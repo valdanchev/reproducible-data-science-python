@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Files &#8212; Reproducible Data Science + Python + Real-World Data</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mylogo2.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Reproducible Data Science + Python + Real-World Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Reproducible Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  About the Course
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html">
+   Course description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#what-is-reproducible-data-science">
+   What is Reproducible Data Science?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#software-stack">
+   Software stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#data-sets">
+   Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#acknowledgment">
+   Acknowledgment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#code-availability">
+   Code availability
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  End-to-End Data Science Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html">
+   Human mobility during UK lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#load-your-data">
+   Load your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairnes-risks">
+   Data Ethics, Privacy, and Fairnes Risks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#describe-your-data">
+   Describe your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#re-cap">
+   Re-cap
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Data Science on the Cloud
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html">
+   <strong>
+    Python for Data Analysis on the Cloud
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#get-started-with-jupyter-colab-notebooks">
+   Get Started with Jupyter &amp; Colab notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#python-coding-for-data-analysis">
+   Python Coding for Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#descriptive-statistics-with-numpy">
+   Descriptive statistics with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#loading-real-world-data-with-pandas">
+   Loading real-world data with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-python-skills">
+   Hands-on exercise: Let’s practice your Python skills
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#markdown-text-cells">
+   Markdown Text Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
+   Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  data design &amp; data wrangling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html">
+   Data Design &amp; Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#get-started-with-pandas">
+   Get started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#importing-pandas">
+   Importing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-your-data">
+   Loading your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-covid-19-data-sets-via-url">
+   Loading Covid-19 data sets via URL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#viewing-describing-and-accessing-your-data">
+   Viewing, Describing, and Accessing your Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#accessing-columns-and-rows-in-your-data">
+   Accessing columns and rows in your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#handling-missing-values">
+   Handling Missing Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#compare-mobility-data-formats">
+   Compare mobility data formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Exploration &amp; Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html">
+   Exploratory Data Analysis and Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#addressing-simple-questions-via-python-eda">
+   Addressing simple questions via Python EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq1-how-do-countries-differ-in-mobility-trends">
+   RQ1: How do countries differ in mobility trends?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#data-visualisation-with-seaborn">
+   Data visualisation with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#changing-figure-appearance">
+   Changing figure appearance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#wide-and-long-data-format">
+   Wide and long data format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#multi-plot-visualisations">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq2-how-do-mobility-trends-change-over-time">
+   RQ2: How do mobility trends change over time?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-time-series-data">
+   Visualising time series data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#bootstrapping-for-inference">
+   Bootstrapping for inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq3-how-have-mobility-trends-differed-across-uk-lockdowns">
+   RQ3: How have mobility trends differed across UK lockdowns?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-lockdowns-mobility-as-barplots">
+   Visualising lockdowns’ mobility as barplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq4-how-have-mobility-trends-differed-across-uk-counties-during-the-third-lockdown">
+   RQ4: How have mobility trends differed across UK counties during the third lockdown?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#id1">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#split-apply-combine">
+   Split-apply-combine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#summarising-data-by-groups">
+   Summarising data by groups
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq5-how-do-mobility-categories-relate-to-each-other">
+   RQ5: How do mobility categories relate to each other?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-distributions">
+   Visualising distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#plotting-pairwise-relationships">
+   Plotting pairwise relationships
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq6-how-correlated-are-mobility-categories-across-uk-counties">
+   RQ6: How correlated are mobility categories across UK counties?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-correlation">
+   Visualising correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-linear-regression">
+   Visualising linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pattern Discovery using Unsupervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html">
+   Discovering patterns in data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#machine-learning-what-is-it-what-is-it-good-for">
+   Machine Learning: What is it? What is it good for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#research-problem-clustering-counties-by-mobility">
+   Research problem: clustering counties by mobility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#k-means-clustering">
+   <em>
+    k
+   </em>
+   -means clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#let-s-get-coding-with-scikit-learn">
+   Let’s get coding with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-preprocessing">
+   Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-standardisation">
+   Data standardisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#choosing-the-optimal-number-of-clusters">
+   Choosing the optimal number of clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#performing-for-loop">
+   Performing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#elbow-plot">
+   Elbow plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#dimensionality-reduction-via-pca">
+   Dimensionality Reduction via PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#visualising-mobility-clusters">
+   Visualising mobility clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#related-approaches-hierarchical-clustering">
+   Related approaches: Hierarchical clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction using Supervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html">
+   Learning from Data to Predict
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Causal Inference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html">
+   Introduction to Causal Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#what-causes-what">
+   What causes what?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#confoundingbasic-definitions">
+   Confounding—basic definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#our-example-of-collider-bias">
+   Our example of collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#drawing-causal-graphs">
+   Drawing causal graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#statistical-models-in-python">
+   Statistical Models in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#collider-confounder">
+   Collider confounder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#additional-material">
+   Additional material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#gender-discrimination-and-collider-bias">
+   Gender discrimination and collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Network Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html">
+   Network analysis with NetworkX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#open-network-data-repositories">
+   Open network data repositories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#assortative-mixing">
+   Assortative mixing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-a-directed-network">
+   Creating a directed network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data ethics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html">
+   Data Ethics, Bias, and Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#discussion-a-level-results-in-2020-england">
+   Discussion: A-level results in 2020 England
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#learning-resources-about-the-a-level-controversy">
+   Learning resources about the A-level controversy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#bias-and-fairness-in-data-science-systems">
+   Bias and Fairness in Data Science Systems
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/markdown.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-myst">
+   What is MyST?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-roles-and-directives">
+   What are roles and directives?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-directive">
+     Using a directive
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-role">
+     Using a role
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-citation">
+     Adding a citation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-code-in-your-markdown-files">
+     Executing code in your markdown files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="markdown-files">
+<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">¶</a></h1>
+<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
+in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
+called <strong>MyST Markdown</strong>.</p>
+<div class="section" id="what-is-myst">
+<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
+<p>MyST stands for “Markedly Structured Text”. It
+is a slight variation on a flavor of markdown called “CommonMark” markdown,
+with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
+in the Sphinx ecosystem.</p>
+</div>
+<div class="section" id="what-are-roles-and-directives">
+<h2>What are roles and directives?<a class="headerlink" href="#what-are-roles-and-directives" title="Permalink to this headline">¶</a></h2>
+<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
+are kind of like functions, but written in a markup language. They both
+serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
+<strong>directives span many lines</strong>. They both accept different kinds of inputs,
+and what they do with those inputs depends on the specific role or directive
+that is being called.</p>
+<div class="section" id="using-a-directive">
+<h3>Using a directive<a class="headerlink" href="#using-a-directive" title="Permalink to this headline">¶</a></h3>
+<p>At its simplest, you can insert a directive into your book’s content like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mydirectivename}
+My directive content
+```
+</pre></div>
+</div>
+<p>This will only work if a directive with name <code class="docutils literal notranslate"><span class="pre">mydirectivename</span></code> already exists
+(which it doesn’t). There are many pre-defined directives associated with
+Jupyter Book. For example, to insert a note box into your content, you can
+use the following directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
+Here is a note
+```
+</pre></div>
+</div>
+<p>This results in:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a note</p>
+</div>
+<p>In your built book.</p>
+<p>For more information on writing directives, see the
+<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
+</div>
+<div class="section" id="using-a-role">
+<h3>Using a role<a class="headerlink" href="#using-a-role" title="Permalink to this headline">¶</a></h3>
+<p>Roles are very similar to directives, but they are less-complex and written
+entirely on one line. You can insert a role into your book’s content with
+this pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some content {rolename}`and here is my role&#39;s content!`
+</pre></div>
+</div>
+<p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
+the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
+refer directly to another page by its relative path. For example, the
+role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <a class="reference internal" href="intro.html"><span class="doc">Welcome to Reproducible Data Science</span></a>.</p>
+<p>For more information on writing roles, see the
+<a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
+</div>
+<div class="section" id="adding-a-citation">
+<h3>Adding a citation<a class="headerlink" href="#adding-a-citation" title="Permalink to this headline">¶</a></h3>
+<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
+the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
+this: <span id="id1">[<a class="reference internal" href="#id3"><span>HdHPK14</span></a>]</span>.</p>
+<p>Moreoever, you can insert a bibliography into your page with this syntax:
+The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
+render properly.
+For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
+then the bibliography is inserted with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography}
+```
+</pre></div>
+</div>
+<p>Resulting in a rendered bibliography that looks like:</p>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
+<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+</dd>
+</dl>
+</p>
+</div>
+<div class="section" id="executing-code-in-your-markdown-files">
+<h3>Executing code in your markdown files<a class="headerlink" href="#executing-code-in-your-markdown-files" title="Permalink to this headline">¶</a></h3>
+<p>If you’d like to include computational content inside these markdown files,
+you can use MyST Markdown to define cells that will be executed when your
+book is built. Jupyter Book uses <em>jupytext</em> to do this.</p>
+<p>First, add Jupytext metadata to the file. For example, to add Jupytext metadata
+to this markdown page, run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">markdown</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Once a markdown file has Jupytext metadata in it, you can add the following
+directive to run the code at build time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
+print(&quot;Here is some code to execute&quot;)
+```
+</pre></div>
+</div>
+<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
+executed with your default Jupyter kernel, and their outputs will be displayed
+in-line with the rest of your content.</p>
+<p>For more information about executing computational content with Jupyter Book,
+see <a class="reference external" href="https://myst-nb.readthedocs.io/">The MyST-NB documentation</a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Valentin Danchev<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
