@@ -1,8 +1,8 @@
 Welcome to Reproducible Data Science
 =======================
 
-Welcome to the course ***Reproducible Data Science: Accessible Data Analysis with Open
-Source Python Tools and Real-World Data*** by Valentin Danchev. The course uses real-world 
+Welcome to the textbook ***Reproducible Data Science: Accessible Data Analysis with Open
+Source Python Tools and Real-World Data*** by Valentin Danchev. The textbook uses real-world 
 social data sets related to the COVID-19 pandemic to provide an accessible introduction to 
 open, reproducible, and ethical data analysis using hands-on Python coding, modern open-source 
 computational tools, and data science techniques. Topics include open reproducible research workflows, 
