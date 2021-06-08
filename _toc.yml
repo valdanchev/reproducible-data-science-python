@@ -1,0 +1,59 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+- part: About the Course
+  chapters:
+  - file: course_description
+
+- part: End-to-End Data Science Project
+  chapters:
+  - file: end_to_end_data_science_project
+
+- part: Open Reproducible Workflow
+  chapters:
+  - file: open_reproducible_workflows
+
+- part: Python Data Science on the Cloud
+  chapters:
+  - file: python_data_science_cloud
+  
+- part: data design & data wrangling
+  chapters:
+  - file: data_design_wrangling
+  
+- part: Data Exploration & Visualisation
+  chapters:
+  - file: data_exploration_visualisation
+  
+- part: Pattern Discovery using Unsupervised Learning
+  chapters:
+  - file: pattern_discovery_unsupervised_learning
+  
+- part: Prediction using Supervised Learning
+  chapters:
+  - file: prediction_supervised_learning
+
+- part: Causal Inference
+  chapters:
+  - file: causal_inference
+
+- part: Network Analysis
+  chapters:
+  - file: network_analysis
+
+- part: Data ethics
+  chapters:
+  - file: data_ethics
+    
+#  sections:
+#  - file: causal-inference
+#    title: My alternate page title
+#  - file: content
+#  sections:
+#    - file: pandas
+#    - file: notebooks
+#    - file: Copy_of_OpenReproducibleResearchWorkflow-2
+#    - file: Copy_of_DataVisualisation
+#    - file: markdown
+

@@ -1,0 +1,3678 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning from Data to Predict &#8212; Reproducible Data Science + Python + Real-World Data</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Causal Inference" href="causal_inference.html" />
+    <link rel="prev" title="Discovering patterns in data" href="pattern_discovery_unsupervised_learning.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mylogo2.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Reproducible Data Science + Python + Real-World Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Reproducible Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  About the Course
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html">
+   Course description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#what-is-reproducible-data-science">
+   What is Reproducible Data Science?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#software-stack">
+   Software stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#data-sets">
+   Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#acknowledgment">
+   Acknowledgment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#code-availability">
+   Code availability
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  End-to-End Data Science Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html">
+   Human mobility during UK lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#load-your-data">
+   Load your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairnes-risks">
+   Data Ethics, Privacy, and Fairnes Risks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#describe-your-data">
+   Describe your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#re-cap">
+   Re-cap
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Data Science on the Cloud
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html">
+   <strong>
+    Python for Data Analysis on the Cloud
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#get-started-with-jupyter-colab-notebooks">
+   Get Started with Jupyter &amp; Colab notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#python-coding-for-data-analysis">
+   Python Coding for Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#descriptive-statistics-with-numpy">
+   Descriptive statistics with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#loading-real-world-data-with-pandas">
+   Loading real-world data with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-python-skills">
+   Hands-on exercise: Let’s practice your Python skills
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#markdown-text-cells">
+   Markdown Text Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
+   Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  data design &amp; data wrangling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html">
+   Data Design &amp; Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#get-started-with-pandas">
+   Get started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#importing-pandas">
+   Importing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-your-data">
+   Loading your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-covid-19-data-sets-via-url">
+   Loading Covid-19 data sets via URL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#viewing-describing-and-accessing-your-data">
+   Viewing, Describing, and Accessing your Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#accessing-columns-and-rows-in-your-data">
+   Accessing columns and rows in your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#handling-missing-values">
+   Handling Missing Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#compare-mobility-data-formats">
+   Compare mobility data formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Exploration &amp; Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html">
+   Exploratory Data Analysis and Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#addressing-simple-questions-via-python-eda">
+   Addressing simple questions via Python EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq1-how-do-countries-differ-in-mobility-trends">
+   RQ1: How do countries differ in mobility trends?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#data-visualisation-with-seaborn">
+   Data visualisation with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#changing-figure-appearance">
+   Changing figure appearance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#wide-and-long-data-format">
+   Wide and long data format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#multi-plot-visualisations">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq2-how-do-mobility-trends-change-over-time">
+   RQ2: How do mobility trends change over time?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-time-series-data">
+   Visualising time series data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#bootstrapping-for-inference">
+   Bootstrapping for inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq3-how-have-mobility-trends-differed-across-uk-lockdowns">
+   RQ3: How have mobility trends differed across UK lockdowns?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-lockdowns-mobility-as-barplots">
+   Visualising lockdowns’ mobility as barplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq4-how-have-mobility-trends-differed-across-uk-counties-during-the-third-lockdown">
+   RQ4: How have mobility trends differed across UK counties during the third lockdown?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#id1">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#split-apply-combine">
+   Split-apply-combine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#summarising-data-by-groups">
+   Summarising data by groups
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq5-how-do-mobility-categories-relate-to-each-other">
+   RQ5: How do mobility categories relate to each other?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-distributions">
+   Visualising distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#plotting-pairwise-relationships">
+   Plotting pairwise relationships
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq6-how-correlated-are-mobility-categories-across-uk-counties">
+   RQ6: How correlated are mobility categories across UK counties?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-correlation">
+   Visualising correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-linear-regression">
+   Visualising linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pattern Discovery using Unsupervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html">
+   Discovering patterns in data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#machine-learning-what-is-it-what-is-it-good-for">
+   Machine Learning: What is it? What is it good for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#research-problem-clustering-counties-by-mobility">
+   Research problem: clustering counties by mobility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#k-means-clustering">
+   <em>
+    k
+   </em>
+   -means clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#let-s-get-coding-with-scikit-learn">
+   Let’s get coding with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-preprocessing">
+   Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-standardisation">
+   Data standardisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#choosing-the-optimal-number-of-clusters">
+   Choosing the optimal number of clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#performing-for-loop">
+   Performing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#elbow-plot">
+   Elbow plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#dimensionality-reduction-via-pca">
+   Dimensionality Reduction via PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#visualising-mobility-clusters">
+   Visualising mobility clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#related-approaches-hierarchical-clustering">
+   Related approaches: Hierarchical clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction using Supervised Learning
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Learning from Data to Predict
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Causal Inference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html">
+   Introduction to Causal Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#what-causes-what">
+   What causes what?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#confoundingbasic-definitions">
+   Confounding—basic definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#our-example-of-collider-bias">
+   Our example of collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#drawing-causal-graphs">
+   Drawing causal graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#statistical-models-in-python">
+   Statistical Models in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#collider-confounder">
+   Collider confounder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#additional-material">
+   Additional material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Network Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html">
+   Network analysis with NetworkX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#open-network-data-repositories">
+   Open network data repositories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#assortative-mixing">
+   Assortative mixing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-a-directed-network">
+   Creating a directed network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data ethics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html">
+   Data Ethics, Bias, and Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#discussion-a-level-results-in-2020-england">
+   Discussion: A-level results in 2020 England
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#learning-resources-about-the-a-level-controversy">
+   Learning resources about the A-level controversy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#bias-and-fairness-in-data-science-systems">
+   Bias and Fairness in Data Science Systems
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/prediction_supervised_learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fprediction_supervised_learning.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/prediction_supervised_learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Learning from Data to Predict
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-themes">
+     Key themes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-resources">
+     Learning resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-data-from-your-google-drive">
+     Accessing data from your Google Drive
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-the-understanding-society-covid-19-study-wave-6-november-2020">
+     Loading the Understanding Society Covid-19 Study (Wave 6, November 2020)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outcome-output-y">
+     Outcome: Output
+     <em>
+      (Y)
+     </em>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictors-input-features-x">
+     Predictors: Input features
+     <em>
+      (X)
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-problem-of-model-overfitting">
+     The problem of model overfitting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-set-validation-set-and-test-set">
+     Training set, Validation set, and Test set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#categorical-predictors-dummy-variables">
+     Categorical predictors — dummy variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-predictors-standardisation">
+     Continuous predictors — standardisation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combine-categorical-and-continuous-predictors-into-one-data-array">
+       Combine categorical and continuous predictors into one data array
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hands-on-mini-exercise">
+     Hands-on mini-exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-cross-validation-technique">
+     The cross-validation technique
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metrics-to-evaluate-model-performance">
+     Metrics to evaluate model performance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="learning-from-data-to-predict">
+<h1>Learning from Data to Predict<a class="headerlink" href="#learning-from-data-to-predict" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="key-themes">
+<h2>Key themes<a class="headerlink" href="#key-themes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The prediction task</p></li>
+<li><p>Supervised learning</p></li>
+<li><p>Machine learning tasks — e.g., regression (continuous) and classification (binary)</p></li>
+<li><p>Building and evaluation of simple prediction models</p></li>
+<li><p>The problem of model overfitting and strategies to avoid it:</p>
+<ul>
+<li><p>Splitting the data into training set and testing set</p></li>
+<li><p>Cross-validation</p></li>
+</ul>
+</li>
+<li><p>Introduction to supervised machine learning algorithms, including <em>k</em>-Nearest Neighbors and Logistic Regression</p></li>
+</ul>
+</div>
+<div class="section" id="learning-resources">
+<h2>Learning resources<a class="headerlink" href="#learning-resources" title="Permalink to this headline">¶</a></h2>
+<p><i class="fas fa-play-circle"></i> <a class="reference external" href="https://www.youtube.com/watch?v=sOaPTrhB_uU">Predictability of life trajectories</a> by Matthew Salganik</p>
+<p><i class="fas fa-play-circle"></i> <a class="reference external" href="https://www.youtube.com/watch?v=KTQJbdCNjMc">Introduction to Machine Learning Methods</a> by Susan Athey</p>
+<p><i class="fas fa-play-circle"></i> <a class="reference external" href="https://www.youtube.com/watch?v=HC0J_SPm9co">Machine Learning with Scikit Learn</a> by Jake VanderPlas</p>
+<p><i class="fas fa-scroll"></i> M Molina &amp; F Garip. 2019. <a class="reference external" href="https://osf.io/preprints/socarxiv/a6r9g/">Machine learning for sociology.</a> <em>Annual Review of Sociology.</em> <a class="reference external" href="https://osf.io/preprints/socarxiv/a6r9g/">Link</a> to an open-access version of the article available at the Open Science Framework.</p>
+<p><i class="fas fa-book"></i> Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter, Julia Lane. 2021. <a class="reference external" href="https://textbook.coleridgeinitiative.org/chap-ml.html">Chapter 7: Machine Learning</a>. In <em>Big Data and Social Science</em> (2nd edition).</p>
+<p><i class="fas fa-book"></i> Aurélien Géron. 2019. <a class="reference external" href="https://github.com/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb">Chapter 2: End-to-end Machine Learning project</a>. In <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em> (2nd Edition). O’Reilly.<br></p>
+</div>
+</div>
+<div class="section" id="the-prediction-task">
+<h1>The Prediction task<a class="headerlink" href="#the-prediction-task" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.tandfonline.com/doi/full/10.1080/09332480.2019.1579578">Prediction</a> is a data science task among other data science tasks, including description and causal inference. <a class="reference external" href="https://osf.io/preprints/socarxiv/a6r9g/">Prediction</a> is the use of data to map some input <em>(X)</em> to  an  output  <em>(Y)</em>. The prediction task is called <em>classification</em> when the output variable is categorical (or discrete), and <em>regression</em> when it is continuous. Our focus in this session will be on classification.</p>
+</div>
+<div class="section" id="prediction-tasks-in-social-sciences">
+<h1>Prediction tasks in social sciences<a class="headerlink" href="#prediction-tasks-in-social-sciences" title="Permalink to this headline">¶</a></h1>
+<p>There are many <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4869349/">prediction problems in social sciences (summarised in Kleinberg et al. 2015)</a> that can benefit from (supervised) machine learning, for example:</p>
+<ul class="simple">
+<li><p>In child protection, predicting <a class="reference external" href="https://www.nytimes.com/2018/01/02/magazine/can-an-algorithm-tell-when-kids-are-in-danger.html">when kids are in danger</a>;</p></li>
+<li><p>In the criminal justice system, predicting whether to detain or release arrestees as they await adjudication of their case (e.g., Kleinberg et al. 2015);</p></li>
+<li><p>In population health, <a class="reference external" href="https://balkin.blogspot.com/2018/10/artificial-intelligence-for-suicide.html">predicting suicides</a>;</p></li>
+<li><p>In education, predicting which teacher will have the greatest value add (e.g., Rockoff et al., 2011);</p></li>
+<li><p>In higher education, predicting earlier <a class="reference external" href="https://www.degruyter.com/document/doi/10.1515/jbnst-2019-0006/html">university dropouts</a>;</p></li>
+<li><p>In labor market policy, predicting unemployment spell length to help workers decide on savings rates and job search strategies;</p></li>
+<li><p>In social policy, predicting highest risk youth for targeting interventions (e.g., Chandler et al., 2011);</p></li>
+<li><p>In sociology, predicting <a class="reference external" href="https://www.pnas.org/content/117/15/8398">life outcomes (Salganik et al. 2020)</a>.
+<br></p></li>
+</ul>
+</div>
+<div class="section" id="predictions-gone-wrong">
+<h1>Predictions gone wrong<a class="headerlink" href="#predictions-gone-wrong" title="Permalink to this headline">¶</a></h1>
+<p>Prediction and machine learning models went wrong in a few occasions in different domains, including public health, education, the criminal justice system, and healthcare:</p>
+<ul class="simple">
+<li><p>David Lazer et all. <a class="reference external" href="https://science.sciencemag.org/content/343/6176/1203">The Parable of Google Flu: Traps in Big Data Analysis.</a> Science.</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=jHtMLEhDOVE">What went wrong with the A-level algorithm?</a> Financial Times.</p></li>
+<li><p><a class="reference external" href="https://www.bbc.co.uk/news/education-53787203">Why did the A-level algorithm say no?</a> BBC.</p></li>
+<li><p><a class="reference external" href="https://www.ft.com/content/58dcbfaa-740f-4747-8240-bc5ffb412e67">Blame the politicians, not the technology, for A-level fiasco.</a>.
+Financial Times.</p></li>
+<li><p><a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. ProPublica.</p></li>
+<li><p>Ziad Obermeyer at all. <a class="reference external" href="https://science.sciencemag.org/content/366/6464/447">Dissecting racial bias in an algorithm used to manage the health of populations</a>. Science.</p></li>
+</ul>
+<p>Regardless of whether you use or not machine learning in your research, knowledge about prediction and machine learning techniques can help you evaluate how those techniques are used across domains and possibly identify ethical challenges and potential biases in those applications. Importantly, such data ethics challenges are found to reside not only in the machine learning algorithms themselves but in the entire <a class="reference external" href="https://textbook.coleridgeinitiative.org/chap-bias.html">data science ‘pipeline’ or ecosystem</a>.</p>
+</div>
+<div class="section" id="supervised-learning">
+<h1>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h1>
+<p>Learn a model from labeled training data or outcome variable that would enable us to make predictions about unseen or future data. The learning is called supervised because the labels (e.g., email Spam or Ham where ‘Ham’ is e-mail that is not Spam) of the outcome variable <em>(Y)</em> that guide the learning process are already known.</p>
+</div>
+<div class="section" id="research-problem-vaccine-hesitancy">
+<h1>Research problem: vaccine hesitancy<a class="headerlink" href="#research-problem-vaccine-hesitancy" title="Permalink to this headline">¶</a></h1>
+<p>We will aim to predict people who are unlikely to take a coronavirus vaccine <em>(Y)</em> from socio-demographic and health input features <em>(X)</em>. An unbiased prediction of individuals who are unlikely to vaccinate can inform targeted public health interventions, including information campaigns disseminating evidence-based information about Covid-19 vaccines.</p>
+</div>
+<div class="section" id="data-understanding-society-covid-19">
+<h1>Data: Understanding Society COVID-19<a class="headerlink" href="#data-understanding-society-covid-19" title="Permalink to this headline">¶</a></h1>
+<p>We will use data from <a class="reference external" href="https://www.understandingsociety.ac.uk/topic/covid-19">The Understanding Society: Covid-19 Study</a>. The survey asks participants across the UK about their experiences during the COVID-19 outbreak. We will use Wave 6 (November 2020) of the survey.</p>
+<p>The data are safeguarded and can be downloaded from the <a class="reference external" href="https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644">UK Data Service</a>.</p>
+<img src="https://www.cdcs.ed.ac.uk/files/styles/large_16x9/public/2019-08/Spotlighton_AjaMurray_A4_UKHLS_Logo_positive_RGB_300dpi.jpg?itok=YmQnr_oq" width="600" height="300" ><div class="section" id="accessing-data-from-your-google-drive">
+<h2>Accessing data from your Google Drive<a class="headerlink" href="#accessing-data-from-your-google-drive" title="Permalink to this headline">¶</a></h2>
+<p>After you obtain access to the Understanding Society: Covid-19 Study, 2020, you can upload the Wave 6 (November 2020) data set into your Google Drive. Then you will need to connect your Google Drive to your Google Colab using the code below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the Drive helper</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+
+<span class="c1"># This will prompt for authorization. Enter your authorisation code and rerun the cell. </span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="n">b2f03ff29d8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import the Drive helper</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># This will prompt for authorization. Enter your authorisation code and rerun the cell.</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-the-understanding-society-covid-19-study-wave-6-november-2020">
+<h2>Loading the Understanding Society Covid-19 Study (Wave 6, November 2020)<a class="headerlink" href="#loading-the-understanding-society-covid-19-study-wave-6-november-2020" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">USocietyCovid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/My Drive/Understanding_Society_Covid19_Wave6_November2020.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display all columns in the Understanding Society: COVID-19 Study </span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># display headings only as the data is safeguarded</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pidp</th>
+      <th>psu</th>
+      <th>strata</th>
+      <th>birthy</th>
+      <th>racel_dv</th>
+      <th>bornuk_dv</th>
+      <th>i_hidp</th>
+      <th>j_hidp</th>
+      <th>k_hidp</th>
+      <th>i_ioutcome</th>
+      <th>j_ioutcome</th>
+      <th>k_ioutcome</th>
+      <th>cf_welsh</th>
+      <th>cf_dobchk</th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_addrchk</th>
+      <th>cf_couplewsh</th>
+      <th>cf_hhnum</th>
+      <th>cf_personsexa</th>
+      <th>cf_personsexb</th>
+      <th>cf_personsexc</th>
+      <th>cf_personsexd</th>
+      <th>cf_personsexe</th>
+      <th>cf_personsexf</th>
+      <th>cf_personsexg</th>
+      <th>cf_personsexh</th>
+      <th>cf_personsexi</th>
+      <th>cf_personsexj</th>
+      <th>cf_personsexk</th>
+      <th>cf_personagea</th>
+      <th>cf_personageb</th>
+      <th>cf_personagec</th>
+      <th>cf_personaged</th>
+      <th>cf_personagee</th>
+      <th>cf_personagef</th>
+      <th>cf_personageg</th>
+      <th>cf_personageh</th>
+      <th>cf_personagei</th>
+      <th>cf_personagej</th>
+      <th>cf_personagek</th>
+      <th>cf_relationa</th>
+      <th>cf_relationb</th>
+      <th>cf_relationc</th>
+      <th>cf_relationd</th>
+      <th>cf_relatione</th>
+      <th>cf_relationf</th>
+      <th>cf_relationg</th>
+      <th>cf_relationh</th>
+      <th>cf_relationi</th>
+      <th>cf_relationj</th>
+      <th>cf_relationk</th>
+      <th>cf_couple</th>
+      <th>cf_hhcompa</th>
+      <th>cf_hhcompb</th>
+      <th>cf_hhcompc</th>
+      <th>cf_hhcompd</th>
+      <th>cf_hhcompe</th>
+      <th>cf_parent0plus</th>
+      <th>cf_parent5plus</th>
+      <th>cf_parent015</th>
+      <th>cf_parent1619</th>
+      <th>cf_parent511</th>
+      <th>cf_parent1217</th>
+      <th>cf_parent418</th>
+      <th>cf_scsf1</th>
+      <th>cf_ff_hadsymp</th>
+      <th>cf_clinvuln_dv</th>
+      <th>cf_hadsymp</th>
+      <th>cf_hassymp</th>
+      <th>cf_symptoms1</th>
+      <th>cf_symptoms2</th>
+      <th>cf_symptoms23</th>
+      <th>cf_symptoms24</th>
+      <th>cf_symptoms25</th>
+      <th>cf_symptoms3</th>
+      <th>cf_symptoms4</th>
+      <th>cf_symptoms5</th>
+      <th>cf_symptoms6</th>
+      <th>cf_symptoms7</th>
+      <th>cf_symptoms8</th>
+      <th>cf_symptoms9</th>
+      <th>cf_symptoms10</th>
+      <th>cf_symptoms12</th>
+      <th>cf_symptoms13</th>
+      <th>cf_symptoms14</th>
+      <th>cf_symptoms15</th>
+      <th>cf_symptoms16</th>
+      <th>cf_symptoms17</th>
+      <th>cf_symptoms18</th>
+      <th>cf_symptoms19</th>
+      <th>cf_symptoms20</th>
+      <th>cf_symptoms21</th>
+      <th>cf_symptoms22</th>
+      <th>cf_symptoms11</th>
+      <th>cf_cv19treat</th>
+      <th>cf_cv19trwhat1</th>
+      <th>cf_cv19trwhat2</th>
+      <th>cf_cv19trwhat3</th>
+      <th>cf_cv19trwhat4</th>
+      <th>cf_cv19trwhat5</th>
+      <th>cf_cv19trwhat6</th>
+      <th>cf_cv19trwhat7</th>
+      <th>cf_cv19trwhat8</th>
+      <th>cf_cv19trwhat9</th>
+      <th>cf_cv19trwhat10</th>
+      <th>cf_cv19trwhat11</th>
+      <th>cf_longcovid</th>
+      <th>cf_lgcvsymp1</th>
+      <th>cf_lgcvsymp23</th>
+      <th>cf_lgcvsymp24</th>
+      <th>cf_lgcvsymp25</th>
+      <th>cf_lgcvsymp3</th>
+      <th>cf_lgcvsymp4</th>
+      <th>cf_lgcvsymp5</th>
+      <th>cf_lgcvsymp6</th>
+      <th>cf_lgcvsymp7</th>
+      <th>cf_lgcvsymp8</th>
+      <th>cf_lgcvsymp9</th>
+      <th>cf_lgcvsymp10</th>
+      <th>cf_lgcvsymp12</th>
+      <th>cf_lgcvsymp13</th>
+      <th>cf_lgcvsymp14</th>
+      <th>cf_lgcvsymp15</th>
+      <th>cf_lgcvsymp16</th>
+      <th>cf_lgcvsymp17</th>
+      <th>cf_lgcvsymp18</th>
+      <th>cf_lgcvsymp19</th>
+      <th>cf_lgcvsymp20</th>
+      <th>cf_lgcvsymp21</th>
+      <th>cf_lgcvsymp22</th>
+      <th>cf_lgcvsymp26</th>
+      <th>cf_lgcvsymp_oth</th>
+      <th>cf_tested</th>
+      <th>cf_testresult</th>
+      <th>cf_testwhen_d</th>
+      <th>cf_testwhen_m</th>
+      <th>cf_testwhen_y</th>
+      <th>cf_hadcovid</th>
+      <th>cf_testtrace</th>
+      <th>cf_traceinfo</th>
+      <th>cf_traceinfoeng</th>
+      <th>cf_traced</th>
+      <th>cf_contactcv19t1</th>
+      <th>cf_contactcv19t5</th>
+      <th>cf_contactcv19t2</th>
+      <th>cf_contactcv19t3</th>
+      <th>cf_contactcv19t4</th>
+      <th>cf_riskcv19</th>
+      <th>cf_smartphone</th>
+      <th>cf_smarttype</th>
+      <th>cf_smartmodel</th>
+      <th>cf_covidapp</th>
+      <th>cf_whynotapp1</th>
+      <th>cf_whynotapp2</th>
+      <th>cf_whynotapp3</th>
+      <th>cf_whynotapp4</th>
+      <th>cf_whynotapp5</th>
+      <th>cf_whynotapp6</th>
+      <th>cf_whynotapp7</th>
+      <th>cf_whynotapp8</th>
+      <th>cf_whynotapp9</th>
+      <th>cf_whynotapp10</th>
+      <th>cf_whynotapp11</th>
+      <th>cf_whynotapp_oth</th>
+      <th>cf_whynotapporder</th>
+      <th>cf_covidappon</th>
+      <th>cf_covidappnot1</th>
+      <th>cf_covidappnot2</th>
+      <th>cf_covidappnot3</th>
+      <th>cf_covidappnot_oth</th>
+      <th>cf_hhsymp</th>
+      <th>cf_hhsympwho_persona</th>
+      <th>cf_hhsympwho_personb</th>
+      <th>cf_hhsympwho_personc</th>
+      <th>cf_hhsympwho_persond</th>
+      <th>cf_hhsympwho_persone</th>
+      <th>cf_hhsympwho_personf</th>
+      <th>cf_hhsympwho_persong</th>
+      <th>cf_hhsympwho_personh</th>
+      <th>cf_hhsympwho_personi</th>
+      <th>cf_hhsympwho_personj</th>
+      <th>cf_hhsympwho_personk</th>
+      <th>cf_hhsympwho_personl</th>
+      <th>cf_hhsympwho_personm</th>
+      <th>cf_hhsympwho_personn</th>
+      <th>cf_hhsympwho_persono</th>
+      <th>cf_hhsympwho_personp</th>
+      <th>cf_hhsympwho_personq</th>
+      <th>cf_hhsympwho_personr</th>
+      <th>cf_hhsympwho_persons</th>
+      <th>cf_hhsympwho_persont</th>
+      <th>cf_hhsympwho_personu</th>
+      <th>cf_hhsympwho_personv</th>
+      <th>cf_hhsympwho_personw</th>
+      <th>cf_hhsympwho_personx</th>
+      <th>cf_hhsympwho_persony</th>
+      <th>cf_hhsympwho_none</th>
+      <th>cf_hhtest</th>
+      <th>cf_hhtestwho_persona</th>
+      <th>cf_hhtestwho_personb</th>
+      <th>cf_hhtestwho_personc</th>
+      <th>cf_hhtestwho_persond</th>
+      <th>cf_hhtestwho_persone</th>
+      <th>cf_hhtestwho_personf</th>
+      <th>cf_hhtestwho_persong</th>
+      <th>cf_hhtestwho_personh</th>
+      <th>cf_hhtestwho_personi</th>
+      <th>cf_hhtestwho_personj</th>
+      <th>cf_hhtestwho_personk</th>
+      <th>cf_hhtestwho_personl</th>
+      <th>cf_hhtestwho_personm</th>
+      <th>cf_hhtestwho_personn</th>
+      <th>cf_hhtestwho_persono</th>
+      <th>cf_hhtestwho_personp</th>
+      <th>cf_hhtestwho_personq</th>
+      <th>cf_hhtestwho_personr</th>
+      <th>cf_hhtestwho_persons</th>
+      <th>cf_hhtestwho_persont</th>
+      <th>cf_hhtestwho_personu</th>
+      <th>cf_hhtestwho_personv</th>
+      <th>cf_hhtestwho_personw</th>
+      <th>cf_hhtestwho_personx</th>
+      <th>cf_hhtestwho_persony</th>
+      <th>cf_hhtestwho_none</th>
+      <th>cf_hhresult_persona</th>
+      <th>cf_hhresult_personb</th>
+      <th>cf_hhresult_personc</th>
+      <th>cf_hhresult_persond</th>
+      <th>cf_hhresult_persone</th>
+      <th>cf_hhresult_personf</th>
+      <th>cf_hhresult_persong</th>
+      <th>cf_hhresult_personh</th>
+      <th>cf_hhresult_personi</th>
+      <th>cf_hhresult_personj</th>
+      <th>cf_hhresult_personk</th>
+      <th>cf_hhresult_personl</th>
+      <th>cf_hhresult_personm</th>
+      <th>cf_hhresult_personn</th>
+      <th>cf_hhresult_persono</th>
+      <th>cf_hhresult_personp</th>
+      <th>cf_hhresult_personq</th>
+      <th>cf_hhresult_personr</th>
+      <th>cf_hhresult_persons</th>
+      <th>cf_hhresult_persont</th>
+      <th>cf_hhresult_personu</th>
+      <th>cf_hhresult_personv</th>
+      <th>cf_hhresult_personw</th>
+      <th>cf_hhresult_personx</th>
+      <th>cf_hhresult_persony</th>
+      <th>cf_hhtestwhen_d_persona</th>
+      <th>cf_hhtestwhen_m_persona</th>
+      <th>cf_hhtestwhen_y_persona</th>
+      <th>cf_hhtestwhen_d_personb</th>
+      <th>cf_hhtestwhen_m_personb</th>
+      <th>cf_hhtestwhen_y_personb</th>
+      <th>cf_hhtestwhen_d_personc</th>
+      <th>cf_hhtestwhen_m_personc</th>
+      <th>cf_hhtestwhen_y_personc</th>
+      <th>cf_hhtestwhen_d_persond</th>
+      <th>cf_hhtestwhen_m_persond</th>
+      <th>cf_hhtestwhen_y_persond</th>
+      <th>cf_hhtestwhen_d_persone</th>
+      <th>cf_hhtestwhen_m_persone</th>
+      <th>cf_hhtestwhen_y_persone</th>
+      <th>cf_hhtestwhen_d_personf</th>
+      <th>cf_hhtestwhen_m_personf</th>
+      <th>cf_hhtestwhen_y_personf</th>
+      <th>cf_hhtestwhen_d_persong</th>
+      <th>cf_hhtestwhen_m_persong</th>
+      <th>cf_hhtestwhen_y_persong</th>
+      <th>cf_hhtestwhen_d_personh</th>
+      <th>cf_hhtestwhen_m_personh</th>
+      <th>cf_hhtestwhen_y_personh</th>
+      <th>cf_hhtestwhen_d_personi</th>
+      <th>cf_hhtestwhen_m_personi</th>
+      <th>cf_hhtestwhen_y_personi</th>
+      <th>cf_hhtestwhen_d_personj</th>
+      <th>cf_hhtestwhen_m_personj</th>
+      <th>cf_hhtestwhen_y_personj</th>
+      <th>cf_hhtestwhen_d_personk</th>
+      <th>cf_hhtestwhen_m_personk</th>
+      <th>cf_hhtestwhen_y_personk</th>
+      <th>cf_hhtestwhen_d_personl</th>
+      <th>cf_hhtestwhen_m_personl</th>
+      <th>cf_hhtestwhen_y_personl</th>
+      <th>cf_hhtestwhen_d_personm</th>
+      <th>cf_hhtestwhen_m_personm</th>
+      <th>cf_hhtestwhen_y_personm</th>
+      <th>cf_hhtestwhen_d_personn</th>
+      <th>cf_hhtestwhen_m_personn</th>
+      <th>cf_hhtestwhen_y_personn</th>
+      <th>cf_hhtestwhen_d_persono</th>
+      <th>cf_hhtestwhen_m_persono</th>
+      <th>cf_hhtestwhen_y_persono</th>
+      <th>cf_hhtestwhen_d_personp</th>
+      <th>cf_hhtestwhen_m_personp</th>
+      <th>cf_hhtestwhen_y_personp</th>
+      <th>cf_hhtestwhen_d_personq</th>
+      <th>cf_hhtestwhen_m_personq</th>
+      <th>cf_hhtestwhen_y_personq</th>
+      <th>cf_hhtestwhen_d_personr</th>
+      <th>cf_hhtestwhen_m_personr</th>
+      <th>cf_hhtestwhen_y_personr</th>
+      <th>cf_hhtestwhen_d_persons</th>
+      <th>cf_hhtestwhen_m_persons</th>
+      <th>cf_hhtestwhen_y_persons</th>
+      <th>cf_hhtestwhen_d_persont</th>
+      <th>cf_hhtestwhen_m_persont</th>
+      <th>cf_hhtestwhen_y_persont</th>
+      <th>cf_hhtestwhen_d_personu</th>
+      <th>cf_hhtestwhen_m_personu</th>
+      <th>cf_hhtestwhen_y_personu</th>
+      <th>cf_hhtestwhen_d_personv</th>
+      <th>cf_hhtestwhen_m_personv</th>
+      <th>cf_hhtestwhen_y_personv</th>
+      <th>cf_hhtestwhen_d_personw</th>
+      <th>cf_hhtestwhen_m_personw</th>
+      <th>cf_hhtestwhen_y_personw</th>
+      <th>cf_hhtestwhen_d_personx</th>
+      <th>cf_hhtestwhen_m_personx</th>
+      <th>cf_hhtestwhen_y_personx</th>
+      <th>cf_hhtestwhen_d_persony</th>
+      <th>cf_hhtestwhen_m_persony</th>
+      <th>cf_hhtestwhen_y_persony</th>
+      <th>cf_fluinvite</th>
+      <th>cf_hadflujab</th>
+      <th>cf_noflujab</th>
+      <th>cf_nofluinvite</th>
+      <th>cf_fluinvite50</th>
+      <th>cf_flusoon</th>
+      <th>cf_vaxxer</th>
+      <th>cf_vaxno</th>
+      <th>cf_vaxwhy</th>
+      <th>cf_vaxpush1</th>
+      <th>cf_vaxpush2</th>
+      <th>cf_vaxpush3</th>
+      <th>cf_ff_hcond1</th>
+      <th>cf_ff_hcond2</th>
+      <th>cf_ff_hcond3</th>
+      <th>cf_ff_hcond4</th>
+      <th>cf_ff_hcond5</th>
+      <th>cf_ff_hcond6</th>
+      <th>cf_ff_hcond7</th>
+      <th>cf_ff_hcond8</th>
+      <th>cf_ff_hcond10</th>
+      <th>cf_ff_hcond11</th>
+      <th>cf_ff_hcond12</th>
+      <th>cf_ff_hcond13</th>
+      <th>cf_ff_hcond14</th>
+      <th>cf_ff_hcond15</th>
+      <th>cf_ff_hcond16</th>
+      <th>cf_ff_hcond18</th>
+      <th>cf_ff_hcond19</th>
+      <th>cf_ff_hcond21</th>
+      <th>cf_ff_hcond22</th>
+      <th>cf_ff_hcond23</th>
+      <th>cf_ff_hcond24</th>
+      <th>cf_ff_hcond27</th>
+      <th>cf_ff_hcondhas</th>
+      <th>cf_ff_pregnow</th>
+      <th>cf_ff_stillpreg</th>
+      <th>cf_hcondnew_cv1</th>
+      <th>cf_hcondnew_cv2</th>
+      <th>cf_hcondnew_cv3</th>
+      <th>cf_hcondnew_cv4</th>
+      <th>cf_hcondnew_cv5</th>
+      <th>cf_hcondnew_cv6</th>
+      <th>cf_hcondnew_cv7</th>
+      <th>cf_hcondnew_cv8</th>
+      <th>cf_hcondnew_cv11</th>
+      <th>cf_hcondnew_cv21</th>
+      <th>cf_hcondnew_cv10</th>
+      <th>cf_hcondnew_cv12</th>
+      <th>cf_hcondnew_cv13</th>
+      <th>cf_hcondnew_cv14</th>
+      <th>cf_hcondnew_cv15</th>
+      <th>cf_hcondnew_cv16</th>
+      <th>cf_hcondnew_cv22</th>
+      <th>cf_hcondnew_cv19</th>
+      <th>cf_hcondnew_cv23</th>
+      <th>cf_hcondnew_cv24</th>
+      <th>cf_hcondnew_cv27</th>
+      <th>cf_hcondnew_cv18</th>
+      <th>cf_hcondnew_cv96</th>
+      <th>cf_arthtypn</th>
+      <th>cf_cancertypn_cv1</th>
+      <th>cf_cancertypn_cv2</th>
+      <th>cf_cancertypn_cv3</th>
+      <th>cf_cancertypn_cv4</th>
+      <th>cf_cancertypn_cv5</th>
+      <th>cf_cancertypn_cv6</th>
+      <th>cf_cancertypn_cv8</th>
+      <th>cf_cancertypn_cv7</th>
+      <th>cf_mhealthtypn_cv2</th>
+      <th>cf_mhealthtypn_cv3</th>
+      <th>cf_mhealthtypn_cv4</th>
+      <th>cf_mhealthtypn_cv5</th>
+      <th>cf_mhealthtypn_cv6</th>
+      <th>cf_mhealthtypn_cv8</th>
+      <th>cf_mhealthtypn_cv9</th>
+      <th>cf_mhealthtypn_cv10</th>
+      <th>cf_mhealthtypn_cv11</th>
+      <th>cf_mhealthtypn_cv12</th>
+      <th>cf_mhealthtypn_cv13</th>
+      <th>cf_mhealthtypn_cv14</th>
+      <th>cf_mhealthtypn_cv15</th>
+      <th>cf_mhealthtypn_cv16</th>
+      <th>cf_mhealthtypn_cv17</th>
+      <th>cf_mhealthtypn_cv18</th>
+      <th>cf_mhealthtypn_cv19</th>
+      <th>cf_mhealthtypn_cv20</th>
+      <th>cf_hcond_treat1</th>
+      <th>cf_hcond_treat2</th>
+      <th>cf_hcond_treat3</th>
+      <th>cf_hcond_treat4</th>
+      <th>cf_hcond_treat5</th>
+      <th>cf_hcond_treat6</th>
+      <th>cf_treatment1</th>
+      <th>cf_treatment2</th>
+      <th>cf_treatment3</th>
+      <th>cf_treatment4</th>
+      <th>cf_treatment5</th>
+      <th>cf_canceltreat</th>
+      <th>cf_nhsnowgp2</th>
+      <th>cf_nhsnowpm2</th>
+      <th>cf_nhsnowop2</th>
+      <th>cf_nhsnowip2</th>
+      <th>cf_nhsnow1112</th>
+      <th>cf_chscnowpharm2</th>
+      <th>cf_chscnowotcm2</th>
+      <th>cf_chscnowcarer2</th>
+      <th>cf_chscnowpsy2</th>
+      <th>cf_pregnow</th>
+      <th>cf_stillpreg</th>
+      <th>cf_pregscan</th>
+      <th>cf_pregmidwife</th>
+      <th>cf_pregantenatal</th>
+      <th>cf_aidhh</th>
+      <th>cf_aidnum</th>
+      <th>cf_carehhc1</th>
+      <th>cf_carehhc2</th>
+      <th>cf_carehhc3</th>
+      <th>cf_carehhc4</th>
+      <th>cf_carehhc5</th>
+      <th>cf_carehhc6</th>
+      <th>cf_carehhwho1</th>
+      <th>cf_carehhwho2</th>
+      <th>cf_carehhwho3</th>
+      <th>cf_carehhwho4</th>
+      <th>cf_carehhwho5</th>
+      <th>cf_carehhwho6</th>
+      <th>cf_carehhwho7</th>
+      <th>cf_carehhwho8</th>
+      <th>cf_carehhsh</th>
+      <th>cf_aidhrs_cv</th>
+      <th>cf_respitenow</th>
+      <th>cf_caring</th>
+      <th>cf_carehow1</th>
+      <th>cf_carehow2</th>
+      <th>cf_carehow3</th>
+      <th>cf_carehow4</th>
+      <th>cf_carehow5</th>
+      <th>cf_carehow6</th>
+      <th>cf_carehow7</th>
+      <th>cf_carehow8</th>
+      <th>cf_carehow9</th>
+      <th>cf_carehow10</th>
+      <th>cf_carewho1</th>
+      <th>cf_carewho2</th>
+      <th>cf_carewho3</th>
+      <th>cf_carewho4</th>
+      <th>cf_carewho5</th>
+      <th>cf_carewho6</th>
+      <th>cf_carewho7</th>
+      <th>cf_carewho8</th>
+      <th>cf_help</th>
+      <th>cf_helpwhat1</th>
+      <th>cf_helpwhat2</th>
+      <th>cf_helpwhat3</th>
+      <th>cf_helpwhat4</th>
+      <th>cf_helpwhat5</th>
+      <th>cf_helpwhat6</th>
+      <th>cf_helpwhat7</th>
+      <th>cf_helpwhat8</th>
+      <th>cf_helpwhat9</th>
+      <th>cf_helpwhat10</th>
+      <th>cf_helpwho1</th>
+      <th>cf_helpwho2</th>
+      <th>cf_helpwho3</th>
+      <th>cf_helpwho4</th>
+      <th>cf_helpwho5</th>
+      <th>cf_helpwho6</th>
+      <th>cf_helpwho7</th>
+      <th>cf_helpwho8</th>
+      <th>cf_sclonely_cv</th>
+      <th>cf_f2fcontact</th>
+      <th>cf_f2fcontfreq</th>
+      <th>cf_phcontact</th>
+      <th>cf_smcontact</th>
+      <th>cf_whymove1</th>
+      <th>cf_whymove2</th>
+      <th>cf_whymove3</th>
+      <th>cf_whymove4</th>
+      <th>cf_whymove5</th>
+      <th>cf_whymove6</th>
+      <th>cf_whymove7</th>
+      <th>cf_whymove8</th>
+      <th>cf_whymove9</th>
+      <th>cf_whymove10</th>
+      <th>cf_whymove11</th>
+      <th>cf_whymove12</th>
+      <th>cf_whymove13</th>
+      <th>cf_hsownd_cv</th>
+      <th>cf_garden1</th>
+      <th>cf_garden2</th>
+      <th>cf_garden3</th>
+      <th>cf_garden4</th>
+      <th>cf_garden5</th>
+      <th>cf_garden6</th>
+      <th>cf_deskspace</th>
+      <th>cf_pcnet</th>
+      <th>cf_expmove</th>
+      <th>cf_whyexpmove1</th>
+      <th>cf_whyexpmove2</th>
+      <th>cf_whyexpmove3</th>
+      <th>cf_whyexpmove4</th>
+      <th>cf_whyexpmove5</th>
+      <th>cf_whyexpmove6</th>
+      <th>cf_whyexpmove7</th>
+      <th>cf_whyexpmove8</th>
+      <th>cf_whyexpmove9</th>
+      <th>cf_whyexpmove10</th>
+      <th>cf_whyexpmove11</th>
+      <th>cf_whyexpmove12</th>
+      <th>cf_whyexpmove13</th>
+      <th>cf_ff_semp</th>
+      <th>cf_ff_sempderived</th>
+      <th>cf_ff_hours</th>
+      <th>cf_ff_furlough</th>
+      <th>cf_ff_stillfurl</th>
+      <th>cf_ff_sempgovt</th>
+      <th>cf_ff_blwork</th>
+      <th>cf_sempchk</th>
+      <th>cf_semp</th>
+      <th>cf_sempderived</th>
+      <th>cf_hours</th>
+      <th>cf_hrschange112</th>
+      <th>cf_hrschange11</th>
+      <th>cf_hrschange12</th>
+      <th>cf_hrschange13</th>
+      <th>cf_hrschange14</th>
+      <th>cf_hrschange15</th>
+      <th>cf_hrschange116</th>
+      <th>cf_hrschange16</th>
+      <th>cf_hrschange113</th>
+      <th>cf_hrschange17</th>
+      <th>cf_hrschange18</th>
+      <th>cf_hrschange19</th>
+      <th>cf_hrschange114</th>
+      <th>cf_hrschange110</th>
+      <th>cf_hrschange115</th>
+      <th>cf_hrschange111</th>
+      <th>cf_hrschange28</th>
+      <th>cf_hrschange21</th>
+      <th>cf_hrschange22</th>
+      <th>cf_hrschange23</th>
+      <th>cf_hrschange24</th>
+      <th>cf_hrschange25</th>
+      <th>cf_hrschange29</th>
+      <th>cf_hrschange26</th>
+      <th>cf_hrschange210</th>
+      <th>cf_hrschange27</th>
+      <th>cf_hrschange315</th>
+      <th>cf_hrschange31</th>
+      <th>cf_hrschange32</th>
+      <th>cf_hrschange33</th>
+      <th>cf_hrschange34</th>
+      <th>cf_hrschange35</th>
+      <th>cf_hrschange319</th>
+      <th>cf_hrschange36</th>
+      <th>cf_hrschange316</th>
+      <th>cf_hrschange37</th>
+      <th>cf_hrschange38</th>
+      <th>cf_hrschange39</th>
+      <th>cf_hrschange310</th>
+      <th>cf_hrschange311</th>
+      <th>cf_hrschange312</th>
+      <th>cf_hrschange317</th>
+      <th>cf_hrschange313</th>
+      <th>cf_hrschange318</th>
+      <th>cf_hrschange314</th>
+      <th>cf_hrschangeup11</th>
+      <th>cf_hrschangeup12</th>
+      <th>cf_hrschangeup13</th>
+      <th>cf_hrschangeup14</th>
+      <th>cf_hrschangeup15</th>
+      <th>cf_hrschangeup16</th>
+      <th>cf_hrschangeup17</th>
+      <th>cf_hrschangeup18</th>
+      <th>cf_hrschangeup19</th>
+      <th>cf_hrschangeup110</th>
+      <th>cf_hrschangeup111</th>
+      <th>cf_hrschangeup112</th>
+      <th>cf_hrschangeup113</th>
+      <th>cf_stillfurl</th>
+      <th>cf_supprob6</th>
+      <th>cf_supprob8</th>
+      <th>cf_sempgovt2</th>
+      <th>cf_netpay_amount</th>
+      <th>cf_netpay_period</th>
+      <th>cf_grosspay_amount</th>
+      <th>cf_grosspay_period</th>
+      <th>cf_hhearners</th>
+      <th>cf_hhearn_amount</th>
+      <th>cf_hhearn_period</th>
+      <th>cf_hhincome_amount</th>
+      <th>cf_hhincome_period</th>
+      <th>cf_ghhincome_amount</th>
+      <th>cf_ghhincome_period</th>
+      <th>cf_wah</th>
+      <th>cf_wktrv_cv1</th>
+      <th>cf_wktrv_cv2</th>
+      <th>cf_wktrv_cv3</th>
+      <th>cf_wktrv_cv4</th>
+      <th>cf_wktrv_cv5</th>
+      <th>cf_wktrv_cv6</th>
+      <th>cf_wktrv_cv7</th>
+      <th>cf_wktrv_cv8</th>
+      <th>cf_wktrv_cv9</th>
+      <th>cf_wktrv_cv10</th>
+      <th>cf_wktrv_cv11</th>
+      <th>cf_wktrv_cv12</th>
+      <th>cf_wktrvfar_cv</th>
+      <th>cf_trcarfq_cv</th>
+      <th>cf_trbikefq_cv</th>
+      <th>cf_trwalkfq</th>
+      <th>cf_trbusfq_cv</th>
+      <th>cf_trtrnfq_cv</th>
+      <th>cf_trtubefq</th>
+      <th>cf_ff_ucredit</th>
+      <th>cf_ff_morhol</th>
+      <th>cf_ff_hsownd_cv</th>
+      <th>cf_ff_credithol</th>
+      <th>cf_ucreditb65</th>
+      <th>cf_ucredit2b65</th>
+      <th>cf_ucreditadvance65</th>
+      <th>cf_benefitsamt65</th>
+      <th>cf_transfers</th>
+      <th>cf_transfmade1</th>
+      <th>cf_transfmade2</th>
+      <th>cf_transfmade3</th>
+      <th>cf_transfmade4</th>
+      <th>cf_transfmade5</th>
+      <th>cf_transfmade6</th>
+      <th>cf_transfmade7</th>
+      <th>cf_transfrec1</th>
+      <th>cf_transfrec2</th>
+      <th>cf_transfrec3</th>
+      <th>cf_transfrec4</th>
+      <th>cf_transfrec5</th>
+      <th>cf_transfrec6</th>
+      <th>cf_transfrec7</th>
+      <th>cf_transfout</th>
+      <th>cf_transfin</th>
+      <th>cf_xphs_cv</th>
+      <th>cf_morhol3</th>
+      <th>cf_renthol</th>
+      <th>cf_xpbills_cv</th>
+      <th>cf_credithol</th>
+      <th>cf_creditholend</th>
+      <th>cf_creditholwhich1</th>
+      <th>cf_creditholwhich2</th>
+      <th>cf_creditholwhich3</th>
+      <th>cf_creditholwhich4</th>
+      <th>cf_creditholwhich5</th>
+      <th>cf_inoutflows1</th>
+      <th>cf_inoutflows2</th>
+      <th>cf_inoutflows9</th>
+      <th>cf_inoutflows3</th>
+      <th>cf_inoutflows4</th>
+      <th>cf_inoutflows5</th>
+      <th>cf_inoutflows6</th>
+      <th>cf_inoutflows10</th>
+      <th>cf_inoutflows7</th>
+      <th>cf_inoutflows8</th>
+      <th>cf_save_cv</th>
+      <th>cf_saved_cv</th>
+      <th>cf_debtnonmort</th>
+      <th>cf_debtamt</th>
+      <th>cf_debt2</th>
+      <th>cf_debt3</th>
+      <th>cf_spend</th>
+      <th>cf_ff_mpcalloc</th>
+      <th>cf_finnow</th>
+      <th>cf_finfut_cv3</th>
+      <th>cf_jobsec</th>
+      <th>cf_finsec</th>
+      <th>cf_mpc1</th>
+      <th>cf_mpc2</th>
+      <th>cf_mpc31</th>
+      <th>cf_mpc32</th>
+      <th>cf_mpc33</th>
+      <th>cf_mpc34</th>
+      <th>cf_mpc35</th>
+      <th>cf_mpc1b</th>
+      <th>cf_mpc2b</th>
+      <th>cf_mpc3b1</th>
+      <th>cf_mpc3b2</th>
+      <th>cf_mpc3b3</th>
+      <th>cf_mpc3b4</th>
+      <th>cf_scopngbhh_cv</th>
+      <th>cf_nbrcoh3</th>
+      <th>cf_nbrcoh2</th>
+      <th>cf_nbrcoh4</th>
+      <th>cf_scopngbhg</th>
+      <th>cf_crrace_cv</th>
+      <th>cf_num418</th>
+      <th>cf_ch418doba_y</th>
+      <th>cf_ch418dobb_y</th>
+      <th>cf_ch418dobc_y</th>
+      <th>cf_ch418dobd_y</th>
+      <th>cf_ch418dobe_y</th>
+      <th>cf_childage_childa</th>
+      <th>cf_childage_childb</th>
+      <th>cf_childage_childc</th>
+      <th>cf_childage_childd</th>
+      <th>cf_childage_childe</th>
+      <th>cf_schoollw_childa</th>
+      <th>cf_schoollw_childb</th>
+      <th>cf_schoollw_childc</th>
+      <th>cf_schoollw_childd</th>
+      <th>cf_schoollw_childe</th>
+      <th>cf_schoollwdys_childa</th>
+      <th>cf_schoollwdys_childb</th>
+      <th>cf_schoollwdys_childc</th>
+      <th>cf_schoollwdys_childd</th>
+      <th>cf_schoollwdys_childe</th>
+      <th>cf_schoollwhrs_childa</th>
+      <th>cf_schoollwhrs_childb</th>
+      <th>cf_schoollwhrs_childc</th>
+      <th>cf_schoollwhrs_childd</th>
+      <th>cf_schoollwhrs_childe</th>
+      <th>cf_schoollwgo_childa</th>
+      <th>cf_schoollwgo_childb</th>
+      <th>cf_schoollwgo_childc</th>
+      <th>cf_schoollwgo_childd</th>
+      <th>cf_schoollwgo_childe</th>
+      <th>cf_schoolgodys_childa</th>
+      <th>cf_schoolgodys_childb</th>
+      <th>cf_schoolgodys_childc</th>
+      <th>cf_schoolgodys_childd</th>
+      <th>cf_schoolgodys_childe</th>
+      <th>cf_schoolgohrs_childa</th>
+      <th>cf_schoolgohrs_childb</th>
+      <th>cf_schoolgohrs_childc</th>
+      <th>cf_schoolgohrs_childd</th>
+      <th>cf_schoolgohrs_childe</th>
+      <th>cf_schoolwork_childa</th>
+      <th>cf_schoolwork_childb</th>
+      <th>cf_schoolwork_childc</th>
+      <th>cf_schoolwork_childd</th>
+      <th>cf_schoolwork_childe</th>
+      <th>cf_lessonsoff_childa</th>
+      <th>cf_lessonsoff_childb</th>
+      <th>cf_lessonsoff_childc</th>
+      <th>cf_lessonsoff_childd</th>
+      <th>cf_lessonsoff_childe</th>
+      <th>cf_lessonson_childa</th>
+      <th>cf_lessonson_childb</th>
+      <th>cf_lessonson_childc</th>
+      <th>cf_lessonson_childd</th>
+      <th>cf_lessonson_childe</th>
+      <th>cf_hstime2_childa</th>
+      <th>cf_hstime2_childb</th>
+      <th>cf_hstime2_childc</th>
+      <th>cf_hstime2_childd</th>
+      <th>cf_hstime2_childe</th>
+      <th>cf_hshelp2_childa</th>
+      <th>cf_hshelp2_childb</th>
+      <th>cf_hshelp2_childc</th>
+      <th>cf_hshelp2_childd</th>
+      <th>cf_hshelp2_childe</th>
+      <th>cf_tutoring1_childa</th>
+      <th>cf_tutoring2_childa</th>
+      <th>cf_tutoring3_childa</th>
+      <th>cf_tutoring1_childb</th>
+      <th>cf_tutoring2_childb</th>
+      <th>cf_tutoring3_childb</th>
+      <th>cf_tutoring1_childc</th>
+      <th>cf_tutoring2_childc</th>
+      <th>cf_tutoring3_childc</th>
+      <th>cf_tutoring1_childd</th>
+      <th>cf_tutoring2_childd</th>
+      <th>cf_tutoring3_childd</th>
+      <th>cf_tutoring1_childe</th>
+      <th>cf_tutoring2_childe</th>
+      <th>cf_tutoring3_childe</th>
+      <th>cf_remedials_childa</th>
+      <th>cf_remedials_childb</th>
+      <th>cf_remedials_childc</th>
+      <th>cf_remedials_childd</th>
+      <th>cf_remedials_childe</th>
+      <th>cf_academprg_childa</th>
+      <th>cf_academprg_childb</th>
+      <th>cf_academprg_childc</th>
+      <th>cf_academprg_childd</th>
+      <th>cf_academprg_childe</th>
+      <th>cf_cospace1_childa</th>
+      <th>cf_cospace1_childb</th>
+      <th>cf_cospace1_childc</th>
+      <th>cf_cospace1_childd</th>
+      <th>cf_cospace1_childe</th>
+      <th>cf_cospace2_childa</th>
+      <th>cf_cospace2_childb</th>
+      <th>cf_cospace2_childc</th>
+      <th>cf_cospace2_childd</th>
+      <th>cf_cospace2_childe</th>
+      <th>cf_cospace3_childa</th>
+      <th>cf_cospace3_childb</th>
+      <th>cf_cospace3_childc</th>
+      <th>cf_cospace3_childd</th>
+      <th>cf_cospace3_childe</th>
+      <th>cf_cospace4_childa</th>
+      <th>cf_cospace4_childb</th>
+      <th>cf_cospace4_childc</th>
+      <th>cf_cospace4_childd</th>
+      <th>cf_cospace4_childe</th>
+      <th>cf_cospace5_childa</th>
+      <th>cf_cospace5_childb</th>
+      <th>cf_cospace5_childc</th>
+      <th>cf_cospace5_childd</th>
+      <th>cf_cospace5_childe</th>
+      <th>cf_sclfsato_cv</th>
+      <th>cf_scghqa</th>
+      <th>cf_scghqb</th>
+      <th>cf_scghqc</th>
+      <th>cf_scghqd</th>
+      <th>cf_scghqe</th>
+      <th>cf_scghqf</th>
+      <th>cf_scghqg</th>
+      <th>cf_scghqh</th>
+      <th>cf_scghqi</th>
+      <th>cf_scghqj</th>
+      <th>cf_scghqk</th>
+      <th>cf_scghql</th>
+      <th>cf_incentives</th>
+      <th>cf_noemailvoucher</th>
+      <th>cf_scghq1_dv</th>
+      <th>cf_scghq2_dv</th>
+      <th>cf_outcome</th>
+      <th>cf_lastq</th>
+      <th>cf_lastmodule</th>
+      <th>cf_link</th>
+      <th>cf_surveystart</th>
+      <th>cf_surveyend</th>
+      <th>cf_surveytime</th>
+      <th>cf_tsidcheckst</th>
+      <th>cf_tsidcheckend</th>
+      <th>cf_tshhrelst</th>
+      <th>cf_tshhrelend</th>
+      <th>cf_tssahst</th>
+      <th>cf_tssahend</th>
+      <th>cf_tscovidst</th>
+      <th>cf_tscovidend</th>
+      <th>cf_tshhcvst</th>
+      <th>cf_tshhcvend</th>
+      <th>cf_tsflust</th>
+      <th>cf_tsfluend</th>
+      <th>cf_tslthealthst</th>
+      <th>cf_tslthealthend</th>
+      <th>cf_tscaringhhst</th>
+      <th>cf_tscaringhhend</th>
+      <th>cf_tscareexhhst</th>
+      <th>cf_tscareexhhend</th>
+      <th>cf_tslonelyst</th>
+      <th>cf_tslonelyend</th>
+      <th>cf_tscffst</th>
+      <th>cf_tscffend</th>
+      <th>cf_tshsingst</th>
+      <th>cf_tshsingend</th>
+      <th>cf_tsempst</th>
+      <th>cf_tsempend</th>
+      <th>cf_tsttwst</th>
+      <th>cf_tsttwend</th>
+      <th>cf_tstranspst</th>
+      <th>cf_tstranspend</th>
+      <th>cf_tsfinst</th>
+      <th>cf_tsfinend</th>
+      <th>cf_tsfinsecst</th>
+      <th>cf_tsfinsecend</th>
+      <th>cf_tsnbhdst</th>
+      <th>cf_tsnbhdend</th>
+      <th>cf_tsnovschst</th>
+      <th>cf_tsnovschend</th>
+      <th>cf_tslfsatst</th>
+      <th>cf_tslfsatend</th>
+      <th>cf_tsghqst</th>
+      <th>cf_tsghqend</th>
+      <th>cf_tsclosest</th>
+      <th>cf_tscloseend</th>
+      <th>cf_screenres</th>
+      <th>cf_browserres</th>
+      <th>cf_useragentstring</th>
+      <th>cf_ff_prevsurv</th>
+      <th>cf_ff_intd</th>
+      <th>cf_ff_intm</th>
+      <th>cf_ff_inty</th>
+      <th>cf_ff_country</th>
+      <th>cf_gor_dv</th>
+      <th>cf_aid_dv</th>
+      <th>cf_betaindin_xw</th>
+      <th>cf_betaindin_xw_t</th>
+      <th>cf_betaindin_lw</th>
+      <th>cf_betaindin_lw_t1</th>
+      <th>cf_betaindin_lw_t2</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">USocietyCovid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12035, 916)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">USocietyCovid</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 12035 entries, 0 to 12034
+Columns: 916 entries, pidp to cf_betaindin_lw_t2
+dtypes: float64(10), int64(855), object(51)
+memory usage: 84.1+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-output-and-input-variables">
+<h1>Defining Output and Input variables<a class="headerlink" href="#defining-output-and-input-variables" title="Permalink to this headline">¶</a></h1>
+<p>Here are the Output and Input data features we will use in this session.</p>
+<div class="section" id="outcome-output-y">
+<h2>Outcome: Output <em>(Y)</em><a class="headerlink" href="#outcome-output-y" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Likelihood of taking up a coronavirus vaccination</p></td>
+<td><p>cf_vaxxer</p></td>
+<td><p>1 = Very likely, 2 = Likely, 3 = Unlikely, 4 = Very unlikely</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="predictors-input-features-x">
+<h2>Predictors: Input features <em>(X)</em><a class="headerlink" href="#predictors-input-features-x" title="Permalink to this headline">¶</a></h2>
+<p>We select 4 (demographic and health-related) variables as examples only, no prior literature or expert knowledge is considered. We will discuss the role of prior literature and expert knowledge in the process of variable selection when we learn causal inference approaches.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Age</p></td>
+<td><p>cf_age</p></td>
+<td><p>Integer values (whole numbers)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Respondent sex</p></td>
+<td><p>cf_sex_cv</p></td>
+<td><p>1 = Male, 2 = Female, 3 = Prefer not to say</p></td>
+</tr>
+<tr class="row-even"><td><p>General health</p></td>
+<td><p>cf_scsf1</p></td>
+<td><p>1 = Excellent, 2 = Very good, 3 = Good, 4 = Fair, 5 = Poor</p></td>
+</tr>
+<tr class="row-odd"><td><p>At risk of serious illness from Covid-19</p></td>
+<td><p>cf_clinvuln_dv</p></td>
+<td><p>0 = no risk (not clinically vulnerable), 1 = moderate risk (clinically vulnerable), 2 = high risk (clinically extremely vulnerable)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="data-wrangling">
+<h1>Data wrangling<a class="headerlink" href="#data-wrangling" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select output y and input X variables</span>
+<span class="n">USocietyCovid</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[[</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_age&#39;</span><span class="p">,</span><span class="s1">&#39;cf_sex_cv&#39;</span><span class="p">,</span><span class="s1">&#39;cf_scsf1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_clinvuln_dv&#39;</span><span class="p">]]</span>
+<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_vaxxer</th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>37</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>35</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>55</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>38</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>67</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cf_vaxxer&quot;</span><span class="p">,</span> 
+            <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ch:.25&quot;</span><span class="p">,</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">)</span>
+
+<span class="c1"># Tweak the plot </span>
+<span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Likelihood of taking up a coronavirus vaccination&quot;</span><span class="p">,</span> <span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;missing&quot;</span><span class="p">,</span> <span class="s2">&quot;inapplicable&quot;</span><span class="p">,</span> <span class="s2">&quot;refusal&quot;</span><span class="p">,</span> <span class="s2">&quot;don&#39;t know&quot;</span><span class="p">,</span> <span class="s2">&quot;Very likely&quot;</span><span class="p">,</span><span class="s2">&quot;Likely&quot;</span><span class="p">,</span><span class="s2">&quot;Unlikely&quot;</span><span class="p">,</span><span class="s2">&quot;Very unlikely&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9209efc670&gt;
+</pre></div>
+</div>
+<img alt="_images/prediction_supervised_learning_20_1.png" src="_images/prediction_supervised_learning_20_1.png" />
+</div>
+</div>
+<p>Missing observations in Understanding Society are indicated by negative values. Let’s convert negative values to NaN using the function <code class="docutils literal notranslate"><span class="pre">mask</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. An alternative approach would be to reload the data using the Pandas <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function and provide the negative values as an argument to the parameter <code class="docutils literal notranslate"><span class="pre">na_values</span></code>, as a result of which Pandas will recognise these values as NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The function &#39;mask&#39; in pandas replaces values where a condition is met.</span>
+<span class="n">USocietyCovid</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">USocietyCovid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Alternatively, you could replace negative values with another value, e.g., 0, using the code USocietyCovid.mask(USocietyCovid &lt; 0, 0)</span>
+<span class="n">USocietyCovid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_vaxxer</th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>37</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>35</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>55</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>38</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>67</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12030</th>
+      <td>1.0</td>
+      <td>57</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12031</th>
+      <td>2.0</td>
+      <td>70</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>12032</th>
+      <td>2.0</td>
+      <td>64</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12033</th>
+      <td>4.0</td>
+      <td>31</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12034</th>
+      <td>3.0</td>
+      <td>41</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>12035 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove NaN</span>
+<span class="n">USocietyCovid</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[[</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_age&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_scsf1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_clinvuln_dv&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">USocietyCovid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_vaxxer</th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>37</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>35</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>55</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>38</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>67</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12030</th>
+      <td>1.0</td>
+      <td>57</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12031</th>
+      <td>2.0</td>
+      <td>70</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>12032</th>
+      <td>2.0</td>
+      <td>64</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12033</th>
+      <td>4.0</td>
+      <td>31</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12034</th>
+      <td>3.0</td>
+      <td>41</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>11930 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the new cf_vaxxer (vaccination likelihood) variable</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cf_vaxxer&quot;</span><span class="p">,</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ch:.25&quot;</span><span class="p">,</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">)</span>
+
+<span class="c1"># Tweak the plot</span>
+<span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Likelihood of taking up a coronavirus vaccination&quot;</span><span class="p">,</span> <span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;Very likely&quot;</span><span class="p">,</span><span class="s2">&quot;Likely&quot;</span><span class="p">,</span><span class="s2">&quot;Unlikely&quot;</span><span class="p">,</span><span class="s2">&quot;Very unlikely&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f92284700d0&gt;
+</pre></div>
+</div>
+<img alt="_images/prediction_supervised_learning_24_1.png" src="_images/prediction_supervised_learning_24_1.png" />
+</div>
+</div>
+<p>To simplify the problem, we will recode <code class="docutils literal notranslate"><span class="pre">cf_vaxxer</span></code> (vaccination likelihood) variable into a binary variable where 1 refers to ‘Likely to take up a Covid-19 vaccine’ and 2 refers to ‘Unlikely to take up a Covid-19 vaccine’. To achieve this, we use the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method which replaces a set of values we specify (in our case, <code class="docutils literal notranslate"><span class="pre">[1,2,3,4]</span></code>) with another set of values we specify (in our case, <code class="docutils literal notranslate"><span class="pre">[1,1,0,0]</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recode cf_vaxxer into a binary variable</span>
+<span class="n">USocietyCovid</span><span class="p">[</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_vaxxer</th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>37</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>35</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>55</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>38</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>67</td>
+      <td>2</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the binary cf_vaxxer (vaccination likelihood) variable</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;cf_vaxxer&quot;</span><span class="p">,</span> 
+            <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ch:.25&quot;</span><span class="p">,</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">)</span>
+
+<span class="c1"># Tweak the plot </span>
+<span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Likelihood of taking up a coronavirus vaccination&quot;</span><span class="p">,</span> <span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;Unlikely&quot;</span><span class="p">,</span><span class="s2">&quot;Likely&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f92586612b0&gt;
+</pre></div>
+</div>
+<img alt="_images/prediction_supervised_learning_27_1.png" src="_images/prediction_supervised_learning_27_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">USocietyCovid</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+    <tr>
+      <th>cf_vaxxer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>1837</td>
+      <td>1837</td>
+      <td>1837</td>
+      <td>1837</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>10093</td>
+      <td>10093</td>
+      <td>10093</td>
+      <td>10093</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">USocietyCovid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11930
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 84.6% of respondents very likely or likely to take up a Covid vaccine and 15.4% very unlikely or unlikely  </span>
+<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">/</span><span class="n">USocietyCovid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_age</th>
+      <th>cf_sex_cv</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+    </tr>
+    <tr>
+      <th>cf_vaxxer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>0.153982</td>
+      <td>0.153982</td>
+      <td>0.153982</td>
+      <td>0.153982</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>0.846018</td>
+      <td>0.846018</td>
+      <td>0.846018</td>
+      <td>0.846018</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So far, we have described our outcome variable to make sense of the task but we have neither looked at the predictor variables nor examined any relationships between predictor variables and outcomes. It is a good practice to first split the data into training set and test set and only then explore predictors and relationships in the training set.</p>
+</div>
+<div class="section" id="overfitting-and-data-splitting">
+<h1>Overfitting and data splitting<a class="headerlink" href="#overfitting-and-data-splitting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-problem-of-model-overfitting">
+<h2>The problem of model overfitting<a class="headerlink" href="#the-problem-of-model-overfitting" title="Permalink to this headline">¶</a></h2>
+<p>Overfitting occurs when model captures ‘noise’ in a specific sample while failing to recognise general patterns across samples. As a result of overfitting, the model produces accurate predictions for examples from the sample at hand but will predict poorly new examples the model has never seen.</p>
+</div>
+<div class="section" id="training-set-validation-set-and-test-set">
+<h2>Training set, Validation set, and Test set<a class="headerlink" href="#training-set-validation-set-and-test-set" title="Permalink to this headline">¶</a></h2>
+<p>To avoid overfitting, data is typically split into three groups:</p>
+<ul class="simple">
+<li><p>Training set — used to train models</p></li>
+<li><p>Validation set — used to tune the model and estimate  model performance/accuracy for best model selection</p></li>
+<li><p>Test set - used to evaluate the generalisability of the model to new observations the model has never seen</p></li>
+</ul>
+<p>If your data set is not large enough, a possible strategy, which we will use here, is to split the data into training set and test set, and use cross-validation on the training set to evaluate our models’ performance/accuracy. We will use 2/3 of the data to train the predictive model and the remaining 1/3 to create the test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split train and test data</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Outcome variable</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[[</span><span class="s1">&#39;cf_vaxxer&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Predictor variables</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[[</span><span class="s1">&#39;cf_age&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_scsf1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_clinvuln_dv&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Split data into training set and test set</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train data&#39;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;&#39;Test data&#39;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train data (7993, 4) 
+Test data (3937, 4)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preprocessing-the-training-data-set">
+<h1>Preprocessing the training data set<a class="headerlink" href="#preprocessing-the-training-data-set" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="categorical-predictors-dummy-variables">
+<h2>Categorical predictors — dummy variables<a class="headerlink" href="#categorical-predictors-dummy-variables" title="Permalink to this headline">¶</a></h2>
+<p>Categorical variables are often encoded using numeric values. For example, Respondent sex is recorded as 1 = Men, 2 = Female, 3 = Prefer not to say. The numeric values can be ‘misinterpreted’ by the algorithms — the value of 1 is obviously less than the value of 3 but that does not correspond to real-world numerical differences.</p>
+<p>A solution is to convert categorical predictors into dummy variables. Basically, each category value is converted into a new column and assigns a 1 or 0 (True/False) values using the function <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. The function creates dummy/indicator variables that contain value of 1 or 0.</p>
+<p>The Respondent sex variable is converted below is three columns of 1s or 0s corresponding to the respective value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use get_dummies to convert the Respondent sex categorical variable into 3 dummy/indicator variables</span>
+<span class="n">X_train_predictors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cf_sex_cv&quot;</span><span class="p">])</span>
+<span class="n">X_train_predictors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cf_age</th>
+      <th>cf_scsf1</th>
+      <th>cf_clinvuln_dv</th>
+      <th>cf_sex_cv_1</th>
+      <th>cf_sex_cv_2</th>
+      <th>cf_sex_cv_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>994</th>
+      <td>28</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11376</th>
+      <td>41</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9730</th>
+      <td>77</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8235</th>
+      <td>41</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1406</th>
+      <td>60</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create two DataFrames, one for numerical variables and one for categorical variables</span>
+<span class="n">X_train_predictors_cat</span> <span class="o">=</span> <span class="n">X_train_predictors</span><span class="p">[[</span><span class="s1">&#39;cf_sex_cv_1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv_2&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv_3&#39;</span><span class="p">]]</span>
+<span class="n">X_train_predictors_cont</span> <span class="o">=</span> <span class="n">X_train_predictors</span><span class="p">[[</span><span class="s1">&#39;cf_age&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_scsf1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_clinvuln_dv&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continuous-predictors-standardisation">
+<h2>Continuous predictors — standardisation<a class="headerlink" href="#continuous-predictors-standardisation" title="Permalink to this headline">¶</a></h2>
+<p>We standardise the continuous input variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standardise the predictors using the StandardScaler function in sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>  <span class="c1"># For standartising data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span> <span class="c1"># Initialising the scaler using the default arguments </span>
+<span class="n">X_train_predictors_cont_scale</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_predictors_cont</span><span class="p">)</span> <span class="c1"># Fit to continuous input variables and return the standardised dataset </span>
+<span class="n">X_train_predictors_cont_scale</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.65608796, -0.56081614, -0.80754698],
+       [-0.84497135,  2.64868513, -0.80754698],
+       [ 1.40119771,  0.50901761,  0.81873748],
+       ...,
+       [-0.96975852, -1.6306499 , -0.80754698],
+       [ 0.46529394,  0.50901761,  2.44502193],
+       [ 0.77726186,  0.50901761,  0.81873748]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="combine-categorical-and-continuous-predictors-into-one-data-array">
+<h3>Combine categorical and continuous predictors into one data array<a class="headerlink" href="#combine-categorical-and-continuous-predictors-into-one-data-array" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the concatenate function in Numpy to combine all variables — both categorical and continuous predictors — in one array</span>
+<span class="n">X_train_preprocessed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">X_train_predictors_cont_scale</span><span class="p">,</span><span class="n">X_train_predictors_cat</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_train_preprocessed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.65608796, -0.56081614, -0.80754698,  0.        ,  1.        ,
+         0.        ],
+       [-0.84497135,  2.64868513, -0.80754698,  0.        ,  1.        ,
+         0.        ],
+       [ 1.40119771,  0.50901761,  0.81873748,  0.        ,  1.        ,
+         0.        ],
+       ...,
+       [-0.96975852, -1.6306499 , -0.80754698,  0.        ,  1.        ,
+         0.        ],
+       [ 0.46529394,  0.50901761,  2.44502193,  0.        ,  1.        ,
+         0.        ],
+       [ 0.77726186,  0.50901761,  0.81873748,  1.        ,  0.        ,
+         0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_preprocessed</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7993, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unbalance-class-problem">
+<h1>Unbalance class problem<a class="headerlink" href="#unbalance-class-problem" title="Permalink to this headline">¶</a></h1>
+<p>In the case of the vaccination likelihood question, one of the classes (likely to vaccinate) has a significantly greater proportion of cases (84.6%) than the other case (unlikely to vaccinate) (15.4%). We therefore face an unbalanced class problem.</p>
+<p>Different methods to mitigate the problem exist. We will use a method called ADASYN: Adaptive Synthetic Sampling Method for Imbalanced Data. The method oversamples the minority class in the training data set until both classes have an equal number of observations. Hence, the data set we use to train our models contains two balanced classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">ADASYN</span>
+
+<span class="c1"># Initialization of the ADASYN resampling method; set random_state for reproducibility</span>
+<span class="n">adasyn</span> <span class="o">=</span> <span class="n">ADASYN</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Fit the ADASYN resampling method to the train data  </span>
+<span class="n">X_train_balance</span><span class="p">,</span> <span class="n">y_train_balance</span> <span class="o">=</span> <span class="n">adasyn</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train_preprocessed</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resulting <code class="docutils literal notranslate"><span class="pre">X_train_balance</span></code> and <code class="docutils literal notranslate"><span class="pre">y_train_balance</span></code> now include both the original data and the resampled data. The <code class="docutils literal notranslate"><span class="pre">y_train_balance</span></code> now includes an almost equal number of labels for each class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now that the two classes are balanced, the train data is ~14K observations, greater than the original ~8K.   </span>
+<span class="n">X_train_balance</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(13611, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hands-on-mini-exercise">
+<h2>Hands-on mini-exercise<a class="headerlink" href="#hands-on-mini-exercise" title="Permalink to this headline">¶</a></h2>
+<p>Verify that after the oversampling the <code class="docutils literal notranslate"><span class="pre">y_train_balance</span></code> data object contains indeed approximately equal number of observations for both classes, those likely to vaccinate (1) and those unlikely to vaccinate (0).</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">y_train_balance</span></code> is a NumPy array. You can check that on your own using the function <code class="docutils literal notranslate"><span class="pre">type()</span></code>, for example: type(y_train).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">y_train_balance</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cf_vaxxer    6849
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">y_train_balance</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cf_vaxxer    6762
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="train-models-on-training-data">
+<h1>Train models on training data<a class="headerlink" href="#train-models-on-training-data" title="Permalink to this headline">¶</a></h1>
+<p>We fit two classifiers — k-Nearest Neighbours (k-NN) and Logistic Regression — on the training data. The k-Nearest Neighbours classifier (k-NN) and Logistic Regression classifier are two widely used classifiers. Our focus is on the end-to-end workflow so we do not discuss the workings of the two classifiers in detail. To learn more about the two classifiers, see <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html">Python Data Science Handbook</a> by Jake VanderPlas (on k-NN) and the DataCamp course <a class="reference external" href="https://learn.datacamp.com/courses/supervised-learning-with-scikit-learn">Supervised Learning with scikit-learn</a>.</p>
+<p>In the models below, we use the default hyperparameters (hyperparameter are parameters that are not learned from data but are set by the researcher to guide the learning process) for both classifiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># Create an instance of k-nearest neighbors (k-NN) classifier.</span>
+<span class="c1"># We set the hyperparameter n_neighbors=5 meaning that the label of an unknown respondent (0 or 1) is a function of the labels of its five closest training respondents.</span>
+<span class="n">kNN_Classifier</span> <span class="o">=</span>  <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Create an instance of Logistic Regression Classifier</span>
+<span class="n">LogReg_Classifier</span> <span class="o">=</span>  <span class="n">LogisticRegression</span><span class="p">()</span>
+
+<span class="c1"># Fit both models to the training data</span>
+<span class="n">kNN_Classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_balance</span><span class="p">,</span> <span class="n">y_train_balance</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">)</span>
+<span class="n">LogReg_Classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_balance</span><span class="p">,</span> <span class="n">y_train_balance</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression()
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-evaluation-using-cross-validation">
+<h1>Model evaluation using Cross-validation<a class="headerlink" href="#model-evaluation-using-cross-validation" title="Permalink to this headline">¶</a></h1>
+<p>Now that your two models are fitted, you can evaluate the accuracy of their prediction. In older approaches, the prediction accuracy is often calculated on the same set of training data used to fit the model. The problem of such an approach is that the model can ‘memorise’ the training data and show high prediction accuracy on that data set while failing to perform well on new data. For this reason, approaches in data science, and machine learning in particular, prefer to evaluate the prediction accuracy of a model on new data that has not been used in training the model.</p>
+<div class="section" id="the-cross-validation-technique">
+<h2>The cross-validation technique<a class="headerlink" href="#the-cross-validation-technique" title="Permalink to this headline">¶</a></h2>
+<p>Cross-Validation is a methodology to assess accuracy of model prediction without relying on in-sample prediction. We will split our training set into <em>k</em> equal folds or parts. The number of folds can differ but for simplicity we will consider 5-fold cross-validation. How does 5-fold cross-validation work? While keeping aside one fold (or part), we fit the model with the remaining four folds and use the fitted model to predict outcomes of observations in fold one and on this basis compute model prediction accuracy. We repeat the procedure for all 5 folds or parts of the data and compute the average prediction accuracy.</p>
+</div>
+<div class="section" id="metrics-to-evaluate-model-performance">
+<h2>Metrics to evaluate model performance<a class="headerlink" href="#metrics-to-evaluate-model-performance" title="Permalink to this headline">¶</a></h2>
+<p>Many <a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter">metrics</a> to evaluate model performance exist. We evaluate model performance using the accuracy score. The accuracy score is the simplest metric for evaluating classification models. Simply put, accuracy is the proportion of predictions our model got right. Keep in mind, however, that because of the unbalanced class problem, accuracy may not be the best metric in our case. Because one of our classes accounts for 84.6% of the cases, even a model that uniformly predicts that all respondents are likely to take up the vaccine will obtain very high accuracy of 0.846 while being useless for identifying respondents who are unlikely to take up the vaccine. We will return to this problem shortly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the function cross_val_score() which performs cross-validation and evaluates the model using a score</span>
+<span class="c1"># Many scores are available to evaluate a classification mdoel, we select the simplest one called accuracy</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+
+<span class="c1"># Evaluate the kNN_Classifier model via 5-fold cross-validation</span>
+<span class="n">kNN_score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">kNN_Classifier</span><span class="p">,</span> <span class="n">X_train_balance</span><span class="p">,</span> <span class="n">y_train_balance</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">kNN_score</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.6232097 , 0.65686995, 0.64070536, 0.65980896, 0.64731815])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Take the mean across the five accuracy scores</span>
+<span class="n">kNN_score</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64.55824239753719
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat for our logistic regression model</span>
+<span class="n">LogReg_score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">LogReg_Classifier</span><span class="p">,</span> <span class="n">X_train_balance</span><span class="p">,</span> <span class="n">y_train_balance</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">LogReg_score</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.21431553077533
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output from the cross-validation technique shows that the performance of our two models is comparable as measured by the accuracy score.</p>
+<p>At this stage, we could fine-tune model hyperparameters — i.e., parameters that the model does not learn from data, e.g., the number of <em>k</em> neighbours in the <em>k</em>-NN algorithm — and re-evaluate model performance. During the process of model validation, we do not use the test data. Once we are happy with how our model(s) perform, we test the model on unseen data.</p>
+</div>
+</div>
+<div class="section" id="testing-model-accuracy-on-new-data">
+<h1>Testing model accuracy on new data<a class="headerlink" href="#testing-model-accuracy-on-new-data" title="Permalink to this headline">¶</a></h1>
+<p>Before we test the accuracy of our model on the test data set, we preprocess the test data set using the same procedure we used to preprocess the training data.</p>
+</div>
+<div class="section" id="preprocessing-the-test-data-set">
+<h1>Preprocessing the test data set<a class="headerlink" href="#preprocessing-the-test-data-set" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use get_dummies to convert the Respondent sex categorical variable into 3 dummy/indicator variables</span>
+<span class="n">X_test_predictors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cf_sex_cv&quot;</span><span class="p">])</span>
+
+<span class="c1"># Create two DataFrames, one for quantitative variables and one for qualitative variables</span>
+<span class="n">X_test_predictors_cat</span> <span class="o">=</span> <span class="n">X_test_predictors</span><span class="p">[[</span><span class="s1">&#39;cf_sex_cv_1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv_2&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_sex_cv_3&#39;</span><span class="p">]]</span>
+<span class="n">X_test_predictors_cont</span> <span class="o">=</span> <span class="n">X_test_predictors</span><span class="p">[[</span><span class="s1">&#39;cf_age&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_scsf1&#39;</span><span class="p">,</span> <span class="s1">&#39;cf_clinvuln_dv&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Standardise the predictors using the StandardScaler function in sklearn</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span> <span class="c1"># Initialising the scaler using the default arguments </span>
+<span class="n">X_test_predictors_cont_scale</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test_predictors_cont</span><span class="p">)</span> <span class="c1"># Fit to continuous input variables and return the standardised dataset </span>
+
+<span class="c1"># Use the concatenate function in Numpy to combine all variables — both categorical and continuous predictors — in one array</span>
+<span class="n">X_test_preprocessed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">X_test_predictors_cont_scale</span><span class="p">,</span><span class="n">X_test_predictors_cat</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test_preprocessed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.44686144, -1.63480238, -0.82552056,  1.        ,  0.        ,
+         0.        ],
+       [-0.41738323, -0.58244513, -0.82552056,  0.        ,  1.        ,
+         0.        ],
+       [-0.35565147, -0.58244513, -0.82552056,  1.        ,  0.        ,
+         0.        ],
+       ...,
+       [ 0.01473911, -0.58244513, -0.82552056,  1.        ,  0.        ,
+         0.        ],
+       [ 1.37283788,  0.46991213,  0.7914319 ,  0.        ,  1.        ,
+         0.        ],
+       [-0.47911499, -1.63480238, -0.82552056,  1.        ,  0.        ,
+         0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="predicting-vaccine-hesitancy">
+<h1>Predicting vaccine hesitancy<a class="headerlink" href="#predicting-vaccine-hesitancy" title="Permalink to this headline">¶</a></h1>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">predict</span></code> function to predict who is likely to take up the COVID-19 vaccine or not using the test data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_kNN</span> <span class="o">=</span> <span class="n">kNN_Classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_preprocessed</span><span class="p">)</span>
+<span class="n">y_pred_LogReg</span> <span class="o">=</span> <span class="n">LogReg_Classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_preprocessed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_LogReg</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 0., 1., ..., 1., 1., 1.])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-evaluation-on-test-data">
+<h1>Model evaluation on test data<a class="headerlink" href="#model-evaluation-on-test-data" title="Permalink to this headline">¶</a></h1>
+<p>Let’s evaluate the performance of our models predicting vaccination willingness using accuracy metric.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate performance using the accuracy score for the logistic regresson model</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_LogReg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6245872491744984
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate performance using the accuracy score for the  k-nearest neighbors model</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_kNN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5044450088900178
+</pre></div>
+</div>
+</div>
+</div>
+<p>The accuracy scores are slightly lower on the test set compared to the accuracy score on the training set, indicating that the data split methodology mitigates the risk of overfitting.</p>
+<p>Accuracy is a good metric when the positive class and the negative class are balanced. However, when one of the classes is a majority, as in our case, then a model can achieve a high accuracy by just predicting all observations to be the majority class. However, this is not what we want. In fact, in order to inform an information campaign about vaccination, we are more interested in predicting the minority class, people that are unlikely to take up the vaccine.</p>
+<p>We can use a confusion matrix to further evaluate the performance of our classification models. The confusion matrix shows the number of respondents known to be in group 0 (unlikely to vaccinate) or 1 (likely to vaccinate) and predicted to be in group 0 or 1, respectively.</p>
+<p>The confusion matrix below shows that the logistic model predicts 393 out of the 606 respondents who are unlikely to vaccinate. The model does much better job predicting respondents that are likely to vaccinate, 2066 out of 3331 respondents in the test data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confusion matrix for the logistic regression model plotted via Pandas crosstab() function</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">,</span><span class="n">y_pred_LogReg</span><span class="p">,</span> <span class="n">rownames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual&#39;</span><span class="p">],</span> <span class="n">colnames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Predicted&#39;</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Predicted</th>
+      <th>0.0</th>
+      <th>1.0</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Actual</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>393</td>
+      <td>213</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>1265</td>
+      <td>2066</td>
+      <td>3331</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>1658</td>
+      <td>2279</td>
+      <td>3937</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What do the numbers in the confusion matrix mean?</p>
+<ul class="simple">
+<li><p>True positive - our model correctly predicts the positive class (likely to vaccinate)</p></li>
+<li><p>True negative - our model correctly predicts the negative class (unlikely to vaccinate)</p></li>
+<li><p>False positive - our model incorrectly predicts the positive class</p></li>
+<li><p>False negative - our model incorrectly predicts the negative class</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is another representation of the confusion matrix using the scikit-learn `confusion_matrix` function</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_LogReg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 393,  213],
+       [1265, 2066]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The function ravel() flattens the confusion matrix</span>
+<span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_LogReg</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True negative = &#39;</span><span class="p">,</span> <span class="n">tn</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">False positive = &#39;</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">False negative = &#39;</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">True positive = &#39;</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True negative =  393 
+False positive =  213 
+False negative =  1265 
+True positive =  2066
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the k-nearest neighbors model, the confusion matrix  below shows that the k-NN model predicts 316 out of the 606 respondents who are unlikely to vaccinate (the logistic regression model predicts more accurately those unlikely to vaccinate). The model does not predicts well respondents that are likely to vaccinate, 1670 out of 3331 respondents in the test data set.</p>
+<p>Recall that we are less interested in predicting the majority class (likely to vaccinate). Instead, we are interested in predicting the minority class (unlikely to vaccinate) so that the results can inform an information campaign among people that are unlikely to vaccinate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confusion matrix for the k-nearest neighbors model plotted via pandas function crosstab</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">cf_vaxxer</span><span class="p">,</span><span class="n">y_pred_kNN</span><span class="p">,</span> <span class="n">rownames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual&#39;</span><span class="p">],</span> <span class="n">colnames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Predicted&#39;</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Predicted</th>
+      <th>0.0</th>
+      <th>1.0</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Actual</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>316</td>
+      <td>290</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>1661</td>
+      <td>1670</td>
+      <td>3331</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>1977</td>
+      <td>1960</td>
+      <td>3937</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Instead of relying on a single metric, it is often helpful (if not confusing) to compare various metrics. You can use the scikit-learn function <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html"><code class="docutils literal notranslate"><span class="pre">classification_report</span></code></a> to calculate various classification metrics, including <a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html#classification-report">precision and recall</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="c1"># Various metrics for the logistic regression model</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_LogReg</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+         0.0       0.24      0.65      0.35       606
+         1.0       0.91      0.62      0.74      3331
+
+    accuracy                           0.62      3937
+   macro avg       0.57      0.63      0.54      3937
+weighted avg       0.80      0.62      0.68      3937
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Various metrics for the k-nearest neighbors model </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_kNN</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+         0.0       0.16      0.52      0.24       606
+         1.0       0.85      0.50      0.63      3331
+
+    accuracy                           0.50      3937
+   macro avg       0.51      0.51      0.44      3937
+weighted avg       0.75      0.50      0.57      3937
+</pre></div>
+</div>
+</div>
+</div>
+<p>Overall, predicting accuracy of approximately 62% and 50% for the two models and the low predictive accuracy of the minority class (unlikely to vaccinate) indicate that the performance of our models is far from optimal. However, the purpose of this lab is not to build a well-performing model but to introduce you to an end-to-end machine learning workflow.</p>
+<p>Keep in mind that it is not a good research practice to now — after you tested the models on the test data — go back and fine-tune the training models as this will introduce overfitting. A good research practice is to fine-tune and improve your model(s) at the stage of training and cross-validation (not after you tested your model on unseen data). Once you select your best performing model(s) at the cross-validation stage, you test the model using the test data and report the performance scores.</p>
+<p>As part of your data analysis exercises, you will have another opportunity to build a new machine learning model and evaluate model performance.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="pattern_discovery_unsupervised_learning.html" title="previous page">Discovering patterns in data</a>
+    <a class='right-next' id="next-link" href="causal_inference.html" title="next page">Introduction to Causal Inference</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Valentin Danchev<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

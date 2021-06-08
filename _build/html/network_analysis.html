@@ -1,0 +1,2335 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network analysis with NetworkX &#8212; Reproducible Data Science + Python + Real-World Data</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Ethics, Bias, and Fairness" href="data_ethics.html" />
+    <link rel="prev" title="Introduction to Causal Inference" href="causal_inference.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mylogo2.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Reproducible Data Science + Python + Real-World Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Reproducible Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  About the Course
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html">
+   Course description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#what-is-reproducible-data-science">
+   What is Reproducible Data Science?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#software-stack">
+   Software stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#data-sets">
+   Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#acknowledgment">
+   Acknowledgment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#code-availability">
+   Code availability
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  End-to-End Data Science Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html">
+   Human mobility during UK lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#load-your-data">
+   Load your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairnes-risks">
+   Data Ethics, Privacy, and Fairnes Risks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#describe-your-data">
+   Describe your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="end_to_end_data_science_project.html#re-cap">
+   Re-cap
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Data Science on the Cloud
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html">
+   <strong>
+    Python for Data Analysis on the Cloud
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#get-started-with-jupyter-colab-notebooks">
+   Get Started with Jupyter &amp; Colab notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#python-coding-for-data-analysis">
+   Python Coding for Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#descriptive-statistics-with-numpy">
+   Descriptive statistics with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#loading-real-world-data-with-pandas">
+   Loading real-world data with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-python-skills">
+   Hands-on exercise: Let’s practice your Python skills
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#markdown-text-cells">
+   Markdown Text Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
+   Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  data design &amp; data wrangling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html">
+   Data Design &amp; Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#get-started-with-pandas">
+   Get started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#importing-pandas">
+   Importing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-your-data">
+   Loading your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-covid-19-data-sets-via-url">
+   Loading Covid-19 data sets via URL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#viewing-describing-and-accessing-your-data">
+   Viewing, Describing, and Accessing your Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#accessing-columns-and-rows-in-your-data">
+   Accessing columns and rows in your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#handling-missing-values">
+   Handling Missing Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#compare-mobility-data-formats">
+   Compare mobility data formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Exploration &amp; Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html">
+   Exploratory Data Analysis and Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#addressing-simple-questions-via-python-eda">
+   Addressing simple questions via Python EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq1-how-do-countries-differ-in-mobility-trends">
+   RQ1: How do countries differ in mobility trends?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#data-visualisation-with-seaborn">
+   Data visualisation with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#changing-figure-appearance">
+   Changing figure appearance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#wide-and-long-data-format">
+   Wide and long data format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#multi-plot-visualisations">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq2-how-do-mobility-trends-change-over-time">
+   RQ2: How do mobility trends change over time?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-time-series-data">
+   Visualising time series data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#bootstrapping-for-inference">
+   Bootstrapping for inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq3-how-have-mobility-trends-differed-across-uk-lockdowns">
+   RQ3: How have mobility trends differed across UK lockdowns?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-lockdowns-mobility-as-barplots">
+   Visualising lockdowns’ mobility as barplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq4-how-have-mobility-trends-differed-across-uk-counties-during-the-third-lockdown">
+   RQ4: How have mobility trends differed across UK counties during the third lockdown?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#id1">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#split-apply-combine">
+   Split-apply-combine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#summarising-data-by-groups">
+   Summarising data by groups
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq5-how-do-mobility-categories-relate-to-each-other">
+   RQ5: How do mobility categories relate to each other?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-distributions">
+   Visualising distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#plotting-pairwise-relationships">
+   Plotting pairwise relationships
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq6-how-correlated-are-mobility-categories-across-uk-counties">
+   RQ6: How correlated are mobility categories across UK counties?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-correlation">
+   Visualising correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-linear-regression">
+   Visualising linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pattern Discovery using Unsupervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html">
+   Discovering patterns in data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#machine-learning-what-is-it-what-is-it-good-for">
+   Machine Learning: What is it? What is it good for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#research-problem-clustering-counties-by-mobility">
+   Research problem: clustering counties by mobility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#k-means-clustering">
+   <em>
+    k
+   </em>
+   -means clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#let-s-get-coding-with-scikit-learn">
+   Let’s get coding with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-preprocessing">
+   Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-standardisation">
+   Data standardisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#choosing-the-optimal-number-of-clusters">
+   Choosing the optimal number of clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#performing-for-loop">
+   Performing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#elbow-plot">
+   Elbow plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#dimensionality-reduction-via-pca">
+   Dimensionality Reduction via PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#visualising-mobility-clusters">
+   Visualising mobility clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#related-approaches-hierarchical-clustering">
+   Related approaches: Hierarchical clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction using Supervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html">
+   Learning from Data to Predict
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Causal Inference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html">
+   Introduction to Causal Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#what-causes-what">
+   What causes what?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#confoundingbasic-definitions">
+   Confounding—basic definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#our-example-of-collider-bias">
+   Our example of collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#drawing-causal-graphs">
+   Drawing causal graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#statistical-models-in-python">
+   Statistical Models in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#collider-confounder">
+   Collider confounder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#additional-material">
+   Additional material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#gender-discrimination-and-collider-bias">
+   Gender discrimination and collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Network Analysis
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Network analysis with NetworkX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#open-network-data-repositories">
+   Open network data repositories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#assortative-mixing">
+   Assortative mixing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#creating-a-directed-network">
+   Creating a directed network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data ethics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html">
+   Data Ethics, Bias, and Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#discussion-a-level-results-in-2020-england">
+   Discussion: A-level results in 2020 England
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#learning-resources-about-the-a-level-controversy">
+   Learning resources about the A-level controversy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#bias-and-fairness-in-data-science-systems">
+   Bias and Fairness in Data Science Systems
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/network_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnetwork_analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/network_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Network analysis with NetworkX
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-resources">
+     Learning resources
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networks-and-covid-19">
+     Networks and COVID-19
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-network-data-repositories">
+   Open network data repositories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networkx">
+     NetworkX
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-python-libraries-for-network-analysis">
+     Other Python libraries for network analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-level-diagnostics">
+     Node-level diagnostics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#network-level-diagnostics">
+     Network-level diagnostics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assortative-mixing">
+   Assortative mixing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-node-attributes">
+     Adding node attributes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-assortativity">
+     Measuring assortativity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-directed-network">
+   Creating a directed network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-how-network-diagnostics-differ-across-directed-and-undirected-networks">
+     Discussion: How network diagnostics differ across directed and undirected networks?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="network-analysis-with-networkx">
+<h1>Network analysis with NetworkX<a class="headerlink" href="#network-analysis-with-networkx" title="Permalink to this headline">¶</a></h1>
+<p>This lab provides an introduction to the study of social networks. Network data and network analysis focus on the <em>relationships</em> between entities, including individuals, organisations, countries, and other entities. In the course so far, the data we have studied were from different sources, including digital, administrative, and survey sources, but with one common feature — these were tabular data. Tabular data is structured into rows, each representing a distinct observation (e.g., individuals, counties) and columns representing observations’ attributes. By contrast, in network data we are not primarily interested in the attributes of distinct observations but in the relationships between those observations.</p>
+<p>A network is a set of nodes (also called vertices) and a set of edges (also called links) between them. In networks, nodes represent individuals (or other entities, including countries, organisations, and Web pages) and links represent various social ties, including friendship, kinship, acquaintanceship, or hyperlinks.</p>
+<p>Network analysis studies the patterns of relationships that emerge from the interaction of individuals or other entities. Such patterns are often described as <em>network structure</em>. Network structure can be characterised at different scales:</p>
+<ul class="simple">
+<li><p>local scale (e.g., nodes, dyads, and triads)</p></li>
+<li><p>meso-scale (e.g., network communities)</p></li>
+<li><p>macro-scale (e.g., network diameter)</p></li>
+</ul>
+<p>Different metrics and methods have been developed to measure properties of network structure at the local, meso, and macro scales. For example, community detection methods have been developed to study meso-scale network structure.</p>
+<p>The rationale of network analysis is that the position of a node in a network affects relevant social outcomes, for example node importance and performance in a social system. An overview of network analysis can be found in <a class="reference external" href="https://books.google.co.uk/books?id=CAm2DpIqRUIC&amp;printsec=frontcover&amp;redir_esc=y#v=onepage&amp;q&amp;f=false">Wasserman and Faust (1994)</a> and <a class="reference external" href="https://global.oup.com/academic/product/networks-9780198805090?cc=us&amp;lang=en&amp;">Newman (2018)</a>.</p>
+<p>In this lab, we will first create and study a small toy network in order to build an intuition about basic network concepts and diagnostics. We will then study a social network of characters in the movie Star Wars Episode IV: A New Hope.</p>
+<div class="section" id="learning-resources">
+<h2>Learning resources<a class="headerlink" href="#learning-resources" title="Permalink to this headline">¶</a></h2>
+<p><i class="fas fa-scroll"></i> Stephen Borgatti, Ajay Mehra, Daniel Brass, Giuseppe Labianca. 2009. <a class="reference external" href="https://science.sciencemag.org/content/323/5916/892/tab-pdf">Network Analysis in the Social Sciences.</a> Science.</p>
+<p><i class="fas fa-scroll"></i> Petter Holme, Mason A. Porter, Hiroki Sayama. <a class="reference external" href="https://kids.frontiersin.org/articles/10.3389/frym.2019.00099">Who Is the Most Important Character in Frozen? What Networks Can Tell Us About the World</a>. Frontiers for Young Minds.</p>
+<p><i class="fas fa-play-circle"></i> Mark Newman. <a class="reference external" href="https://www.youtube.com/watch?v=yAtsm5xkb5c">1. The Connected World</a> and <a class="reference external" href="https://www.youtube.com/watch?v=lETt7IcDWLI">2. What Networks Can Tell Us About the World</a>. Santa Fe Institute.</p>
+<p><i class="fas fa-code"></i> Rob Chew’s and Peter Baumgartner <a class="reference external" href="https://www.youtube.com/watch?v=7fsreJMy_pI">Connected: A Social Network Analysis Tutorial with NetworkX.</a> PyData 2016. Authors’ Jupyter notebooks are available on <a class="reference external" href="https://github.com/rtidatascience/connected-nx-tutorial/tree/master/notebooks">GitHub</a>.</p>
+<p><i class="fas fa-book"></i> <i class="fas fa-code"></i> Menczer, F., Fortunato, S., Davis, C. 2020. A First Course in Network Science. Cambridge University Press. Authors’ Jupyter notebooks are available on <a class="reference external" href="https://github.com/CambridgeUniversityPress/FirstCourseNetworkScience">GitHub</a>.</p>
+<p><i class="fas fa-book"></i> <i class="fas fa-code"></i> Edward L. Platt. 2020. Network Science with Python and NetworkX Quick Start Guide: Explore and visualize network data effectively. Packt Publishing. Author’s Jupyter notebooks are available on <a class="reference external" href="https://github.com/PacktPublishing/Network-Science-with-Python-and-NetworkX-Quick-Start-Guide">GitHub</a>.</p>
+<p><i class="fas fa-scroll"></i> Santo Fortunato and Darko Hric. 2016. <a class="reference external" href="https://arxiv.org/pdf/1608.00163.pdf">Community detection in networks: A user guide.</a>. Physics Reports. An open access version of the article is available on the <a class="reference external" href="https://arxiv.org/pdf/1608.00163.pdf">arXiv</a>.</p>
+<p><i class="fas fa-scroll"></i> Mason A. Porter, Jukka-Pekka Onnela, Peter J. Mucha. 2009. <a class="reference external" href="https://www.ams.org/notices/200909/rtx090901082p.pdf">Communities in Networks.</a> Notices of the AMS.</p>
+<p><i class="fas fa-scroll"></i> Valentin Danchev and Mason A. Porter. 2018. <a class="reference external" href="https://www.math.ucla.edu/~mason/papers/danchev2018-final-with_supp.pdf">Neither global nor local: Heterogeneous connectivity in spatial network structures of world migration</a>. Social Networks.</p>
+<p><i class="fas fa-code"></i> <a class="reference external" href="https://networkx.org/documentation/networkx-2.0/tutorial.html">NetworkX tutorial.</a></p>
+</div>
+<div class="section" id="networks-and-covid-19">
+<h2>Networks and COVID-19<a class="headerlink" href="#networks-and-covid-19" title="Permalink to this headline">¶</a></h2>
+<p><i class="fas fa-scroll"></i> <a class="reference external" href="https://www.nytimes.com/2020/03/13/science/coronavirus-social-networks-data.html">Mapping the Social Network of Coronavirus</a>. New York Times.</p>
+<p><i class="fas fa-scroll"></i> David Holtz et al. <a class="reference external" href="https://www.pnas.org/content/117/33/19837">Interdependence and the cost of uncoordinated responses to COVID-19.</a> PNAS.</p>
+<p><i class="fas fa-scroll"></i> S. Chang, E. Pierson, P. W. Koh, J. Gerardin, B. Redbird, D. Grusky, J. Leskovec. <a class="reference external" href="https://cs.stanford.edu/people/jure/pubs/covid-nature20.pdf">Mobility network models of COVID-19 explain inequities and inform reopening.</a> Nature.</p>
+</div>
+</div>
+<div class="section" id="open-network-data-repositories">
+<h1>Open network data repositories<a class="headerlink" href="#open-network-data-repositories" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="http://networkrepository.com/index.php">Network Repository. An Interactive Scientific Network Data Repository.</a></p></li>
+<li><p><a class="reference external" href="http://www-personal.umich.edu/~mejn/netdata/">Mark Newman’s website</a></p></li>
+<li><p><a class="reference external" href="http://vlado.fmf.uni-lj.si/pub/networks/data/default.htm">Pajek datasets</a></p></li>
+<li><p><a class="reference external" href="http://snap.stanford.edu/data/index.html">Stanford Large Network Dataset Collection</a></p></li>
+<li><p><a class="reference external" href="https://moviegalaxies.com">Moviegalaxies—Social networks in movies</a></p></li>
+</ul>
+<div class="section" id="networkx">
+<h2>NetworkX<a class="headerlink" href="#networkx" title="Permalink to this headline">¶</a></h2>
+<p>We will perform network analysis using <a class="reference external" href="https://networkx.org">NetworkX</a>. NetworkX is a Python library for creating, analysing, and visualising networks:</p>
+<ul class="simple">
+<li><p>written in pure Python</p></li>
+<li><p>flexible and easy to install</p></li>
+<li><p>relatively scalable</p></li>
+</ul>
+<p><img alt="" src="https://networkx.org/_static/networkx_logo.svg" /></p>
+</div>
+<div class="section" id="other-python-libraries-for-network-analysis">
+<h2>Other Python libraries for network analysis<a class="headerlink" href="#other-python-libraries-for-network-analysis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://igraph.org/python/">python-igraph</a></p>
+<ul>
+<li><p>written in C/C++ with interfaces to Python and R</p></li>
+<li><p>pros: performance and speed; cons: installation can be a hurdle</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://graph-tool.skewed.de">graph-tool</a></p>
+<ul>
+<li><p>written in C++</p></li>
+<li><p>fast algorithms and powerful visualisations</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://www.mkivela.com/pymnet/">Pymnet</a>: Multilayer Networks Library for Python</p>
+<ul>
+<li><p>written in Python, based on Matplotlib and integrated with NetworkX</p></li>
+<li><p>handle multilayer networks: analysis and visualisation</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="network-representations">
+<h1>Network representations<a class="headerlink" href="#network-representations" title="Permalink to this headline">¶</a></h1>
+<p>Below are four different representations of a network. Those four different network representations refer to the same set of nodes and the same set of edges connecting those nodes.</p>
+<p>In the network, each person is a <em>node</em>. For example, Nancy is a node (ID 3) connected to three other nodes: Emma (ID 2), John (ID 4), and Emily (ID 5). Those three people are <em>neighbors</em> of Nancy. In network terms, Nancy has a <em>degree</em> of three. Similarly, Sophie has two neighbors (i.e., nodes to which Sophie is connected) so we say she has a degree of two.</p>
+<p>This is an example of a simple network. Simple networks are characterised as:</p>
+<ul class="simple">
+<li><p>Undirected — edges between each pair of nodes have no direction such that if an edge from node A to node B is present, the edge from B to A is also present. By contrast, in directed networks, edges point to only one direction.</p></li>
+<li><p>Unweighted — edges between each pair of nodes are either present or absent. By contrast, in weighted networks, edges have weights assigned to them.</p></li>
+</ul>
+<p><img alt="title" src="_images/network_representation_undirected.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Networkx and other packages we will use</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-an-undirected-network">
+<h1>Creating an undirected network<a class="headerlink" href="#creating-an-undirected-network" title="Permalink to this headline">¶</a></h1>
+<p>We begin by creating an empty undirected network using the <code class="docutils literal notranslate"><span class="pre">networkX</span></code> function <code class="docutils literal notranslate"><span class="pre">Graph()</span></code>. The created empty network has no nodes and no edges.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty network</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="c1"># G = nx.DiGraph() # Would create a directed network</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s add a colection nodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add nodes</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Alternatively, you can add a set of nodes from a list</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now add a collection of edges connecting the nodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add edges</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Alternatively, you can add a set of edges from a list</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the created edges</span>
+<span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EdgeView([(1, 2), (1, 4), (1, 5), (2, 4), (2, 6), (3, 4), (5, 6)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Examine basic properties of the graph using the <code class="docutils literal notranslate"><span class="pre">info()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check basic properties of the graph</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: 
+Type: Graph
+Number of nodes: 6
+Number of edges: 7
+Average degree:   2.3333
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw a network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#F4ABAA&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;GraphUndirected.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/network_analysis_15_0.png" src="_images/network_analysis_15_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="computing-network-diagnostics">
+<h1>Computing network diagnostics<a class="headerlink" href="#computing-network-diagnostics" title="Permalink to this headline">¶</a></h1>
+<p>We compute various network diagnostics, ranging from local (node-level) diagnostics (degree centrality) to global (network-level) diagnostics (e.g., network diameter).</p>
+<div class="section" id="node-level-diagnostics">
+<h2>Node-level diagnostics<a class="headerlink" href="#node-level-diagnostics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Node degree</strong></p>
+<p>Node degree is simply the number of connections a node has.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute node degree</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DegreeView({1: 3, 2: 3, 3: 1, 4: 3, 5: 2, 6: 2})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print node degree in a more readable format</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 3
+2 3
+3 1
+4 3
+5 2
+6 2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Number of triangles</strong></p>
+<p>Number of triangles refers to any three connected nodes that include a node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the number of triangles per node</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 1
+2 1
+3 0
+4 1
+5 0
+6 0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Clustering</strong></p>
+<p>Clustering of a node is the fraction of possible triangles (i.e., the number of actual triangles divided by the number of possible triangles).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the clustering coefficient for nodes</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.3333333333333333
+2 0.3333333333333333
+3 0
+4 0.3333333333333333
+5 0
+6 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s consolidate our code and print the above local network diagnostics in one place</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiple network diagnostics</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;node degree triangles clustering&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">),</span> <span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">),</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>node degree triangles clustering
+1 3 1 0.3333333333333333
+2 3 1 0.3333333333333333
+3 1 0 0
+4 3 1 0.3333333333333333
+5 2 0 0
+6 2 0 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above node-level diagnostics consider only direct connections to a node without taking into account the global structure of a network. Let’s compute diagnostics that take into account the global structure of our network.</p>
+<p><strong>Betweenness centrality and shortest paths</strong></p>
+<p>One such diagnostic is <em>betweenness centrality</em>. Nodes with high betweenness centrality are thought to connect otherwise disconnected nodes and in this sense to harness coordination and communication flow in social networks.</p>
+<p>How do we compute betweenness centrality? Consider that between any pair of nodes there is a shortest path connected that pair, the betweenness centrality of a node is the sum of the fraction of shortest paths between all pairs that pass through a node.</p>
+<p>To make things concrete, let’s first compute the shortest paths between a pair of nodes that go through a node. For example, the shortest paths that go through node 1: 2 → 5, 3 → 5, 4 → 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the shortest paths that go through a node</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">all_shortest_paths</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mi">5</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 1, 5], [2, 6, 5]]
+[[3, 4, 1, 5]]
+[[4, 1, 5]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s compute now the betweenness centrality for node 1.</p>
+<p>The shortest paths, which pass through node 1, are between the pairs:</p>
+<p>2 → 5</p>
+<p>3 → 5</p>
+<p>4 → 5</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pairs of nodes</p></th>
+<th class="head"><p>Number of shortest paths through node 1</p></th>
+<th class="head"><p>Number of all shortest paths</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2 → 5</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 → 5</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>4 → 5</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Betweenness centrality for node 1 is then computed as:</p>
+<p><span class="math notranslate nohighlight">\(1/2 + 1/1 + 1/1 = 2.5\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute betweenness centrality</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 2.5, 2: 2.5, 3: 0.0, 4: 4.0, 5: 0.5, 6: 0.5}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">normalized</span> <span class="pre">=</span> <span class="pre">True</span></code>, then betweenness centrality of a node is normalised by <span class="math notranslate nohighlight">\(2/((n - 1)(n - 2))\)</span>. In our example graph:</p>
+<p><span class="math notranslate nohighlight">\(2/((6 - 1)(6 - 2) = 2/(5 * 4) = 2 / 20 = 0.1.\)</span></p>
+<p>Hence the betweenness centrality, for example, of node 1 is <span class="math notranslate nohighlight">\(2.5/0.1 = 0.25\)</span>.</p>
+<p><strong>Eigenvector centrality</strong></p>
+<p>Eigenvector centrality is another diagnostic that considers non-direct connections. If node degree measures the number of connections of a node, eigenvector centrality measures the extent to which those connected to a node are themselves highly connected nodes. Eigenvector centrality is an indicator of the influence of a node in a network. People with high eigenvector centrality in social and information networks are influential because they are connected to others who are themselves highly connected and, thus, can easily reach many other people in the networks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute eigenvector centrality</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.5131199170225811,
+ 2: 0.5131199170225811,
+ 3: 0.18452474299639904,
+ 4: 0.4726682070377605,
+ 5: 0.3285964750170798,
+ 6: 0.3285964750170798}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In our small undirected network, node 1 and node 2 have the highest eigenvector centrality due to their connections to each other and to node 4, each of which has degree of 3 and is therefore highly connected in this network of six nodes.</p>
+</div>
+<div class="section" id="network-level-diagnostics">
+<h2>Network-level diagnostics<a class="headerlink" href="#network-level-diagnostics" title="Permalink to this headline">¶</a></h2>
+<p>We now consider network-level diagnostics.</p>
+<p><strong>Average shortest path</strong></p>
+<p>One diagnostic that characterises the global structure of a network is the average shortest path for the network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average shortest path for the network</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6666666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Network diameter</strong></p>
+<p>Network diameter is another network-level diagnostic. Diameter of a network is the longest of all the path lengths or the maximum distance between nodes in a network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">distance_measures</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="assortative-mixing">
+<h1>Assortative mixing<a class="headerlink" href="#assortative-mixing" title="Permalink to this headline">¶</a></h1>
+<p>Assortativity or assortative mixing (also called homophily) is the preference of nodes with similar attributes to interact between each other. In other words, “similarity breeds connection” <a class="reference external" href="https://doi.org/10.1146/annurev.soc.27.1.415">McPherson et al. Am. Soc. Rew.</a>. To illustrate the tendency for assortative mixing, we first add node attributes.</p>
+<div class="section" id="adding-node-attributes">
+<h2>Adding node attributes<a class="headerlink" href="#adding-node-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add gender attribute to existing nodes</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+<span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign different colour to nodes with different attribute classes</span>
+<span class="n">nodes_colors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">:</span>
+    <span class="n">nodes_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;#40E0D0&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">nodes_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;#E6E6FA&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The resulting list of colors for female (&#39;#a5b41f&#39;) and male (&#39;#1fb4a5&#39;)  </span>
+<span class="n">nodes_colors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;#40E0D0&#39;, &#39;#40E0D0&#39;, &#39;#E6E6FA&#39;, &#39;#E6E6FA&#39;, &#39;#40E0D0&#39;, &#39;#40E0D0&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the network with node colours representing gender categories</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">nodes_colors</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="c1"># Save the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;GraphUndirectedGender.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/network_analysis_42_0.png" src="_images/network_analysis_42_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="measuring-assortativity">
+<h2>Measuring assortativity<a class="headerlink" href="#measuring-assortativity" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see if indeed similarity with respect to gender attributes breeds connections in our toy network. Networks in which similar nodes are more likely to connect than dissimilar nodes are called assortative.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute assortativity coefficient</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">attribute_assortativity_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;gender&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29999999999999977
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nodes may be linked because they have similar social attributes but also because they have similar number of links or a similar role in a network. Let’s see if nodes with similar node degree are more likely (i.e., degree assortativity) or less likely (i.e., degree disassortativity) to be linked in our example network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assortativity for node degree</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">degree_assortativity_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.10526315789473836
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-directed-network">
+<h1>Creating a directed network<a class="headerlink" href="#creating-a-directed-network" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an empty directed network</span>
+<span class="n">DG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Add nodes</span>
+<span class="n">DG</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Add edges</span>
+<span class="n">DG</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw the directed network</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">DG</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#FFC0CB&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+<span class="c1"># Save the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;GraphDirected.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/network_analysis_49_0.png" src="_images/network_analysis_49_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic network properties: in-degree and out-degree</span>
+
+<span class="n">DG</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()</span>
+<span class="c1"># basic network roperties</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;node out_degree out_degree&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">DG</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">DG</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="n">DG</span><span class="o">.</span><span class="n">in_degree</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>node out_degree out_degree
+1 3 0
+2 2 1
+3 1 0
+4 0 3
+5 1 1
+6 0 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute betweenness_centrality</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">DG</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.0, 2: 0.025, 3: 0.0, 4: 0.0, 5: 0.025, 6: 0.0}
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="discussion-how-network-diagnostics-differ-across-directed-and-undirected-networks">
+<h2>Discussion: How network diagnostics differ across directed and undirected networks?<a class="headerlink" href="#discussion-how-network-diagnostics-differ-across-directed-and-undirected-networks" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="a-fun-examplestar-wars-network">
+<h1>A fun example—Star Wars network<a class="headerlink" href="#a-fun-examplestar-wars-network" title="Permalink to this headline">¶</a></h1>
+<p>In this section we use a <a class="reference external" href="http://evelinag.com/blog/2015/12-15-star-wars-social-network/">small weighted network reconstructed from the movie Star Wars Episode IV: A New Hope by Evelina Gabasova</a>. The network is also used in the <a class="reference external" href="https://cdn.rawgit.com/pablobarbera/data-science-workshop/master/sna/01_networks_intro.html">network analysis’ tutorial in R by Alex Hanna, Pablo Barbera, and Dan Cervone</a>. For interactive social networks of characters in films and series, see the website <a class="reference external" href="https://moviegalaxies.com">Moviegalaxies.com</a>.</p>
+<p>Each node in the Star Wars Episode IV: A New Hope network represents a character and each edge represents the number of times a pair of characters appeared together in a scene of the movie. Edges are undirected and weighted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A quick view of the network using the command line</span>
+
+<span class="o">!</span>head star-wars-network.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>source,target,weight
+
+C-3PO,R2-D2,17
+
+LUKE,R2-D2,13
+
+OBI-WAN,R2-D2,6
+
+LEIA,R2-D2,5
+
+HAN,R2-D2,5
+
+CHEWBACCA,R2-D2,3
+
+DODONNA,R2-D2,1
+
+CHEWBACCA,OBI-WAN,7
+
+C-3PO,CHEWBACCA,5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Read the edge list file using the Pandas function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>. We use a version of the file <code class="docutils literal notranslate"><span class="pre">star-wars-network.csv</span></code> that can be found also on <a class="reference external" href="https://raw.githubusercontent.com/pablobarbera/data-science-workshop/master/sna/data/star-wars-network-edges.csv">Pablo Barberá’s GitHub repository</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">StarWars_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/valdanchev/SC207/main/star-wars-network.csv&#39;</span><span class="p">)</span>
+<span class="n">StarWars_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C-3PO</td>
+      <td>R2-D2</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LUKE</td>
+      <td>R2-D2</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>OBI-WAN</td>
+      <td>R2-D2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LEIA</td>
+      <td>R2-D2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>HAN</td>
+      <td>R2-D2</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We now create a graph object using the NetworkX function <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GraphStarWars</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">StarWars_df</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span><span class="n">edge_attr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the graph</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: 
+Type: Graph
+Number of nodes: 21
+Number of edges: 60
+Average degree:   5.7143
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns the number of edges in a network</span>
+<span class="n">GraphStarWars</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns total weight sum</span>
+<span class="n">GraphStarWars</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>295.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the weight of the edge between a pair of nodes</span>
+<span class="n">GraphStarWars</span><span class="p">[</span><span class="s1">&#39;C-3PO&#39;</span><span class="p">][</span><span class="s1">&#39;R2-D2&#39;</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify figure size</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+
+<span class="c1"># Compute node position using the default spring_layout  </span>
+<span class="n">node_position</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+
+<span class="c1"># Draw the Star Wars Episode IV network </span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="n">node_position</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;#F4ABAA&#39;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Add edge weights</span>
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="n">node_position</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">);</span>
+
+<span class="c1"># Save the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;GraphStarWars.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/network_analysis_63_0.png" src="_images/network_analysis_63_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="global-network-diagnostics">
+<h1>Global network diagnostics<a class="headerlink" href="#global-network-diagnostics" title="Permalink to this headline">¶</a></h1>
+<p>Let’s compute the average shortest path to characterise the global structure of the network. Recall that the average shortest path determines the extent to which characters in the Star Wars network are distant from one another.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average shortest path for the network</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9095238095238096
+</pre></div>
+</div>
+</div>
+</div>
+<p>The other global diagnostic we consider is network diameter. Recall that the diameter of a network is the longest of all the path lengths or the maximum distance between nodes in a network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">distance_measures</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="meso-scale-network-diagnostics">
+<h1>Meso-scale network diagnostics<a class="headerlink" href="#meso-scale-network-diagnostics" title="Permalink to this headline">¶</a></h1>
+<p>To study the meso-scale properties of a network, we identify network communities. Network communities are collection of nodes that are more connected to each other than to other communities compared to a null model. Many community detection methods have been developed to identify community structure in networks. To identify network communities in the Star Wars network, we will use a technique called modularity maximisation. We will maximise modularity using the Louvain community detection heuristics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install and import the Louvain community detection algorithm</span>
+<span class="o">!</span>pip install python-louvain
+<span class="kn">import</span> <span class="nn">community</span> <span class="k">as</span> <span class="nn">community_louvain</span>
+
+<span class="c1"># Detect the community structure of the graph which maximises the modularity using the Louvain heuristices</span>
+<span class="n">partition</span> <span class="o">=</span> <span class="n">community_louvain</span><span class="o">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span><span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-louvain in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.14)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: networkx in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-louvain) (2.5)
+Requirement already satisfied: numpy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-louvain) (1.19.2)
+Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx-&gt;python-louvain) (5.0.9)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set figure size that is larger than the default</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> 
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">),</span> <span class="c1"># spring_layout is the default layout</span>
+        <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span><span class="p">,</span>
+        <span class="n">node_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Save the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;GraphStarWars.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/network_analysis_70_0.png" src="_images/network_analysis_70_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="local-network-diagnostics">
+<h1>Local network diagnostics<a class="headerlink" href="#local-network-diagnostics" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node degree - number of edges adjacent to that node</span>
+
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">GraphStarWars</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span><span class="n">node</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C-3PO 10
+R2-D2 7
+LUKE 15
+OBI-WAN 7
+LEIA 12
+HAN 8
+CHEWBACCA 8
+DODONNA 5
+DARTH VADER 5
+CAMIE 2
+BIGGS 7
+BERU 4
+OWEN 3
+MOTTI 3
+TARKIN 3
+GREEDO 1
+JABBA 1
+GOLD LEADER 5
+WEDGE 5
+RED LEADER 7
+RED TEN 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the node degrees in descending order</span>
+
+<span class="n">GraphStarWars_degrees</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">GraphStarWars_degrees</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 15),
+ (&#39;LEIA&#39;, 12),
+ (&#39;C-3PO&#39;, 10),
+ (&#39;HAN&#39;, 8),
+ (&#39;CHEWBACCA&#39;, 8),
+ (&#39;R2-D2&#39;, 7),
+ (&#39;OBI-WAN&#39;, 7),
+ (&#39;BIGGS&#39;, 7),
+ (&#39;RED LEADER&#39;, 7),
+ (&#39;DODONNA&#39;, 5),
+ (&#39;DARTH VADER&#39;, 5),
+ (&#39;GOLD LEADER&#39;, 5),
+ (&#39;WEDGE&#39;, 5),
+ (&#39;BERU&#39;, 4),
+ (&#39;OWEN&#39;, 3),
+ (&#39;MOTTI&#39;, 3),
+ (&#39;TARKIN&#39;, 3),
+ (&#39;CAMIE&#39;, 2),
+ (&#39;RED TEN&#39;, 2),
+ (&#39;GREEDO&#39;, 1),
+ (&#39;JABBA&#39;, 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a histogram for node degrees</span>
+<span class="n">degree_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">GraphStarWars_degrees</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">degree_values</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Degree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of nodes&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Star Wars Episode IV network&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Star Wars Episode IV network&#39;)
+</pre></div>
+</div>
+<img alt="_images/network_analysis_74_1.png" src="_images/network_analysis_74_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Node strenght - sum of the edge weights adjacent to the node</span>
+
+<span class="n">gsw_weights</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">gsw_weights</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 129),
+ (&#39;HAN&#39;, 80),
+ (&#39;C-3PO&#39;, 64),
+ (&#39;CHEWBACCA&#39;, 63),
+ (&#39;LEIA&#39;, 59),
+ (&#39;R2-D2&#39;, 50),
+ (&#39;OBI-WAN&#39;, 49),
+ (&#39;BIGGS&#39;, 14),
+ (&#39;RED LEADER&#39;, 13),
+ (&#39;DARTH VADER&#39;, 11),
+ (&#39;TARKIN&#39;, 10),
+ (&#39;BERU&#39;, 9),
+ (&#39;WEDGE&#39;, 9),
+ (&#39;OWEN&#39;, 8),
+ (&#39;DODONNA&#39;, 5),
+ (&#39;GOLD LEADER&#39;, 5),
+ (&#39;CAMIE&#39;, 4),
+ (&#39;MOTTI&#39;, 4),
+ (&#39;RED TEN&#39;, 2),
+ (&#39;GREEDO&#39;, 1),
+ (&#39;JABBA&#39;, 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the number of triangles</span>
+
+<span class="n">triangles</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">triangles</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 35),
+ (&#39;LEIA&#39;, 27),
+ (&#39;C-3PO&#39;, 24),
+ (&#39;CHEWBACCA&#39;, 19),
+ (&#39;R2-D2&#39;, 17),
+ (&#39;OBI-WAN&#39;, 17),
+ (&#39;HAN&#39;, 15),
+ (&#39;BIGGS&#39;, 12),
+ (&#39;RED LEADER&#39;, 12),
+ (&#39;GOLD LEADER&#39;, 8)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute clustering</span>
+
+<span class="n">clustering</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">clustering</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;CAMIE&#39;, 1.0),
+ (&#39;OWEN&#39;, 1.0),
+ (&#39;MOTTI&#39;, 1.0),
+ (&#39;TARKIN&#39;, 1.0),
+ (&#39;RED TEN&#39;, 1.0),
+ (&#39;BERU&#39;, 0.8333333333333334),
+ (&#39;R2-D2&#39;, 0.8095238095238095),
+ (&#39;OBI-WAN&#39;, 0.8095238095238095),
+ (&#39;GOLD LEADER&#39;, 0.8),
+ (&#39;WEDGE&#39;, 0.8)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the average shortest path for the network</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9095238095238096
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the distance from one character (e.g., Luke) to any other character</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="s1">&#39;LUKE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;LUKE&#39;: 0,
+ &#39;HAN&#39;: 1,
+ &#39;OWEN&#39;: 1,
+ &#39;WEDGE&#39;: 1,
+ &#39;RED TEN&#39;: 1,
+ &#39;CHEWBACCA&#39;: 1,
+ &#39;OBI-WAN&#39;: 1,
+ &#39;BERU&#39;: 1,
+ &#39;GOLD LEADER&#39;: 1,
+ &#39;CAMIE&#39;: 1,
+ &#39;C-3PO&#39;: 1,
+ &#39;DODONNA&#39;: 1,
+ &#39;RED LEADER&#39;: 1,
+ &#39;LEIA&#39;: 1,
+ &#39;R2-D2&#39;: 1,
+ &#39;BIGGS&#39;: 1,
+ &#39;JABBA&#39;: 2,
+ &#39;TARKIN&#39;: 2,
+ &#39;GREEDO&#39;: 2,
+ &#39;DARTH VADER&#39;: 2,
+ &#39;MOTTI&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the shortes path between any two characters</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="s1">&#39;LUKE&#39;</span><span class="p">,</span><span class="s1">&#39;DARTH VADER&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;LUKE&#39;, &#39;CHEWBACCA&#39;, &#39;DARTH VADER&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute betweenness centrality — unweighted</span>
+
+<span class="n">betweenness</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">betweenness</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 62.428571428571416),
+ (&#39;LEIA&#39;, 45.59523809523809),
+ (&#39;HAN&#39;, 37.0),
+ (&#39;C-3PO&#39;, 12.095238095238093),
+ (&#39;CHEWBACCA&#39;, 7.452380952380952),
+ (&#39;BIGGS&#39;, 6.749999999999999),
+ (&#39;RED LEADER&#39;, 6.749999999999999),
+ (&#39;OBI-WAN&#39;, 3.119047619047619),
+ (&#39;R2-D2&#39;, 2.5),
+ (&#39;DARTH VADER&#39;, 2.5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute betweenness centrality — weighted</span>
+
+<span class="n">betweenness</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">betweenness</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LEIA&#39;, 59.95000000000001),
+ (&#39;DODONNA&#39;, 47.53333333333333),
+ (&#39;HAN&#39;, 37.0),
+ (&#39;C-3PO&#39;, 32.78333333333333),
+ (&#39;BIGGS&#39;, 31.91666666666667),
+ (&#39;RED LEADER&#39;, 31.416666666666668),
+ (&#39;GOLD LEADER&#39;, 23.799999999999997),
+ (&#39;R2-D2&#39;, 22.75),
+ (&#39;LUKE&#39;, 18.333333333333332),
+ (&#39;CHEWBACCA&#39;, 15.916666666666664)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute eigenvector centrality</span>
+
+<span class="n">eigenvector</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">GraphStarWars</span><span class="p">)</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">eigenvector</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 0.4173849989544929),
+ (&#39;LEIA&#39;, 0.3621476171212341),
+ (&#39;C-3PO&#39;, 0.34237759659841116),
+ (&#39;CHEWBACCA&#39;, 0.29309285556955944),
+ (&#39;R2-D2&#39;, 0.2768558557532187),
+ (&#39;OBI-WAN&#39;, 0.27354238616778775),
+ (&#39;HAN&#39;, 0.2652851070021197),
+ (&#39;RED LEADER&#39;, 0.22769355656700285),
+ (&#39;BIGGS&#39;, 0.22769355656700282),
+ (&#39;DODONNA&#39;, 0.16949029608351718)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Menczer, F., Fortunato, S., Davis, C. 2020. <a class="reference external" href="https://www.cambridge.org/highereducation/books/first-course-in-network-science/EE22722F27519D8BB1443C7225C57BAF#overview">A first course in network science.</a> Cambridge University Press.</p></li>
+<li><p>Rob Chew’s and Peter Baumgartner’s tutorial <a class="reference external" href="https://www.youtube.com/watch?v=7fsreJMy_pI">Connected: A Social Network Analysis Tutorial with NetworkX</a>. PyData 2016.</p></li>
+<li><p>Edward L. Platt. 2020. <a class="reference external" href="https://github.com/PacktPublishing/Network-Science-with-Python-and-NetworkX-Quick-Start-Guide">Network Science with Python and NetworkX Quick Start Guide: Explore and visualize network data effectively</a>. Packt Publishing.</p></li>
+<li><p>Evelina Gabasova. 2015. <a class="reference external" href="http://evelinag.com/blog/2015/12-15-star-wars-social-network/">The Star Wars social network</a>.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="causal_inference.html" title="previous page">Introduction to Causal Inference</a>
+    <a class='right-next' id="next-link" href="data_ethics.html" title="next page">Data Ethics, Bias, and Fairness</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Valentin Danchev<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

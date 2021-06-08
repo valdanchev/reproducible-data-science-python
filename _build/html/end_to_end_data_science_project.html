@@ -1,0 +1,2647 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human mobility during UK lockdowns &#8212; Reproducible Data Science + Python + Real-World Data</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Open Reproducible Data Science Workflows" href="open_reproducible_workflows.html" />
+    <link rel="prev" title="Course description" href="course_description.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mylogo2.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Reproducible Data Science + Python + Real-World Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Reproducible Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  About the Course
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html">
+   Course description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#what-is-reproducible-data-science">
+   What is Reproducible Data Science?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#software-stack">
+   Software stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#data-sets">
+   Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#acknowledgment">
+   Acknowledgment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_description.html#code-availability">
+   Code availability
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  End-to-End Data Science Project
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Human mobility during UK lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#load-your-data">
+   Load your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-ethics-privacy-and-fairnes-risks">
+   Data Ethics, Privacy, and Fairnes Risks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#describe-your-data">
+   Describe your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#re-cap">
+   Re-cap
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Data Science on the Cloud
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html">
+   <strong>
+    Python for Data Analysis on the Cloud
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#get-started-with-jupyter-colab-notebooks">
+   Get Started with Jupyter &amp; Colab notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#python-coding-for-data-analysis">
+   Python Coding for Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#descriptive-statistics-with-numpy">
+   Descriptive statistics with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#loading-real-world-data-with-pandas">
+   Loading real-world data with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-python-skills">
+   Hands-on exercise: Let’s practice your Python skills
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#markdown-text-cells">
+   Markdown Text Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
+   Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  data design &amp; data wrangling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html">
+   Data Design &amp; Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#get-started-with-pandas">
+   Get started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#importing-pandas">
+   Importing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-your-data">
+   Loading your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#loading-covid-19-data-sets-via-url">
+   Loading Covid-19 data sets via URL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#viewing-describing-and-accessing-your-data">
+   Viewing, Describing, and Accessing your Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#accessing-columns-and-rows-in-your-data">
+   Accessing columns and rows in your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#handling-missing-values">
+   Handling Missing Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#compare-mobility-data-formats">
+   Compare mobility data formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_design_wrangling.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Exploration &amp; Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html">
+   Exploratory Data Analysis and Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#addressing-simple-questions-via-python-eda">
+   Addressing simple questions via Python EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq1-how-do-countries-differ-in-mobility-trends">
+   RQ1: How do countries differ in mobility trends?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#data-visualisation-with-seaborn">
+   Data visualisation with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#changing-figure-appearance">
+   Changing figure appearance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#wide-and-long-data-format">
+   Wide and long data format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#multi-plot-visualisations">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq2-how-do-mobility-trends-change-over-time">
+   RQ2: How do mobility trends change over time?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-time-series-data">
+   Visualising time series data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#bootstrapping-for-inference">
+   Bootstrapping for inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq3-how-have-mobility-trends-differed-across-uk-lockdowns">
+   RQ3: How have mobility trends differed across UK lockdowns?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-lockdowns-mobility-as-barplots">
+   Visualising lockdowns’ mobility as barplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq4-how-have-mobility-trends-differed-across-uk-counties-during-the-third-lockdown">
+   RQ4: How have mobility trends differed across UK counties during the third lockdown?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#id1">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#split-apply-combine">
+   Split-apply-combine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#summarising-data-by-groups">
+   Summarising data by groups
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq5-how-do-mobility-categories-relate-to-each-other">
+   RQ5: How do mobility categories relate to each other?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-distributions">
+   Visualising distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#plotting-pairwise-relationships">
+   Plotting pairwise relationships
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#rq6-how-correlated-are-mobility-categories-across-uk-counties">
+   RQ6: How correlated are mobility categories across UK counties?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-correlation">
+   Visualising correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#visualising-linear-regression">
+   Visualising linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration_visualisation.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pattern Discovery using Unsupervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html">
+   Discovering patterns in data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#machine-learning-what-is-it-what-is-it-good-for">
+   Machine Learning: What is it? What is it good for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#research-problem-clustering-counties-by-mobility">
+   Research problem: clustering counties by mobility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#k-means-clustering">
+   <em>
+    k
+   </em>
+   -means clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#let-s-get-coding-with-scikit-learn">
+   Let’s get coding with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-preprocessing">
+   Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#data-standardisation">
+   Data standardisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#choosing-the-optimal-number-of-clusters">
+   Choosing the optimal number of clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#performing-for-loop">
+   Performing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#elbow-plot">
+   Elbow plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#dimensionality-reduction-via-pca">
+   Dimensionality Reduction via PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#visualising-mobility-clusters">
+   Visualising mobility clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#related-approaches-hierarchical-clustering">
+   Related approaches: Hierarchical clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pattern_discovery_unsupervised_learning.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction using Supervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html">
+   Learning from Data to Predict
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_supervised_learning.html#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Causal Inference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html">
+   Introduction to Causal Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#what-causes-what">
+   What causes what?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#confoundingbasic-definitions">
+   Confounding—basic definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#our-example-of-collider-bias">
+   Our example of collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#drawing-causal-graphs">
+   Drawing causal graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#statistical-models-in-python">
+   Statistical Models in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#collider-confounder">
+   Collider confounder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#additional-material">
+   Additional material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="causal_inference.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Network Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html">
+   Network analysis with NetworkX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#open-network-data-repositories">
+   Open network data repositories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#assortative-mixing">
+   Assortative mixing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#creating-a-directed-network">
+   Creating a directed network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="network_analysis.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data ethics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html">
+   Data Ethics, Bias, and Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#discussion-a-level-results-in-2020-england">
+   Discussion: A-level results in 2020 England
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#learning-resources-about-the-a-level-controversy">
+   Learning resources about the A-level controversy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_ethics.html#bias-and-fairness-in-data-science-systems">
+   Bias and Fairness in Data Science Systems
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/end_to_end_data_science_project.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fend_to_end_data_science_project.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/end_to_end_data_science_project.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Human mobility during UK lockdowns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#end-to-end-data-science-project">
+     End-to-End Data Science Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-has-human-mobility-differed-across-the-three-lockdowns-in-the-united-kingdom-during-the-covid-19-pandemic">
+     <em>
+      How has human mobility differed across the three lockdowns in the United Kingdom during the COVID-19 pandemic?
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-programming-language">
+     The Python programming language
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-your-data">
+   Load your data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-function">
+     What is a function?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-help-when-needed">
+     Getting help when needed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-the-google-covid-19-community-mobility-reports-data">
+     Reading the Google Covid-19 Community Mobility Reports data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-ethics-privacy-and-fairnes-risks">
+   Data Ethics, Privacy, and Fairnes Risks
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describe-your-data">
+   Describe your data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-specific-columns-and-rows-in-your-data">
+     Access specific columns and rows in your data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualising-a-single-time-series-variable">
+     Visualising a single time series variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-wrangling">
+   Data wrangling
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transforming-from-wide-to-long-data-format">
+     Transforming from wide to long data format
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-apply-combine">
+     Split-Apply-Combine
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visual-comparison-of-the-three-uk-lockdowns">
+     Visual comparison of the three UK lockdowns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#re-cap">
+   Re-cap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessible-hands-on-data-analysis">
+     Accessible hands-on data analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-reproducible-research-workflow">
+     Open reproducible research workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="human-mobility-during-uk-lockdowns">
+<h1>Human mobility during UK lockdowns<a class="headerlink" href="#human-mobility-during-uk-lockdowns" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="end-to-end-data-science-project">
+<h2>End-to-End Data Science Project<a class="headerlink" href="#end-to-end-data-science-project" title="Permalink to this headline">¶</a></h2>
+<p>In this first lab, you will go through the key steps in a data science project, starting from a research question, though data processing and analysis, to results that can potentially inform public policy. Specifically, we will go through five steps in the <a class="reference external" href="https://www.textbook.ds100.org/ch/01/lifecycle_intro.html">data science lifecycle</a>:</p>
+<ul class="simple">
+<li><p>formulate a research question of real-world relevance</p></li>
+<li><p>obtain real-world data, wrangle, and transform data</p></li>
+<li><p>explore and visualise data</p></li>
+<li><p>generate descriptive findings that can inform decision-making</p></li>
+</ul>
+<p>Later on in the course, we will cover in detail the techniques, code, and workflow we use in this session.</p>
+</div>
+</div>
+<div class="section" id="let-s-formulate-our-research-question">
+<h1>Let’s formulate our research question<a class="headerlink" href="#let-s-formulate-our-research-question" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-has-human-mobility-differed-across-the-three-lockdowns-in-the-united-kingdom-during-the-covid-19-pandemic">
+<h2><em>How has human mobility differed across the three lockdowns in the United Kingdom during the COVID-19 pandemic?</em><a class="headerlink" href="#how-has-human-mobility-differed-across-the-three-lockdowns-in-the-united-kingdom-during-the-covid-19-pandemic" title="Permalink to this headline">¶</a></h2>
+<p><em>Why is that research question important?</em></p>
+<ul class="simple">
+<li><p>concerns many of us</p></li>
+<li><p>is of public health policy relevance, and</p></li>
+<li><p>involves large data analysis requiring modern computational technique and tools</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-to-address-the-question">
+<h1>Data to address the question<a class="headerlink" href="#data-to-address-the-question" title="Permalink to this headline">¶</a></h1>
+<img src="https://www.google.com/covid19/static/reports-icon-grid.png" title='Google Covid-19 Community Mobility Data' width="200" height="100" align="right"/>
+<p>We will use a real-world and real-time (updated daily) data on human mobility — The Google <a class="reference external" href="https://www.google.com/covid19/mobility/">Covid-19 Community Mobility Reports</a></p>
+<p>An aggregated and anonymised large data set showing movement trends over time by geography, across six categories of places including retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.</p>
+</div>
+<div class="section" id="get-started-with-jupyter-colab-notebook">
+<h1>Get started with Jupyter/Colab notebook<a class="headerlink" href="#get-started-with-jupyter-colab-notebook" title="Permalink to this headline">¶</a></h1>
+<p>We will use the <span class="xref myst">Jupyter notebook</span> implemented on the Google Cloud, which is called <a class="reference external" href="(https://colab.research.google.com/notebooks/intro.ipynb#recent=true)">Google Colaboratory</a> (or Colab for short).</p>
+<p><a class="reference external" href="https://jupyter.org">The Jupyter Notebook</a> is a user-friendly, free, open-source web application that allows you to combine live software code, explanatory text, visualisations and model outputs in a single computational notebook.</p>
+<p><a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a> runs Jupyter notebook on the Google Cloud, allowing you to write and execute Python code in your browser and do scalable data analysis with no setup requirements.</p>
+<p>You can learn more about the Colab and how to open a new notebook <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">here</a>.</p>
+<div class="section" id="the-python-programming-language">
+<h2>The Python programming language<a class="headerlink" href="#the-python-programming-language" title="Permalink to this headline">¶</a></h2>
+<p>We will code using the Python programming language.</p>
+<ul class="simple">
+<li><p>Python is open source, free, and easy to learn programming language</p></li>
+<li><p>Python is one of world’s most popular programming language with a growing community</p></li>
+<li><p>Python programming skills are in high demand on the job market</p></li>
+<li><p>The Python data science community have developed an ecosystem of fast, powerful, and flexible open source tools for doing data science at scale.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="let-s-get-coding">
+<h1>Let’s get coding<a class="headerlink" href="#let-s-get-coding" title="Permalink to this headline">¶</a></h1>
+<p>The Colab notebook has two types of cells: code and text. You can add new cells by using the <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Code</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Text</span></code> buttons that are in the toolbar above the notebook and also appear when you are between a pair of cells.</p>
+<p>Below is a code cell, in which we type in the arithmetic expression <code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">+</span> <span class="pre">21</span></code>.</p>
+<p>The code is prefixed by a comment. Commenting your code is a good research practice and part of your reproducible workflow. Comments in Python’s code cells start with a hashtag symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by a white space character and some text. The text that follows the hashtag symbol on the same line is marked as a comment and is not therefore evaluated by the Python interpreter. Only the code (in this instance, “21 + 21”) is evaluated and the output (in this instance, “42”) will be displayed below the code cell.</p>
+<p>To execute the cell, press <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or click the Play icon on the left.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Performing a basic arithmetic operation of addition</span>
+<span class="mi">21</span> <span class="o">+</span> <span class="mi">21</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python <em>reads</em> the code entered in the cell, <em>evaluates</em> it, and <em>prints</em> the result (42).</p>
+</div>
+<div class="section" id="python-tools-for-data-analysis">
+<h1>Python tools for data analysis<a class="headerlink" href="#python-tools-for-data-analysis" title="Permalink to this headline">¶</a></h1>
+<p>The Python data science community have developed an open source ecosystem of libraries for data science.</p>
+<p>We will use two main libraries:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> for data loading, wrangling, and analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for data visualisation</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" title='Pandas Logo' width="200" height="100" align="center" />
+<img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" title='Pandas Logo' width="200" height="100" align="right" />
+</li>
+</ul>
+<p>Think about those Python libraries as tools that allow you to do data science tasks at easy, with minimal programming requirements, while focusing on scalable and reproducible analysis of social data.</p>
+<p>We first import the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library and, by convention, give it the alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the pandas library</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now access all the functions and capabilities the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library provides.</p>
+</div>
+<div class="section" id="load-your-data">
+<h1>Load your data<a class="headerlink" href="#load-your-data" title="Permalink to this headline">¶</a></h1>
+<p>The Google Covid-19 <a class="reference external" href="https://www.google.com/covid19/mobility/">Community Mobility Reports</a> data are provided as a comma-separated values (CSV) file. We load the CSV file into Python using the Pandas function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
+<div class="section" id="what-is-a-function">
+<h2>What is a function?<a class="headerlink" href="#what-is-a-function" title="Permalink to this headline">¶</a></h2>
+<p>A function is a block of code that:</p>
+<ul class="simple">
+<li><p>takes input parameters</p></li>
+<li><p>performs a specific task</p></li>
+<li><p>returns an output.</p></li>
+</ul>
+<p>The function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> will take as an input parameter a comma-separated values (csv) file, read the file, and return Pandas DataFrame.</p>
+<p>We call a function by writing the function name followed by parenthesis. The function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> takes many input parameters, for example</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code> — delimeter to use when reading the file; default is <code class="docutils literal notranslate"><span class="pre">,</span></code> but other possible delimeters include tab characters or space characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> — a column to be parsed as date and time.</p></li>
+</ul>
+</div>
+<div class="section" id="getting-help-when-needed">
+<h2>Getting help when needed<a class="headerlink" href="#getting-help-when-needed" title="Permalink to this headline">¶</a></h2>
+<p>To learn more about a function, in Colab, you use a question mark <code class="docutils literal notranslate"><span class="pre">?</span></code>. For example, to access help information about the function Pandas function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>, you type in</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>pd.read_csv<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reading-the-google-covid-19-community-mobility-reports-data">
+<h2>Reading the Google Covid-19 Community Mobility Reports data<a class="headerlink" href="#reading-the-google-covid-19-community-mobility-reports-data" title="Permalink to this headline">¶</a></h2>
+<p>To read the Google Covid-19 Community Mobility Reports data, there is no need to download the file on your local computer. We just call the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function and specify the URL. The code below loads the most recent online version of the data. We also assign the loaded data set to a variable called mobility_trends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading the Google Covid-19 Community Mobility Reports data from web address (URL)</span>
+<span class="n">mobility_trends</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="view-your-data">
+<h1>View your data<a class="headerlink" href="#view-your-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the top five rows</span>
+<span class="n">mobility_trends</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_region_code</th>
+      <th>country_region</th>
+      <th>sub_region_1</th>
+      <th>sub_region_2</th>
+      <th>metro_area</th>
+      <th>iso_3166_2_code</th>
+      <th>census_fips_code</th>
+      <th>place_id</th>
+      <th>date</th>
+      <th>retail_and_recreation_percent_change_from_baseline</th>
+      <th>grocery_and_pharmacy_percent_change_from_baseline</th>
+      <th>parks_percent_change_from_baseline</th>
+      <th>transit_stations_percent_change_from_baseline</th>
+      <th>workplaces_percent_change_from_baseline</th>
+      <th>residential_percent_change_from_baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-15</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-16</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-17</td>
+      <td>-1.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-18</td>
+      <td>-2.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-19</td>
+      <td>-2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-20</td>
+      <td>-2.0</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-21</td>
+      <td>-3.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>-1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-22</td>
+      <td>-2.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>-2.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-23</td>
+      <td>-1.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>-1.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-24</td>
+      <td>-3.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>-1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> stores data as a <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html#min-tut-01-tableoriented">DataFrame</a>: 2-dimensional data structure in which variables are in columns, and observations are in rows.</p>
+<img src="https://pandas.pydata.org/docs/_images/01_table_dataframe.svg" title='Pandas DataFrame' width="400" height="200"/></div>
+<div class="section" id="data-design-how-are-data-generated">
+<h1>Data Design: How are data generated?<a class="headerlink" href="#data-design-how-are-data-generated" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>The data shows <em>percentage changes</em> in visitors to (or time spent in) six categories of places compared to baseline days.</p>
+<ul>
+<li><p>A baseline day represents a normal value for that day of the week.</p></li>
+<li><p>The baseline day is the <em>median value</em> from the 5‑week period Jan 3 – Feb 6, 2020.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="data-ethics-privacy-and-fairnes-risks">
+<h1>Data Ethics, Privacy, and Fairnes Risks<a class="headerlink" href="#data-ethics-privacy-and-fairnes-risks" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><em>Low privacy risks</em>: individual privacy is safeguarded as data is aggregated and anonymised.</p></li>
+<li><p><em>Low Individual Fairness Risk but moderate Group Fairness Risk</em>: areas with greater mobility during lockdowns may be misattributed to non-compliance while greater mobility could also be due to some groups being essential workers or another category that does not enjoy working from home’s privileges.</p></li>
+<li><p><em>Sources of algorithmic confounding</em>: the design of the Google Maps’ personalised recommendation system likely introduces mobility patterns into data but those would be very small at the geographic scale of the data (i.e., districts, counties).</p></li>
+</ul>
+</div>
+<div class="section" id="describe-your-data">
+<h1>Describe your data<a class="headerlink" href="#describe-your-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of rows and columns in your DataFrame  </span>
+<span class="n">mobility_trends</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5648329, 15)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show a concise summary of your DataFrame</span>
+<span class="n">mobility_trends</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 5648329 entries, 0 to 5648328
+Data columns (total 15 columns):
+ #   Column                                              Dtype         
+---  ------                                              -----         
+ 0   country_region_code                                 object        
+ 1   country_region                                      object        
+ 2   sub_region_1                                        object        
+ 3   sub_region_2                                        object        
+ 4   metro_area                                          object        
+ 5   iso_3166_2_code                                     object        
+ 6   census_fips_code                                    float64       
+ 7   place_id                                            object        
+ 8   date                                                datetime64[ns]
+ 9   retail_and_recreation_percent_change_from_baseline  float64       
+ 10  grocery_and_pharmacy_percent_change_from_baseline   float64       
+ 11  parks_percent_change_from_baseline                  float64       
+ 12  transit_stations_percent_change_from_baseline       float64       
+ 13  workplaces_percent_change_from_baseline             float64       
+ 14  residential_percent_change_from_baseline            float64       
+dtypes: datetime64[ns](1), float64(7), object(7)
+memory usage: 646.4+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="access-specific-columns-and-rows-in-your-data">
+<h2>Access specific columns and rows in your data<a class="headerlink" href="#access-specific-columns-and-rows-in-your-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access a column  </span>
+<span class="n">mobility_trends</span><span class="p">[</span><span class="s1">&#39;country_region&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          United Arab Emirates
+1          United Arab Emirates
+2          United Arab Emirates
+3          United Arab Emirates
+4          United Arab Emirates
+                   ...         
+5648324                Zimbabwe
+5648325                Zimbabwe
+5648326                Zimbabwe
+5648327                Zimbabwe
+5648328                Zimbabwe
+Name: country_region, Length: 5648329, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are interested in the data about the United Kingdom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mobility_trends</span><span class="p">[</span><span class="s1">&#39;country_region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;United Arab Emirates&#39;, &#39;Afghanistan&#39;, &#39;Antigua and Barbuda&#39;,
+       &#39;Angola&#39;, &#39;Argentina&#39;, &#39;Austria&#39;, &#39;Australia&#39;, &#39;Aruba&#39;,
+       &#39;Bosnia and Herzegovina&#39;, &#39;Barbados&#39;, &#39;Bangladesh&#39;, &#39;Belgium&#39;,
+       &#39;Burkina Faso&#39;, &#39;Bulgaria&#39;, &#39;Bahrain&#39;, &#39;Benin&#39;, &#39;Bolivia&#39;,
+       &#39;Brazil&#39;, &#39;The Bahamas&#39;, &#39;Botswana&#39;, &#39;Belarus&#39;, &#39;Belize&#39;, &#39;Canada&#39;,
+       &#39;Switzerland&#39;, &quot;Côte d&#39;Ivoire&quot;, &#39;Chile&#39;, &#39;Cameroon&#39;, &#39;Colombia&#39;,
+       &#39;Costa Rica&#39;, &#39;Cape Verde&#39;, &#39;Czechia&#39;, &#39;Germany&#39;, &#39;Denmark&#39;,
+       &#39;Dominican Republic&#39;, &#39;Ecuador&#39;, &#39;Estonia&#39;, &#39;Egypt&#39;, &#39;Spain&#39;,
+       &#39;Finland&#39;, &#39;Fiji&#39;, &#39;France&#39;, &#39;Gabon&#39;, &#39;United Kingdom&#39;, &#39;Georgia&#39;,
+       &#39;Ghana&#39;, &#39;Greece&#39;, &#39;Guatemala&#39;, &#39;Guinea-Bissau&#39;, &#39;Hong Kong&#39;,
+       &#39;Honduras&#39;, &#39;Croatia&#39;, &#39;Haiti&#39;, &#39;Hungary&#39;, &#39;Indonesia&#39;, &#39;Ireland&#39;,
+       &#39;Israel&#39;, &#39;India&#39;, &#39;Iraq&#39;, &#39;Italy&#39;, &#39;Jamaica&#39;, &#39;Jordan&#39;, &#39;Japan&#39;,
+       &#39;Kenya&#39;, &#39;Kyrgyzstan&#39;, &#39;Cambodia&#39;, &#39;South Korea&#39;, &#39;Kuwait&#39;,
+       &#39;Kazakhstan&#39;, &#39;Laos&#39;, &#39;Lebanon&#39;, &#39;Liechtenstein&#39;, &#39;Sri Lanka&#39;,
+       &#39;Lithuania&#39;, &#39;Luxembourg&#39;, &#39;Latvia&#39;, &#39;Libya&#39;, &#39;Morocco&#39;, &#39;Moldova&#39;,
+       &#39;North Macedonia&#39;, &#39;Mali&#39;, &#39;Myanmar (Burma)&#39;, &#39;Mongolia&#39;, &#39;Malta&#39;,
+       &#39;Mauritius&#39;, &#39;Mexico&#39;, &#39;Malaysia&#39;, &#39;Mozambique&#39;, &#39;Namibia&#39;,
+       &#39;Niger&#39;, &#39;Nigeria&#39;, &#39;Nicaragua&#39;, &#39;Netherlands&#39;, &#39;Norway&#39;, &#39;Nepal&#39;,
+       &#39;New Zealand&#39;, &#39;Oman&#39;, &#39;Panama&#39;, &#39;Peru&#39;, &#39;Papua New Guinea&#39;,
+       &#39;Philippines&#39;, &#39;Pakistan&#39;, &#39;Poland&#39;, &#39;Puerto Rico&#39;, &#39;Portugal&#39;,
+       &#39;Paraguay&#39;, &#39;Qatar&#39;, &#39;Réunion&#39;, &#39;Romania&#39;, &#39;Serbia&#39;, &#39;Russia&#39;,
+       &#39;Rwanda&#39;, &#39;Saudi Arabia&#39;, &#39;Sweden&#39;, &#39;Singapore&#39;, &#39;Slovenia&#39;,
+       &#39;Slovakia&#39;, &#39;Senegal&#39;, &#39;El Salvador&#39;, &#39;Togo&#39;, &#39;Thailand&#39;,
+       &#39;Tajikistan&#39;, &#39;Turkey&#39;, &#39;Trinidad and Tobago&#39;, &#39;Taiwan&#39;,
+       &#39;Tanzania&#39;, &#39;Ukraine&#39;, &#39;Uganda&#39;, &#39;United States&#39;, &#39;Uruguay&#39;,
+       &#39;Venezuela&#39;, &#39;Vietnam&#39;, &#39;Yemen&#39;, &#39;South Africa&#39;, &#39;Zambia&#39;,
+       &#39;Zimbabwe&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the rows about United Kingdom and save it to its own variable</span>
+<span class="n">mobility_trends_UK</span> <span class="o">=</span> <span class="n">mobility_trends</span><span class="p">[</span><span class="n">mobility_trends</span><span class="p">[</span><span class="s1">&#39;country_region&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">]</span>
+<span class="n">mobility_trends_UK</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_region_code</th>
+      <th>country_region</th>
+      <th>sub_region_1</th>
+      <th>sub_region_2</th>
+      <th>metro_area</th>
+      <th>iso_3166_2_code</th>
+      <th>census_fips_code</th>
+      <th>place_id</th>
+      <th>date</th>
+      <th>retail_and_recreation_percent_change_from_baseline</th>
+      <th>grocery_and_pharmacy_percent_change_from_baseline</th>
+      <th>parks_percent_change_from_baseline</th>
+      <th>transit_stations_percent_change_from_baseline</th>
+      <th>workplaces_percent_change_from_baseline</th>
+      <th>residential_percent_change_from_baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2068066</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJqZHHQhE7WgIReiWIMkOg-MQ</td>
+      <td>2020-02-15</td>
+      <td>-12.0</td>
+      <td>-7.0</td>
+      <td>-35.0</td>
+      <td>-12.0</td>
+      <td>-4.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2068067</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJqZHHQhE7WgIReiWIMkOg-MQ</td>
+      <td>2020-02-16</td>
+      <td>-7.0</td>
+      <td>-6.0</td>
+      <td>-28.0</td>
+      <td>-7.0</td>
+      <td>-3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2068068</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJqZHHQhE7WgIReiWIMkOg-MQ</td>
+      <td>2020-02-17</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>24.0</td>
+      <td>-2.0</td>
+      <td>-14.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2068069</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJqZHHQhE7WgIReiWIMkOg-MQ</td>
+      <td>2020-02-18</td>
+      <td>7.0</td>
+      <td>-1.0</td>
+      <td>20.0</td>
+      <td>-3.0</td>
+      <td>-14.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2068070</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJqZHHQhE7WgIReiWIMkOg-MQ</td>
+      <td>2020-02-19</td>
+      <td>6.0</td>
+      <td>-2.0</td>
+      <td>8.0</td>
+      <td>-4.0</td>
+      <td>-14.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2266232</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2021-05-31</td>
+      <td>20.0</td>
+      <td>14.0</td>
+      <td>222.0</td>
+      <td>-16.0</td>
+      <td>-74.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>2266233</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2021-06-01</td>
+      <td>21.0</td>
+      <td>31.0</td>
+      <td>177.0</td>
+      <td>-16.0</td>
+      <td>-50.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>2266234</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2021-06-02</td>
+      <td>15.0</td>
+      <td>23.0</td>
+      <td>157.0</td>
+      <td>-22.0</td>
+      <td>-49.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>2266235</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2021-06-03</td>
+      <td>14.0</td>
+      <td>24.0</td>
+      <td>133.0</td>
+      <td>-23.0</td>
+      <td>-47.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>2266236</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2021-06-04</td>
+      <td>-2.0</td>
+      <td>19.0</td>
+      <td>93.0</td>
+      <td>-20.0</td>
+      <td>-46.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>198171 rows × 15 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="exploratory-data-analysis">
+<h1>Exploratory data analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Let’s use the pandas method <code class="docutils literal notranslate"><span class="pre">describe()</span></code> to summarise the central tendency, dispersion and shape of our dataset’s distribution.</p>
+<p>We summarise data from the start day of the first UK lockdown (2020-03-24) and from the start day of the third UK lockdown (2021-01-06). NaN (Not a Number) values are excluded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute descriptive statistics about the start day of first UK lockdown</span>
+<span class="n">mobility_trends_UK</span><span class="p">[</span><span class="n">mobility_trends_UK</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2020-03-24&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>census_fips_code</th>
+      <th>retail_and_recreation_percent_change_from_baseline</th>
+      <th>grocery_and_pharmacy_percent_change_from_baseline</th>
+      <th>parks_percent_change_from_baseline</th>
+      <th>transit_stations_percent_change_from_baseline</th>
+      <th>workplaces_percent_change_from_baseline</th>
+      <th>residential_percent_change_from_baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>0.0</td>
+      <td>417.000000</td>
+      <td>417.000000</td>
+      <td>350.000000</td>
+      <td>417.000000</td>
+      <td>419.000000</td>
+      <td>395.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>-69.597122</td>
+      <td>-23.323741</td>
+      <td>-9.688571</td>
+      <td>-57.889688</td>
+      <td>-56.830549</td>
+      <td>23.278481</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>5.480805</td>
+      <td>6.070756</td>
+      <td>20.769099</td>
+      <td>10.808531</td>
+      <td>7.503583</td>
+      <td>3.721036</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>-94.000000</td>
+      <td>-79.000000</td>
+      <td>-88.000000</td>
+      <td>-87.000000</td>
+      <td>-82.000000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>-73.000000</td>
+      <td>-26.000000</td>
+      <td>-20.000000</td>
+      <td>-66.000000</td>
+      <td>-61.000000</td>
+      <td>21.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>-69.000000</td>
+      <td>-23.000000</td>
+      <td>-11.000000</td>
+      <td>-58.000000</td>
+      <td>-56.000000</td>
+      <td>23.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>-67.000000</td>
+      <td>-20.000000</td>
+      <td>1.000000</td>
+      <td>-51.000000</td>
+      <td>-52.000000</td>
+      <td>25.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>-50.000000</td>
+      <td>-4.000000</td>
+      <td>152.000000</td>
+      <td>-13.000000</td>
+      <td>-36.000000</td>
+      <td>37.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute descriptive statistics about the start day of third UK lockdown</span>
+<span class="n">mobility_trends_UK</span><span class="p">[</span><span class="n">mobility_trends_UK</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2021-01-06&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>census_fips_code</th>
+      <th>retail_and_recreation_percent_change_from_baseline</th>
+      <th>grocery_and_pharmacy_percent_change_from_baseline</th>
+      <th>parks_percent_change_from_baseline</th>
+      <th>transit_stations_percent_change_from_baseline</th>
+      <th>workplaces_percent_change_from_baseline</th>
+      <th>residential_percent_change_from_baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>0.0</td>
+      <td>413.000000</td>
+      <td>414.000000</td>
+      <td>357.000000</td>
+      <td>416.000000</td>
+      <td>419.000000</td>
+      <td>413.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>-58.910412</td>
+      <td>-21.253623</td>
+      <td>-8.439776</td>
+      <td>-57.281250</td>
+      <td>-48.107399</td>
+      <td>20.726392</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>6.648178</td>
+      <td>7.038870</td>
+      <td>20.869845</td>
+      <td>10.027203</td>
+      <td>8.146706</td>
+      <td>3.576515</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>-94.000000</td>
+      <td>-80.000000</td>
+      <td>-89.000000</td>
+      <td>-87.000000</td>
+      <td>-75.000000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>-62.000000</td>
+      <td>-25.000000</td>
+      <td>-20.000000</td>
+      <td>-64.000000</td>
+      <td>-53.000000</td>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>-59.000000</td>
+      <td>-22.000000</td>
+      <td>-10.000000</td>
+      <td>-58.000000</td>
+      <td>-47.000000</td>
+      <td>20.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>-55.000000</td>
+      <td>-18.000000</td>
+      <td>2.000000</td>
+      <td>-51.000000</td>
+      <td>-42.000000</td>
+      <td>23.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>-41.000000</td>
+      <td>0.000000</td>
+      <td>128.000000</td>
+      <td>-26.000000</td>
+      <td>-28.000000</td>
+      <td>33.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="visualising-a-single-time-series-variable">
+<h2>Visualising a single time series variable<a class="headerlink" href="#visualising-a-single-time-series-variable" title="Permalink to this headline">¶</a></h2>
+<p>A time series is a sequence of data points arranged in time order. We import the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library and use the <code class="docutils literal notranslate"><span class="pre">relplot</span></code> function to plot the relationship between time and mobility change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;pastel&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;workplaces_percent_change_from_baseline&#39;</span><span class="p">,</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">mobility_trends_UK</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe0d2ca18e0&gt;
+</pre></div>
+</div>
+<img alt="_images/end_to_end_data_science_project_31_1.png" src="_images/end_to_end_data_science_project_31_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-wrangling">
+<h1>Data wrangling<a class="headerlink" href="#data-wrangling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transforming-from-wide-to-long-data-format">
+<h2>Transforming from wide to long data format<a class="headerlink" href="#transforming-from-wide-to-long-data-format" title="Permalink to this headline">¶</a></h2>
+<p>In the original data, each mobility category is a separate column, which is known as wide data format. Wide data format is easy to read but restricts us to plotting only one mobility category at a time (unless we employ a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop). We can plot all mobility categories simultaneously in <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> after we reshape our data from wide format to long format. Long data format will have one column for all six mobility categories and one column for the values of those categories.</p>
+<p>Below is a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">‘pandas`</a>schematic of wide (left) and long format data (right):</p>
+<img src="https://pandas.pydata.org/pandas-docs/stable/_images/reshaping_melt.png" title='Pandas DataFrame' width="600" height="300"/>
+<p>We use the pandas <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html"><code class="docutils literal notranslate"><span class="pre">melt</span></code></a> function to  reshape our mobility categories from wide to long format. The function transforms a DataFrame into a format where one or more columns are identifier variables (id_vars), while other columns (value_vars) are turned into a long format, returning columns, ‘variable’ and ‘value’. In our example, id_vars are<code class="docutils literal notranslate"><span class="pre">country_region</span></code> and <code class="docutils literal notranslate"><span class="pre">date</span></code>, and value_vars are the six mobility categories. The <code class="docutils literal notranslate"><span class="pre">melt</span></code> function takes the following parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> — your pandas DataFrame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_vars</span></code> — a list of identifier variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value_vars</span></code> — a list of variables to turn into long format</p></li>
+</ul>
+<p>At the end we use the <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> method <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> to remove missing values in the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># From wide to long format using the function melt</span>
+<span class="n">mobility_trends_UK_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">mobility_trends_UK</span><span class="p">,</span> 
+                                  <span class="n">id_vars</span> <span class="o">=</span><span class="n">mobility_trends_UK</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">]],</span> 
+                                  <span class="n">value_vars</span> <span class="o">=</span> <span class="n">mobility_trends_UK</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">15</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">mobility_trends_UK_long</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_region</th>
+      <th>sub_region_1</th>
+      <th>date</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>476</th>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-02-15</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-02-16</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-02-17</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-02-18</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-02-19</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1189021</th>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>2021-05-31</td>
+      <td>residential_percent_change_from_baseline</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>1189022</th>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>2021-06-01</td>
+      <td>residential_percent_change_from_baseline</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>1189023</th>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>2021-06-02</td>
+      <td>residential_percent_change_from_baseline</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1189024</th>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>2021-06-03</td>
+      <td>residential_percent_change_from_baseline</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1189025</th>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>2021-06-04</td>
+      <td>residential_percent_change_from_baseline</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1102933 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualising-mobility-trends">
+<h1>Visualising mobility trends<a class="headerlink" href="#visualising-mobility-trends" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualising UK time series data for all six mobility categories</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+            <span class="n">height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="n">facet_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sharey&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">mobility_trends_UK_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe0c0327a60&gt;
+</pre></div>
+</div>
+<img alt="_images/end_to_end_data_science_project_35_1.png" src="_images/end_to_end_data_science_project_35_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="mobility-changes-across-lockdowns">
+<h1>Mobility changes across lockdowns<a class="headerlink" href="#mobility-changes-across-lockdowns" title="Permalink to this headline">¶</a></h1>
+<p>For each lockdown, we consider the first three weeks for comparability.</p>
+<ul class="simple">
+<li><p>2020-03-24 — 2020-04-13</p></li>
+<li><p>2020-11-05 — 2020-11-25</p></li>
+<li><p>2021-01-06 — 2021-01-26</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subsets data about the three lockdowns</span>
+
+<span class="n">lockdown1</span> <span class="o">=</span> <span class="n">mobility_trends_UK_long</span><span class="p">[(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2020-03-24&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2020-04-13&#39;</span><span class="p">)]</span>
+<span class="n">lockdown2</span> <span class="o">=</span> <span class="n">mobility_trends_UK_long</span><span class="p">[(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2020-11-05&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2020-11-25&#39;</span><span class="p">)]</span>
+<span class="n">lockdown3</span> <span class="o">=</span> <span class="n">mobility_trends_UK_long</span><span class="p">[(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2021-01-06&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mobility_trends_UK_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2021-01-26&#39;</span><span class="p">)]</span>
+  
+<span class="c1"># Link the three DataFrames into one DataFrame using the Pandas `concat()` function</span>
+<span class="n">lockdowns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">lockdown1</span><span class="p">,</span><span class="n">lockdown2</span><span class="p">,</span><span class="n">lockdown3</span><span class="p">],</span> 
+                      <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lockdown1&quot;</span><span class="p">,</span> <span class="s2">&quot;lockdown2&quot;</span><span class="p">,</span> <span class="s2">&quot;lockdown3&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">lockdowns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>                      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>level_0</th>
+      <th>level_1</th>
+      <th>country_region</th>
+      <th>sub_region_1</th>
+      <th>date</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lockdown1</td>
+      <td>514</td>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-03-24</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-75.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>lockdown1</td>
+      <td>515</td>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-03-25</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-78.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>lockdown1</td>
+      <td>516</td>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-03-26</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-80.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>lockdown1</td>
+      <td>517</td>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-03-27</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-80.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>lockdown1</td>
+      <td>518</td>
+      <td>United Kingdom</td>
+      <td>Aberdeen City</td>
+      <td>2020-03-28</td>
+      <td>retail_and_recreation_percent_change_from_base...</td>
+      <td>-87.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="split-apply-combine">
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<p>Using the Pandas method <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, we split the data into groups (lockdown by mobility category), apply the function <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, and combine the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Explore descriptive statistics for one of the lockdown DataFrames</span>
+<span class="n">lockdowns</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;level_0&#39;</span><span class="p">,</span> <span class="s1">&#39;variable&#39;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>level_0    variable                                          
+lockdown1  retail_and_recreation_percent_change_from_baseline   -76.643915
+           grocery_and_pharmacy_percent_change_from_baseline    -33.936180
+           parks_percent_change_from_baseline                   -21.391601
+           transit_stations_percent_change_from_baseline        -65.397655
+           workplaces_percent_change_from_baseline              -64.930514
+           residential_percent_change_from_baseline              25.771162
+lockdown2  retail_and_recreation_percent_change_from_baseline   -47.537369
+           grocery_and_pharmacy_percent_change_from_baseline    -11.587230
+           parks_percent_change_from_baseline                     8.789530
+           transit_stations_percent_change_from_baseline        -46.186192
+           workplaces_percent_change_from_baseline              -33.901246
+           residential_percent_change_from_baseline              14.285984
+lockdown3  retail_and_recreation_percent_change_from_baseline   -61.713526
+           grocery_and_pharmacy_percent_change_from_baseline    -23.850479
+           parks_percent_change_from_baseline                    -9.215003
+           transit_stations_percent_change_from_baseline        -58.740466
+           workplaces_percent_change_from_baseline              -44.636270
+           residential_percent_change_from_baseline              18.332545
+Name: value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visual-comparison-of-the-three-uk-lockdowns">
+<h2>Visual comparison of the three UK lockdowns<a class="headerlink" href="#visual-comparison-of-the-three-uk-lockdowns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the three lockdowns as a catplot multi-plot</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;country_region&quot;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
+            <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span><span class="p">,</span>
+            <span class="n">col</span> <span class="o">=</span><span class="s1">&#39;level_0&#39;</span><span class="p">,</span>
+            <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">lockdowns</span><span class="p">);</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">set_ylabels</span><span class="p">(</span><span class="s2">&quot;Mean mobility change from baseline (%)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fe049440820&gt;
+</pre></div>
+</div>
+<img alt="_images/end_to_end_data_science_project_41_1.png" src="_images/end_to_end_data_science_project_41_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zooming-in-regional-mobility-trends">
+<h1>Zooming in: Regional mobility trends<a class="headerlink" href="#zooming-in-regional-mobility-trends" title="Permalink to this headline">¶</a></h1>
+<p>For decision-making and to inform public health interventions, we need to provide results at a higher resolution, for example at the regional level. Below we visualise the six mobility categories across UK regions (counties, districts) during the first lockdown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting mobility changes across UK regions during the first lockdown</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sub_region_1&quot;</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+                <span class="n">sharex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">0.13</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">lockdown1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/end_to_end_data_science_project_43_0.png" src="_images/end_to_end_data_science_project_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting mobility changes across UK regions during the second lockdown</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sub_region_1&quot;</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+                <span class="n">sharex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">0.13</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">lockdown2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/end_to_end_data_science_project_44_0.png" src="_images/end_to_end_data_science_project_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting mobility changes across UK regions during the third lockdown</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;sub_region_1&quot;</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+                <span class="n">sharex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">0.13</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">lockdown3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/end_to_end_data_science_project_45_0.png" src="_images/end_to_end_data_science_project_45_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="re-cap">
+<h1>Re-cap<a class="headerlink" href="#re-cap" title="Permalink to this headline">¶</a></h1>
+<p>Using a Colab computational notebook and Python open source tools, we analysed large real-world COVID-19 mobility data through exploratory data analysis and visualisation to address a research question of public health policy relevance.</p>
+<div class="section" id="accessible-hands-on-data-analysis">
+<h2>Accessible hands-on data analysis<a class="headerlink" href="#accessible-hands-on-data-analysis" title="Permalink to this headline">¶</a></h2>
+<p>We integrated interactive tools and practical hands-on coding that lower barriers to entry for students with little to no programming skills.</p>
+</div>
+<div class="section" id="open-reproducible-research-workflow">
+<h2>Open reproducible research workflow<a class="headerlink" href="#open-reproducible-research-workflow" title="Permalink to this headline">¶</a></h2>
+<p>We combine research question, Python code, explanatory text (comments), exploratory outputs and visualisations in a single document — anyone can check, reproduce, re-use (when we license open source), and improve our analysis.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="course_description.html" title="previous page">Course description</a>
+    <a class='right-next' id="next-link" href="open_reproducible_workflows.html" title="next page">Open Reproducible Data Science Workflows</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Valentin Danchev<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
