@@ -97,52 +97,52 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  About the Course
+  About the textbook
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html">
-   Course description
+  <a class="reference internal" href="textbook_outline.html">
+   Textbook outline
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#what-is-reproducible-data-science">
+  <a class="reference internal" href="textbook_outline.html#what-is-reproducible-data-science">
    What is Reproducible Data Science?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#learning-objectives">
+  <a class="reference internal" href="textbook_outline.html#learning-objectives">
    Learning objectives
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#how-to-get-the-most-of-these-materials">
+  <a class="reference internal" href="textbook_outline.html#how-to-get-the-most-of-these-materials">
    How to get the most of these materials?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#learning-resources">
+  <a class="reference internal" href="textbook_outline.html#learning-resources">
    Learning resources
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#software-stack">
+  <a class="reference internal" href="textbook_outline.html#software-stack">
    Software stack
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#data-sets">
+  <a class="reference internal" href="textbook_outline.html#data-sets">
    Data sets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#acknowledgment">
+  <a class="reference internal" href="textbook_outline.html#acknowledgment">
    Acknowledgment
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="course_description.html#code-availability">
+  <a class="reference internal" href="textbook_outline.html#code-availability">
    Code availability
   </a>
  </li>
@@ -1238,33 +1238,33 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dowhy==0.6 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.6)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sympy&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.6.2)
-Requirement already satisfied: scikit-learn in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.24.2)
-Requirement already satisfied: networkx&gt;=2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (2.5)
-Requirement already satisfied: pydot&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.4.2)
+Requirement already satisfied: sympy&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.6.2)
 Requirement already satisfied: statsmodels in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.12.1)
 Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
+Requirement already satisfied: networkx&gt;=2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (2.5)
+Requirement already satisfied: scikit-learn in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.24.2)
+Requirement already satisfied: pydot&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.4.2)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
 Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx&gt;=2.0-&gt;dowhy==0.6) (5.0.9)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2020.4)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2.8.1)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: pyparsing&gt;=2.1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pydot&gt;=1.4-&gt;dowhy==0.6) (2.4.7)
-Requirement already satisfied: six&gt;=1.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;dowhy==0.6) (1.15.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (0.17.0)
-Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx&gt;=2.0-&gt;dowhy==0.6) (5.0.9)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2.8.1)
+Requirement already satisfied: pytz&gt;=2017.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2020.4)
+Requirement already satisfied: pyparsing&gt;=2.1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pydot&gt;=1.4-&gt;dowhy==0.6) (2.4.7)
+Requirement already satisfied: six&gt;=1.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;dowhy==0.6) (1.15.0)
+Requirement already satisfied: joblib&gt;=0.11 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (0.17.0)
 Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (2.1.0)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
-Requirement already satisfied: patsy&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels-&gt;dowhy==0.6) (0.5.1)
 Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
+Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+Requirement already satisfied: patsy&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels-&gt;dowhy==0.6) (0.5.1)
 Requirement already satisfied: six&gt;=1.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;dowhy==0.6) (1.15.0)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from sympy&gt;=1.4-&gt;dowhy==0.6) (1.1.0)
@@ -1309,7 +1309,6 @@ bio==0.0.6
 biopython==1.78
 bitarray @ file:///opt/concourse/worker/volumes/live/fdfca23e-4dd8-48f7-512d-c4f3db552eeb/volume/bitarray_1605065128338/work
 bkcharts==0.2
-
 bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
 bokeh @ file:///opt/concourse/worker/volumes/live/b2253281-9b72-4dcb-624e-e22924b50435/volume/bokeh_1603297849453/work
 boto==2.49.0
@@ -1632,23 +1631,21 @@ import pandas as pd
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: watermark in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (2.2.0)
+Requirement already satisfied: ipython in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from watermark) (7.23.1)
+Requirement already satisfied: setuptools&gt;=18.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (57.0.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from watermark) (7.23.1)
-Requirement already satisfied: backcall in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.2.0)
-Requirement already satisfied: matplotlib-inline in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
-Requirement already satisfied: setuptools&gt;=18.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (57.0.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib-inline in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
 Requirement already satisfied: decorator in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.9)
 Requirement already satisfied: appnope in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (3.0.18)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
-Requirement already satisfied: pexpect&gt;4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (4.8.0)
 Requirement already satisfied: jedi&gt;=0.16 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.18.0)
-Requirement already satisfied: pickleshare in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.7.5)
+Requirement already satisfied: pexpect&gt;4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (4.8.0)
 Requirement already satisfied: pygments in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (2.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;watermark) (0.8.2)
+Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (3.0.18)
+Requirement already satisfied: pickleshare in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.7.5)
+Requirement already satisfied: backcall in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.2.0)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;watermark) (0.8.2)
 Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;watermark) (0.7.0)
 Requirement already satisfied: wcwidth in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;watermark) (0.2.5)
