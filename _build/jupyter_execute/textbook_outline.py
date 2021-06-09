@@ -16,7 +16,7 @@ The textbook teaches you how to critically evaluate data and biases intrinsic to
 Prior knowledge of programming is not required as coding for data analysis will be taught from first principles. Background in mathematics or statistics are not required beyond basic algebra and descriptive statistics. 
 
 ## Who this textbook is for
-The textbook would be ideal for students in the social sciences, public health, and related fields who want to study real-world problems using diverse data sets but lack data science knowledge and coding skill. In fact, the textbook could also be titled _Reproducible Data Science with Python for Social Scientists with Questions_.
+The textbook would be ideal for students in the social sciences, public health, and related fields who want to study real-world problems using diverse data sets but lack data science knowledge and coding skill.
 
 <br>
 
@@ -59,20 +59,40 @@ By the end of the module, you will be able to:
 
 You can read the materials on this website and learn about various topics in reproducible data science. If you prefer more hands-on coding, you can access the interactive versions of the Python Jupyter notebooks via: 
 
-* [Binder](https://jupyter.org/binder) — a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively.
+* [Binder](https://jupyter.org/binder) — a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively [Not functional yet].
 
 * [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) — a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed and taught in Colab. Below are links to Colab notebooks for each topic of the textbook:
 
-1. [End-to-End Data Science Project: Human mobility during UK lockdowns](https://colab.research.google.com/drive/1wsqTwxi8ugajiUH_y-KKSopd8GnZkUQn?usp=sharing)
-2. [Data Science with Python on the Cloud](https://colab.research.google.com/drive/1ZSxoR7VPynPNkUW-wmpFOqmsUL1H9iQi?usp=sharing)
-3. [Reproducible Data Science Workflow](https://colab.research.google.com/drive/1oR0Us_MfDSvZoFzXh4C4rErYVHND334Q?usp=sharing)
-4. [Data Design and Data Wrangling](https://colab.research.google.com/drive/1twPv8VdO7Qe-Vyk-11QhevWH6ypG4o0e?usp=sharing)
-5. [Data Exploration and Data Visualisation](https://colab.research.google.com/drive/1isrZsY1Yv-TvMZbm2N0VMc7wCWcyiJZp?usp=sharing)
-6. [Pattern Discovery using Unsupervised Learning](https://colab.research.google.com/drive/1rx_88pmxKyoGxNZ1CF6se56qsxhEnSyA?usp=sharing)
-7. [Prediction using Supervised Learning](https://colab.research.google.com/drive/1wTQ8i8FLAp5BSvmbC0Lp_fiM3ciTxo99?usp=sharing)
-8. [What Causes What? Introduction to Causal inference](https://colab.research.google.com/drive/1q2CwLOSkv2eKvmbLDb_gUXbb7oL_-bq7?usp=sharing)
-9. [Network Analysis](https://colab.research.google.com/drive/1ZNnBFwfTxDkXOYth1vwRvY0IToTipl74?usp=sharing)
-10. [Data Ethics](https://colab.research.google.com/drive/1JlB6fGpN4MpOUYA703m8Hcr9P0TbSl2Q?usp=sharing)
+
+1. End-to-End Data Science Project: Human mobility during UK lockdowns 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/end_to_end_data_science_project.ipynb)
+
+2. Data Science with Python on the Cloud
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/python_data_science_cloud.ipynb)
+
+3. Reproducible Data Science Workflow
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/open_reproducible_workflows.ipynb)
+
+4. Data Design and Data Wrangling
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_design_wrangling.ipynb)
+
+5. Data Exploration and Data Visualisation 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_exploration_visualisation.ipynb)
+
+6. Pattern Discovery using Unsupervised Learning
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/pattern_discovery_unsupervised_learning.ipynb)
+
+7. Prediction using Supervised Learning
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/prediction_supervised_learning.ipynb)
+
+8. What Causes What? Introduction to Causal inference 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/causal_inference.ipynb)
+
+9. Network Analysis
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/network_analysis.ipynb)
+
+10. Data Ethics
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_ethics.ipynb)
 
 <br>
 
@@ -202,6 +222,8 @@ I am grateful to many people and communities who helped with discussions, advice
 [Berkeley Initiative for Transparency in the Social Sciences (BITSS)](https://www.bitss.org/resource-library/?_sft_resource_type=websites-audio-video) \
 [Meta-Research Innovation Center at Stanford (METRICS)](https://metrics.stanford.edu)\
 [The Carpentries](https://carpentries.org)
+
+I used elements of this textbook to teach third year students at the Department of Sociology, University of Essex in Spring 2021 and I would like to thank the GTA Kirils Makarovs and all the students for their hard work and kindness. This feedback from a student captures it well: “i was genuinely terrified when the term started and i saw coding and python but this has been great thank you!
 
 <br>
 
