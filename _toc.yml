@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
-- part: About the Course
+- part: About the textbook
   chapters:
-  - file: course_description
+  - file: textbook_outline
 
 - part: End-to-End Data Science Project
   chapters:
@@ -45,15 +45,3 @@
 - part: Data ethics
   chapters:
   - file: data_ethics
-    
-#  sections:
-#  - file: causal-inference
-#    title: My alternate page title
-#  - file: content
-#  sections:
-#    - file: pandas
-#    - file: notebooks
-#    - file: Copy_of_OpenReproducibleResearchWorkflow-2
-#    - file: Copy_of_DataVisualisation
-#    - file: markdown
-

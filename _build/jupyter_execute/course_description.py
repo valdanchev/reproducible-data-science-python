@@ -208,7 +208,7 @@ I am grateful to many people and communities who helped with discussions, advice
 
 <i class="fab fa-github"></i>
 
-All materials, code, and data included in this course as well as this course website are available as an open GitHub repository at https://github.com/valdanchev/
+All materials, code, and data included in this course as well as this course website are available as a public GitHub repository at https://github.com/valdanchev/reproducible-data-science-python.git
 
 ## License
 

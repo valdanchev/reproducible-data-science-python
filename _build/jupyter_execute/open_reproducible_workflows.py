@@ -75,7 +75,7 @@ The terms of reproducibility (and computational reproducibility) and replicabili
 
 Source: [Reproducibility and Replicability in Science (2019), National Academies of Sciences, Engineering, and Medicine](https://www.nationalacademies.org/our-work/reproducibility-and-replicability-in-science)
 
-In this course, our focus is on the _reproducibility_ of our data analysis workflow, and on _computational reproducibility_ in particular.
+Our focus is on the _reproducibility_ of our data analysis workflow, and on _computational reproducibility_ in particular.
 
 # Open Reproducible Workflow in Jupyter/Colab Notebooks
 
@@ -135,7 +135,7 @@ At the end of a session, rerun your notebook from top to bottom using `Restart a
 
 # Recording dependencies
 
-Throughout the course, we will refer to the rules for reproducible research workflow. We illustrate below a few simple rules (e.g., comment your code; use cell division to make your steps clear) with a focus on recording software dependencies, which is a key prerequisite for computational reproducibility. 
+Throughout the textbook, we will refer to the rules for reproducible research workflow. We illustrate below a few simple rules (e.g., comment your code; use cell division to make your steps clear) with a focus on recording software dependencies, which is a key prerequisite for computational reproducibility. 
 
 Reproducing your data analysis in the future will require reusing not only your data and code but also any module and library as well as their respective versions that you employed in your code. It is a good practice to record those dependencies so that others or your future self (i.e., you in a month's time) can recreate the environment underlying your analysis.
 
