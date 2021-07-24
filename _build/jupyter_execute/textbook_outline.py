@@ -61,8 +61,7 @@ You can read the materials on this website and learn about various topics in rep
 
 * [Binder](https://jupyter.org/binder) — a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively [Not functional yet].
 
-* [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) — a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed and taught in Colab. Below are links to Colab notebooks for each topic of the textbook:
-
+* [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) — a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed in Colab (some components were designed for Jupyter Book and may appear differently in Colab). For each topic, you can click on ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) and work with the notebook interactively:
 
 1. End-to-End Data Science Project: Human mobility during UK lockdowns 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/end_to_end_data_science_project.ipynb)
