@@ -292,7 +292,7 @@ Different rules and restrictions were in place during the three lockdowns. Let's
 
 # RQ4: How have mobility trends differed across UK counties during the third lockdown?
 
-We now explore mobility trends across mobility categories and counties in the United Kingdom during the third lockdown. We employ the Seaborn `catplot()` function using one of our DataFrame 'third_lockdown_UK'. We use the variable called `variable`, which contains the labels of the six mobility categories to determine the faceting of the multi-plot grid. The UK counties are on the vertical axis and the mean values of mobility change from baseline (%) are on the horizontal axis. The `violin` plot function computes, for each pair of country and mobility category, the mean mobility change and the distributions of the mobility percent change.
+We will now explore mobility trends across mobility categories and counties in the United Kingdom during the third lockdown. We employ the Seaborn `catplot()` function using one of our DataFrame 'third_lockdown_UK'. We use the variable called `variable`, which contains the labels of the six mobility categories to determine the faceting of the multi-plot grid. The UK counties are on the vertical axis and the mean values of mobility change from baseline (%) are on the horizontal axis. The `violin` plot function computes, for each pair of country and mobility category, the mean mobility change and the distributions of the mobility percent change.
 
 # Multi-plot visualisations
 

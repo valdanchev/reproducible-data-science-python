@@ -57,19 +57,19 @@ By the end of the module, you will be able to:
 
 # How to get the most of these materials?
 
-You can read the materials on this website and learn about various topics in reproducible data science. If you prefer more hands-on coding, you can access the interactive versions of the Python Jupyter notebooks via: 
+You can read the materials on this website and learn about various topics in reproducible data science. If you prefer more hands-on coding, you can access the interactive versions of the Python Jupyter notebooks via Binder and Colab. 
 
-* [Binder](https://jupyter.org/binder) — a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively [Not functional yet].
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/master) [Binder](https://jupyter.org/binder) is a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively.
 
-* [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) — a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed in Colab (some components were designed for Jupyter Book and may appear differently in Colab). For each topic, you can click on ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) and work with the notebook interactively:
+* ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) is a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed in Colab (some components were designed for Jupyter Book and may appear differently in Colab). For each topic, you can click on ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) and work with the notebook interactively:
 
 1. End-to-End Data Science Project: Human mobility during UK lockdowns 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/end_to_end_data_science_project.ipynb)
 
-2. Data Science with Python on the Cloud
+2. Python Data Science on the Cloud
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/python_data_science_cloud.ipynb)
 
-3. Reproducible Data Science Workflow
+3. Open Reproducible Data Science Workflow
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/open_reproducible_workflows.ipynb)
 
 4. Data Design and Data Wrangling
@@ -122,9 +122,9 @@ We distinguish four categories of learning resources by marking articles with a 
 <i class="fas fa-book"></i> Aurélien Géron. 2019. **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition.** O’Reilly.<br>
 &nbsp;&nbsp;&nbsp;<i class="fas fa-code"></i> Freely available Jupyter [notebooks](https://github.com/ageron/handson-ml2). <br>
 
-<i class="fas fa-play-circle"></i> [Reproducible Data Analysis in Jupyter](https://jakevdp.github.io/blog/2017/03/03/reproducible-data-analysis-in-jupyter/). Jake Vanderplas.
+<i class="fas fa-play-circle"></i> [Reproducible Data Analysis in Jupyter](https://jakevdp.github.io/blog/2017/03/03/reproducible-data-analysis-in-jupyter/) by Jake Vanderplas.
 
-<i class="fas fa-play-circle"></i> [Machine Learning with Scikit Learn](https://www.youtube.com/watch?v=HC0J_SPm9co) by Jake VanderPlas
+<i class="fas fa-play-circle"></i> [Machine Learning with Scikit Learn](https://www.youtube.com/watch?v=HC0J_SPm9co) by Jake VanderPlas.
 
 <i class="fas fa-book"></i> <i class="fas fa-code"></i> The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, ... Kirstie Whitaker. (2019, March 25). **The Turing Way: A Handbook for Reproducible Data Science** (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986 [[Freely available online guide]](https://the-turing-way.netlify.app/welcome)
 

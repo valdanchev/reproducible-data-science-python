@@ -125,7 +125,7 @@ mobility_trends.head(10)
   * A baseline day represents a normal value for that day of the week. 
   * The baseline day is the _median value_ from the 5‑week period Jan 3 – Feb 6, 2020.
 
-# Data Ethics, Privacy, and Fairnes Risks
+# Data Ethics, Privacy, and Fairness Risks
 
 * _Low privacy risks_: individual privacy is safeguarded as data is aggregated and anonymised.
 * _Low Individual Fairness Risk but moderate Group Fairness Risk_: areas with greater mobility during lockdowns may be misattributed to non-compliance while greater mobility could also be due to some groups being essential workers or another category that does not enjoy working from home's privileges.

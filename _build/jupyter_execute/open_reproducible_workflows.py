@@ -1,4 +1,4 @@
-# Open Reproducible Data Science Workflows
+# Open Reproducible Data Science Workflow
 <br>
 
 > ### "An article about computational science in a scientific publication is _not_ the scholarship itself, it is merely _advertising_ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
@@ -128,7 +128,7 @@ Let's consider a few [simple rules for reproducible research workflow with Jupyt
 
 To create a reproducible research report, use throughout the notebook:
 * Python code in Code cells
-* Hashtag symbol `#` in Code cells to introduce a comment line describing your Python code. _Code commenting is a very important part of computational data analysis. 
+* Hashtag symbol `#` in Code cells to introduce a comment line describing your Python code. Code commenting is a very important part of computational data analysis. 
 * Markdown language in Text cells to write up your methods, results, and interpretation.
 
 At the end of a session, rerun your notebook from top to bottom using `Restart and run all` (under `Runtime` in the Colab menu bar) to ensure computational reproducibility.
