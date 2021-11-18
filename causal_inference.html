@@ -199,8 +199,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairnes-risks">
-   Data Ethics, Privacy, and Fairnes Risks
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairness-risks">
+   Data Ethics, Privacy, and Fairness Risks
   </a>
  </li>
  <li class="toctree-l1">
@@ -236,43 +236,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="end_to_end_data_science_project.html#re-cap">
    Re-cap
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Open Reproducible Workflow
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html">
-   Open Reproducible Data Science Workflows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
-   What is computational reproducibility and why it matters?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
-   Open Reproducible Workflow in Jupyter/Colab Notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
-   Rules for Reproducible Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
-   Reproducible research report
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
-   Recording dependencies
   </a>
  </li>
 </ul>
@@ -337,6 +300,43 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
    Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
   </a>
  </li>
 </ul>
@@ -1142,19 +1142,21 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rpy2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (3.3.6)
-Requirement already satisfied: tzlocal in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.1)
-Requirement already satisfied: jinja2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.11.2)
-Requirement already satisfied: pytest in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (0.0.0)
 Requirement already satisfied: cffi&gt;=1.10.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (1.14.4)
+Requirement already satisfied: pytest in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (6.2.4)
+Requirement already satisfied: tzlocal in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.1)
 Requirement already satisfied: pytz in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2020.4)
+Requirement already satisfied: jinja2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.11.2)
 Requirement already satisfied: pycparser in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from cffi&gt;=1.10.0-&gt;rpy2) (2.20)
-Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jinja2-&gt;rpy2) (1.1.1)
-Requirement already satisfied: attrs&gt;=17.4.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jinja2-&gt;rpy2) (1.1.1)
 Requirement already satisfied: iniconfig in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (1.1.1)
-Requirement already satisfied: packaging in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.7)
-Requirement already satisfied: pluggy&lt;1.0,&gt;=0.12 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.13.1)
 Requirement already satisfied: py&gt;=1.8.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (1.9.0)
 Requirement already satisfied: toml in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.10.1)
+Requirement already satisfied: packaging in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.7)
+Requirement already satisfied: attrs&gt;=19.2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.3.0)
+Requirement already satisfied: pluggy&lt;1.0.0a1,&gt;=0.12 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.13.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.0.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from packaging-&gt;pytest-&gt;rpy2) (2.4.7)

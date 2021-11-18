@@ -241,43 +241,6 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Open Reproducible Workflow
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html">
-   Open Reproducible Data Science Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
-   What is computational reproducibility and why it matters?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
-   Open Reproducible Workflow in Jupyter/Colab Notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
-   Rules for Reproducible Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
-   Reproducible research report
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
-   Recording dependencies
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
   Python Data Science on the Cloud
  </span>
 </p>
@@ -337,6 +300,43 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
    Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
   </a>
  </li>
 </ul>
@@ -3260,7 +3260,7 @@ dtype: int64
 <p>Now that your two models are fitted, you can evaluate the accuracy of their prediction. In older approaches, the prediction accuracy is often calculated on the same set of training data used to fit the model. The problem of such an approach is that the model can ‘memorise’ the training data and show high prediction accuracy on that data set while failing to perform well on new data. For this reason, approaches in data science, and machine learning in particular, prefer to evaluate the prediction accuracy of a model on new data that has not been used in training the model.</p>
 <div class="section" id="the-cross-validation-technique">
 <h2>The cross-validation technique<a class="headerlink" href="#the-cross-validation-technique" title="Permalink to this headline">¶</a></h2>
-<p>Cross-Validation is a methodology to assess accuracy of model prediction without relying on in-sample prediction. We will split our training set into <em>k</em> equal folds or parts. The number of folds can differ but for simplicity we will consider 5-fold cross-validation. How does 5-fold cross-validation work? While keeping aside one fold (or part), we fit the model with the remaining four folds and use the fitted model to predict outcomes of observations in fold one and on this basis compute model prediction accuracy. We repeat the procedure for all 5 folds or parts of the data and compute the average prediction accuracy.</p>
+<p>Cross-validation is a technique for assessing accuracy of model prediction without relying on in-sample prediction. We will split our training set into <em>k</em> equal folds or parts. The number of folds can differ but for simplicity we will consider 5-fold cross-validation. How does 5-fold cross-validation work? While keeping aside one fold (or part), we fit the model with the remaining four folds and use the fitted model to predict outcomes of observations in fold one and on this basis compute model prediction accuracy. We repeat the procedure for all 5 folds or parts of the data and compute the average prediction accuracy.</p>
 </div>
 <div class="section" id="metrics-to-evaluate-model-performance">
 <h2>Metrics to evaluate model performance<a class="headerlink" href="#metrics-to-evaluate-model-performance" title="Permalink to this headline">¶</a></h2>

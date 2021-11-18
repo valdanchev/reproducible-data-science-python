@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python for Data Analysis on the Cloud" href="python_data_science_cloud.html" />
-    <link rel="prev" title="Human mobility during UK lockdowns" href="end_to_end_data_science_project.html" />
+    <link rel="next" title="Data Design &amp; Data Wrangling" href="data_design_wrangling.html" />
+    <link rel="prev" title="Python for Data Analysis on the Cloud" href="python_data_science_cloud.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -241,43 +241,6 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Open Reproducible Workflow
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Open Reproducible Data Science Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#what-is-computational-reproducibility-and-why-it-matters">
-   What is computational reproducibility and why it matters?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#open-reproducible-workflow-in-jupyter-colab-notebooks">
-   Open Reproducible Workflow in Jupyter/Colab Notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#rules-for-reproducible-workflow">
-   Rules for Reproducible Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#reproducible-research-report">
-   Reproducible research report
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#recording-dependencies">
-   Recording dependencies
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
   Python Data Science on the Cloud
  </span>
 </p>
@@ -337,6 +300,43 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python_data_science_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
    Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Open Reproducible Data Science Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#recording-dependencies">
+   Recording dependencies
   </a>
  </li>
 </ul>
@@ -1158,27 +1158,15 @@
 <blockquote>
 <div><p><em><strong>Document the process, not just the results</strong></em> — “… make sure to document all your explorations, even (or perhaps especially) those that led to dead ends. These comments will help you remember what you did and … why you chose a particular parameter value, where you copied a block of code from, or what you found interesting about an intermediate result.”</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>For an example, see <span class="xref myst">Section</span>.</p></li>
-</ul>
 <blockquote>
 <div><p><em><strong>Use cell divisions to make steps clear</strong></em> — “… try to make each cell in your notebook perform one meaningful step of the analysis that is easy to understand from the code in the cell or the surrounding markdown description. Modularize your code by cells and label the cells with markdown above the cell. Think of each cell as being one paragraph, having one function, or accomplishing one task (for example, create a plot).”</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>For an example, see <span class="xref myst">Section</span>.</p></li>
-</ul>
 <blockquote>
 <div><p><em><strong>Modularize code</strong></em> — “It is always good practice to avoid duplicate code, but in notebooks, it is especially easy to copy a cell, tweak a few lines, paste the resulting code into a new cell or another notebook, and run it again. This form of experimentation is expedient but makes notebooks difficult to read and nearly impossible to maintain if you want to change the functionality of or fix a bug in the copied code. Instead, wrap code you are about to copy and reuse in a function, which you can then call from as many cells as desired.”</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>For an example, see <span class="xref myst">Section</span>.</p></li>
-</ul>
 <blockquote>
 <div><p><em><strong>Record dependencies</strong></em> — “Rerunning your analysis in the future will require accessing not only your code but also any module or library that your code relied on.”</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>For an example, see <span class="xref myst">Section</span>.</p></li>
-</ul>
 <blockquote>
 <div><p><em><strong>Use version control</strong></em> — “Version control is a critical adjunct to notebook use because the interactive nature of notebooks makes it easy to accidentally change or delete important content. Furthermore, since notebooks contain code and code inevitably contains bugs, being able to determine the history of when a given bug you have discovered was introduced to the code versus when it was fixed—and thus what analyses it may have affected—is a key capability in scientific computation.”</p>
 </div></blockquote>
@@ -1238,33 +1226,31 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dowhy==0.6 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.6)
-Requirement already satisfied: scikit-learn in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.24.2)
-Requirement already satisfied: pydot&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.4.2)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: networkx&gt;=2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (2.5)
-Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
-Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
 Requirement already satisfied: sympy&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.6.2)
-Requirement already satisfied: statsmodels in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.12.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx&gt;=2.0-&gt;dowhy==0.6) (5.0.9)
+Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2.8.1)
+Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
+Requirement already satisfied: networkx&gt;=2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (2.5)
+Requirement already satisfied: statsmodels in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.12.1)
+Requirement already satisfied: pydot&gt;=1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.4.2)
+Requirement already satisfied: scikit-learn in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (0.24.2)
+Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx&gt;=2.0-&gt;dowhy==0.6) (5.0.9)
 Requirement already satisfied: pytz&gt;=2017.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2020.4)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;dowhy==0.6) (2.8.1)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
 Requirement already satisfied: pyparsing&gt;=2.1.4 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pydot&gt;=1.4-&gt;dowhy==0.6) (2.4.7)
 Requirement already satisfied: six&gt;=1.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;dowhy==0.6) (1.15.0)
-Requirement already satisfied: joblib&gt;=0.11 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (0.17.0)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
-Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (2.1.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (0.17.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;dowhy==0.6) (2.1.0)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
 Requirement already satisfied: scipy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.5.2)
 Requirement already satisfied: patsy&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels-&gt;dowhy==0.6) (0.5.1)
-Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
+Requirement already satisfied: pandas&gt;=0.24 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.1.3)
 Requirement already satisfied: six&gt;=1.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;dowhy==0.6) (1.15.0)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from dowhy==0.6) (1.19.2)
 Requirement already satisfied: mpmath&gt;=0.19 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from sympy&gt;=1.4-&gt;dowhy==0.6) (1.1.0)
@@ -1295,10 +1281,11 @@ asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
 astroid @ file:///opt/concourse/worker/volumes/live/21fd14a9-2a7e-484b-7394-5a9912cdcf80/volume/astroid_1592498459180/work
 astropy @ file:///opt/concourse/worker/volumes/live/37fbd2b2-7bed-485f-777f-7939107df919/volume/astropy_1606922928626/work
 async-generator==1.10
-atomicwrites==1.4.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>atomicwrites==1.4.0
 attrs @ file:///tmp/build/80754af9/attrs_1604765588209/work
 autopep8 @ file:///tmp/build/80754af9/autopep8_1596578164842/work
-
 Babel @ file:///tmp/build/80754af9/babel_1605108370292/work
 backcall==0.2.0
 backports.functools-lru-cache @ file:///tmp/build/80754af9/backports.functools_lru_cache_1605305165209/work
@@ -1314,11 +1301,14 @@ bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
 bokeh @ file:///opt/concourse/worker/volumes/live/b2253281-9b72-4dcb-624e-e22924b50435/volume/bokeh_1603297849453/work
 boto==2.49.0
 Bottleneck==1.3.2
+Brotli==1.0.9
 brotlipy==0.7.0
 certifi==2020.12.5
 cffi @ file:///opt/concourse/worker/volumes/live/730e9a28-66f9-4e03-51ad-252ec8e40d81/volume/cffi_1606255126408/work
 chardet @ file:///opt/concourse/worker/volumes/live/a5a7c56b-23cb-471d-7404-f4130b8aed33/volume/chardet_1605303184529/work
 click==7.1.2
+click-plugins==1.1.1
+cligj==0.7.2
 cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
 clyent==1.2.2
 colorama @ file:///tmp/build/80754af9/colorama_1603211150991/work
@@ -1327,10 +1317,15 @@ conda-build==3.20.5
 conda-package-handling @ file:///opt/concourse/worker/volumes/live/a7e34989-4c54-4cb6-4156-4e58ee270730/volume/conda-package-handling_1603018121300/work
 conda-verify==3.4.2
 contextlib2==0.6.0.post1
+coverage==5.5
 cryptography @ file:///opt/concourse/worker/volumes/live/62f9527a-361c-47e5-5709-227a4a523add/volume/cryptography_1605544472602/work
 cycler==0.10.0
 Cython @ file:///opt/concourse/worker/volumes/live/c7485e3f-2096-4fd2-7e22-acdb1fbaa2c6/volume/cython_1605457627467/work
 cytoolz==0.11.0
+dash==1.21.0
+dash-core-components==1.17.1
+dash-html-components==1.1.4
+dash-table==4.12.0
 dask @ file:///tmp/build/80754af9/dask-core_1602083700509/work
 decorator==5.0.9
 defusedxml==0.6.0
@@ -1344,12 +1339,15 @@ entrypoints==0.3
 et-xmlfile==1.0.1
 fastcache==1.1.0
 filelock==3.0.12
+Fiona==1.8.20
 flake8 @ file:///tmp/build/80754af9/flake8_1601911421857/work
 Flask==1.1.2
+Flask-Compress==1.10.1
 fsspec @ file:///tmp/build/80754af9/fsspec_1602684995936/work
 funcy==1.15
 future==0.18.2
 gensim==3.8.3
+geopandas==0.9.0
 gevent @ file:///opt/concourse/worker/volumes/live/e6b243ce-c4b8-40bb-4934-ef3bf1c512f2/volume/gevent_1601397552921/work
 ghp-import==2.0.1
 gitdb==4.0.7
@@ -1424,6 +1422,7 @@ more-itertools @ file:///tmp/build/80754af9/more-itertools_1605111547926/work
 mpmath==1.1.0
 msgpack==1.0.0
 multipledispatch==0.6.0
+munch==2.5.0
 myst-nb==0.12.0
 myst-parser==0.13.6
 navigator-updater==0.2.1
@@ -1432,6 +1431,7 @@ nbclient @ file:///tmp/build/80754af9/nbclient_1602783176460/work
 nbconvert==5.6.1
 nbdime==2.1.0
 nbformat @ file:///tmp/build/80754af9/nbformat_1602783287752/work
+nbval==0.9.6
 nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1606153767164/work
 nested-lookup==0.2.22
 networkx @ file:///tmp/build/80754af9/networkx_1598376031484/work
@@ -1441,6 +1441,7 @@ nose @ file:///tmp/build/80754af9/nose_1606773131901/work
 notebook @ file:///opt/concourse/worker/volumes/live/be0f3504-189d-4bae-4e57-c5d6da73ffcd/volume/notebook_1601501605350/work
 numba @ file:///opt/concourse/worker/volumes/live/ae24c1ca-d916-4043-5919-a843fa33e451/volume/numba_1600084276085/work
 numexpr==2.7.1
+
 numpy @ file:///opt/concourse/worker/volumes/live/5572694e-967a-4c0c-52cf-b53d43e72de9/volume/numpy_and_numpy_base_1603491881791/work
 numpydoc @ file:///tmp/build/80754af9/numpydoc_1605117425582/work
 olefile==0.46
@@ -1463,6 +1464,7 @@ pipreqs==0.4.10
 pipreqsnb==0.2.3
 pkginfo==1.6.1
 plac==1.2.0
+plotly==5.1.0
 pluggy==0.13.1
 ply==3.11
 prometheus-client @ file:///tmp/build/80754af9/prometheus_client_1606344362066/work
@@ -1491,9 +1493,10 @@ pylint @ file:///opt/concourse/worker/volumes/live/ed0164b6-bcc7-4f6b-7dd4-ad896
 pyodbc===4.0.0-unsupported
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1606517880428/work
 pyparsing==2.4.7
+pyproj==3.1.0
 pyrsistent @ file:///opt/concourse/worker/volumes/live/ff11f3f0-615b-4508-471d-4d9f19fa6657/volume/pyrsistent_1600141727281/work
 PySocks @ file:///opt/concourse/worker/volumes/live/85a5b906-0e08-41d9-6f59-084cee4e9492/volume/pysocks_1594394636991/work
-pytest==0.0.0
+pytest==6.2.4
 python-dateutil==2.8.1
 python-igraph==0.7.1.post7
 python-jsonrpc-server @ file:///tmp/build/80754af9/python-jsonrpc-server_1594397536060/work
@@ -1520,8 +1523,9 @@ scikit-image==0.17.2
 scikit-learn==0.24.2
 scikits.bootstrap==1.0.1
 scipy @ file:///opt/concourse/worker/volumes/live/851446f6-a052-41c4-4243-67bb78999b49/volume/scipy_1604596178167/work
-seaborn @ file:///tmp/build/80754af9/seaborn_1600553570093/work
+seaborn==0.11.2
 Send2Trash==1.5.0
+Shapely==1.7.1
 simplegeneric==0.8.1
 simplejson==3.17.2
 singledispatch @ file:///tmp/build/80754af9/singledispatch_1602523705405/work
@@ -1556,6 +1560,7 @@ statsmodels @ file:///opt/concourse/worker/volumes/live/8cc21252-fe82-4d91-6eab-
 sympy @ file:///opt/concourse/worker/volumes/live/d5d0b33b-5c2f-493b-5b67-8149e5531868/volume/sympy_1605119535834/work
 tables==3.6.1
 tblib @ file:///tmp/build/80754af9/tblib_1597928476713/work
+tenacity==8.0.1
 termcolor==1.1.0
 terminado==0.9.1
 testpath==0.4.4
@@ -1570,9 +1575,9 @@ typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/w
 tzlocal==2.1
 uc-micro-py==1.0.1
 ujson==1.35
-
 unicodecsv==0.14.1
 urllib3 @ file:///tmp/build/80754af9/urllib3_1603305693037/work
+version-information==1.0.4
 watchdog @ file:///opt/concourse/worker/volumes/live/cc0ee7bb-1065-44c4-5867-0fd5d13729e0/volume/watchdog_1593447373245/work
 watermark==2.2.0
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
@@ -1612,7 +1617,8 @@ zope.interface @ file:///opt/concourse/worker/volumes/live/de428e3b-00ba-4161-44
 numpydoc @ file:///tmp/build/80754af9/numpydoc_1605117425582/work
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas @ file:///opt/concourse/worker/volumes/live/f14cf8c4-c564-4eff-4b17-158e90dbf88a/volume/pandas_1602088128240/work
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geopandas==0.9.0
+pandas @ file:///opt/concourse/worker/volumes/live/f14cf8c4-c564-4eff-4b17-158e90dbf88a/volume/pandas_1602088128240/work
 </pre></div>
 </div>
 </div>
@@ -1639,21 +1645,23 @@ import pandas as pd
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: watermark in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (2.2.0)
 Requirement already satisfied: ipython in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from watermark) (7.23.1)
-Requirement already satisfied: jedi&gt;=0.16 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.18.0)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
-Requirement already satisfied: pygments in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (2.9.0)
-Requirement already satisfied: setuptools&gt;=18.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (57.0.0)
-Requirement already satisfied: pickleshare in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.7.5)
-Requirement already satisfied: matplotlib-inline in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
-Requirement already satisfied: appnope in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pexpect&gt;4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (4.8.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
+Requirement already satisfied: appnope in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
 Requirement already satisfied: backcall in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.2.0)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (3.0.18)
+Requirement already satisfied: pickleshare in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.7.5)
+Requirement already satisfied: matplotlib-inline in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.1.2)
 Requirement already satisfied: decorator in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.9)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (3.0.18)
+Requirement already satisfied: pexpect&gt;4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (4.8.0)
+Requirement already satisfied: jedi&gt;=0.16 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (0.18.0)
+Requirement already satisfied: pygments in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (2.9.0)
+Requirement already satisfied: setuptools&gt;=18.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (57.0.0)
 Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;watermark) (0.8.2)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;watermark) (5.0.5)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;watermark) (0.7.0)
 Requirement already satisfied: wcwidth in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;watermark) (0.2.5)
 Requirement already satisfied: ipython-genutils in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;watermark) (0.2.0)
@@ -1698,8 +1706,8 @@ Requirement already satisfied: ipython-genutils in /Users/valentindanchev/opt/an
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="end_to_end_data_science_project.html" title="previous page">Human mobility during UK lockdowns</a>
-    <a class='right-next' id="next-link" href="python_data_science_cloud.html" title="next page"><strong>Python for Data Analysis on the Cloud</strong></a>
+    <a class='left-prev' id="prev-link" href="python_data_science_cloud.html" title="previous page"><strong>Python for Data Analysis on the Cloud</strong></a>
+    <a class='right-next' id="next-link" href="data_design_wrangling.html" title="next page">Data Design &amp; Data Wrangling</a>
 
         </div>
         

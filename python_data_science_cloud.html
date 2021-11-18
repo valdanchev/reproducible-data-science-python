@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Design &amp; Data Wrangling" href="data_design_wrangling.html" />
-    <link rel="prev" title="Open Reproducible Data Science Workflows" href="open_reproducible_workflows.html" />
+    <link rel="next" title="Open Reproducible Data Science Workflow" href="open_reproducible_workflows.html" />
+    <link rel="prev" title="Human mobility during UK lockdowns" href="end_to_end_data_science_project.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -199,8 +199,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairnes-risks">
-   Data Ethics, Privacy, and Fairnes Risks
+  <a class="reference internal" href="end_to_end_data_science_project.html#data-ethics-privacy-and-fairness-risks">
+   Data Ethics, Privacy, and Fairness Risks
   </a>
  </li>
  <li class="toctree-l1">
@@ -236,43 +236,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="end_to_end_data_science_project.html#re-cap">
    Re-cap
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Open Reproducible Workflow
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html">
-   Open Reproducible Data Science Workflows
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
-   What is computational reproducibility and why it matters?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
-   Open Reproducible Workflow in Jupyter/Colab Notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
-   Rules for Reproducible Workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
-   Reproducible research report
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
-   Recording dependencies
   </a>
  </li>
 </ul>
@@ -337,6 +300,43 @@
  <li class="toctree-l1">
   <a class="reference internal" href="#hands-on-exercise-let-s-practice-your-markdown-skills">
    Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
   </a>
  </li>
 </ul>
@@ -1462,16 +1462,16 @@ np.mean<span class="o">?</span>
       <th>new_deaths</th>
       <th>new_deaths_smoothed</th>
       <th>...</th>
-      <th>gdp_per_capita</th>
-      <th>extreme_poverty</th>
-      <th>cardiovasc_death_rate</th>
-      <th>diabetes_prevalence</th>
       <th>female_smokers</th>
       <th>male_smokers</th>
       <th>handwashing_facilities</th>
       <th>hospital_beds_per_thousand</th>
       <th>life_expectancy</th>
       <th>human_development_index</th>
+      <th>excess_mortality_cumulative_absolute</th>
+      <th>excess_mortality_cumulative</th>
+      <th>excess_mortality</th>
+      <th>excess_mortality_cumulative_per_million</th>
     </tr>
   </thead>
   <tbody>
@@ -1481,23 +1481,23 @@ np.mean<span class="o">?</span>
       <td>Asia</td>
       <td>Afghanistan</td>
       <td>2020-02-24</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>1803.987</td>
-      <td>NaN</td>
-      <td>597.029</td>
-      <td>9.59</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>37.746</td>
       <td>0.5</td>
       <td>64.83</td>
       <td>0.511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1505,23 +1505,23 @@ np.mean<span class="o">?</span>
       <td>Asia</td>
       <td>Afghanistan</td>
       <td>2020-02-25</td>
-      <td>1.0</td>
+      <td>5.0</td>
       <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>1803.987</td>
-      <td>NaN</td>
-      <td>597.029</td>
-      <td>9.59</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>37.746</td>
       <td>0.5</td>
       <td>64.83</td>
       <td>0.511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1529,23 +1529,23 @@ np.mean<span class="o">?</span>
       <td>Asia</td>
       <td>Afghanistan</td>
       <td>2020-02-26</td>
-      <td>1.0</td>
+      <td>5.0</td>
       <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>1803.987</td>
-      <td>NaN</td>
-      <td>597.029</td>
-      <td>9.59</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>37.746</td>
       <td>0.5</td>
       <td>64.83</td>
       <td>0.511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1553,23 +1553,23 @@ np.mean<span class="o">?</span>
       <td>Asia</td>
       <td>Afghanistan</td>
       <td>2020-02-27</td>
-      <td>1.0</td>
+      <td>5.0</td>
       <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>1803.987</td>
-      <td>NaN</td>
-      <td>597.029</td>
-      <td>9.59</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>37.746</td>
       <td>0.5</td>
       <td>64.83</td>
       <td>0.511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1577,27 +1577,27 @@ np.mean<span class="o">?</span>
       <td>Asia</td>
       <td>Afghanistan</td>
       <td>2020-02-28</td>
-      <td>1.0</td>
+      <td>5.0</td>
       <td>0.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>1803.987</td>
-      <td>NaN</td>
-      <td>597.029</td>
-      <td>9.59</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>37.746</td>
       <td>0.5</td>
       <td>64.83</td>
       <td>0.511</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 59 columns</p>
+<p>5 rows × 67 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1637,142 +1637,142 @@ np.mean<span class="o">?</span>
       <th>new_deaths</th>
       <th>new_deaths_smoothed</th>
       <th>...</th>
-      <th>gdp_per_capita</th>
-      <th>extreme_poverty</th>
-      <th>cardiovasc_death_rate</th>
-      <th>diabetes_prevalence</th>
       <th>female_smokers</th>
       <th>male_smokers</th>
       <th>handwashing_facilities</th>
       <th>hospital_beds_per_thousand</th>
       <th>life_expectancy</th>
       <th>human_development_index</th>
+      <th>excess_mortality_cumulative_absolute</th>
+      <th>excess_mortality_cumulative</th>
+      <th>excess_mortality</th>
+      <th>excess_mortality_cumulative_per_million</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>94436</th>
+      <th>134015</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2021-06-04</td>
-      <td>39144.0</td>
-      <td>52.0</td>
-      <td>32.286</td>
-      <td>1605.0</td>
-      <td>1.0</td>
-      <td>1.857</td>
+      <td>2021-11-13</td>
+      <td>133393.0</td>
+      <td>64.0</td>
+      <td>32.143</td>
+      <td>4696.0</td>
+      <td>2.0</td>
+      <td>1.571</td>
       <td>...</td>
-      <td>1899.775</td>
-      <td>21.4</td>
-      <td>307.846</td>
-      <td>1.82</td>
       <td>1.6</td>
       <td>30.7</td>
       <td>36.791</td>
       <td>1.7</td>
       <td>61.49</td>
       <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>94437</th>
+      <th>134016</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2021-06-05</td>
-      <td>39168.0</td>
-      <td>24.0</td>
-      <td>33.571</td>
-      <td>1605.0</td>
+      <td>2021-11-14</td>
+      <td>133428.0</td>
+      <td>35.0</td>
+      <td>34.429</td>
+      <td>4696.0</td>
       <td>0.0</td>
       <td>1.571</td>
       <td>...</td>
-      <td>1899.775</td>
-      <td>21.4</td>
-      <td>307.846</td>
-      <td>1.82</td>
       <td>1.6</td>
       <td>30.7</td>
       <td>36.791</td>
       <td>1.7</td>
       <td>61.49</td>
       <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>94438</th>
+      <th>134017</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2021-06-06</td>
-      <td>39189.0</td>
-      <td>21.0</td>
-      <td>35.000</td>
-      <td>1606.0</td>
+      <td>2021-11-15</td>
+      <td>133438.0</td>
+      <td>10.0</td>
+      <td>33.286</td>
+      <td>4697.0</td>
       <td>1.0</td>
-      <td>1.714</td>
+      <td>1.000</td>
       <td>...</td>
-      <td>1899.775</td>
-      <td>21.4</td>
-      <td>307.846</td>
-      <td>1.82</td>
       <td>1.6</td>
       <td>30.7</td>
       <td>36.791</td>
       <td>1.7</td>
       <td>61.49</td>
       <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>94439</th>
+      <th>134018</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2021-06-07</td>
-      <td>39238.0</td>
-      <td>49.0</td>
-      <td>39.571</td>
-      <td>1611.0</td>
-      <td>5.0</td>
-      <td>2.429</td>
+      <td>2021-11-16</td>
+      <td>133505.0</td>
+      <td>67.0</td>
+      <td>37.571</td>
+      <td>4698.0</td>
+      <td>1.0</td>
+      <td>1.000</td>
       <td>...</td>
-      <td>1899.775</td>
-      <td>21.4</td>
-      <td>307.846</td>
-      <td>1.82</td>
       <td>1.6</td>
       <td>30.7</td>
       <td>36.791</td>
       <td>1.7</td>
       <td>61.49</td>
       <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>94440</th>
+      <th>134019</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2021-06-08</td>
-      <td>39321.0</td>
-      <td>83.0</td>
-      <td>46.143</td>
-      <td>1617.0</td>
-      <td>6.0</td>
-      <td>2.571</td>
+      <td>2021-11-17</td>
+      <td>133557.0</td>
+      <td>52.0</td>
+      <td>36.429</td>
+      <td>4699.0</td>
+      <td>1.0</td>
+      <td>0.714</td>
       <td>...</td>
-      <td>1899.775</td>
-      <td>21.4</td>
-      <td>307.846</td>
-      <td>1.82</td>
       <td>1.6</td>
       <td>30.7</td>
       <td>36.791</td>
       <td>1.7</td>
       <td>61.49</td>
       <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 59 columns</p>
+<p>5 rows × 67 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -1788,7 +1788,7 @@ np.mean<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(94441, 59)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(134020, 67)
 </pre></div>
 </div>
 </div>
@@ -1802,7 +1802,7 @@ np.mean<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94441
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>134020
 </pre></div>
 </div>
 </div>
@@ -1815,7 +1815,7 @@ np.mean<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
 </pre></div>
 </div>
 </div>
@@ -1829,7 +1829,7 @@ np.mean<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the most current data on COVID-19 by Our World in Data, the number of rows is 94441 and the number of columns is 59
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the most current data on COVID-19 by Our World in Data, the number of rows is 134020 and the number of columns is 67
 </pre></div>
 </div>
 </div>
@@ -1855,15 +1855,20 @@ np.mean<span class="o">?</span>
        &#39;total_tests_per_thousand&#39;, &#39;new_tests_per_thousand&#39;,
        &#39;new_tests_smoothed&#39;, &#39;new_tests_smoothed_per_thousand&#39;,
        &#39;positive_rate&#39;, &#39;tests_per_case&#39;, &#39;tests_units&#39;, &#39;total_vaccinations&#39;,
-       &#39;people_vaccinated&#39;, &#39;people_fully_vaccinated&#39;, &#39;new_vaccinations&#39;,
-       &#39;new_vaccinations_smoothed&#39;, &#39;total_vaccinations_per_hundred&#39;,
-       &#39;people_vaccinated_per_hundred&#39;, &#39;people_fully_vaccinated_per_hundred&#39;,
-       &#39;new_vaccinations_smoothed_per_million&#39;, &#39;stringency_index&#39;,
+       &#39;people_vaccinated&#39;, &#39;people_fully_vaccinated&#39;, &#39;total_boosters&#39;,
+       &#39;new_vaccinations&#39;, &#39;new_vaccinations_smoothed&#39;,
+       &#39;total_vaccinations_per_hundred&#39;, &#39;people_vaccinated_per_hundred&#39;,
+       &#39;people_fully_vaccinated_per_hundred&#39;, &#39;total_boosters_per_hundred&#39;,
+       &#39;new_vaccinations_smoothed_per_million&#39;,
+       &#39;new_people_vaccinated_smoothed&#39;,
+       &#39;new_people_vaccinated_smoothed_per_hundred&#39;, &#39;stringency_index&#39;,
        &#39;population&#39;, &#39;population_density&#39;, &#39;median_age&#39;, &#39;aged_65_older&#39;,
        &#39;aged_70_older&#39;, &#39;gdp_per_capita&#39;, &#39;extreme_poverty&#39;,
        &#39;cardiovasc_death_rate&#39;, &#39;diabetes_prevalence&#39;, &#39;female_smokers&#39;,
        &#39;male_smokers&#39;, &#39;handwashing_facilities&#39;, &#39;hospital_beds_per_thousand&#39;,
-       &#39;life_expectancy&#39;, &#39;human_development_index&#39;],
+       &#39;life_expectancy&#39;, &#39;human_development_index&#39;,
+       &#39;excess_mortality_cumulative_absolute&#39;, &#39;excess_mortality_cumulative&#39;,
+       &#39;excess_mortality&#39;, &#39;excess_mortality_cumulative_per_million&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -1878,71 +1883,79 @@ np.mean<span class="o">?</span>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 94441 entries, 0 to 94440
-Data columns (total 59 columns):
- #   Column                                 Non-Null Count  Dtype  
----  ------                                 --------------  -----  
- 0   iso_code                               94441 non-null  object 
- 1   continent                              89979 non-null  object 
- 2   location                               94441 non-null  object 
- 3   date                                   94441 non-null  object 
- 4   total_cases                            91358 non-null  float64
- 5   new_cases                              91355 non-null  float64
- 6   new_cases_smoothed                     90345 non-null  float64
- 7   total_deaths                           81395 non-null  float64
- 8   new_deaths                             81551 non-null  float64
- 9   new_deaths_smoothed                    90345 non-null  float64
- 10  total_cases_per_million                90870 non-null  float64
- 11  new_cases_per_million                  90867 non-null  float64
- 12  new_cases_smoothed_per_million         89862 non-null  float64
- 13  total_deaths_per_million               80920 non-null  float64
- 14  new_deaths_per_million                 81076 non-null  float64
- 15  new_deaths_smoothed_per_million        89862 non-null  float64
- 16  reproduction_rate                      76127 non-null  float64
- 17  icu_patients                           9514 non-null   float64
- 18  icu_patients_per_million               9514 non-null   float64
- 19  hosp_patients                          11810 non-null  float64
- 20  hosp_patients_per_million              11810 non-null  float64
- 21  weekly_icu_admissions                  861 non-null    float64
- 22  weekly_icu_admissions_per_million      861 non-null    float64
- 23  weekly_hosp_admissions                 1496 non-null   float64
- 24  weekly_hosp_admissions_per_million     1496 non-null   float64
- 25  new_tests                              42642 non-null  float64
- 26  total_tests                            42335 non-null  float64
- 27  total_tests_per_thousand               42335 non-null  float64
- 28  new_tests_per_thousand                 42642 non-null  float64
- 29  new_tests_smoothed                     49436 non-null  float64
- 30  new_tests_smoothed_per_thousand        49436 non-null  float64
- 31  positive_rate                          46602 non-null  float64
- 32  tests_per_case                         46003 non-null  float64
- 33  tests_units                            51035 non-null  object 
- 34  total_vaccinations                     13879 non-null  float64
- 35  people_vaccinated                      13087 non-null  float64
- 36  people_fully_vaccinated                10326 non-null  float64
- 37  new_vaccinations                       11611 non-null  float64
- 38  new_vaccinations_smoothed              23938 non-null  float64
- 39  total_vaccinations_per_hundred         13879 non-null  float64
- 40  people_vaccinated_per_hundred          13087 non-null  float64
- 41  people_fully_vaccinated_per_hundred    10326 non-null  float64
- 42  new_vaccinations_smoothed_per_million  23938 non-null  float64
- 43  stringency_index                       79883 non-null  float64
- 44  population                             93819 non-null  float64
- 45  population_density                     87804 non-null  float64
- 46  median_age                             84634 non-null  float64
- 47  aged_65_older                          83680 non-null  float64
- 48  aged_70_older                          84165 non-null  float64
- 49  gdp_per_capita                         84918 non-null  float64
- 50  extreme_poverty                        57399 non-null  float64
- 51  cardiovasc_death_rate                  85024 non-null  float64
- 52  diabetes_prevalence                    87079 non-null  float64
- 53  female_smokers                         66553 non-null  float64
- 54  male_smokers                           65578 non-null  float64
- 55  handwashing_facilities                 42713 non-null  float64
- 56  hospital_beds_per_thousand             77509 non-null  float64
- 57  life_expectancy                        89680 non-null  float64
- 58  human_development_index                85190 non-null  float64
-dtypes: float64(54), object(5)
-memory usage: 42.5+ MB
+RangeIndex: 134020 entries, 0 to 134019
+Data columns (total 67 columns):
+ #   Column                                      Non-Null Count   Dtype  
+---  ------                                      --------------   -----  
+ 0   iso_code                                    134020 non-null  object 
+ 1   continent                                   125468 non-null  object 
+ 2   location                                    134020 non-null  object 
+ 3   date                                        134020 non-null  object 
+ 4   total_cases                                 126652 non-null  float64
+ 5   new_cases                                   126650 non-null  float64
+ 6   new_cases_smoothed                          125607 non-null  float64
+ 7   total_deaths                                115487 non-null  float64
+ 8   new_deaths                                  115683 non-null  float64
+ 9   new_deaths_smoothed                         125607 non-null  float64
+ 10  total_cases_per_million                     126002 non-null  float64
+ 11  new_cases_per_million                       126000 non-null  float64
+ 12  new_cases_smoothed_per_million              124962 non-null  float64
+ 13  total_deaths_per_million                    114850 non-null  float64
+ 14  new_deaths_per_million                      115046 non-null  float64
+ 15  new_deaths_smoothed_per_million             124962 non-null  float64
+ 16  reproduction_rate                           104981 non-null  float64
+ 17  icu_patients                                15996 non-null   float64
+ 18  icu_patients_per_million                    15996 non-null   float64
+ 19  hosp_patients                               18731 non-null   float64
+ 20  hosp_patients_per_million                   18731 non-null   float64
+ 21  weekly_icu_admissions                       1341 non-null    float64
+ 22  weekly_icu_admissions_per_million           1341 non-null    float64
+ 23  weekly_hosp_admissions                      2130 non-null    float64
+ 24  weekly_hosp_admissions_per_million          2130 non-null    float64
+ 25  new_tests                                   55918 non-null   float64
+ 26  total_tests                                 56259 non-null   float64
+ 27  total_tests_per_thousand                    56259 non-null   float64
+ 28  new_tests_per_thousand                      55918 non-null   float64
+ 29  new_tests_smoothed                          68097 non-null   float64
+ 30  new_tests_smoothed_per_thousand             68097 non-null   float64
+ 31  positive_rate                               63582 non-null   float64
+ 32  tests_per_case                              62921 non-null   float64
+ 33  tests_units                                 70124 non-null   object 
+ 34  total_vaccinations                          34036 non-null   float64
+ 35  people_vaccinated                           32452 non-null   float64
+ 36  people_fully_vaccinated                     29478 non-null   float64
+ 37  total_boosters                              6181 non-null    float64
+ 38  new_vaccinations                            28318 non-null   float64
+ 39  new_vaccinations_smoothed                   60658 non-null   float64
+ 40  total_vaccinations_per_hundred              34036 non-null   float64
+ 41  people_vaccinated_per_hundred               32452 non-null   float64
+ 42  people_fully_vaccinated_per_hundred         29478 non-null   float64
+ 43  total_boosters_per_hundred                  6181 non-null    float64
+ 44  new_vaccinations_smoothed_per_million       60658 non-null   float64
+ 45  new_people_vaccinated_smoothed              59362 non-null   float64
+ 46  new_people_vaccinated_smoothed_per_hundred  59362 non-null   float64
+ 47  stringency_index                            109328 non-null  float64
+ 48  population                                  133067 non-null  float64
+ 49  population_density                          121288 non-null  float64
+ 50  median_age                                  115568 non-null  float64
+ 51  aged_65_older                               114290 non-null  float64
+ 52  aged_70_older                               114937 non-null  float64
+ 53  gdp_per_capita                              116316 non-null  float64
+ 54  extreme_poverty                             77771 non-null   float64
+ 55  cardiovasc_death_rate                       115791 non-null  float64
+ 56  diabetes_prevalence                         119614 non-null  float64
+ 57  female_smokers                              90205 non-null   float64
+ 58  male_smokers                                88901 non-null   float64
+ 59  handwashing_facilities                      58283 non-null   float64
+ 60  hospital_beds_per_thousand                  105228 non-null  float64
+ 61  life_expectancy                             124594 non-null  float64
+ 62  human_development_index                     115905 non-null  float64
+ 63  excess_mortality_cumulative_absolute        4723 non-null    float64
+ 64  excess_mortality_cumulative                 4723 non-null    float64
+ 65  excess_mortality                            4723 non-null    float64
+ 66  excess_mortality_cumulative_per_million     4723 non-null    float64
+dtypes: float64(62), object(5)
+memory usage: 68.5+ MB
 </pre></div>
 </div>
 </div>
@@ -1955,7 +1968,7 @@ memory usage: 42.5+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>114.67
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118.18
 </pre></div>
 </div>
 </div>
@@ -1969,7 +1982,7 @@ memory usage: 42.5+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33704
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46778
 </pre></div>
 </div>
 </div>
@@ -2011,25 +2024,25 @@ memory usage: 42.5+ MB
       <th>new_deaths</th>
       <th>new_deaths_smoothed</th>
       <th>...</th>
-      <th>gdp_per_capita</th>
-      <th>extreme_poverty</th>
-      <th>cardiovasc_death_rate</th>
-      <th>diabetes_prevalence</th>
       <th>female_smokers</th>
       <th>male_smokers</th>
       <th>handwashing_facilities</th>
       <th>hospital_beds_per_thousand</th>
       <th>life_expectancy</th>
       <th>human_development_index</th>
+      <th>excess_mortality_cumulative_absolute</th>
+      <th>excess_mortality_cumulative</th>
+      <th>excess_mortality</th>
+      <th>excess_mortality_cumulative_per_million</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>33704</th>
+      <th>46778</th>
       <td>GIB</td>
       <td>Europe</td>
       <td>Gibraltar</td>
-      <td>2021-06-08</td>
+      <td>2021-11-14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2041,16 +2054,16 @@ memory usage: 42.5+ MB
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>79.93</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>1 rows × 59 columns</p>
+<p>1 rows × 67 columns</p>
 </div></div></div>
 </div>
 <p>The above example is only for illustration of pandas functionality. We will unpack different approaches for data slicing and selecting with pandas in section <em>Data Design and Data Wrangling</em>.</p>
@@ -2214,8 +2227,8 @@ memory usage: 42.5+ MB
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="open_reproducible_workflows.html" title="previous page">Open Reproducible Data Science Workflows</a>
-    <a class='right-next' id="next-link" href="data_design_wrangling.html" title="next page">Data Design &amp; Data Wrangling</a>
+    <a class='left-prev' id="prev-link" href="end_to_end_data_science_project.html" title="previous page">Human mobility during UK lockdowns</a>
+    <a class='right-next' id="next-link" href="open_reproducible_workflows.html" title="next page">Open Reproducible Data Science Workflow</a>
 
         </div>
         
