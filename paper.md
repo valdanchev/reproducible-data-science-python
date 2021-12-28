@@ -131,7 +131,6 @@ Below are links to interactive versions of the ten Jupyter notebooks executable 
 
 # Acknowledgements
 
-I thank the participants at the 2021 National Workshop on Data Science Education and students at the Research Transparency and Reproducibility Training (RT2) and at the Department of Sociology, 
-University of Essex, for helpful feedback. I also thank Kirils Makarovs and Hamid Nejadghorban for help with teaching earlier iterations of the learning resource.
+I thank the participants at the 2021 National Workshop on Data Science Education (organised by UC Berkeley's Division of Computing, Data Science, and Society) and students who studied elements of the learning resource at the Research Transparency and Reproducibility Training (RT2) Virtual 2021 (organised by Berkeley Initiative for Transparency in the Social Sciences (BITSS) and at the Department of Sociology, University of Essex, for helpful feedback. I also thank Kirils Makarovs and Hamid Nejadghorban for help with teaching earlier iterations of the learning resource.
 
 # References
