@@ -6,7 +6,7 @@
 
 <br>
 
-> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="800" height="400">
+> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="800" height="300">
 >
 >[— Marwick et al, 2017, Open science in archaeology](https://eprints.gla.ac.uk/148887/7/148887.pdf)
 
