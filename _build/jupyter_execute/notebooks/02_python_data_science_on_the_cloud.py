@@ -12,7 +12,8 @@ There are many free services that allow you to run Jupyter notebooks on the clou
 
 [MyBinder](https://mybinder.org) is a free, community-led infrastructure that opens Jupyter notebooks in an interactive and reproducible environment and requires no install or setup. Binder requires no account registration or log-in to execute and change code interactively.
 
-<img src="https://jupyter.org/assets/homepage/jupyterpreview.webp" align="left" width="400" height="200"/><img src="https://lh3.googleusercontent.com/edryGqlH18ng3ff18ffCbHuLEqfWpSJuO-1sejiV6t3ZYuUEpLYD4nqD1oha8yI4K4c9y1lqaseOckOrG7wZ-M4vaQ=w640-h400-e365-rj-sc0x00ffffff" align="middle" width="400" height="200"/>
+<img src="https://jupyter.org/assets/homepage/jupyterpreview.webp" align="left" width="400" height="200"/>
+<img src="https://lh3.googleusercontent.com/edryGqlH18ng3ff18ffCbHuLEqfWpSJuO-1sejiV6t3ZYuUEpLYD4nqD1oha8yI4K4c9y1lqaseOckOrG7wZ-M4vaQ=w640-h400-e365-rj-sc0x00ffffff" align="middle" width="400" height="200"/>
 
 <br>
 

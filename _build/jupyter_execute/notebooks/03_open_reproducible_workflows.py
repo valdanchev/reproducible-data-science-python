@@ -1,12 +1,12 @@
 # Open Reproducible Data Science Workflow
 <br>
 
-> ### "An article about computational science in a scientific publication is _not_ the scholarship itself, it is merely _advertising_ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
+> #### "An article about computational science in a scientific publication is _not_ the scholarship itself, it is merely _advertising_ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
 >[— J. B. Buckheit and D. L. Donoho, 1995](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)
 
 <br>
 
-> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true">
+> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="800" height="400">
 >
 >[— Marwick et al, 2017, Open science in archaeology](https://eprints.gla.ac.uk/148887/7/148887.pdf)
 
@@ -140,8 +140,6 @@ Let's first determine your Python version. You can check your Python version in 
 # Check Python version
 !python --version
 
-As of April 2021, Colab supports Python 3.7.10.
-
 To install and manage Python software modules or libraries, you can use a package-management system, such as [`pip`](https://pypi.org/project/pip/). Using `pip`, you can download and install a specific version of a module/library you plan to use in your data analysis. For example, you can install the library for causal inference [`DoWhy`](https://microsoft.github.io/dowhy/example_notebooks/dowhy_simple_example.html#) version [0.6](https://pypi.org/project/dowhy/#id4) released on 03 March 2021 by typing `!pip install doWhy==0.6`. Note that we use two consecutive equal marks `==` called the equality operator instead of a single equal marks `=` which is an assignment operator in Python.
 
 # Install and import a Python library.
@@ -155,7 +153,7 @@ If many modules and libraries are already preinstalled, as in Colab, you can use
 # and packages we have installed in this session (e.g. the library DoWhy)
 !pip freeze
 
-You can type in `>` following the `!pip freeze` command to save the list of packages to a file called `requirements.txt` (details about the `requirements.txt` file are provided at the end of the notebook). The character `>` saves any command output to a file.
+You can type in `>` following the `!pip freeze` command to save the list of Python packages to a requirements file named `requirements.txt` (details about the `requirements.txt` file are provided at the end of the notebook). The character `>` saves any command output to a file.
 
 !pip freeze > requirements.txt
 
@@ -192,7 +190,7 @@ pandas==1.2.0
 dowhy==0.6
 ```
 
-You can use the package [`pipreqsnb`](https://pypi.org/project/pipreqsnb/) to automatically save a list of the packages (and their versions) used in the current notebook to a file named `requirements.txt`. The file `requirements.txt` will be created in your working directory after you execute the command below.
+You can use the package [`pipreqsnb`](https://pypi.org/project/pipreqsnb/) to automatically save a list of all Python packages (and their versions) used in your current notebook to a file named `requirements.txt`. The file `requirements.txt` will be created in your working directory after you execute the command below.
 
 # Install the pipreqsnb package
 !pip install -q pipreqsnb
@@ -200,4 +198,4 @@ You can use the package [`pipreqsnb`](https://pypi.org/project/pipreqsnb/) to au
 # Run pipreqsnb after specifying the path to the notebook
 !pipreqsnb ../notebooks/03_open_reproducible_workflows.ipynb
 
-The dependency file `requirements.txt` can be then used by tools like [Binder](https://mybinder.org) to build a [Docker container](https://www.docker.com/resources/what-container) that recreates the computational environment (including packages and their particular versions) you have used in your data analysis, making your code immediately reproducible by others irrespective of their computational environment (e.g., operating system or software  versions). Reproducing your computational environment is a precondition for others to be able to reproduce your data analysis.
+The requirements file (`requirements.txt`) can be then used by tools like [Binder](https://mybinder.org) to build a [Docker container](https://www.docker.com/resources/what-container) that recreates the computational environment (including packages and package versions) you have used in your data analysis, making your code immediately reproducible by others irrespective of their computational environment (e.g., operating system or software  versions). Reproducing your computational environment is a key precondition for others to be able to reproduce your data analysis.

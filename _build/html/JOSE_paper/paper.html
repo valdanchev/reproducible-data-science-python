@@ -115,11 +115,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/00_textbook_outline.html#how-to-get-the-most-of-these-materials">
-   How to get the most of these materials?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/00_textbook_outline.html#learning-resources">
    Learning resources
   </a>
@@ -132,6 +127,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/00_textbook_outline.html#data-sets">
    Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
   </a>
  </li>
  <li class="toctree-l1">
@@ -1151,20 +1151,18 @@ GitHub (<a class="reference external" href="https://github.com/valdanchev/dynami
 <p>Learners can access the resource in its entirety on the dedicated website <a class="reference external" href="https://valdanchev.github.io/reproducible-data-science-python">https://valdanchev.github.io/reproducible-data-science-python</a>. The resource website is built
 using <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a> and is deployed to GitHub Pages from the <a class="reference external" href="https://github.com/valdanchev/reproducible-data-science-python">resource’s public GitHub repository</a>.
 To interactively work with the code, learners can access the interactive versions of the Jupyter notebooks via <a class="reference external" href="https://mybinder.org/">MyBinder</a> and <a class="reference external" href="https://colab.research.google.com">Colab</a>
-without any setup, istall, or download requirements.</p>
+with no setup or download requirements.</p>
 <ul class="simple">
-<li><p>Binder [&#64;project_jupyter-proc-scipy-2018]  is a free open-source online service that lets you open and execute Jupyter notebooks and work with the code interactively in your browser. MyBinder uses the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file (which lists all the packages used
-in the resource and their versions) and which is provided in the <a class="reference external" href="https://github.com/valdanchev/reproducible-data-science-python">resource’s public GitHub repository</a>) to build a live environment that includes the package dependencies
-and versions used in the original notebooks, enabling reproducibility and minimising possible errors due to package updates.
-Binder is suited for relatively short sessions—a computational user session can last up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity. Regarding
-data ethics and user privacy, Binder is free, public service that requires no log-in and does not keep track of user data. All code and data that are run during a session are destroyed once the session finishes. More information
-on how MyBinder ensures user privacy is provided by the MyBinder team in their <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/about/faq.html#how-does-mybinder-org-ensure-user-privacy">Frequently Asked Questions (FAQs)</a>.</p></li>
+<li><p>MyBinder [&#64;project_jupyter-proc-scipy-2018] is a free open-source online service that lets you open and execute Jupyter notebooks and work with the code interactively in your browser. MyBinder uses the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>
+file from the <a class="reference external" href="https://github.com/valdanchev/reproducible-data-science-python">resource’s public GitHub repository</a>, which lists all the packages and package versions used in the resource, to build a live environment that
+includes the package dependencies and versions used in the original notebooks, enabling reproducibility and minimising possible errors due to package updates. Binder is suited for relatively short sessions—a user session
+can last up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity. Notebooks launched on MyBinder are non-persistent—any changes will be lost after user’s myBinder session times out unless
+the user downloads the notebook. Regarding access and user privacy, myBinder is public service that requires no log-in and does not keep track of user data. All code and data that are run during a session are destroyed once
+the session finishes. More information on how MyBinder ensures user privacy is provided by the MyBinder team in their <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/about/faq.html#how-does-mybinder-org-ensure-user-privacy">Frequently Asked Questions (FAQs)</a>.</p></li>
 <li><p>Colab is an environment from Google Research that runs Jupyter notebooks on the Google Cloud, allowing interactive work with notebooks from the browser. Similar to MyBinder, Colab is free of charge but requires a
 Google account and a log-in. For more information, see <a class="reference external" href="https://research.google.com/colaboratory/faq.html">Colab’s Frequently Asked Questions</a>). Colab notebooks likely run faster and have longer session lifetimes
 (up to 12 hours) compared to MyBinder. In comparison to MyBinder, which reproduces the computing environment and package dependencies used in the original notebooks, Colab opens notebooks in a new environment with
-preinstalled package dependencies. At the time of use, the packages preinstalled on Colab may differ in versions (and associated modules, functions, or parameters) from the packages used in the original notebooks,
-introducing possible errors. To install the original package dependencies, Colab users would need to run the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file following the instructions in the <a class="reference external" href="http://README.md">README.md</a> file on the
-<a class="reference external" href="https://github.com/valdanchev/reproducible-data-science-python">resource’s public GitHub repository</a>.</p></li>
+preinstalled package dependencies. At the time of use, the packages and package versions preinstalled on Colab may differ from the packages and package versions used in the original notebooks, introducing possible errors. To install the original package dependencies, Colab users would need to run the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file following the instructions in the <a class="reference external" href="http://README.md">README.md</a> file on the <a class="reference external" href="https://github.com/valdanchev/reproducible-data-science-python">resource’s public GitHub repository</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="acknowledgements">

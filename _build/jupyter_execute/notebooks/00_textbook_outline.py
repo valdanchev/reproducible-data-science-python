@@ -54,47 +54,6 @@ By the end of the module, you will be able to:
 <br>
 
 
-# How to get the most of these materials?
-
-You can read the materials on this website and learn about various topics in reproducible data science. If you prefer more hands-on coding, you can access the interactive versions of the Python Jupyter notebooks via Binder and Colab. 
-
-* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/master) [MyBinder](https://jupyter.org/binder) is a free open online service that lets you open and execute Jupyter notebooks and work with the code interactively.
-
-* ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) [Colab](https://colab.research.google.com/notebooks/intro.ipynb?utm_source=scs-index) is a freely available service that allows you to run your Python Jupyter notebook on the Google Cloud, making it possible to interactively write and execute Python code in your browser. Colab differs from Jupyter in some respects (e.g., keyboard shortcuts). The code on this website should work in Colab as early versions of many of the notebooks were designed in Colab (some components were designed for Jupyter Book and may appear differently in Colab). For each topic, you can click on ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) and work with the notebook interactively:
-
-1. End-to-End Data Science Project: Human mobility during UK lockdowns 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/end_to_end_data_science_project.ipynb)
-
-2. Python Data Science on the Cloud
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/python_data_science_cloud.ipynb)
-
-3. Open Reproducible Data Science Workflow
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/open_reproducible_workflows.ipynb)
-
-4. Data Design and Data Wrangling
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_design_wrangling.ipynb)
-
-5. Data Exploration and Data Visualisation 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_exploration_visualisation.ipynb)
-
-6. Pattern Discovery using Unsupervised Learning
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/pattern_discovery_unsupervised_learning.ipynb)
-
-7. Prediction using Supervised Learning
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/prediction_supervised_learning.ipynb)
-
-8. What Causes What? Introduction to Causal inference 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/causal_inference.ipynb)
-
-9. Network Analysis
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/network_analysis.ipynb)
-
-10. Data Ethics
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_ethics.ipynb)
-
-<br>
-
-
 # Learning resources
 
 To accommodate students' different styles of learning, I have assembled a range of resources, from books and articles to short video lectures and tutorials on coding and data analysis. You are welcome to focus on learning materials you personally find the most helpful. Below are listed some of the key readings and learning resource that can help you get started, and throughout the textbook I point to particular learning resources that are directly relevant to the lab’s topic.
@@ -146,9 +105,9 @@ We distinguish four categories of learning resources by marking articles with a 
 
 The textbook uses [Python](https://www.python.org). Python is open source, freely available, and accessible general-purpose programming language. A great feature of Python (and other open-source programing languages) are the collaborative communities which have developed a diverse ecosystem of powerful libraries or tools for doing data science. Those open-source tools allow us to perform computational data analysis at easy while focusing on the understanding of our results and on their evaluation and implications. The open-source tools for data analysis we will use the most include [`pandas`](https://pandas.pydata.org/docs/index.html) for data loading, wrangling, and exploratory data analysis; [`seaborn`](https://seaborn.pydata.org/#) and [`Matplotlib`](https://matplotlib.org) for data visualisation; [`scikit-learn`](https://scikit-learn.org/stable/index.html) for prediction, pattern discovery and other machine learning tasks; and [`statsmodels`](https://www.statsmodels.org/stable/index.html) for statistical modelling. Many of these tools are built on top of [`NumPy`](https://numpy.org) and [`SciPy`](https://www.scipy.org/scipylib/index.html), two foundational libraries for scientific computing in Python.
 
-We write Python code in [Jupyter Notebook](https://jupyter.org). The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. 
+We write Python code in [Jupyter Notebooks](https://jupyter.org). The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. 
 
-We run our Jupyter notebooks on the cloud. The cloud computing infrastructure gives learners access to pre-configured data science computational environments, data, and learning resources without the need of software installation and configuration. Learners can access the Jupyter notebooks either via MyBinder or Colab. [MyBinder](https://mybinder.org) is a free, public online service that runs Jupyter notebooks in an executable and reproducible environment, enabling interactive analysis. The [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true) is a free environment that runs Jupyter notebooks on the Google Cloud, enabling  interactive analysis.
+We use cloud services to run Jupyter Notebook. The cloud infrastructure provides access to pre-configured data science computational environments. Learners can open a notebook and interact with the code without the need of software installation and configuration. Specifically, learners can access the notebooks that form part of this learning resource via MyBinder or Colab. [MyBinder](https://mybinder.org) is a free, public online service that runs Jupyter notebooks in an executable and reproducible environment, enabling interactive data analysis. The [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true) is a free environment that runs Jupyter notebooks on the Google Cloud, enabling interactive data analysis.
 
 ---
 <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/open_source_python_data_science.png?raw=true">
@@ -189,6 +148,47 @@ We believe in open science and open data, and, therefore, the majority of the te
 <br>
 
 In addition to the above three data sets, we explore in exercises various other data sets related to COVID-19, including the [World Health Organisation (WHO) COVID-19 Global Data](https://covid19.who.int) and [Apple's COVID-19 Mobility Trends Reports](https://covid19.apple.com/mobility).
+
+<br>
+
+
+# How to get the most of these materials?
+
+You can read the materials on this website and learn reproducible data science. To interactively work with the code, you can access the interactive versions of the Jupyter notebooks in your browser via [Binder](https://mybinder.org) and [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true). 
+
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/master) By clicking on the Binder badge, you will launch the Jupyter notebooks in a cloud instance. Binder will open the notebooks in a reproducible computational environment (i.e., an environment that contains pre-installed the Python packages used in the original notebooks) from where you can interactively run and modify the code in your browser. Binder is a free, public cloud service. No setup or a login is required to execute the notebooks.
+
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](http://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/gh-pages) By clicking on the Colab badge on the left, you will access a list of all Jupyter notebooks from which you can select a notebook to launch on Google Cloud. Alternatively, you can open any individual Colab notebook of choice by clicking on one of the ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) badges listed below. Once open in your browser, you can interactively run and modify the notebook. Colab is a free cloud service that requires no setup. You can view the notebooks without a login but to execute and modify a notebook, a Google account and a login are required.
+
+> 1. End-to-End Data Science Project: Human mobility during UK lockdowns 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/end_to_end_data_science_project.ipynb)
+>
+> 2. Python Data Science on the Cloud
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/python_data_science_cloud.ipynb)
+>
+> 3. Open Reproducible Data Science Workflow
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/open_reproducible_workflows.ipynb)
+>
+> 4. Data Design and Data Wrangling
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_design_wrangling.ipynb)
+>
+> 5. Data Exploration and Data Visualisation 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_exploration_visualisation.ipynb)
+>
+> 6. Pattern Discovery using Unsupervised Learning
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/pattern_discovery_unsupervised_learning.ipynb)
+>
+> 7. Prediction using Supervised Learning
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/prediction_supervised_learning.ipynb)
+>
+> 8. What Causes What? Introduction to Causal inference 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/causal_inference.ipynb)
+>
+> 9. Network Analysis
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/network_analysis.ipynb)
+>
+> 10. Data Ethics
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/data_ethics.ipynb)
 
 <br>
 

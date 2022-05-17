@@ -117,11 +117,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-these-materials">
-   How to get the most of these materials?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#learning-resources">
    Learning resources
   </a>
@@ -134,6 +129,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#data-sets">
    Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
   </a>
  </li>
  <li class="toctree-l1">
@@ -1106,7 +1106,7 @@
 </div>
 <br>
 <blockquote>
-<div><img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true">
+<div><img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="800" height="400">
 <p><a class="reference external" href="https://eprints.gla.ac.uk/148887/7/148887.pdf">— Marwick et al, 2017, Open science in archaeology</a></p>
 </div></blockquote>
 <div class="section" id="key-themes">
@@ -1244,7 +1244,6 @@
 </div>
 </div>
 </div>
-<p>As of April 2021, Colab supports Python 3.7.10.</p>
 <p>To install and manage Python software modules or libraries, you can use a package-management system, such as <a class="reference external" href="https://pypi.org/project/pip/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. Using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you can download and install a specific version of a module/library you plan to use in your data analysis. For example, you can install the library for causal inference <a class="reference external" href="https://microsoft.github.io/dowhy/example_notebooks/dowhy_simple_example.html"><code class="docutils literal notranslate"><span class="pre">DoWhy</span></code></a> version <a class="reference external" href="https://pypi.org/project/dowhy/#id4">0.6</a> released on 03 March 2021 by typing <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">doWhy==0.6</span></code>. Note that we use two consecutive equal marks <code class="docutils literal notranslate"><span class="pre">==</span></code> called the equality operator instead of a single equal marks <code class="docutils literal notranslate"><span class="pre">=</span></code> which is an assignment operator in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1252,6 +1251,13 @@
 <span class="c1"># The flag -q is short for --quiet and is used to hide output/warnings</span>
 <span class="o">!</span>pip install -q <span class="nv">dowhy</span><span class="o">==</span><span class="m">0</span>.6
 <span class="kn">import</span> <span class="nn">dowhy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 22.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/valentindanchev/opt/anaconda3/bin/python -m pip install --upgrade pip&#39; command.</span>
+
 </pre></div>
 </div>
 </div>
@@ -1330,7 +1336,6 @@ dash-core-components==1.17.1
 dash-html-components==1.1.4
 dash-table==4.12.0
 dask @ file:///tmp/build/80754af9/dask-core_1602083700509/work
-
 decorator==5.0.9
 defusedxml==0.6.0
 delayed==0.11.0b1
@@ -1340,7 +1345,7 @@ docopt==0.6.2
 docutils==0.16
 dowhy==0.6
 en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.2.0/en_core_web_md-3.2.0-py3-none-any.whl
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.3.0/en_core_web_sm-3.3.0-py3-none-any.whl
 entrypoints==0.3
 et-xmlfile==1.0.1
 fastcache==1.1.0
@@ -1561,8 +1566,8 @@ snowballstemmer==2.0.0
 sortedcollections==1.2.1
 sortedcontainers @ file:///tmp/build/80754af9/sortedcontainers_1606865132123/work
 soupsieve==2.0.1
-spacy==3.2.1
-spacy-legacy==3.0.8
+spacy==3.3.0
+spacy-legacy==3.0.9
 spacy-loggers==1.0.1
 Sphinx @ file:///tmp/build/80754af9/sphinx_1597428793432/work
 sphinx-book-theme==0.0.42
@@ -1582,7 +1587,7 @@ sphinxcontrib-websupport @ file:///tmp/build/80754af9/sphinxcontrib-websupport_1
 spyder @ file:///opt/concourse/worker/volumes/live/93f52c11-6bc0-49a8-541e-aa5e1de1eadc/volume/spyder_1599056974853/work
 spyder-kernels @ file:///opt/concourse/worker/volumes/live/b4ec5b57-5b3c-42d0-7731-c0691f88ee81/volume/spyder-kernels_1599056790993/work
 SQLAlchemy @ file:///opt/concourse/worker/volumes/live/0214475e-3c0a-49a9-6cb8-ab2d5c945bef/volume/sqlalchemy_1603812264100/work
-srsly==2.4.2
+srsly==2.4.3
 stargazer==0.0.5
 statsmodels==0.12.2
 sympy @ file:///opt/concourse/worker/volumes/live/d5d0b33b-5c2f-493b-5b67-8149e5531868/volume/sympy_1605119535834/work
@@ -1593,7 +1598,7 @@ termcolor==1.1.0
 terminado==0.9.1
 testpath==0.4.4
 textblob==0.17.1
-thinc==8.0.13
+thinc==8.0.15
 threadpoolctl==3.1.0
 tifffile==2020.10.1
 tokenize-rt==4.2.1
@@ -1612,7 +1617,7 @@ ujson==1.35
 unicodecsv==0.14.1
 urllib3 @ file:///tmp/build/80754af9/urllib3_1603305693037/work
 version-information==1.0.4
-wasabi==0.9.0
+wasabi==0.9.1
 watchdog @ file:///opt/concourse/worker/volumes/live/cc0ee7bb-1065-44c4-5867-0fd5d13729e0/volume/watchdog_1593447373245/work
 watermark==2.2.0
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
@@ -1638,7 +1643,7 @@ zope.interface @ file:///opt/concourse/worker/volumes/live/de428e3b-00ba-4161-44
 </div>
 </div>
 </div>
-<p>You can type in <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> following the <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">freeze</span></code> command to save the list of packages to a file called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (details about the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file are provided at the end of the notebook). The character <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> saves any command output to a file.</p>
+<p>You can type in <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> following the <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">freeze</span></code> command to save the list of Python packages to a requirements file named <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> (details about the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file are provided at the end of the notebook). The character <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> saves any command output to a file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip freeze &gt; requirements.txt
@@ -1683,6 +1688,13 @@ import pandas as pd
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 22.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/valentindanchev/opt/anaconda3/bin/python -m pip install --upgrade pip&#39; command.</span>
+
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1703,7 +1715,7 @@ import pandas as pd
 <span class="n">dowhy</span><span class="o">==</span><span class="mf">0.6</span>
 </pre></div>
 </div>
-<p>You can use the package <a class="reference external" href="https://pypi.org/project/pipreqsnb/"><code class="docutils literal notranslate"><span class="pre">pipreqsnb</span></code></a> to automatically save a list of the packages (and their versions) used in the current notebook to a file named <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. The file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> will be created in your working directory after you execute the command below.</p>
+<p>You can use the package <a class="reference external" href="https://pypi.org/project/pipreqsnb/"><code class="docutils literal notranslate"><span class="pre">pipreqsnb</span></code></a> to automatically save a list of all Python packages (and their versions) used in your current notebook to a file named <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. The file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> will be created in your working directory after you execute the command below.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the pipreqsnb package</span>
@@ -1715,6 +1727,11 @@ import pandas as pd
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 22.0.4; however, version 22.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/valentindanchev/opt/anaconda3/bin/python -m pip install --upgrade pip&#39; command.</span>
+
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pipreqs  --savepath ../notebooks/requirements.txt .//__temp_pipreqsnb_folder/
 </pre></div>
 </div>
@@ -1723,7 +1740,7 @@ import pandas as pd
 </div>
 </div>
 </div>
-<p>The dependency file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> can be then used by tools like <a class="reference external" href="https://mybinder.org">Binder</a> to build a <a class="reference external" href="https://www.docker.com/resources/what-container">Docker container</a> that recreates the computational environment (including packages and their particular versions) you have used in your data analysis, making your code immediately reproducible by others irrespective of their computational environment (e.g., operating system or software  versions). Reproducing your computational environment is a precondition for others to be able to reproduce your data analysis.</p>
+<p>The requirements file (<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>) can be then used by tools like <a class="reference external" href="https://mybinder.org">Binder</a> to build a <a class="reference external" href="https://www.docker.com/resources/what-container">Docker container</a> that recreates the computational environment (including packages and package versions) you have used in your data analysis, making your code immediately reproducible by others irrespective of their computational environment (e.g., operating system or software  versions). Reproducing your computational environment is a key precondition for others to be able to reproduce your data analysis.</p>
 </div>
 
     <script type="text/x-thebe-config">
