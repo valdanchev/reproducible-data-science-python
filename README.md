@@ -1,31 +1,29 @@
 # Reproducible Data Science with Python
 
-This repository contains the open textbook [Reproducible Data Science with Python](https://valdanchev.github.io/reproducible-data-science-python/intro.html) in the form of Python Jupyter notebooks.
+This repository contains the open learning resource [Reproducible Data Science with Python](https://valdanchev.github.io/reproducible-data-science-python/intro.html) in the form of Python Jupyter notebooks.
 
 ## Description 
 
-The textbook uses real-world social data sets related to the COVID-19 pandemic to provide an accessible introduction to open, reproducible, and ethical data analysis using hands-on Python coding, modern open-source computational tools, and data science techniques. 
+The open learning resource uses real-world social data sets related to the COVID-19 pandemic to provide an accessible introduction to open, reproducible, and ethical data analysis using hands-on Python coding, modern open-source computational tools, and data science techniques. 
 Topics include reproducible workflows, data wrangling, exploratory data analysis, data visualisation, pattern discovery (e.g., clustering), prediction and machine learning, causal inference, and network analysis.
  
 ## How to use the learning resource?
 
 You can read the textbook on the dedicated [website](https://valdanchev.github.io/reproducible-data-science-python/intro.html). In addition, you can view each individual notebook on GitHub by clicking on the respective ![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label) button below.
 
-To interactively work with the code, you can access the interactive versions of the Jupyter notebooks in your browser via [Binder](https://mybinder.org) and [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true). 
+To interactively work with the code, you can access the interactive versions of the Jupyter notebooks via the free cloud services [myBinder](https://mybinder.org) and [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true). Both services allow you to interactively modify and run the notebooks from your browser. 
 
 * By clicking on a ![Binder](https://mybinder.org/badge_logo.svg) button below, you will launch an interactive version of the Jupyter notebook, with the following capabilities:
-	* **Interactivity** Notebooks can be modified and run from your browser.
-	* **Reproducibility** Notebooks run in a computational environment containing the same Python packages and package versions used in the original notebooks.
-	* **Session time** Notebooks run for up to 6 hours. A session will be shut down automatically after more than 10 minutes of inactivity.
-	* **Notebook persistence** Non-persistent, changes will be lost after your myBinder session times out unless you download the notebook.
-	* **Access** Free, public cloud service. No setup or a login is required to view and execute the notebooks.
+	* **Reproducibility:** Notebooks run in a reproducible computing environment containing the same Python packages and package versions used in the original notebooks.
+	* **Session time:** Notebooks run for up to 6 hours. A session will be shut down automatically after more than 10 minutes of inactivity.
+	* **Notebook persistence:** Non-persistent, changes will be lost after your myBinder session times out unless you download the notebook.
+	* **Access:** Free, public, and anonymous cloud service. No setup or a login is required to view and execute the notebooks.
 
 * By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) button below, you will open a Jupyter notebook in Colab, with the following capabilities:
-	* **Interactivity** Notebooks can be modified and run from your browser.
-	* **Reproducibility** Colab environment comes with pre-installed Python packages and package versions, and these may differ from the ones used in the original notebooks. To enable computational reproducibility, see section "Installing dependencies" below.
-	* **Session time** Notebooks run by connecting to virtual machines (VMs) that have maximum lifetimes up to 12 hours. Notebooks will disconnect from VMs when left idle for too long (time may vary).
-	* **Notebook persistence** Persistent, changes are saved automatically if you are logged in.
-	* **Access** Free cloud service that requires no setup. You can view the notebooks without a login but to execute and modify a notebook, a Google account and a login are required.
+	* **Reproducibility:** Colab environment comes with pre-installed Python packages and package versions, and these may differ from the ones used in the original notebooks. To enable computational reproducibility, see section "Installing dependencies" below.
+	* **Session time:** Notebooks run by connecting to virtual machines (VMs) that have maximum lifetimes up to 12 hours. Notebooks will disconnect from VMs when left idle for too long (time may vary).
+	* **Notebook persistence:** Persistent, changes are saved automatically if you are logged in.
+	* **Access:** Free cloud service that requires no setup. You can view the notebooks without a login but to execute and modify a notebook, a Google account and a login are required.
 
 | Textbook chapter | View on GitHub | Launch on myBinder.org | Open in Colab |
 |--------------|-----------|--------------|-----------|
