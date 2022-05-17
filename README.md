@@ -15,7 +15,7 @@ To interactively work with the code, you can access the interactive versions of 
 
 * By clicking on a ![Binder](https://mybinder.org/badge_logo.svg) button below, you will launch an interactive version of the Jupyter notebook, with the following capabilities:
 	* **Reproducibility:** Notebooks run in a reproducible computing environment containing the same Python packages and package versions used in the original notebooks.
-	* **Session time:** Notebooks run for up to 6 hours and shut down automatically after more than 10 minutes of inactivity.
+	* **Session time:** Notebooks run for up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity.
 	* **Notebook persistence:** Non-persistent, changes will be lost after your myBinder session times out unless you download the notebook.
 	* **Access:** Free, public, and anonymous cloud service. No setup or a login is required to view and execute the notebooks.
 
