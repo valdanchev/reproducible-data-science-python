@@ -4,44 +4,44 @@
 - file: intro
 - part: About the textbook
   chapters:
-  - file: textbook_outline
+  - file: notebooks/00_textbook_outline
 
 - part: End-to-End Data Science Project
   chapters:
-  - file: end_to_end_data_science_project
-
-- part: Open Reproducible Workflow
-  chapters:
-  - file: open_reproducible_workflows
+  - file: notebooks/01_end_to_end_data_science_project
 
 - part: Python Data Science on the Cloud
   chapters:
-  - file: python_data_science_cloud
+  - file: notebooks/02_python_data_science_on_the_cloud
+  
+- part: Open Reproducible Workflow
+  chapters:
+  - file: notebooks/03_open_reproducible_workflows
   
 - part: data design & data wrangling
   chapters:
-  - file: data_design_wrangling
+  - file: notebooks/04_data_design_and_data_wrangling
   
 - part: Data Exploration & Visualisation
   chapters:
-  - file: data_exploration_visualisation
+  - file: notebooks/05_data_exploration_and_visualisation
   
 - part: Pattern Discovery using Unsupervised Learning
   chapters:
-  - file: pattern_discovery_unsupervised_learning
+  - file: notebooks/06_pattern_discovery_using_unsupervised_learning
   
 - part: Prediction using Supervised Learning
   chapters:
-  - file: prediction_supervised_learning
+  - file: notebooks/07_prediction_using_supervised_learning
 
 - part: Causal Inference
   chapters:
-  - file: causal_inference
+  - file: notebooks/08_causal_inference
 
 - part: Network Analysis
   chapters:
-  - file: network_analysis
+  - file: notebooks/09_network_analysis
 
 - part: Data ethics
   chapters:
-  - file: data_ethics
+  - file: notebooks/10_data_ethics

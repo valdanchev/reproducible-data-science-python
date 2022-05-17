@@ -3,7 +3,7 @@
 
 title: 'Reproducible Data Science + Python + Real-World Data'
 author: Valentin Danchev
-logo: mylogo2.png
+logo: images/logo.png
 copyright: 2021
 page_titles: false
 # Force re-execution of notebooks on each build.
