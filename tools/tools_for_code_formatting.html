@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools for Python code formatting &#8212; Reproducible Data Science + Python + Real-World Data</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Reproducible Data Science + Python + Real-World Data</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Reproducible Data Science with Python
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  About the textbook
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html">
+   Textbook outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#what-is-reproducible-data-science">
+   What is Reproducible Data Science?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#how-to-get-the-most-of-these-materials">
+   How to get the most of these materials?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#software-stack">
+   Software stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#data-sets">
+   Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#acknowledgment">
+   Acknowledgment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00_textbook_outline.html#code-availability">
+   Code availability
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  End-to-End Data Science Project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html">
+   Human mobility during UK lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#let-s-formulate-our-research-question">
+   Let’s formulate our research question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#data-to-address-the-question">
+   Data to address the question
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#get-started-with-jupyter-colab-notebook">
+   Get started with Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#let-s-get-coding">
+   Let’s get coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#python-tools-for-data-analysis">
+   Python tools for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#load-your-data">
+   Load your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#view-your-data">
+   View your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#data-design-how-are-data-generated">
+   Data Design: How are data generated?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#data-ethics-privacy-and-fairness-risks">
+   Data Ethics, Privacy, and Fairness Risks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#describe-your-data">
+   Describe your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#exploratory-data-analysis">
+   Exploratory data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#visualising-mobility-trends">
+   Visualising mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#mobility-changes-across-lockdowns">
+   Mobility changes across lockdowns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#zooming-in-regional-mobility-trends">
+   Zooming in: Regional mobility trends
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01_end_to_end_data_science_project.html#re-cap">
+   Re-cap
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Data Science on the Cloud
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html">
+   <strong>
+    Python for Data Analysis on the Cloud
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#get-started-with-jupyter-colab-notebooks">
+   Get Started with Jupyter &amp; Colab notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#python-coding-for-data-analysis">
+   Python Coding for Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#descriptive-statistics-with-numpy">
+   Descriptive statistics with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#readability-of-your-python-code">
+   Readability of your Python code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#running-terminal-commands-in-jupyter-colab-notebook">
+   Running Terminal commands in Jupyter/Colab notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#installing-packages-with-pip">
+   Installing packages with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pip
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#jupyter-magic-commands">
+   Jupyter magic commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#loading-real-world-data-with-pandas">
+   Loading real-world data with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#hands-on-exercise-let-s-practice-your-python-skills">
+   Hands-on exercise: Let’s practice your Python skills
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#markdown-text-cells">
+   Markdown Text Cells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02_python_data_science_on_the_cloud.html#hands-on-exercise-let-s-practice-your-markdown-skills">
+   Hands-on exercise: Let’s practice your Markdown skills
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Open Reproducible Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html">
+   Open Reproducible Data Science Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html#what-is-computational-reproducibility-and-why-it-matters">
+   What is computational reproducibility and why it matters?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html#open-reproducible-workflow-in-jupyter-colab-notebooks">
+   Open Reproducible Workflow in Jupyter/Colab Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html#rules-for-reproducible-workflow">
+   Rules for Reproducible Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html#reproducible-research-report">
+   Reproducible research report
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03_open_reproducible_workflows.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  data design &amp; data wrangling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html">
+   Data Design &amp; Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#get-started-with-pandas">
+   Get started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#importing-pandas">
+   Importing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#loading-your-data">
+   Loading your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#loading-covid-19-data-sets-via-url">
+   Loading Covid-19 data sets via URL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#viewing-describing-and-accessing-your-data">
+   Viewing, Describing, and Accessing your Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#accessing-columns-and-rows-in-your-data">
+   Accessing columns and rows in your data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#handling-missing-values">
+   Handling Missing Values
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#compare-mobility-data-formats">
+   Compare mobility data formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04_data_design_and_data_wrangling.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Exploration &amp; Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html">
+   Exploratory Data Analysis and Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#addressing-simple-questions-via-python-eda">
+   Addressing simple questions via Python EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#code-reuse-creating-your-own-functions">
+   Code reuse: creating your own functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq1-how-do-countries-differ-in-mobility-trends">
+   RQ1: How do countries differ in mobility trends?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#data-visualisation-with-seaborn">
+   Data visualisation with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#changing-figure-appearance">
+   Changing figure appearance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#wide-and-long-data-format">
+   Wide and long data format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#multi-plot-visualisations">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq2-how-do-mobility-trends-change-over-time">
+   RQ2: How do mobility trends change over time?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#visualising-time-series-data">
+   Visualising time series data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#bootstrapping-for-inference">
+   Bootstrapping for inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq3-how-have-mobility-trends-differed-across-uk-lockdowns">
+   RQ3: How have mobility trends differed across UK lockdowns?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#visualising-lockdowns-mobility-as-barplots">
+   Visualising lockdowns’ mobility as barplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq4-how-have-mobility-trends-differed-across-uk-counties-during-the-third-lockdown">
+   RQ4: How have mobility trends differed across UK counties during the third lockdown?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#id1">
+   Multi-plot visualisations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#split-apply-combine">
+   Split-apply-combine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#summarising-data-by-groups">
+   Summarising data by groups
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq5-how-do-mobility-categories-relate-to-each-other">
+   RQ5: How do mobility categories relate to each other?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#visualising-distributions">
+   Visualising distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#plotting-pairwise-relationships">
+   Plotting pairwise relationships
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#rq6-how-correlated-are-mobility-categories-across-uk-counties">
+   RQ6: How correlated are mobility categories across UK counties?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#visualising-correlation">
+   Visualising correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#visualising-linear-regression">
+   Visualising linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05_data_exploration_and_visualisation.html#recording-dependencies">
+   Recording dependencies
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pattern Discovery using Unsupervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html">
+   Discovering patterns in data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#machine-learning-what-is-it-what-is-it-good-for">
+   Machine Learning: What is it? What is it good for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#research-problem-clustering-counties-by-mobility">
+   Research problem: clustering counties by mobility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#k-means-clustering">
+   <em>
+    k
+   </em>
+   -means clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#let-s-get-coding-with-scikit-learn">
+   Let’s get coding with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#data-preprocessing">
+   Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#data-standardisation">
+   Data standardisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#choosing-the-optimal-number-of-clusters">
+   Choosing the optimal number of clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#performing-for-loop">
+   Performing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#elbow-plot">
+   Elbow plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#dimensionality-reduction-via-pca">
+   Dimensionality Reduction via PCA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#visualising-mobility-clusters">
+   Visualising mobility clusters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#related-approaches-hierarchical-clustering">
+   Related approaches: Hierarchical clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06_pattern_discovery_using_unsupervised_learning.html#hands-on-exercise">
+   Hands-on exercise
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction using Supervised Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html">
+   Learning from Data to Predict
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#the-prediction-task">
+   The Prediction task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#prediction-tasks-in-social-sciences">
+   Prediction tasks in social sciences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#predictions-gone-wrong">
+   Predictions gone wrong
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#research-problem-vaccine-hesitancy">
+   Research problem: vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#data-understanding-society-covid-19">
+   Data: Understanding Society COVID-19
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#defining-output-and-input-variables">
+   Defining Output and Input variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#data-wrangling">
+   Data wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#overfitting-and-data-splitting">
+   Overfitting and data splitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#preprocessing-the-training-data-set">
+   Preprocessing the training data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#unbalance-class-problem">
+   Unbalance class problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#train-models-on-training-data">
+   Train models on training data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#model-evaluation-using-cross-validation">
+   Model evaluation using Cross-validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#testing-model-accuracy-on-new-data">
+   Testing model accuracy on new data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#preprocessing-the-test-data-set">
+   Preprocessing the test data set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#predicting-vaccine-hesitancy">
+   Predicting vaccine hesitancy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07_prediction_using_supervised_learning.html#model-evaluation-on-test-data">
+   Model evaluation on test data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Causal Inference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html">
+   Introduction to Causal Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#what-causes-what">
+   What causes what?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#confoundingbasic-definitions">
+   Confounding—basic definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#our-example-of-collider-bias">
+   Our example of collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#drawing-causal-graphs">
+   Drawing causal graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#statistical-models-in-python">
+   Statistical Models in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#collider-confounder">
+   Collider confounder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#additional-material">
+   Additional material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#gender-discrimination-and-collider-bias">
+   Gender discrimination and collider bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08_causal_inference.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Network Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html">
+   Network analysis with NetworkX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#open-network-data-repositories">
+   Open network data repositories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#network-representations">
+   Network representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#creating-an-undirected-network">
+   Creating an undirected network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#computing-network-diagnostics">
+   Computing network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#assortative-mixing">
+   Assortative mixing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#creating-a-directed-network">
+   Creating a directed network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#a-fun-examplestar-wars-network">
+   A fun example—Star Wars network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#global-network-diagnostics">
+   Global network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#meso-scale-network-diagnostics">
+   Meso-scale network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#local-network-diagnostics">
+   Local network diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09_network_analysis.html#references">
+   References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data ethics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/10_data_ethics.html">
+   Data Ethics, Bias, and Fairness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/10_data_ethics.html#discussion-a-level-results-in-2020-england">
+   Discussion: A-level results in 2020 England
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/10_data_ethics.html#learning-resources-about-the-a-level-controversy">
+   Learning resources about the A-level controversy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/10_data_ethics.html#bias-and-fairness-in-data-science-systems">
+   Bias and Fairness in Data Science Systems
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tools/tools_for_code_formatting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/valdanchev/reproducible-data-science-python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/valdanchev/reproducible-data-science-python/issues/new?title=Issue%20on%20page%20%2Ftools/tools_for_code_formatting.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/master?urlpath=tree/tools/tools_for_code_formatting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tools-for-python-code-formatting">
+<h1>Tools for Python code formatting<a class="headerlink" href="#tools-for-python-code-formatting" title="Permalink to this headline">¶</a></h1>
+<p>The code in the learning resource is validated against the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8 style guide for Python code</a> by executing two automated code style tools—the automated code formatter <a class="reference external" href="https://github.com/psf/black">Black</a> and the style guide checker <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a>—via <a class="reference external" href="https://github.com/nbQA-dev/nbQA">nbQA</a>. nbQA is a tool for notebook code style that allows you to run standard Python code formatters on a Jupyter notebook.</p>
+<p>This notebook installs and runs on all notebooks these code style tools.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install code quality tools</span>
+<span class="o">!</span>pip install -U nbqa black flake8
+
+<span class="c1"># Run black on all notebooks in a folder </span>
+<span class="o">!</span>nbqa black ../notebooks/*.ipynb
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nbqa in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (1.3.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: black in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (22.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: flake8 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (4.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tokenize-rt&gt;=3.2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from nbqa) (4.2.1)
+Requirement already satisfied: tomli in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from nbqa) (2.0.1)
+Requirement already satisfied: ipython&gt;=7.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from nbqa) (7.32.0)
+Requirement already satisfied: typing-extensions&gt;=3.10.0.0 in /Users/valentindanchev/.local/lib/python3.8/site-packages (from black) (4.0.1)
+Requirement already satisfied: pathspec&gt;=0.9.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from black) (0.9.0)
+Requirement already satisfied: platformdirs&gt;=2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from black) (2.5.2)
+Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from black) (0.4.3)
+Requirement already satisfied: click&gt;=8.0.0 in /Users/valentindanchev/.local/lib/python3.8/site-packages (from black) (8.0.3)
+Requirement already satisfied: pyflakes&lt;2.5.0,&gt;=2.4.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from flake8) (2.4.0)
+Requirement already satisfied: mccabe&lt;0.7.0,&gt;=0.6.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from flake8) (0.6.1)
+Requirement already satisfied: pycodestyle&lt;2.9.0,&gt;=2.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from flake8) (2.8.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (5.0.5)
+Requirement already satisfied: setuptools&gt;=18.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (57.0.0)
+Requirement already satisfied: pickleshare in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (0.7.5)
+Requirement already satisfied: jedi&gt;=0.16 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (0.18.0)
+Requirement already satisfied: appnope in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (0.1.2)
+Requirement already satisfied: pexpect&gt;4.3 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (4.8.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (3.0.18)
+Requirement already satisfied: pygments in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (2.9.0)
+Requirement already satisfied: backcall in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (0.2.0)
+Requirement already satisfied: decorator in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (5.0.9)
+Requirement already satisfied: matplotlib-inline in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=7.8.0-&gt;nbqa) (0.1.2)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=7.8.0-&gt;nbqa) (0.8.2)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=7.8.0-&gt;nbqa) (0.7.0)
+Requirement already satisfied: wcwidth in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=7.8.0-&gt;nbqa) (0.2.5)
+Requirement already satisfied: ipython-genutils in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython&gt;=7.8.0-&gt;nbqa) (0.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All done! ✨ 🍰 ✨
+11 files left unchanged.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run flake8 on all notebooks in a folder</span>
+<span class="o">!</span>nbqa flake8 ../notebooks/*.ipynb
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/01_end_to_end_data_science_project.ipynb:cell_2:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/01_end_to_end_data_science_project.ipynb:cell_13:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/01_end_to_end_data_science_project.ipynb:cell_13:6:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/01_end_to_end_data_science_project.ipynb:cell_16:18:80: E501 line too long (83 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/02_python_data_science_on_the_cloud.ipynb:cell_8:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/02_python_data_science_on_the_cloud.ipynb:cell_22:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/02_python_data_science_on_the_cloud.ipynb:cell_23:1:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/02_python_data_science_on_the_cloud.ipynb:cell_29:2:80: E501 line too long (87 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/02_python_data_science_on_the_cloud.ipynb:cell_33:1:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/03_open_reproducible_workflows.ipynb:cell_2:3:1: F401 &#39;dowhy&#39; imported but unused
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/03_open_reproducible_workflows.ipynb:cell_2:3:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_1:6:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_8:4:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_13:2:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_17:1:80: E501 line too long (90 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_18:1:80: E501 line too long (88 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_18:2:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_24:5:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_25:5:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/04_data_design_and_data_wrangling.ipynb:cell_36:2:80: E501 line too long (118 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_1:11:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_1:14:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_1:15:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_2:2:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_2:22:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_2:23:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_3:5:80: E501 line too long (105 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_3:19:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_3:20:80: E501 line too long (84 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_3:22:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_9:2:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_9:14:80: E501 line too long (81 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_14:1:80: E501 line too long (81 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_17:2:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_17:5:80: E501 line too long (87 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_18:1:80: E501 line too long (81 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_32:1:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_40:3:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_42:1:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_42:10:80: E501 line too long (87 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/05_data_exploration_and_visualisation.ipynb:cell_43:1:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_1:12:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_1:15:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_1:16:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_1:17:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_4:8:80: E501 line too long (105 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_4:22:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_4:23:80: E501 line too long (84 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_4:25:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_8:1:80: E501 line too long (88 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_10:2:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_10:5:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_16:7:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_16:9:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_18:8:80: E501 line too long (83 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_30:15:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_30:28:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_31:15:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_31:33:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_31:40:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_33:27:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_34:45:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_41:11:80: E501 line too long (83 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_42:1:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_44:7:80: E501 line too long (81 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/06_pattern_discovery_using_unsupervised_learning.ipynb:cell_45:2:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_2:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_2:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_2:5:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_7:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_16:3:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_19:6:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_20:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_20:4:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_23:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_23:3:80: E501 line too long (86 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_23:7:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_27:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_27:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_28:5:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_28:9:80: E501 line too long (88 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_31:5:80: E501 line too long (89 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_31:6:80: E501 line too long (88 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_31:7:80: E501 line too long (84 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_31:10:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_34:1:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_34:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_35:1:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_37:3:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.ipynb:cell_40:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_7:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_8:1:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_8:4:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_10:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_13:3:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_13:5:80: E501 line too long (83 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_15:2:80: E501 line too long (81 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_16:2:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_16:3:80: E501 line too long (80 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_17:2:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_17:3:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_17:4:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_17:5:1: E402 module level import not at top of file
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/08_causal_inference.ipynb:cell_19:4:80: E501 line too long (85 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/09_network_analysis.ipynb:cell_1:6:1: F401 &#39;scipy.stats.stats.pearsonr&#39; imported but unused
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/09_network_analysis.ipynb:cell_12:4:80: E501 line too long (82 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/09_network_analysis.ipynb:cell_28:2:80: E501 line too long (117 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/09_network_analysis.ipynb:cell_34:12:80: E501 line too long (83 &gt; 79 characters)
+/Users/valentindanchev/Documents/MyJupyterBook/reproducible_data_science_python/reproducible-data-science-python/notebooks/09_network_analysis.ipynb:cell_37:3:1: E402 module level import not at top of file
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tools"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Valentin Danchev<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
