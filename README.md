@@ -15,13 +15,13 @@ To interactively work with the code, you can access the interactive versions of 
 
 * By clicking on a ![Binder](https://mybinder.org/badge_logo.svg) button below, you will launch an interactive version of the Jupyter notebook, with the following capabilities:
 	* **Reproducibility:** Notebooks run in a reproducible computing environment containing the same Python packages and package versions used in the original notebooks.
-	* **Session time:** Notebooks run for up to 6 hours. A session will be shut down automatically after more than 10 minutes of inactivity.
+	* **Session time:** Notebooks run for up to 6 hours and shut down automatically after more than 10 minutes of inactivity.
 	* **Notebook persistence:** Non-persistent, changes will be lost after your myBinder session times out unless you download the notebook.
 	* **Access:** Free, public, and anonymous cloud service. No setup or a login is required to view and execute the notebooks.
 
 * By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) button below, you will open a Jupyter notebook in Colab, with the following capabilities:
-	* **Reproducibility:** Colab environment comes with pre-installed Python packages and package versions, and these may differ from the ones used in the original notebooks. To enable computational reproducibility, see section "Installing dependencies" below.
-	* **Session time:** Notebooks run by connecting to virtual machines (VMs) that have maximum lifetimes up to 12 hours. Notebooks will disconnect from VMs when left idle for too long (time may vary).
+	* **Reproducibility:** Colab environment comes with pre-installed Python packages and package versions, which may differ from the ones used in the original notebooks. To enable computational reproducibility, see section "Installing dependencies" below.
+	* **Session time:** Notebooks run for up to 12 hours and will disconnect when left idle for too long (time may vary).
 	* **Notebook persistence:** Persistent, changes are saved automatically if you are logged in.
 	* **Access:** Free cloud service that requires no setup. You can view the notebooks without a login but to execute and modify a notebook, a Google account and a login are required.
 
