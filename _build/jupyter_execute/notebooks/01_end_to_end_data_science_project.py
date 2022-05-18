@@ -36,7 +36,7 @@ An aggregated and anonymised large data set showing movement trends over time by
 
 # Get started with Jupyter/Colab notebook
 
-We will use the [Jupyter notebook](https://jupyter.org) implemented on the Google Cloud, which is called [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#) (or Colab for short). 
+We will use the [Jupyter Notebook](https://jupyter.org) implemented on the Google Cloud, which is called [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#) (or Colab for short). 
 
 [The Jupyter Notebook](https://jupyter.org) is a user-friendly, free, open-source web application that allows you to combine live software code, explanatory text, visualisations and model outputs in a single computational notebook.
 
