@@ -65,11 +65,15 @@ We will aim to predict people who are unlikely to take a coronavirus vaccine _(Y
 
 # Data: Understanding Society COVID-19
 
-We will use data from [The Understanding Society: Covid-19 Study](https://www.understandingsociety.ac.uk/topic/covid-19). The survey asks participants across the UK about their experiences during the COVID-19 outbreak. We use the Wave 6 (November 2020) web-collected survey data.
+We will use data from [The Understanding Society: Covid-19 Study](https://www.understandingsociety.ac.uk/topic/covid-19). The survey asks participants across the UK about their experiences during the COVID-19 outbreak. We use the Wave 6 (November 2020) web-collected survey data. More information about the survey data and questionnaire is available in the study documentation on the [UK Data Service](https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644#!/documentation) website. 
 
-The data are safeguarded and can be downloaded from the [UK Data Service](https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644).
+The data are safeguarded and is available to users registered with the [UK Data Service](https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644).
 
-<img src="https://www.cdcs.ed.ac.uk/files/styles/large_16x9/public/2019-08/Spotlighton_AjaMurray_A4_UKHLS_Logo_positive_RGB_300dpi.jpg?itok=YmQnr_oq" width="600" height="300" >
+<img src="https://www.cdcs.ed.ac.uk/files/styles/large_16x9/public/2019-08/Spotlighton_AjaMurray_A4_UKHLS_Logo_positive_RGB_300dpi.jpg?itok=YmQnr_oq" width="400" height="200" >
+
+:::{note}
+The workflow in this session assumes that learners, first, have registered with the UK Data Service and obtained access to the Understanding Society: Covid-19 Study (Wave 6, November 2020, Web-collected data) and, second, have safely and securely stored the data in their Google Drive as a comma-separated values (CSV) file named `Understanding_Society_Covid19_Wave6_November2020.csv` that can be loaded in Colab. If you have not registered with the UK Data Service and have not obtained access to the data, you can still read the textbook chapter and follow the analytical steps but would not be able to work interactively with the notebook.
+:::
 
 ## Accessing data from your Google Drive
 After you obtain access to the Understanding Society: Covid-19 Study, 2020, you can upload the Wave 6 (November 2020) data set into your Google Drive. Then you will need to connect your Google Drive to your Google Colab using the code below:   
@@ -80,6 +84,10 @@ from google.colab import drive
 # This will prompt for authorization.
 # Enter your authorisation code and rerun the cell.
 drive.mount("/content/drive")
+
+:::{note}
+The above code will execute in Colab but will give the following error `ModuleNotFoundError: No module named 'google'` when the notebook is run outside Colab, including when the notebook is executed for the build of the Jupyter Book website.
+:::
 
 ## Loading the Understanding Society Covid-19 Study (Wave 6, November 2020, Web collected)
 

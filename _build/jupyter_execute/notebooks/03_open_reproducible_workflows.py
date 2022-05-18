@@ -1,12 +1,14 @@
 # Open Reproducible Data Science Workflow
 <br>
 
-> #### "An article about computational science in a scientific publication is _not_ the scholarship itself, it is merely _advertising_ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
+> "An article about computational science in a scientific publication is _not_ the scholarship itself, it is merely _advertising_ of 
+> the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which 
+> generated the figures."
 >[— J. B. Buckheit and D. L. Donoho, 1995](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)
 
 <br>
 
-> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="800" height="300">
+> <img src="https://github.com/valdanchev/reproducible-data-science-python/blob/master/images/reproducibility_spectrum.png?raw=true" width="600" height="300">
 >
 >[— Marwick et al, 2017, Open science in archaeology](https://eprints.gla.ac.uk/148887/7/148887.pdf)
 
