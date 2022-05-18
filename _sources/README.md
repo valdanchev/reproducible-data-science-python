@@ -47,7 +47,7 @@ By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab
 ---
 **NOTE**
 
-The notebooks _Prediction using Supervised Learning_ and _What Causes What? Introduction to Causal inference_ require [access to safeguarded data](https://valdanchev.github.io/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.html#data-understanding-society-covid-19) which, once obtained, needs to be stored securely on your Google Drive and the notebooks should be run on your private Colab notebooks.  
+The notebooks _Prediction using Supervised Learning_ and _What Causes What? Introduction to Causal inference_ require [access to safeguarded data](https://valdanchev.github.io/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.html#data-understanding-society-covid-19) which, once obtained, needs to be stored securely on your Google Drive and loaded in your private Colab notebooks.  
 
 ---
 <br>
