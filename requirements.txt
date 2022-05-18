@@ -13,3 +13,4 @@ community==1.0.0b1
 imblearn==0.0
 protobuf==3.17.3
 scikit_learn==0.24.2
+pipreqsnb==0.2.4
