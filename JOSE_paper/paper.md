@@ -1,5 +1,5 @@
 ---
-title: An open learning resource on Reproducible Data Science with Python
+title: Reproducible Data Science with Python: An open learning resource
 tags:
 - Python
 - Jupyter notebook
