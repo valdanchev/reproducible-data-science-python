@@ -2,6 +2,11 @@
 
 This repository contains the open learning resource [Reproducible Data Science with Python](https://valdanchev.github.io/reproducible-data-science-python/intro.html) in the form of Python Jupyter notebooks.
 
+| **Publication about the Learning Resource** | [![status](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898/status.svg)](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898)[![DOI](https://jose.theoj.org/papers/10.21105/jose.00152/status.svg)](https://doi.org/10.21105/jose.00152) |
+| :--- | :--- |
+| **Releases** | [![GitHub release (latest by date)](https://img.shields.io/github/v/release/valdanchev/reproducible-data-science-python?logo=GitHub)](https://github.com/valdanchev/reproducible-data-science-python/releases) |
+| __License__ | [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/) |
+
 ## Description 
 
 The open learning resource uses real-world social data sets related to the COVID-19 pandemic to provide an accessible introduction to open, reproducible, and ethical data analysis using hands-on Python coding, modern open-source computational tools, and data science techniques. 
@@ -11,13 +16,13 @@ Topics include reproducible workflows, data wrangling, exploratory data analysis
 
 You can read the textbook on the dedicated [website](https://valdanchev.github.io/reproducible-data-science-python/intro.html). In addition, you can view each individual notebook on GitHub by clicking on the respective ![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label) button below.
 
-To interactively work with the code, you can access the interactive versions of the Jupyter notebooks via the free cloud services [myBinder](https://mybinder.org) and [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true). Both services allow you to interactively modify and run the notebooks from your browser. 
+To interactively work with the code, you can access the interactive versions of the Jupyter notebooks via the free cloud services [MyBinder](https://mybinder.org) and [Colab](https://colab.research.google.com/notebooks/intro.ipynb#recent=true). Both services allow you to interactively modify and run the notebooks from your browser. 
 
 By clicking on a ![Binder](https://mybinder.org/badge_logo.svg) button below, you will launch an interactive version of the Jupyter notebook, with the following capabilities:
 * **Reproducibility:** Notebooks run in a reproducible computing environment containing the same Python packages and package versions used in the original notebooks.
 * **Session time:** Notebooks run for up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity.
-* **Notebook persistence:** Non-persistent, changes will be lost after your myBinder session times out unless you download the notebook.
-* **Access:** Free, public, and anonymous cloud service. No setup or a login is required to view and execute the notebooks.
+* **Notebook persistence:** Non-persistent, changes will be lost after your MyBinder session times out unless you download the notebook.
+* **Access:** Free, public, and anonymous cloud service. No setup or a login is required to view and execute the notebooks. Notebooks that use safeguarded data should not be launched on MyBinder.
 
 By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) button below, you will open a Jupyter notebook in Colab, with the following capabilities:
 * **Reproducibility:** Colab environment comes with pre-installed Python packages and package versions, which may differ from the ones used in the original notebooks. To enable computational reproducibility, see section "Installing dependencies" below.
@@ -25,7 +30,7 @@ By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab
 * **Notebook persistence:** Persistent, changes are saved automatically when you are logged in.
 * **Access:** Free cloud service that requires no setup. You can view the notebooks without a login but to execute and modify a notebook, a Google account and a login are required.
 
-| Textbook chapter | View on GitHub | Launch on myBinder.org | Open in Colab |
+| Textbook chapter | View on GitHub | Launch on MyBinder.org | Open in Colab |
 |--------------|-----------|--------------|-----------|
 | [About the textbook](https://valdanchev.github.io/reproducible-data-science-python/notebooks/00_textbook_outline.html) | [![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/valdanchev/reproducible-data-science-python/blob/master/notebooks/00_textbook_outline.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/604f6843faf5052420d4254073e0ea1db809864c?urlpath=lab%2Ftree%2Fnotebooks%2F04_data_design_and_data_wrangling.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/_build/html/_sources/notebooks/00_textbook_outline.ipynb) |
 | [End-to-End Data Science Project](https://valdanchev.github.io/reproducible-data-science-python/notebooks/01_end_to_end_data_science_project.html) | [![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/valdanchev/reproducible-data-science-python/blob/master/notebooks/01_end_to_end_data_science_project.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/604f6843faf5052420d4254073e0ea1db809864c?urlpath=lab%2Ftree%2Fnotebooks%2F04_data_design_and_data_wrangling.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/_build/html/_sources/notebooks/01_end_to_end_data_science_project.ipynb) |
@@ -38,6 +43,13 @@ By clicking on a ![Open In Colab](https://colab.research.google.com/assets/colab
 | [What Causes What? Introduction to Causal inference](https://valdanchev.github.io/reproducible-data-science-python/notebooks/08_causal_inference.html) | [![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/valdanchev/reproducible-data-science-python/blob/master/notebooks/08_causal_inference.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/604f6843faf5052420d4254073e0ea1db809864c?urlpath=lab%2Ftree%2Fnotebooks%2F04_data_design_and_data_wrangling.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/_build/html/_sources/notebooks/08_causal_inference.ipynb) |
 | [Network Analysis](https://valdanchev.github.io/reproducible-data-science-python/notebooks/09_network_analysis.html) | [![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/valdanchev/reproducible-data-science-python/blob/master/notebooks/09_network_analysis.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/604f6843faf5052420d4254073e0ea1db809864c?urlpath=lab%2Ftree%2Fnotebooks%2F04_data_design_and_data_wrangling.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/_build/html/_sources/notebooks/09_network_analysis.ipynb) |
 | [Data Ethics](https://valdanchev.github.io/reproducible-data-science-python/notebooks/10_data_ethics.html) | [![GitHub](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/valdanchev/reproducible-data-science-python/blob/master/notebooks/10_data_ethics.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/valdanchev/reproducible-data-science-python/604f6843faf5052420d4254073e0ea1db809864c?urlpath=lab%2Ftree%2Fnotebooks%2F04_data_design_and_data_wrangling.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valdanchev/reproducible-data-science-python/blob/master/_build/html/_sources/notebooks/10_data_ethics.ipynb) |
+
+---
+**NOTE**
+
+The notebooks _Prediction using Supervised Learning_ and _What Causes What? Introduction to Causal inference_ require [access to safeguarded data](https://valdanchev.github.io/reproducible-data-science-python/notebooks/07_prediction_using_supervised_learning.html#data-understanding-society-covid-19) which, once obtained, needs to be stored securely on your Google Drive and the notebooks should be run on your private Colab notebooks.  
+
+---
 <br>
 
 ## Installing dependencies
