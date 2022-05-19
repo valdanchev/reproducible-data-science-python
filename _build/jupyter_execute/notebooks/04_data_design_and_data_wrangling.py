@@ -52,7 +52,6 @@ pd.__version__
 
 # Suppress warnings to avoid potential confusion
 import warnings
-
 warnings.filterwarnings("ignore")
 
 # Loading your data

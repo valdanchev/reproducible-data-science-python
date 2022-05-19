@@ -1210,7 +1210,6 @@ Socius.</p>
 
 <span class="c1"># Suppress warnings to avoid potential confusion</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1241,145 +1240,6 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 <span class="p">)</span>
 
 <span class="n">mobility_trends</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">gaierror</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1349</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1350</span>                 <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1351</span>                           <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span>         <span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">_send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">body</span> <span class="o">=</span> <span class="n">_encode</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1301</span>         <span class="bp">self</span><span class="o">.</span><span class="n">endheaders</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">endheaders</span><span class="nt">(self, message_body, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span>             <span class="k">raise</span> <span class="n">CannotSendHeader</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1250</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_send_output</span><span class="p">(</span><span class="n">message_body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1251</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">_send_output</span><span class="nt">(self, message_body, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>         <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="p">[:]</span>
-<span class="ne">-&gt; </span><span class="mi">1010</span>         <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">send</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_open</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">950</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span>             <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1416</span> 
-<span class="ne">-&gt; </span><span class="mi">1417</span>             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/http/client.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">920</span>         <span class="sd">&quot;&quot;&quot;Connect to the host and port specified in __init__.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">921</span>         <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">922</span>             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_address</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/socket.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address)</span>
-<span class="g g-Whitespace">    </span><span class="mi">786</span>     <span class="n">err</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">787</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
-<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">--&gt; </span><span class="mi">918</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
-
-<span class="ne">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">URLError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-2-00c2b1515f51&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mobility_trends</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s2">&quot;https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> 
-<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="g g-Whitespace">    </span><span class="mi">688</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span>     <span class="c1"># though mypy handling of conditional imports is difficult.</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="c1"># See https://github.com/python/mypy/issues/1297</span>
-<span class="ne">--&gt; </span><span class="mi">434</span>     <span class="n">fp_or_buf</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">compression</span><span class="p">,</span> <span class="n">should_close</span> <span class="o">=</span> <span class="n">get_filepath_or_buffer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span>         <span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">compression</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_url</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="c1"># TODO: fsspec can also handle HTTP via requests, but leaving this unchanged</span>
-<span class="ne">--&gt; </span><span class="mi">183</span>         <span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>         <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span> 
-<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span> 
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> 
-<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">def</span> <span class="nf">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">):</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span> 
-<span class="g g-Whitespace">    </span><span class="mi">524</span>         <span class="n">sys</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="s1">&#39;urllib.Request&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">())</span>
-<span class="ne">--&gt; </span><span class="mi">525</span>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span> 
-<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="c1"># post-process response</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">_open</span><span class="nt">(self, req, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span> 
-<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">protocol</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">type</span>
-<span class="ne">--&gt; </span><span class="mi">542</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_open</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">protocol</span> <span class="o">+</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>                                   <span class="s1">&#39;_open&#39;</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">_call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>             <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">502</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>             <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>                 <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">https_open</span><span class="nt">(self, req)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1391</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1392</span>         <span class="k">def</span> <span class="nf">https_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1393</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1394</span>                 <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">check_hostname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_hostname</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1395</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/urllib/request.py</span> in <span class="ni">do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1351</span>                           <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1352</span>             <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
-<span class="ne">-&gt; </span><span class="mi">1353</span>                 <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1354</span>             <span class="n">r</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1355</span>         <span class="k">except</span><span class="p">:</span>
-
-<span class="ne">URLError</span>: &lt;urlopen error [Errno 8] nodename nor servname provided, or not known&gt;
 </pre></div>
 </div>
 </div>
@@ -1593,7 +1453,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
   </thead>
   <tbody>
     <tr>
-      <th>9709262</th>
+      <th>9900501</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1602,16 +1462,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-25</td>
+      <td>2022-05-10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>84.0</td>
+      <td>126.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709263</th>
+      <th>9900502</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1620,16 +1480,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-26</td>
+      <td>2022-05-11</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>107.0</td>
+      <td>129.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709264</th>
+      <th>9900503</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1638,16 +1498,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-27</td>
+      <td>2022-05-12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>109.0</td>
+      <td>116.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709265</th>
+      <th>9900504</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1656,16 +1516,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-28</td>
+      <td>2022-05-13</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.0</td>
+      <td>118.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709266</th>
+      <th>9900505</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1674,12 +1534,12 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-29</td>
+      <td>2022-05-16</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>113.0</td>
+      <td>100.0</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -1731,7 +1591,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
   </thead>
   <tbody>
     <tr>
-      <th>9709257</th>
+      <th>9900496</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1740,16 +1600,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-18</td>
+      <td>2022-05-03</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-3.0</td>
+      <td>119.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709258</th>
+      <th>9900497</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1758,16 +1618,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-19</td>
+      <td>2022-05-04</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>95.0</td>
+      <td>116.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709259</th>
+      <th>9900498</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1776,16 +1636,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-20</td>
+      <td>2022-05-05</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.0</td>
+      <td>110.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709260</th>
+      <th>9900499</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1794,16 +1654,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-21</td>
+      <td>2022-05-06</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74.0</td>
+      <td>124.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709261</th>
+      <th>9900500</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1812,16 +1672,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-22</td>
+      <td>2022-05-09</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>97.0</td>
+      <td>98.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709262</th>
+      <th>9900501</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1830,16 +1690,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-25</td>
+      <td>2022-05-10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>84.0</td>
+      <td>126.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709263</th>
+      <th>9900502</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1848,16 +1708,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-26</td>
+      <td>2022-05-11</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>107.0</td>
+      <td>129.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709264</th>
+      <th>9900503</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1866,16 +1726,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-27</td>
+      <td>2022-05-12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>109.0</td>
+      <td>116.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709265</th>
+      <th>9900504</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1884,16 +1744,16 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-28</td>
+      <td>2022-05-13</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.0</td>
+      <td>118.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709266</th>
+      <th>9900505</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1902,12 +1762,12 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-29</td>
+      <td>2022-05-16</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>113.0</td>
+      <td>100.0</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -1925,7 +1785,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9709267, 15)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9900506, 15)
 </pre></div>
 </div>
 </div>
@@ -1950,7 +1810,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>As of 2022-05-04 05:55:30.237493 The Google COVID-19 Community Mobility Reports contain 9709267 rows and 15 columns.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>As of 2022-05-19 16:03:13.963353 The Google COVID-19 Community Mobility Reports contain 9900506 rows and 15 columns.
 </pre></div>
 </div>
 </div>
@@ -1986,7 +1846,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 9709267 entries, 0 to 9709266
+RangeIndex: 9900506 entries, 0 to 9900505
 Data columns (total 15 columns):
  #   Column                                              Dtype         
 ---  ------                                              -----         
@@ -2417,7 +2277,7 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3577753</th>
+      <th>3647576</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2435,7 +2295,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577754</th>
+      <th>3647577</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2453,7 +2313,7 @@ memory usage: 1.1+ GB
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3577755</th>
+      <th>3647578</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2471,7 +2331,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577756</th>
+      <th>3647579</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2489,7 +2349,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577757</th>
+      <th>3647580</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2561,7 +2421,7 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3114174</th>
+      <th>3174838</th>
       <td>DE</td>
       <td>Germany</td>
       <td>NaN</td>
@@ -2579,7 +2439,7 @@ memory usage: 1.1+ GB
       <td>-1.0</td>
     </tr>
     <tr>
-      <th>3114175</th>
+      <th>3174839</th>
       <td>DE</td>
       <td>Germany</td>
       <td>NaN</td>
@@ -2597,7 +2457,7 @@ memory usage: 1.1+ GB
       <td>0.0</td>
     </tr>
     <tr>
-      <th>3114176</th>
+      <th>3174840</th>
       <td>DE</td>
       <td>Germany</td>
       <td>NaN</td>
@@ -2615,7 +2475,7 @@ memory usage: 1.1+ GB
       <td>0.0</td>
     </tr>
     <tr>
-      <th>3114177</th>
+      <th>3174841</th>
       <td>DE</td>
       <td>Germany</td>
       <td>NaN</td>
@@ -2633,7 +2493,7 @@ memory usage: 1.1+ GB
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3114178</th>
+      <th>3174842</th>
       <td>DE</td>
       <td>Germany</td>
       <td>NaN</td>
@@ -2768,7 +2628,7 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3649131</th>
+      <th>3720375</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Essex</td>
@@ -2786,7 +2646,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3649132</th>
+      <th>3720376</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Essex</td>
@@ -2804,7 +2664,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3649133</th>
+      <th>3720377</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Essex</td>
@@ -2822,7 +2682,7 @@ memory usage: 1.1+ GB
       <td>3.0</td>
     </tr>
     <tr>
-      <th>3649134</th>
+      <th>3720378</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Essex</td>
@@ -2840,7 +2700,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3649135</th>
+      <th>3720379</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Essex</td>
@@ -2913,7 +2773,7 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3577753</th>
+      <th>3647576</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2931,7 +2791,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577754</th>
+      <th>3647577</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2949,7 +2809,7 @@ memory usage: 1.1+ GB
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3577755</th>
+      <th>3647578</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2967,7 +2827,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577756</th>
+      <th>3647579</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -2985,7 +2845,7 @@ memory usage: 1.1+ GB
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577757</th>
+      <th>3647580</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3021,7 +2881,7 @@ memory usage: 1.1+ GB
       <td>...</td>
     </tr>
     <tr>
-      <th>3913819</th>
+      <th>3990325</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>York</td>
@@ -3030,34 +2890,16 @@ memory usage: 1.1+ GB
       <td>GB-YOR</td>
       <td>NaN</td>
       <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-26</td>
-      <td>-4.0</td>
-      <td>11.0</td>
-      <td>23.0</td>
-      <td>-23.0</td>
-      <td>-27.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>3913820</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-27</td>
-      <td>-6.0</td>
-      <td>9.0</td>
-      <td>21.0</td>
-      <td>-23.0</td>
+      <td>2022-05-12</td>
+      <td>-3.0</td>
+      <td>10.0</td>
+      <td>91.0</td>
+      <td>-20.0</td>
       <td>-25.0</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>3913821</th>
+      <th>3990326</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>York</td>
@@ -3066,53 +2908,71 @@ memory usage: 1.1+ GB
       <td>GB-YOR</td>
       <td>NaN</td>
       <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-28</td>
-      <td>-2.0</td>
-      <td>11.0</td>
-      <td>26.0</td>
-      <td>-23.0</td>
-      <td>-25.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>3913822</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-29</td>
-      <td>-6.0</td>
-      <td>12.0</td>
-      <td>22.0</td>
-      <td>-12.0</td>
-      <td>-27.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>3913823</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-30</td>
-      <td>-7.0</td>
+      <td>2022-05-13</td>
+      <td>-9.0</td>
       <td>8.0</td>
-      <td>39.0</td>
-      <td>4.0</td>
-      <td>-10.0</td>
+      <td>71.0</td>
+      <td>-12.0</td>
+      <td>-26.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>3990327</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-14</td>
+      <td>-15.0</td>
+      <td>6.0</td>
+      <td>23.0</td>
+      <td>-7.0</td>
+      <td>-5.0</td>
       <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>3990328</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-15</td>
+      <td>-8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>-10.0</td>
+      <td>-5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3990329</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-16</td>
+      <td>-5.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+      <td>-24.0</td>
+      <td>-30.0</td>
+      <td>6.0</td>
     </tr>
   </tbody>
 </table>
-<p>336071 rows × 15 columns</p>
+<p>342754 rows × 15 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -3157,27 +3017,27 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3667647</th>
+      <th>3739259</th>
       <td>Gloucestershire</td>
       <td>-16.0</td>
     </tr>
     <tr>
-      <th>3670056</th>
+      <th>3741716</th>
       <td>Greater London</td>
       <td>-14.0</td>
     </tr>
     <tr>
-      <th>3691818</th>
+      <th>3763910</th>
       <td>Greater London</td>
       <td>-13.0</td>
     </tr>
     <tr>
-      <th>3670862</th>
+      <th>3742538</th>
       <td>Greater London</td>
       <td>-12.0</td>
     </tr>
     <tr>
-      <th>3686982</th>
+      <th>3758978</th>
       <td>Greater London</td>
       <td>-11.0</td>
     </tr>
@@ -3187,27 +3047,27 @@ memory usage: 1.1+ GB
       <td>...</td>
     </tr>
     <tr>
-      <th>3872801</th>
+      <th>3948491</th>
       <td>Tyne and Wear</td>
       <td>-1.0</td>
     </tr>
     <tr>
-      <th>3810655</th>
+      <th>3885110</th>
       <td>Nottinghamshire</td>
       <td>-1.0</td>
     </tr>
     <tr>
-      <th>3700684</th>
+      <th>3772952</th>
       <td>Greater Manchester</td>
       <td>-1.0</td>
     </tr>
     <tr>
-      <th>3855116</th>
+      <th>3930454</th>
       <td>Suffolk</td>
       <td>-1.0</td>
     </tr>
     <tr>
-      <th>3730429</th>
+      <th>3803289</th>
       <td>Kent</td>
       <td>-1.0</td>
     </tr>
@@ -3258,27 +3118,27 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3670070</th>
+      <th>3741730</th>
       <td>Greater London</td>
       <td>-94.0</td>
     </tr>
     <tr>
-      <th>3670876</th>
+      <th>3742552</th>
       <td>Greater London</td>
       <td>-92.0</td>
     </tr>
     <tr>
-      <th>3675712</th>
+      <th>3747484</th>
       <td>Greater London</td>
       <td>-87.0</td>
     </tr>
     <tr>
-      <th>3695056</th>
+      <th>3767212</th>
       <td>Greater London</td>
       <td>-84.0</td>
     </tr>
     <tr>
-      <th>3684578</th>
+      <th>3756526</th>
       <td>Greater London</td>
       <td>-83.0</td>
     </tr>
@@ -3288,27 +3148,27 @@ memory usage: 1.1+ GB
       <td>...</td>
     </tr>
     <tr>
-      <th>3893747</th>
+      <th>3969853</th>
       <td>West Sussex</td>
       <td>-56.0</td>
     </tr>
     <tr>
-      <th>3616211</th>
+      <th>3686799</th>
       <td>Cumbria</td>
       <td>-56.0</td>
     </tr>
     <tr>
-      <th>3735279</th>
+      <th>3808235</th>
       <td>Kent</td>
       <td>-54.0</td>
     </tr>
     <tr>
-      <th>3736891</th>
+      <th>3809879</th>
       <td>Kent</td>
       <td>-54.0</td>
     </tr>
     <tr>
-      <th>3769073</th>
+      <th>3842701</th>
       <td>Merseyside</td>
       <td>-50.0</td>
     </tr>
@@ -3331,7 +3191,7 @@ memory usage: 1.1+ GB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3684598
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3756546
 </pre></div>
 </div>
 </div>
@@ -3382,7 +3242,7 @@ memory usage: 1.1+ GB
   </thead>
   <tbody>
     <tr>
-      <th>3684598</th>
+      <th>3756546</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>Greater London</td>
@@ -3574,7 +3434,7 @@ memory usage: 1.1+ GB
       <td>...</td>
     </tr>
     <tr>
-      <th>9709262</th>
+      <th>9900501</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -3592,7 +3452,7 @@ memory usage: 1.1+ GB
       <td>True</td>
     </tr>
     <tr>
-      <th>9709263</th>
+      <th>9900502</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -3610,7 +3470,7 @@ memory usage: 1.1+ GB
       <td>True</td>
     </tr>
     <tr>
-      <th>9709264</th>
+      <th>9900503</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -3628,7 +3488,7 @@ memory usage: 1.1+ GB
       <td>True</td>
     </tr>
     <tr>
-      <th>9709265</th>
+      <th>9900504</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -3646,7 +3506,7 @@ memory usage: 1.1+ GB
       <td>True</td>
     </tr>
     <tr>
-      <th>9709266</th>
+      <th>9900505</th>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -3665,7 +3525,7 @@ memory usage: 1.1+ GB
     </tr>
   </tbody>
 </table>
-<p>9709267 rows × 15 columns</p>
+<p>9900506 rows × 15 columns</p>
 </div></div></div>
 </div>
 <p>Let’s determine the number of missing values for each column in the DataFrame.</p>
@@ -3676,21 +3536,21 @@ memory usage: 1.1+ GB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country_region_code                                      6074
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country_region_code                                      6183
 country_region                                              0
-sub_region_1                                           160592
-sub_region_2                                          1579590
-metro_area                                            9657078
-iso_3166_2_code                                       8015213
-census_fips_code                                      7642906
-place_id                                                17824
+sub_region_1                                           163754
+sub_region_2                                          1610543
+metro_area                                            9847293
+iso_3166_2_code                                       8173140
+census_fips_code                                      7793263
+place_id                                                18182
 date                                                        0
-retail_and_recreation_percent_change_from_baseline    3697187
-grocery_and_pharmacy_percent_change_from_baseline     3969658
-parks_percent_change_from_baseline                    5113773
-transit_stations_percent_change_from_baseline         4891148
-workplaces_percent_change_from_baseline                347869
-residential_percent_change_from_baseline              3779724
+retail_and_recreation_percent_change_from_baseline    3769374
+grocery_and_pharmacy_percent_change_from_baseline     4048994
+parks_percent_change_from_baseline                    5217709
+transit_stations_percent_change_from_baseline         4988015
+workplaces_percent_change_from_baseline                354374
+residential_percent_change_from_baseline              3846476
 dtype: int64
 </pre></div>
 </div>
@@ -3704,21 +3564,21 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country_region_code                                    0.062559
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country_region_code                                    0.062451
 country_region                                         0.000000
-sub_region_1                                           1.654007
-sub_region_2                                          16.268890
-metro_area                                            99.462483
-iso_3166_2_code                                       82.552195
-census_fips_code                                      78.717642
-place_id                                               0.183577
+sub_region_1                                           1.653996
+sub_region_2                                          16.267280
+metro_area                                            99.462522
+iso_3166_2_code                                       82.552750
+census_fips_code                                      78.715805
+place_id                                               0.183647
 date                                                   0.000000
-retail_and_recreation_percent_change_from_baseline    38.078951
-grocery_and_pharmacy_percent_change_from_baseline     40.885249
-parks_percent_change_from_baseline                    52.668991
-transit_stations_percent_change_from_baseline         50.376079
-workplaces_percent_change_from_baseline                3.582855
-residential_percent_change_from_baseline              38.929036
+retail_and_recreation_percent_change_from_baseline    38.072539
+grocery_and_pharmacy_percent_change_from_baseline     40.896839
+parks_percent_change_from_baseline                    52.701438
+transit_stations_percent_change_from_baseline         50.381415
+workplaces_percent_change_from_baseline                3.579352
+residential_percent_change_from_baseline              38.851307
 dtype: float64
 </pre></div>
 </div>
@@ -3734,19 +3594,19 @@ dtype: float64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country_region_code                                     0.000000
 country_region                                          0.000000
-sub_region_1                                            0.239830
-sub_region_2                                           36.106954
+sub_region_1                                            0.239822
+sub_region_2                                           36.107237
 metro_area                                            100.000000
-iso_3166_2_code                                        49.442231
+iso_3166_2_code                                        49.442166
 census_fips_code                                      100.000000
 place_id                                                0.000000
 date                                                    0.000000
-retail_and_recreation_percent_change_from_baseline      2.789887
-grocery_and_pharmacy_percent_change_from_baseline       2.705083
-parks_percent_change_from_baseline                     21.133927
-transit_stations_percent_change_from_baseline           3.258835
-workplaces_percent_change_from_baseline                 0.526972
-residential_percent_change_from_baseline                5.749975
+retail_and_recreation_percent_change_from_baseline      2.760289
+grocery_and_pharmacy_percent_change_from_baseline       2.684724
+parks_percent_change_from_baseline                     21.118353
+transit_stations_percent_change_from_baseline           3.234390
+workplaces_percent_change_from_baseline                 0.518739
+residential_percent_change_from_baseline                5.692713
 dtype: float64
 </pre></div>
 </div>
@@ -3850,7 +3710,7 @@ dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>3577753</th>
+      <th>3647576</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3868,7 +3728,7 @@ dtype: float64
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577754</th>
+      <th>3647577</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3886,7 +3746,7 @@ dtype: float64
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3577755</th>
+      <th>3647578</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3904,7 +3764,7 @@ dtype: float64
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577756</th>
+      <th>3647579</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3922,7 +3782,7 @@ dtype: float64
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577757</th>
+      <th>3647580</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>NaN</td>
@@ -3958,7 +3818,7 @@ dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>3913819</th>
+      <th>3990325</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>York</td>
@@ -3967,34 +3827,16 @@ dtype: float64
       <td>GB-YOR</td>
       <td>NaN</td>
       <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-26</td>
-      <td>-4.0</td>
-      <td>11.0</td>
-      <td>23.0</td>
-      <td>-23.0</td>
-      <td>-27.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>3913820</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-27</td>
-      <td>-6.0</td>
-      <td>9.0</td>
-      <td>21.0</td>
-      <td>-23.0</td>
+      <td>2022-05-12</td>
+      <td>-3.0</td>
+      <td>10.0</td>
+      <td>91.0</td>
+      <td>-20.0</td>
       <td>-25.0</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>3913821</th>
+      <th>3990326</th>
       <td>GB</td>
       <td>United Kingdom</td>
       <td>York</td>
@@ -4003,53 +3845,71 @@ dtype: float64
       <td>GB-YOR</td>
       <td>NaN</td>
       <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-28</td>
-      <td>-2.0</td>
-      <td>11.0</td>
-      <td>26.0</td>
-      <td>-23.0</td>
-      <td>-25.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>3913822</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-29</td>
-      <td>-6.0</td>
-      <td>12.0</td>
-      <td>22.0</td>
-      <td>-12.0</td>
-      <td>-27.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>3913823</th>
-      <td>GB</td>
-      <td>United Kingdom</td>
-      <td>York</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>GB-YOR</td>
-      <td>NaN</td>
-      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
-      <td>2022-04-30</td>
-      <td>-7.0</td>
+      <td>2022-05-13</td>
+      <td>-9.0</td>
       <td>8.0</td>
-      <td>39.0</td>
-      <td>4.0</td>
-      <td>-10.0</td>
+      <td>71.0</td>
+      <td>-12.0</td>
+      <td>-26.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>3990327</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-14</td>
+      <td>-15.0</td>
+      <td>6.0</td>
+      <td>23.0</td>
+      <td>-7.0</td>
+      <td>-5.0</td>
       <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>3990328</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-15</td>
+      <td>-8.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>-10.0</td>
+      <td>-5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3990329</th>
+      <td>GB</td>
+      <td>United Kingdom</td>
+      <td>York</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>GB-YOR</td>
+      <td>NaN</td>
+      <td>ChIJh-IigLwxeUgRAKFv7Z75DAM</td>
+      <td>2022-05-16</td>
+      <td>-5.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+      <td>-24.0</td>
+      <td>-30.0</td>
+      <td>6.0</td>
     </tr>
   </tbody>
 </table>
-<p>250421 rows × 15 columns</p>
+<p>255595 rows × 15 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -4059,7 +3919,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(336071, 15)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(342754, 15)
 </pre></div>
 </div>
 </div>
@@ -4115,27 +3975,27 @@ dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>3577753</th>
+      <th>3647576</th>
       <td>-4.0</td>
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577754</th>
+      <th>3647577</th>
       <td>-3.0</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3577755</th>
+      <th>3647578</th>
       <td>-14.0</td>
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577756</th>
+      <th>3647579</th>
       <td>-14.0</td>
       <td>2.0</td>
     </tr>
     <tr>
-      <th>3577757</th>
+      <th>3647580</th>
       <td>-14.0</td>
       <td>3.0</td>
     </tr>
@@ -4145,33 +4005,33 @@ dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>3913819</th>
-      <td>-27.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>3913820</th>
+      <th>3990325</th>
       <td>-25.0</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>3913821</th>
-      <td>-25.0</td>
+      <th>3990326</th>
+      <td>-26.0</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>3913822</th>
-      <td>-27.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>3913823</th>
-      <td>-10.0</td>
+      <th>3990327</th>
+      <td>-5.0</td>
       <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>3990328</th>
+      <td>-5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3990329</th>
+      <td>-30.0</td>
+      <td>6.0</td>
     </tr>
   </tbody>
 </table>
-<p>336071 rows × 2 columns</p>
+<p>342754 rows × 2 columns</p>
 </div></div></div>
 </div>
 <p>We now have the same number of rows (191064) as the original mobility_trends_UK DataFrame, with each missing value replaced by the mean value for the respective column. More advanced (and practical) approaches of replacing missing values can take into account groupings in the data and replace missing values with the mean value of a group of counties or the mean value of a time period; those operations would require more advanced Pandas functionality such as <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>, which we will use in the next lab.</p>
