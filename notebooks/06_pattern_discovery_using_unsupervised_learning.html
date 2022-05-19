@@ -117,11 +117,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-these-materials">
-   How to get the most of these materials?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#learning-resources">
    Learning resources
   </a>
@@ -134,6 +129,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#data-sets">
    Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-the-open-learning-resource">
+   How to get the most of the open learning resource?
   </a>
  </li>
  <li class="toctree-l1">
@@ -1326,13 +1326,10 @@
     <span class="s2">&quot;https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv&quot;</span><span class="p">,</span>
     <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span>
 <span class="p">)</span>
-
-<span class="n">mobility_trends_complete</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Select a manageable subset of the dataset covering the period from 15 February 2020 to 30 June 2021 using the functions <code class="docutils literal notranslate"><span class="pre">subperiod_mobility_trends()</span></code> and <code class="docutils literal notranslate"><span class="pre">rename_mobility_trends()</span></code> we defined in the previous chapter <em>Exploratory Data Analysis and Visualisation</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mobility_trends_complete</span>
@@ -1485,7 +1482,7 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>9709262</th>
+      <th>9900501</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1494,16 +1491,16 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-25</td>
+      <td>2022-05-10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>84.0</td>
+      <td>126.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709263</th>
+      <th>9900502</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1512,16 +1509,16 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-26</td>
+      <td>2022-05-11</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>107.0</td>
+      <td>129.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709264</th>
+      <th>9900503</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1530,16 +1527,16 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-27</td>
+      <td>2022-05-12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>109.0</td>
+      <td>116.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709265</th>
+      <th>9900504</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1548,16 +1545,16 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-28</td>
+      <td>2022-05-13</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.0</td>
+      <td>118.0</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709266</th>
+      <th>9900505</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1566,19 +1563,20 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
-      <td>2022-04-29</td>
+      <td>2022-05-16</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>113.0</td>
+      <td>100.0</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>9709267 rows × 15 columns</p>
+<p>9900506 rows × 15 columns</p>
 </div></div></div>
 </div>
+<p>Select a manageable subset of the dataset covering the period from 15 February 2020 to 30 June 2021 using the functions <code class="docutils literal notranslate"><span class="pre">subperiod_mobility_trends()</span></code> and <code class="docutils literal notranslate"><span class="pre">rename_mobility_trends()</span></code> we defined in the previous chapter <em>Exploratory Data Analysis and Visualisation</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load preprocess_mobility_trends.py</span>
@@ -1771,7 +1769,7 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>9709045</th>
+      <th>9900273</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1789,7 +1787,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709046</th>
+      <th>9900274</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1807,7 +1805,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709047</th>
+      <th>9900275</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1825,7 +1823,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709048</th>
+      <th>9900276</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -1843,7 +1841,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709049</th>
+      <th>9900277</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -2018,7 +2016,7 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>9709045</th>
+      <th>9900273</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -2036,7 +2034,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709046</th>
+      <th>9900274</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -2054,7 +2052,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709047</th>
+      <th>9900275</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -2072,7 +2070,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709048</th>
+      <th>9900276</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -2090,7 +2088,7 @@
       <td>NaN</td>
     </tr>
     <tr>
-      <th>9709049</th>
+      <th>9900277</th>
       <td>ZW</td>
       <td>Zimbabwe</td>
       <td>Midlands Province</td>
@@ -3073,35 +3071,35 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[846.0,
- 547.4933297761415,
+ 547.7080256569716,
  429.7112613888795,
- 365.2401015788564,
+ 365.4782968827096,
  328.8362897853743,
- 302.31190583988297,
- 281.7158957093183,
- 264.1113708579146,
- 248.16801095160525,
- 238.31770740623438,
- 229.24885020325013,
- 215.40185600318907,
- 205.7336954394515,
- 197.1862449416831,
- 187.24704825297005,
- 184.91809572407928,
- 173.08781853373597,
- 171.67736358162904,
- 160.44435973324312,
- 156.2959542017424,
- 151.78600684962305,
- 148.6078179383303,
- 143.41108695621557,
- 137.67769369097238,
- 132.73540682307745,
- 127.99085248949477,
- 119.70314624103685,
- 117.5472217077401,
- 116.05483541696202,
- 114.80575895998513]
+ 301.72829951678796,
+ 281.05116080411847,
+ 262.8764097559398,
+ 251.88350703120256,
+ 239.34973620094246,
+ 223.86683466112927,
+ 214.68357391767273,
+ 209.50534998708247,
+ 197.3101329363527,
+ 189.8774747310233,
+ 183.84087640511768,
+ 177.90242231870533,
+ 171.01789694172618,
+ 162.46276850451392,
+ 159.95180340703382,
+ 152.35221938560662,
+ 145.9763201437044,
+ 142.81737201523777,
+ 137.44933254954873,
+ 134.80252297181383,
+ 129.93053030365422,
+ 123.79731323466231,
+ 119.02326607285883,
+ 114.9870769137471,
+ 111.87382179317166]
 </pre></div>
 </div>
 </div>
@@ -4271,7 +4269,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fafe927c5e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcaa1b6e580&gt;
 </pre></div>
 </div>
 <img alt="../_images/06_pattern_discovery_using_unsupervised_learning_63_1.png" src="../_images/06_pattern_discovery_using_unsupervised_learning_63_1.png" />
@@ -4391,7 +4389,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faed2c962e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcaaf0d9df0&gt;
 </pre></div>
 </div>
 <img alt="../_images/06_pattern_discovery_using_unsupervised_learning_69_1.png" src="../_images/06_pattern_discovery_using_unsupervised_learning_69_1.png" />
@@ -4475,7 +4473,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x7fafedbb85b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x7fca86b7a3a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/06_pattern_discovery_using_unsupervised_learning_73_1.png" src="../_images/06_pattern_discovery_using_unsupervised_learning_73_1.png" />
@@ -5045,32 +5043,32 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
  304.3305477620855,
  206.67194353683982,
  148.95634380079338,
- 122.24786066825997,
- 96.27356324199825,
- 79.95814324410034,
- 68.75905341639621,
- 60.30574281015718,
- 53.748956120086476,
- 48.61976747338799,
- 44.17720427948472,
- 42.250249157747845,
- 38.048928889794894,
- 35.614292163281775,
- 32.64326864173346,
- 30.532901055480856,
- 28.4076167870721,
- 26.759863041117402,
- 24.06342250491226,
- 21.969896464062025,
- 21.712681542451968,
- 19.322573035128254,
- 18.582938346303578,
- 17.468602315161554,
- 16.412354219971142,
- 15.611784645917602,
- 14.457965984086236,
- 13.63236003052964,
- 12.862398753444031]
+ 121.28174974759105,
+ 97.43999961101579,
+ 80.83841686606813,
+ 68.90853268223835,
+ 60.22874329306373,
+ 54.14883465310518,
+ 48.573875243346166,
+ 45.43947822211138,
+ 40.28743116061935,
+ 37.842849347016006,
+ 34.45415389681908,
+ 33.05362269834717,
+ 31.83094041245218,
+ 28.85520473381342,
+ 26.095529452652656,
+ 24.52245402734946,
+ 23.495979871278994,
+ 22.14922258419889,
+ 19.607214460726738,
+ 18.627583942264145,
+ 17.74833201042812,
+ 16.640232091054198,
+ 16.03881696384903,
+ 14.79872891026243,
+ 13.496850551112397,
+ 13.02564592378948]
 </pre></div>
 </div>
 </div>
@@ -5117,12 +5115,12 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 0, 3, 0, 1, 0, 1, 1, 3, 0, 0, 0, 2, 3, 0, 2, 1, 0, 2, 3, 2,
-       0, 3, 3, 3, 3, 0, 0, 2, 0, 3, 3, 2, 3, 0, 1, 0, 0, 0, 0, 0, 1, 0,
-       3, 0, 3, 1, 0, 1, 1, 2, 3, 0, 0, 3, 1, 3, 0, 1, 3, 0, 1, 0, 0, 2,
-       0, 0, 3, 2, 0, 3, 3, 0, 2, 3, 1, 3, 1, 3, 0, 1, 1, 2, 1, 0, 0, 3,
-       2, 3, 2, 3, 3, 3, 0, 3, 3, 1, 0, 0, 3, 1, 1, 0, 3, 0, 3, 3, 2, 0,
-       3, 0, 0, 1, 1, 1, 1, 3, 2, 3, 0, 1, 0, 1, 3, 0, 1, 3, 1, 2, 2, 1],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 0, 2, 1, 2, 0, 2, 0, 0, 1, 2, 2, 2, 3, 1, 2, 3, 0, 2, 3, 1, 3,
+       2, 1, 1, 1, 1, 2, 2, 3, 2, 1, 1, 3, 1, 2, 0, 2, 2, 2, 2, 2, 0, 2,
+       1, 2, 1, 0, 2, 0, 0, 3, 1, 2, 2, 1, 0, 1, 2, 0, 1, 2, 0, 2, 2, 3,
+       2, 2, 1, 3, 2, 1, 1, 2, 3, 1, 0, 1, 0, 1, 2, 0, 0, 3, 0, 2, 2, 1,
+       3, 1, 3, 1, 1, 1, 2, 1, 1, 0, 2, 2, 1, 0, 0, 2, 1, 2, 1, 1, 3, 2,
+       1, 2, 2, 0, 0, 0, 0, 1, 3, 1, 2, 0, 2, 0, 1, 2, 0, 1, 0, 3, 3, 0],
       dtype=int32)
 </pre></div>
 </div>
@@ -5207,7 +5205,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-4.188804</td>
       <td>-7.533917</td>
       <td>4.368709</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Angola</th>
@@ -5217,7 +5215,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-27.115071</td>
       <td>-11.890746</td>
       <td>7.796813</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>Antigua and Barbuda</th>
@@ -5227,7 +5225,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-43.980952</td>
       <td>-33.560899</td>
       <td>4.367725</td>
-      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Argentina</th>
@@ -5237,7 +5235,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-46.950210</td>
       <td>-12.739573</td>
       <td>10.504889</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Aruba</th>
@@ -5247,7 +5245,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-45.807128</td>
       <td>-21.149194</td>
       <td>5.266667</td>
-      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>...</th>
@@ -5267,7 +5265,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-35.782869</td>
       <td>-20.547809</td>
       <td>12.866534</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Vietnam</th>
@@ -5277,7 +5275,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-16.383344</td>
       <td>-3.686304</td>
       <td>-3.852658</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>Yemen</th>
@@ -5287,7 +5285,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>10.733753</td>
       <td>-0.384462</td>
       <td>2.203187</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Zambia</th>
@@ -5297,7 +5295,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-5.911355</td>
       <td>-8.706175</td>
       <td>8.505976</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>Zimbabwe</th>
@@ -5307,7 +5305,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-21.217305</td>
       <td>-8.079623</td>
       <td>11.429731</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -5371,7 +5369,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-38.142992</td>
       <td>-35.856338</td>
       <td>12.764187</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -5385,7 +5383,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -5449,7 +5447,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-46.950210</td>
       <td>-12.739573</td>
       <td>10.504889</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Barbados</th>
@@ -5459,7 +5457,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-48.604196</td>
       <td>-35.294311</td>
       <td>7.961740</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Bolivia</th>
@@ -5469,7 +5467,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-40.778590</td>
       <td>-21.111781</td>
       <td>13.924102</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Cambodia</th>
@@ -5479,7 +5477,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-40.810991</td>
       <td>-23.098286</td>
       <td>11.036915</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Cape Verde</th>
@@ -5489,7 +5487,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-61.708897</td>
       <td>-35.132780</td>
       <td>8.541126</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Chile</th>
@@ -5499,7 +5497,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-42.491373</td>
       <td>-22.204740</td>
       <td>16.739138</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Colombia</th>
@@ -5509,7 +5507,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-35.618999</td>
       <td>-15.789791</td>
       <td>12.373928</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Costa Rica</th>
@@ -5519,7 +5517,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-41.059761</td>
       <td>-25.007968</td>
       <td>11.380478</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Dominican Republic</th>
@@ -5529,7 +5527,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-35.217581</td>
       <td>-32.856045</td>
       <td>7.742787</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Ecuador</th>
@@ -5539,7 +5537,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-31.441646</td>
       <td>-29.826379</td>
       <td>13.833723</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>El Salvador</th>
@@ -5549,7 +5547,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-31.815097</td>
       <td>-28.766900</td>
       <td>7.822666</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Guatemala</th>
@@ -5559,7 +5557,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-36.827924</td>
       <td>-24.630356</td>
       <td>9.426033</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Honduras</th>
@@ -5569,7 +5567,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-38.933476</td>
       <td>-29.526529</td>
       <td>5.587909</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Ireland</th>
@@ -5579,7 +5577,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-35.992820</td>
       <td>-31.905896</td>
       <td>11.153335</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Jamaica</th>
@@ -5589,7 +5587,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-29.953326</td>
       <td>-28.777418</td>
       <td>8.112504</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Jordan</th>
@@ -5599,7 +5597,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-49.044259</td>
       <td>-26.888299</td>
       <td>7.200291</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Kuwait</th>
@@ -5609,7 +5607,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-21.464818</td>
       <td>-30.640898</td>
       <td>14.061209</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Malaysia</th>
@@ -5619,7 +5617,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-44.232086</td>
       <td>-24.315252</td>
       <td>14.673892</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Mauritius</th>
@@ -5629,7 +5627,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-40.304823</td>
       <td>-24.118148</td>
       <td>4.000554</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Mexico</th>
@@ -5639,7 +5637,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-29.086818</td>
       <td>-20.787698</td>
       <td>10.111131</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Morocco</th>
@@ -5649,7 +5647,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-29.600598</td>
       <td>-24.522410</td>
       <td>12.061255</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Myanmar (Burma)</th>
@@ -5659,7 +5657,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-41.780749</td>
       <td>-35.533865</td>
       <td>17.929615</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Nepal</th>
@@ -5669,7 +5667,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-19.846614</td>
       <td>-25.856574</td>
       <td>10.705179</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Oman</th>
@@ -5679,7 +5677,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-40.140449</td>
       <td>-25.352067</td>
       <td>4.543478</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Panama</th>
@@ -5689,7 +5687,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-48.637450</td>
       <td>-41.089641</td>
       <td>21.383466</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Paraguay</th>
@@ -5699,7 +5697,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-42.722443</td>
       <td>-14.520564</td>
       <td>11.017186</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Peru</th>
@@ -5709,7 +5707,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-50.049217</td>
       <td>-25.067323</td>
       <td>17.806543</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Philippines</th>
@@ -5719,7 +5717,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-47.620418</td>
       <td>-31.061475</td>
       <td>19.073404</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Portugal</th>
@@ -5729,7 +5727,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-32.557503</td>
       <td>-24.958716</td>
       <td>11.770899</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Puerto Rico</th>
@@ -5739,7 +5737,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-48.612320</td>
       <td>-24.612285</td>
       <td>9.463872</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Rwanda</th>
@@ -5749,7 +5747,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-26.371871</td>
       <td>-20.675099</td>
       <td>18.381676</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Singapore</th>
@@ -5759,7 +5757,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-32.498008</td>
       <td>-22.992032</td>
       <td>18.470120</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Slovenia</th>
@@ -5769,7 +5767,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-31.772042</td>
       <td>-26.431177</td>
       <td>8.331623</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>South Africa</th>
@@ -5779,7 +5777,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-28.383172</td>
       <td>-19.965717</td>
       <td>13.025299</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Sri Lanka</th>
@@ -5789,7 +5787,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-29.625498</td>
       <td>-30.079681</td>
       <td>17.145418</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>The Bahamas</th>
@@ -5799,7 +5797,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-52.817518</td>
       <td>-32.716393</td>
       <td>4.891566</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Trinidad and Tobago</th>
@@ -5809,7 +5807,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-42.029880</td>
       <td>-28.529880</td>
       <td>8.752988</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>United Kingdom</th>
@@ -5819,7 +5817,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-38.142992</td>
       <td>-35.856338</td>
       <td>12.764187</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Venezuela</th>
@@ -5829,7 +5827,7 @@ In the code below, the <code class="docutils literal notranslate"><span class="p
       <td>-35.782869</td>
       <td>-20.547809</td>
       <td>12.866534</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
