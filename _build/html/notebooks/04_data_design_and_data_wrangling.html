@@ -1232,17 +1232,261 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 </ul>
 <p>An overview of the data from the mobility data can be found <a class="reference external" href="https://www.google.com/covid19/mobility/">here</a>.</p>
 <p>The code below loads the most recent version of the Covid-19 Google Community Mobility Reports as a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame object and assign the object to a variable called ‘mobility_trends’</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mobility_trends</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">&quot;https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv&quot;</span><span class="p">,</span>
     <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span>
 <span class="p">)</span>
-
-<span class="n">mobility_trends</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mobility_trends</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_region_code</th>
+      <th>country_region</th>
+      <th>sub_region_1</th>
+      <th>sub_region_2</th>
+      <th>metro_area</th>
+      <th>iso_3166_2_code</th>
+      <th>census_fips_code</th>
+      <th>place_id</th>
+      <th>date</th>
+      <th>retail_and_recreation_percent_change_from_baseline</th>
+      <th>grocery_and_pharmacy_percent_change_from_baseline</th>
+      <th>parks_percent_change_from_baseline</th>
+      <th>transit_stations_percent_change_from_baseline</th>
+      <th>workplaces_percent_change_from_baseline</th>
+      <th>residential_percent_change_from_baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-15</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-16</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-17</td>
+      <td>-1.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-18</td>
+      <td>-2.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJvRKrsd9IXj4RpwoIwFYv0zM</td>
+      <td>2020-02-19</td>
+      <td>-2.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9900501</th>
+      <td>ZW</td>
+      <td>Zimbabwe</td>
+      <td>Midlands Province</td>
+      <td>Kwekwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
+      <td>2022-05-10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>126.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9900502</th>
+      <td>ZW</td>
+      <td>Zimbabwe</td>
+      <td>Midlands Province</td>
+      <td>Kwekwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
+      <td>2022-05-11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>129.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9900503</th>
+      <td>ZW</td>
+      <td>Zimbabwe</td>
+      <td>Midlands Province</td>
+      <td>Kwekwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
+      <td>2022-05-12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>116.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9900504</th>
+      <td>ZW</td>
+      <td>Zimbabwe</td>
+      <td>Midlands Province</td>
+      <td>Kwekwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
+      <td>2022-05-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>118.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9900505</th>
+      <td>ZW</td>
+      <td>Zimbabwe</td>
+      <td>Midlands Province</td>
+      <td>Kwekwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>ChIJRcIZ3-FJNBkRRsj55IcLpfU</td>
+      <td>2022-05-16</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>100.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>9900506 rows × 15 columns</p>
+</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> load the data as a DataFrame object. We can confirm this by using the built-in function <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
 <div class="cell docutils container">
@@ -1810,7 +2054,7 @@ For details, see <a class="reference external" href="https://pandas.pydata.org/d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>As of 2022-05-19 16:03:13.963353 The Google COVID-19 Community Mobility Reports contain 9900506 rows and 15 columns.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>As of 2022-05-19 17:59:52.163517 The Google COVID-19 Community Mobility Reports contain 9900506 rows and 15 columns.
 </pre></div>
 </div>
 </div>

@@ -119,8 +119,6 @@ mobility_trends_complete
 
 Select a manageable subset of the dataset covering the period from 15 February 2020 to 30 June 2021 using the functions `subperiod_mobility_trends()` and `rename_mobility_trends()` we defined in the previous chapter *Exploratory Data Analysis and Visualisation*. 
 
-mobility_trends_complete
-
 # %load preprocess_mobility_trends.py
 
 

@@ -36,7 +36,5 @@ mobility_trends = pd.read_csv(
     "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv",
     parse_dates=["date"],
 )
-
-mobility_trends
 -------------------
 
