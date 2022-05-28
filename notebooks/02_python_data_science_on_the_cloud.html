@@ -283,8 +283,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#running-terminal-commands-in-jupyter-colab-notebook">
-   Running Terminal commands in Jupyter/Colab notebook
+  <a class="reference internal" href="#running-command-line-commands-in-jupyter-colab-notebook">
+   Running command-line commands in Jupyter/Colab notebook
   </a>
  </li>
  <li class="toctree-l1">
@@ -1085,8 +1085,8 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-terminal-commands-in-jupyter-colab-notebook">
-   Running Terminal commands in Jupyter/Colab notebook
+  <a class="reference internal nav-link" href="#running-command-line-commands-in-jupyter-colab-notebook">
+   Running command-line commands in Jupyter/Colab notebook
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -1565,7 +1565,7 @@ mean(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;)
 </div>
 <div class="section" id="readability-of-your-python-code">
 <h1>Readability of your Python code<a class="headerlink" href="#readability-of-your-python-code" title="Permalink to this headline">¶</a></h1>
-<p>To write readable, consistent, and clean code, it is important to consider the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8 (or Python Enhancement Proposal) style guide for Python code</a>. The guide describes the rules for writing a readable Python code. Below are outlined key rules to keep in mind when you write your Python code (for details and examples, check out the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8 style guide</a>.</p>
+<p>To write readable, consistent, and clean code, it is important to consult the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP (Python Enhancement Proposal) 8 style guide for Python code</a>. The guide describes the rules for writing a readable Python code. Below are outlined key rules to keep in mind when you write your Python code (for details and examples, check out the <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8 style guide</a>).</p>
 <ul class="simple">
 <li><p><strong>Naming conventions</strong></p>
 <ul>
@@ -1612,10 +1612,10 @@ mean(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;)
 </ul>
 <p>As mentioned in PEP 8, section <em>A Foolish Consistency is the Hobgoblin of Little Minds</em>, style guide recommendations may not be applicable in some circumstances. In such circumstances, you could look for examples from the Python community and use your best judgment.</p>
 </div>
-<div class="section" id="running-terminal-commands-in-jupyter-colab-notebook">
-<h1>Running Terminal commands in Jupyter/Colab notebook<a class="headerlink" href="#running-terminal-commands-in-jupyter-colab-notebook" title="Permalink to this headline">¶</a></h1>
-<p>In addition to running Python code, we will also execute Terminal commands in our Jupyter notebooks. Terminal commands are very useful for obtaining information (for example, you can check the version of your Jupyter notebook, Python, or packages), managing computer files, and installing Python packages.</p>
-<p>To execute Terminal commands, you would typically need to use a command-line interface (CLI) such as the Terminal (macOS) or Command Prompt (Windows), which can be challenging. Fortunately,  <a class="reference external" href="https://anaconda.zendesk.com/hc/en-us/articles/360023858254-Executing-Terminal-Commands-in-Jupyter-Notebooks">Jupyter notebook allows you to run Terminal commands in the notebook code cells</a> by prepending an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) to the beginning of the command. Any command appearing after the mark in the line will not be executed from the Python environment but from your operating system’s command-line interface (CLI). You can think of the exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) as introducing command-line interface (You can learn more about the command-line interfaces from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">this tutorial</a> by The Carpentries).</p>
+<div class="section" id="running-command-line-commands-in-jupyter-colab-notebook">
+<h1>Running command-line commands in Jupyter/Colab notebook<a class="headerlink" href="#running-command-line-commands-in-jupyter-colab-notebook" title="Permalink to this headline">¶</a></h1>
+<p>In addition to running Python code, we will also execute command-line commands in our Jupyter notebooks. Command-line commands are very useful for obtaining information (for example, you can check the version of your Jupyter notebook, Python, or packages), managing computer files, and installing Python packages.</p>
+<p>To execute command-line commands, you would typically need to use a command-line interface (CLI) such as the Terminal (macOS) or Command Prompt (Windows), which can be challenging. Fortunately,  <a class="reference external" href="https://anaconda.zendesk.com/hc/en-us/articles/360023858254-Executing-Terminal-Commands-in-Jupyter-Notebooks">Jupyter notebook allows you to run command-line commands in the notebook code cells</a> by prepending an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) to the beginning of the command. Any command appearing after the mark in the line will not be executed from the Python environment but from your operating system’s command-line interface (CLI). You can think of the exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) as introducing command-line interface (You can learn more about the command-line interfaces from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">this tutorial</a> by The Carpentries).</p>
 <p>As an example, you can determine the version of the Jupyter notebook you use by typing the line below, in which the question mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) is followed by the command <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code> and the flag <code class="docutils literal notranslate"><span class="pre">--version</span></code>. Command-line flags are used to specify options and modify command’s execution. As an output, the command prints the version of your active Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1650,7 +1650,9 @@ mean(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: statsmodels
-Version: 0.12.2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 0.12.2
 Summary: Statistical computations and models for Python
 Home-page: https://www.statsmodels.org/
 Author: 
@@ -1705,8 +1707,8 @@ Automagic is ON, % prefix IS NOT needed for line magics.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 87 µs, sys: 44 µs, total: 131 µs
-Wall time: 136 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 77 µs, sys: 41 µs, total: 118 µs
+Wall time: 121 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
@@ -1996,17 +1998,17 @@ Wall time: 136 µs
   </thead>
   <tbody>
     <tr>
-      <th>187564</th>
+      <th>189721</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2022-05-14</td>
-      <td>249206.0</td>
-      <td>75.0</td>
-      <td>141.714</td>
-      <td>5482.0</td>
-      <td>0.0</td>
-      <td>1.286</td>
+      <td>2022-05-23</td>
+      <td>250702.0</td>
+      <td>60.0</td>
+      <td>181.571</td>
+      <td>5495.0</td>
+      <td>1.0</td>
+      <td>1.571</td>
       <td>...</td>
       <td>1.6</td>
       <td>30.7</td>
@@ -2020,17 +2022,17 @@ Wall time: 136 µs
       <td>NaN</td>
     </tr>
     <tr>
-      <th>187565</th>
+      <th>189722</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2022-05-15</td>
-      <td>249206.0</td>
-      <td>0.0</td>
-      <td>122.000</td>
-      <td>5482.0</td>
-      <td>0.0</td>
-      <td>0.857</td>
+      <td>2022-05-24</td>
+      <td>250929.0</td>
+      <td>227.0</td>
+      <td>168.714</td>
+      <td>5496.0</td>
+      <td>1.0</td>
+      <td>1.714</td>
       <td>...</td>
       <td>1.6</td>
       <td>30.7</td>
@@ -2044,17 +2046,41 @@ Wall time: 136 µs
       <td>NaN</td>
     </tr>
     <tr>
-      <th>187566</th>
+      <th>189723</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2022-05-16</td>
-      <td>249431.0</td>
-      <td>225.0</td>
-      <td>127.857</td>
-      <td>5484.0</td>
+      <td>2022-05-25</td>
+      <td>251228.0</td>
+      <td>299.0</td>
+      <td>174.429</td>
+      <td>5496.0</td>
+      <td>0.0</td>
+      <td>1.429</td>
+      <td>...</td>
+      <td>1.6</td>
+      <td>30.7</td>
+      <td>36.791</td>
+      <td>1.7</td>
+      <td>61.49</td>
+      <td>0.571</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>189724</th>
+      <td>ZWE</td>
+      <td>Africa</td>
+      <td>Zimbabwe</td>
+      <td>2022-05-26</td>
+      <td>251646.0</td>
+      <td>418.0</td>
+      <td>205.714</td>
+      <td>5498.0</td>
       <td>2.0</td>
-      <td>0.714</td>
+      <td>1.571</td>
       <td>...</td>
       <td>1.6</td>
       <td>30.7</td>
@@ -2068,41 +2094,17 @@ Wall time: 136 µs
       <td>NaN</td>
     </tr>
     <tr>
-      <th>187567</th>
+      <th>189725</th>
       <td>ZWE</td>
       <td>Africa</td>
       <td>Zimbabwe</td>
-      <td>2022-05-17</td>
-      <td>249748.0</td>
-      <td>317.0</td>
-      <td>158.000</td>
-      <td>5484.0</td>
-      <td>0.0</td>
-      <td>0.429</td>
-      <td>...</td>
-      <td>1.6</td>
-      <td>30.7</td>
-      <td>36.791</td>
-      <td>1.7</td>
-      <td>61.49</td>
-      <td>0.571</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>187568</th>
-      <td>ZWE</td>
-      <td>Africa</td>
-      <td>Zimbabwe</td>
-      <td>2022-05-18</td>
-      <td>250007.0</td>
-      <td>259.0</td>
-      <td>195.000</td>
-      <td>5486.0</td>
+      <td>2022-05-27</td>
+      <td>251959.0</td>
+      <td>313.0</td>
+      <td>212.857</td>
+      <td>5500.0</td>
       <td>2.0</td>
-      <td>0.714</td>
+      <td>1.571</td>
       <td>...</td>
       <td>1.6</td>
       <td>30.7</td>
@@ -2133,7 +2135,7 @@ Wall time: 136 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(187569, 67)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(189726, 67)
 </pre></div>
 </div>
 </div>
@@ -2147,7 +2149,7 @@ Wall time: 136 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>187569
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>189726
 </pre></div>
 </div>
 </div>
@@ -2179,7 +2181,7 @@ Wall time: 136 µs
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the most current data on COVID-19 by Our World in Data, the number of rows is 187569 and the number of columns is 67
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the most current data on COVID-19 by Our World in Data, the number of rows is 189726 and the number of columns is 67
 </pre></div>
 </div>
 </div>
@@ -2233,79 +2235,79 @@ Wall time: 136 µs
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 187569 entries, 0 to 187568
+RangeIndex: 189726 entries, 0 to 189725
 Data columns (total 67 columns):
  #   Column                                      Non-Null Count   Dtype  
 ---  ------                                      --------------   -----  
- 0   iso_code                                    187569 non-null  object 
- 1   continent                                   176651 non-null  object 
- 2   location                                    187569 non-null  object 
- 3   date                                        187569 non-null  object 
- 4   total_cases                                 180170 non-null  float64
- 5   new_cases                                   179954 non-null  float64
- 6   new_cases_smoothed                          178780 non-null  float64
- 7   total_deaths                                161800 non-null  float64
- 8   new_deaths                                  161792 non-null  float64
- 9   new_deaths_smoothed                         160633 non-null  float64
- 10  total_cases_per_million                     179338 non-null  float64
- 11  new_cases_per_million                       179122 non-null  float64
- 12  new_cases_smoothed_per_million              177953 non-null  float64
- 13  total_deaths_per_million                    160981 non-null  float64
- 14  new_deaths_per_million                      160973 non-null  float64
- 15  new_deaths_smoothed_per_million             159819 non-null  float64
- 16  reproduction_rate                           140137 non-null  float64
- 17  icu_patients                                24327 non-null   float64
- 18  icu_patients_per_million                    24327 non-null   float64
- 19  hosp_patients                               25587 non-null   float64
- 20  hosp_patients_per_million                   25587 non-null   float64
- 21  weekly_icu_admissions                       6067 non-null    float64
- 22  weekly_icu_admissions_per_million           6067 non-null    float64
- 23  weekly_hosp_admissions                      12103 non-null   float64
- 24  weekly_hosp_admissions_per_million          12103 non-null   float64
- 25  total_tests                                 76428 non-null   float64
- 26  new_tests                                   73456 non-null   float64
- 27  total_tests_per_thousand                    76428 non-null   float64
- 28  new_tests_per_thousand                      73456 non-null   float64
- 29  new_tests_smoothed                          98583 non-null   float64
- 30  new_tests_smoothed_per_thousand             98583 non-null   float64
- 31  positive_rate                               90878 non-null   float64
- 32  tests_per_case                              89458 non-null   float64
- 33  tests_units                                 101381 non-null  object 
- 34  total_vaccinations                          50921 non-null   float64
- 35  people_vaccinated                           48496 non-null   float64
- 36  people_fully_vaccinated                     45947 non-null   float64
- 37  total_boosters                              23124 non-null   float64
- 38  new_vaccinations                            41640 non-null   float64
- 39  new_vaccinations_smoothed                   100308 non-null  float64
- 40  total_vaccinations_per_hundred              50921 non-null   float64
- 41  people_vaccinated_per_hundred               48496 non-null   float64
- 42  people_fully_vaccinated_per_hundred         45947 non-null   float64
- 43  total_boosters_per_hundred                  23124 non-null   float64
- 44  new_vaccinations_smoothed_per_million       100308 non-null  float64
- 45  new_people_vaccinated_smoothed              99293 non-null   float64
- 46  new_people_vaccinated_smoothed_per_hundred  99293 non-null   float64
- 47  stringency_index                            146120 non-null  float64
- 48  population                                  186420 non-null  float64
- 49  population_density                          167137 non-null  float64
- 50  median_age                                  154945 non-null  float64
- 51  aged_65_older                               153302 non-null  float64
- 52  aged_70_older                               154132 non-null  float64
- 53  gdp_per_capita                              154075 non-null  float64
- 54  extreme_poverty                             100625 non-null  float64
- 55  cardiovasc_death_rate                       154601 non-null  float64
- 56  diabetes_prevalence                         162150 non-null  float64
- 57  female_smokers                              116932 non-null  float64
- 58  male_smokers                                115329 non-null  float64
- 59  handwashing_facilities                      75957 non-null   float64
- 60  hospital_beds_per_thousand                  137178 non-null  float64
- 61  life_expectancy                             175401 non-null  float64
- 62  human_development_index                     150597 non-null  float64
- 63  excess_mortality_cumulative_absolute        6460 non-null    float64
- 64  excess_mortality_cumulative                 6460 non-null    float64
- 65  excess_mortality                            6460 non-null    float64
- 66  excess_mortality_cumulative_per_million     6460 non-null    float64
+ 0   iso_code                                    189726 non-null  object 
+ 1   continent                                   178691 non-null  object 
+ 2   location                                    189726 non-null  object 
+ 3   date                                        189726 non-null  object 
+ 4   total_cases                                 182231 non-null  float64
+ 5   new_cases                                   182021 non-null  float64
+ 6   new_cases_smoothed                          180847 non-null  float64
+ 7   total_deaths                                163807 non-null  float64
+ 8   new_deaths                                  163798 non-null  float64
+ 9   new_deaths_smoothed                         162635 non-null  float64
+ 10  total_cases_per_million                     181390 non-null  float64
+ 11  new_cases_per_million                       181180 non-null  float64
+ 12  new_cases_smoothed_per_million              180011 non-null  float64
+ 13  total_deaths_per_million                    162979 non-null  float64
+ 14  new_deaths_per_million                      162970 non-null  float64
+ 15  new_deaths_smoothed_per_million             161812 non-null  float64
+ 16  reproduction_rate                           140710 non-null  float64
+ 17  icu_patients                                25287 non-null   float64
+ 18  icu_patients_per_million                    25287 non-null   float64
+ 19  hosp_patients                               26547 non-null   float64
+ 20  hosp_patients_per_million                   26547 non-null   float64
+ 21  weekly_icu_admissions                       6147 non-null    float64
+ 22  weekly_icu_admissions_per_million           6147 non-null    float64
+ 23  weekly_hosp_admissions                      12267 non-null   float64
+ 24  weekly_hosp_admissions_per_million          12267 non-null   float64
+ 25  total_tests                                 77125 non-null   float64
+ 26  new_tests                                   73556 non-null   float64
+ 27  total_tests_per_thousand                    77125 non-null   float64
+ 28  new_tests_per_thousand                      73556 non-null   float64
+ 29  new_tests_smoothed                          99918 non-null   float64
+ 30  new_tests_smoothed_per_thousand             99918 non-null   float64
+ 31  positive_rate                               92182 non-null   float64
+ 32  tests_per_case                              90545 non-null   float64
+ 33  tests_units                                 102647 non-null  object 
+ 34  total_vaccinations                          51818 non-null   float64
+ 35  people_vaccinated                           49369 non-null   float64
+ 36  people_fully_vaccinated                     46824 non-null   float64
+ 37  total_boosters                              23926 non-null   float64
+ 38  new_vaccinations                            42442 non-null   float64
+ 39  new_vaccinations_smoothed                   102364 non-null  float64
+ 40  total_vaccinations_per_hundred              51818 non-null   float64
+ 41  people_vaccinated_per_hundred               49369 non-null   float64
+ 42  people_fully_vaccinated_per_hundred         46824 non-null   float64
+ 43  total_boosters_per_hundred                  23926 non-null   float64
+ 44  new_vaccinations_smoothed_per_million       102364 non-null  float64
+ 45  new_people_vaccinated_smoothed              101351 non-null  float64
+ 46  new_people_vaccinated_smoothed_per_hundred  101351 non-null  float64
+ 47  stringency_index                            147714 non-null  float64
+ 48  population                                  188568 non-null  float64
+ 49  population_density                          169064 non-null  float64
+ 50  median_age                                  156690 non-null  float64
+ 51  aged_65_older                               155029 non-null  float64
+ 52  aged_70_older                               155868 non-null  float64
+ 53  gdp_per_capita                              155859 non-null  float64
+ 54  extreme_poverty                             101750 non-null  float64
+ 55  cardiovasc_death_rate                       156337 non-null  float64
+ 56  diabetes_prevalence                         163976 non-null  float64
+ 57  female_smokers                              118246 non-null  float64
+ 58  male_smokers                                116625 non-null  float64
+ 59  handwashing_facilities                      76812 non-null   float64
+ 60  hospital_beds_per_thousand                  138717 non-null  float64
+ 61  life_expectancy                             177427 non-null  float64
+ 62  human_development_index                     152298 non-null  float64
+ 63  excess_mortality_cumulative_absolute        6525 non-null    float64
+ 64  excess_mortality_cumulative                 6525 non-null    float64
+ 65  excess_mortality                            6525 non-null    float64
+ 66  excess_mortality_cumulative_per_million     6525 non-null    float64
 dtypes: float64(62), object(5)
-memory usage: 95.9+ MB
+memory usage: 97.0+ MB
 </pre></div>
 </div>
 </div>
@@ -2332,7 +2334,7 @@ memory usage: 95.9+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>65772
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66501
 </pre></div>
 </div>
 </div>
@@ -2388,7 +2390,7 @@ memory usage: 95.9+ MB
   </thead>
   <tbody>
     <tr>
-      <th>65772</th>
+      <th>66501</th>
       <td>GIB</td>
       <td>Europe</td>
       <td>Gibraltar</td>

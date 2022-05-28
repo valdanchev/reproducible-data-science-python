@@ -2,7 +2,7 @@
 
 This repository contains the open learning resource [Reproducible Data Science with Python](https://valdanchev.github.io/reproducible-data-science-python/intro.html) in the form of Python Jupyter notebooks.
 
-| **Publication about the Learning Resource** | [![status](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898/status.svg)](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898)[![DOI](https://jose.theoj.org/papers/10.21105/jose.00152/status.svg)](https://doi.org/10.21105/jose.00152) |
+| **Publication** | [![status](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898/status.svg)](https://jose.theoj.org/papers/3e1de7c74161a5b2c4ce74e536ef6898)[![DOI](https://jose.theoj.org/papers/10.21105/jose.00152/status.svg)](https://doi.org/10.21105/jose.00152) |
 | :--- | :--- |
 | **Releases** | [![GitHub release (latest by date)](https://img.shields.io/github/v/release/valdanchev/reproducible-data-science-python?logo=GitHub)](https://github.com/valdanchev/reproducible-data-science-python/releases) |
 | __License__ | [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/) |
