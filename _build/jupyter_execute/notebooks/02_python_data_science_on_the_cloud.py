@@ -169,8 +169,7 @@ help(np.mean)
 
 # Readability of your Python code
 
-To write readable, consistent, and clean code, it is important to consider the [PEP 8 (or Python Enhancement Proposal) style guide for Python code](https://peps.python.org/pep-0008/). The guide describes the rules for writing a readable Python code. Below are outlined key rules to keep in mind when you write your Python code (for details and examples, check out the [PEP 8 style guide](https://peps.python.org/pep-0008/).
-
+To write readable, consistent, and clean code, it is important to consult the [PEP (Python Enhancement Proposal) 8 style guide for Python code](https://peps.python.org/pep-0008/). The guide describes the rules for writing a readable Python code. Below are outlined key rules to keep in mind when you write your Python code (for details and examples, check out the [PEP 8 style guide](https://peps.python.org/pep-0008/)).
 
 * **Naming conventions**
     * Variable names (e.g., `even_numbers`) should be lowercase, with words separated by underscores as necessary to improve readability.
@@ -207,11 +206,11 @@ To write readable, consistent, and clean code, it is important to consider the [
 
 As mentioned in PEP 8, section *A Foolish Consistency is the Hobgoblin of Little Minds*, style guide recommendations may not be applicable in some circumstances. In such circumstances, you could look for examples from the Python community and use your best judgment.  
 
-# Running Terminal commands in Jupyter/Colab notebook
+# Running command-line commands in Jupyter/Colab notebook
 
-In addition to running Python code, we will also execute Terminal commands in our Jupyter notebooks. Terminal commands are very useful for obtaining information (for example, you can check the version of your Jupyter notebook, Python, or packages), managing computer files, and installing Python packages. 
+In addition to running Python code, we will also execute command-line commands in our Jupyter notebooks. Command-line commands are very useful for obtaining information (for example, you can check the version of your Jupyter notebook, Python, or packages), managing computer files, and installing Python packages. 
 
-To execute Terminal commands, you would typically need to use a command-line interface (CLI) such as the Terminal (macOS) or Command Prompt (Windows), which can be challenging. Fortunately,  [Jupyter notebook allows you to run Terminal commands in the notebook code cells](https://anaconda.zendesk.com/hc/en-us/articles/360023858254-Executing-Terminal-Commands-in-Jupyter-Notebooks) by prepending an exclamation mark (`!`) to the beginning of the command. Any command appearing after the mark in the line will not be executed from the Python environment but from your operating system's command-line interface (CLI). You can think of the exclamation mark (`!`) as introducing command-line interface (You can learn more about the command-line interfaces from [this tutorial](http://swcarpentry.github.io/shell-novice/) by The Carpentries). 
+To execute command-line commands, you would typically need to use a command-line interface (CLI) such as the Terminal (macOS) or Command Prompt (Windows), which can be challenging. Fortunately,  [Jupyter notebook allows you to run command-line commands in the notebook code cells](https://anaconda.zendesk.com/hc/en-us/articles/360023858254-Executing-Terminal-Commands-in-Jupyter-Notebooks) by prepending an exclamation mark (`!`) to the beginning of the command. Any command appearing after the mark in the line will not be executed from the Python environment but from your operating system's command-line interface (CLI). You can think of the exclamation mark (`!`) as introducing command-line interface (You can learn more about the command-line interfaces from [this tutorial](http://swcarpentry.github.io/shell-novice/) by The Carpentries). 
 
 As an example, you can determine the version of the Jupyter notebook you use by typing the line below, in which the question mark (`!`) is followed by the command `jupyter-notebook` and the flag `--version`. Command-line flags are used to specify options and modify command's execution. As an output, the command prints the version of your active Jupyter notebook.
 
