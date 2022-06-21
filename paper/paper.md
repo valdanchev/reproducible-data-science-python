@@ -1,22 +1,22 @@
 ---
 title: 'Reproducible Data Science with Python: An open learning resource'
 tags:
- - Python
- - Jupyter notebook
- - reproducible workflow
- - open science
- - real-world social data
- - exploratory data analysis
- - machine learning
- - social networks
- - data science ethics
+  - Python
+  - Jupyter notebook
+  - reproducible workflow
+  - open science
+  - real-world social data
+  - exploratory data analysis
+  - machine learning
+  - social networks
+  - data science ethics
 authors:
- - name: Valentin Danchev
-   orcid: 0000-0002-7563-0168
-   affiliation: 1
+  - name: Valentin Danchev
+    orcid: 0000-0002-7563-0168
+    affiliation: 1
 affiliations:
- - name: Department of Sociology, University of Essex, United Kingdom
-   index: 1
+  - name: Department of Sociology, University of Essex, United Kingdom
+    index: 1
 date: 21 June 2022   
 bibliography: paper.bib
 ---
