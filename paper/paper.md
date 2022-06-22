@@ -1,6 +1,7 @@
 ---
 title: 'Reproducible Data Science with Python: An open learning resource'
 tags:
+  - data science
   - Python
   - Jupyter notebook
   - reproducible workflow
