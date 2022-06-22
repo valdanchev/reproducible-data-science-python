@@ -15,9 +15,9 @@ authors:
     orcid: 0000-0002-7563-0168
     affiliation: 1
 affiliations:
-  - name: 'Department of Sociology, University of Essex, United Kingdom'
+  - name: Department of Sociology, University of Essex, United Kingdom
     index: 1
-date: 21 June 2022   
+date: 21 June 2022
 bibliography: paper.bib
 ---
 
@@ -34,7 +34,7 @@ to the open source Python ecosystem of libraries for data science—including `p
 and `networkX` [@Hagberg2008networkx]—and learn about open and reproducible workflow, data wrangling, data exploration and visualization, pattern discovery (e.g., clustering), prediction and machine learning, 
 causal inference, network analysis, and data ethics.
 
-# Statement of Need
+# Statement of need
 
 The importance of data science education for drawing conclusions from diverse data sources in a transparent, reproducible, and ethical manner and for building data literacy skills 
 is now widely recognised [@NAP2018; @Danyluk2021; @Adhikari2021; @Arnold2019turing; @Stoudt2021]. For example, the National Academies of Science, Engineering, and Medicine’s 2018 'Data Science for Undergraduates' 
