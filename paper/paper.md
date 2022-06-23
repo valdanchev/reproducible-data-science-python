@@ -126,7 +126,7 @@ the user downloads the notebook. Regarding access and user privacy, myBinder is 
 the session finishes. More information on how MyBinder ensures user privacy is provided by the MyBinder team in their [Frequently Asked Questions (FAQs)](https://mybinder.readthedocs.io/en/latest/about/faq.html#how-does-mybinder-org-ensure-user-privacy). 
 
 * Colab is an environment from Google Research that runs Jupyter notebooks on the Google Cloud, allowing interactive work with notebooks from the browser. Similar to MyBinder, Colab is free of charge but requires a 
-Google account and a log-in. For more information, see [Colab's Frequently Asked Questions](https://research.google.com/colaboratory/faq.html)). Colab notebooks likely run faster and have longer session lifetimes 
+Google account and a log-in (for more information, see [Colab's Frequently Asked Questions](https://research.google.com/colaboratory/faq.html)). Colab notebooks likely run faster and have longer session lifetimes 
 (up to 12 hours) compared to MyBinder. In comparison to MyBinder, which reproduces the computing environment and package dependencies used in the original notebooks, Colab opens notebooks in a new environment with 
 preinstalled package dependencies. At the time of use, the packages and package versions preinstalled on Colab may differ from the packages and package versions used in the original notebooks, introducing possible errors. To install the original package dependencies, Colab users would need to run the `requirements.txt` file following the instructions in the README.md file on the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python).
 
