@@ -42,7 +42,7 @@ is now widely recognised [@NAP2018; @Danyluk2021; @Adhikari2021; @Arnold2019turi
 report [@NAP2018] identified the importance of workflow, reproducibility, and ethical problem solving in data science undergraduate curriculum. A key challenge ahead for the community of data science educators, and particularly those at the 
 intersection of data science and social sciences, is how to democratise the knowledge and skills needed for conducting reproducible data science and to engage students—with little to no programming 
 experience and from diverse social and academic backgrounds—in accessible, inclusive, and cross-disciplinary data science learning. To address this and related challenges, successful examples of data 
-science curriculum [e.g., @Adhikari2021, @timbers2022data] have been developed. The learning resource presented in this paper addresses the data-science democratisation challenge through the use of down-to-earth research 
+science curriculum [e.g., @Adhikari2021; @timbers2022data] have been developed. The learning resource presented in this paper addresses the data-science democratisation challenge through the use of down-to-earth research 
 questions and real-world social data sets about the COVID-19 pandemic. Both real-world questions and data can encourage students to engage with hands-on computation, data science techniques, reproducible 
 data analysis workflow, and data ethics. The democratisation of reproducible and ethical data science is important for empowering students (and citizens) to use, analyse, and learn from large data sets as 
 well as to critically evaluate data, models, and their social impact.
@@ -117,12 +117,14 @@ Learners can access the resource in its entirety on the dedicated website https:
 using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) and is deployed to GitHub Pages from the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python). 
 To interactively work with the code, learners can access the interactive versions of the Jupyter notebooks via [MyBinder](https://mybinder.org/) and [Colab](https://colab.research.google.com) 
 with no setup or download requirements.
+
 * MyBinder [@project_jupyter_proc_scipy_2018] is a free open-source online service that lets you open and execute Jupyter notebooks and work with the code interactively in your browser. MyBinder uses the `requirements.txt` 
 file from the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python), which lists all the packages and package versions used in the resource, to build a live environment that 
 includes the package dependencies and versions used in the original notebooks, enabling reproducibility and minimising possible errors due to package updates. Binder is suited for relatively short sessions—a user session 
 can last up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity. Notebooks launched on MyBinder are non-persistent—any changes will be lost after user's myBinder session times out unless 
 the user downloads the notebook. Regarding access and user privacy, myBinder is public service that requires no log-in and does not keep track of user data. All code and data that are run during a session are destroyed once 
 the session finishes. More information on how MyBinder ensures user privacy is provided by the MyBinder team in their [Frequently Asked Questions (FAQs)](https://mybinder.readthedocs.io/en/latest/about/faq.html#how-does-mybinder-org-ensure-user-privacy). 
+
 * Colab is an environment from Google Research that runs Jupyter notebooks on the Google Cloud, allowing interactive work with notebooks from the browser. Similar to MyBinder, Colab is free of charge but requires a 
 Google account and a log-in. For more information, see [Colab's Frequently Asked Questions](https://research.google.com/colaboratory/faq.html)). Colab notebooks likely run faster and have longer session lifetimes 
 (up to 12 hours) compared to MyBinder. In comparison to MyBinder, which reproduces the computing environment and package dependencies used in the original notebooks, Colab opens notebooks in a new environment with 
