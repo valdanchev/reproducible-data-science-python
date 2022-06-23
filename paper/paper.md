@@ -117,7 +117,7 @@ Learners can access the resource in its entirety on the dedicated website https:
 using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) and is deployed to GitHub Pages from the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python). 
 To interactively work with the code, learners can access the interactive versions of the Jupyter notebooks via [MyBinder](https://mybinder.org/) and [Colab](https://colab.research.google.com) 
 with no setup or download requirements.
-* MyBinder [@project_jupyter-proc-scipy-2018] is a free open-source online service that lets you open and execute Jupyter notebooks and work with the code interactively in your browser. MyBinder uses the `requirements.txt` 
+* MyBinder [@project_jupyter_proc_scipy_2018] is a free open-source online service that lets you open and execute Jupyter notebooks and work with the code interactively in your browser. MyBinder uses the `requirements.txt` 
 file from the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python), which lists all the packages and package versions used in the resource, to build a live environment that 
 includes the package dependencies and versions used in the original notebooks, enabling reproducibility and minimising possible errors due to package updates. Binder is suited for relatively short sessions—a user session 
 can last up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity. Notebooks launched on MyBinder are non-persistent—any changes will be lost after user's myBinder session times out unless 
