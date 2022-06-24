@@ -1,5 +1,5 @@
 ---
-title: 'Reproducible Data Science with Python: An open learning resource'
+title: 'Reproducible Data Science with Python: An Open Learning Resource'
 tags:
   - data science
   - Python
@@ -122,7 +122,7 @@ with no setup or download requirements.
 file from the [resource's public GitHub repository](https://github.com/valdanchev/reproducible-data-science-python), which lists all the packages and package versions used in the resource, to build a live environment that 
 includes the package dependencies and versions used in the original notebooks, enabling reproducibility and minimising possible errors due to package updates. Binder is suited for relatively short sessions—a user session 
 can last up to 6 hours and will be shut down automatically after more than 10 minutes of inactivity. Notebooks launched on MyBinder are non-persistent—any changes will be lost after user's myBinder session times out unless 
-the user downloads the notebook. Regarding access and user privacy, myBinder is public service that requires no log-in and does not keep track of user data. All code and data that are run during a session are destroyed once 
+the user downloads the notebook. Regarding access and user privacy, MyBinder is public service that requires no log-in and does not keep track of user data. All code and data that are run during a session are destroyed once 
 the session finishes. More information on how MyBinder ensures user privacy is provided by the MyBinder team in their [Frequently Asked Questions (FAQs)](https://mybinder.readthedocs.io/en/latest/about/faq.html#how-does-mybinder-org-ensure-user-privacy). 
 
 * Colab is an environment from Google Research that runs Jupyter notebooks on the Google Cloud, allowing interactive work with notebooks from the browser. Similar to MyBinder, Colab is free of charge but requires a 
