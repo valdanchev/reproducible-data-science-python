@@ -105,7 +105,7 @@ notebook does not guarantee reproducibility [@guzharina2020], it fosters reprodu
 # Experience of use
 
 The learning resource can be used for different modes of learning, including a semester-long module, training workshop, and independent study. So far, elements of the learning resource have been 
-used in a 10-week module delivered in the Spring term of the academic year 2020–2021 to third year undergraduate students at the Department of Sociology, University of Essex. More recently, 
+used in a 10-week module delivered in the Spring term of the academic years 2020–21 and 2021–22 to third year undergraduate students at the Department of Sociology, University of Essex. More recently, 
 core elements of the resource have formed the backbone of a 1.5-hour hands-on training on reproducible workflow with dynamic documents as part of the Research Transparency and Reproducibility 
 Training (RT2), August 23–September 3, 2021, organised by the Berkeley Initiative for Transparency in the Social Sciences. The Jupyter notebook used in the training is publicly 
 available and can be accessed via the RT2's repository on the Open Science Framework (https://osf.io/5neky/) and via 
