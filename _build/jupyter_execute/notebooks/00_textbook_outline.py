@@ -204,12 +204,15 @@ I am grateful to many people and communities who helped with discussions, advice
 [DataCamp for Classrooms](https://www.datacamp.com/groups/classrooms) \
 [Berkeley Initiative for Transparency in the Social Sciences (BITSS)](https://www.bitss.org/resource-library/?_sft_resource_type=websites-audio-video) \
 [Meta-Research Innovation Center at Stanford (METRICS)](https://metrics.stanford.edu)\
-[The Carpentries](https://carpentries.org)
+[The Carpentries](https://carpentries.org)\
+[Tiffany Timbers](https://www.tiffanytimbers.com/)\
+[Ben Marwick](http://faculty.washington.edu/bmarwick/)
 
-I used elements of this textbook to teach third year students at the Department of Sociology, University of Essex in Spring 2021 and I would like to thank the GTA Kirils Makarovs and all the students for their hard work and kindness. This feedback from a student captures it well: “i was genuinely terrified when the term started and i saw coding and python but this has been great thank you!
+In addition, I thank the participants at the 2021 National Workshop on Data Science Education (organised by UC Berkeley’s Division of Computing, Data Science, and Society), third year students at the Department of Sociology, University of Essex, who studied elements of the learning resource in the Spring term of the academic years 2020–21 and 2021–22, and students at the Research Transparency and Reproducibility Training (RT2) Virtual 2021 (organised by Berkeley Initiative for Transparency in the Social Sciences (BITSS)) for their helpful feedback and kindness. This feedback from a student captures it well: "i was genuinely terrified when the term started and i saw coding and python but this has been great thank you!". I also thank Kirils Makarovs and Hamid Nejadghorban for assistance with teaching earlier iterations of the learning resource.
+
+Finally, I thank the open science Twitter community for helpful feedback, discussions, and pointers to resources. 
 
 <br>
-
 
 # Code availability
 
