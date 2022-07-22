@@ -117,11 +117,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-these-materials">
-   How to get the most of these materials?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#learning-resources">
    Learning resources
   </a>
@@ -134,6 +129,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#data-sets">
    Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-the-open-learning-resource">
+   How to get the most of the open learning resource?
   </a>
  </li>
  <li class="toctree-l1">
@@ -283,8 +283,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_python_data_science_on_the_cloud.html#running-terminal-commands-in-jupyter-colab-notebook">
-   Running Terminal commands in Jupyter/Colab notebook
+  <a class="reference internal" href="02_python_data_science_on_the_cloud.html#running-command-line-commands-in-jupyter-colab-notebook">
+   Running command-line commands in Jupyter/Colab notebook
   </a>
  </li>
  <li class="toctree-l1">
@@ -804,6 +804,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="#using-weights-to-correct-for-complex-sample-design">
+   Using weights to correct for complex sample design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="#additional-material">
    Additional material
   </a>
@@ -1070,6 +1075,13 @@
      Variables
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-weights-to-correct-for-complex-sample-design">
+   Using weights to correct for complex sample design
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#questions">
      Questions
@@ -1173,21 +1185,19 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rpy2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (3.3.6)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2020.4)
 Requirement already satisfied: pytest in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (6.2.4)
-Requirement already satisfied: jinja2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.11.2)
-Requirement already satisfied: cffi&gt;=1.10.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (1.14.4)
 Requirement already satisfied: tzlocal in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.1)
+Requirement already satisfied: jinja2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2.11.2)
+Requirement already satisfied: pytz in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (2020.4)
+Requirement already satisfied: cffi&gt;=1.10.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from rpy2) (1.14.4)
 Requirement already satisfied: pycparser in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from cffi&gt;=1.10.0-&gt;rpy2) (2.20)
 Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from jinja2-&gt;rpy2) (1.1.1)
-Requirement already satisfied: iniconfig in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (1.1.1)
-Requirement already satisfied: attrs&gt;=19.2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.3.0)
-Requirement already satisfied: packaging in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.7)
+Requirement already satisfied: toml in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.10.1)
 Requirement already satisfied: py&gt;=1.8.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (1.9.0)
 Requirement already satisfied: pluggy&lt;1.0.0a1,&gt;=0.12 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.13.1)
-Requirement already satisfied: toml in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (0.10.1)
+Requirement already satisfied: attrs&gt;=19.2.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.3.0)
+Requirement already satisfied: packaging in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (20.7)
+Requirement already satisfied: iniconfig in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pytest-&gt;rpy2) (1.1.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.0.2 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from packaging-&gt;pytest-&gt;rpy2) (2.4.7)
@@ -1199,8 +1209,8 @@ Requirement already satisfied: toml in /Users/valentindanchev/opt/anaconda3/lib/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
-#install.packages(&#39;ggdag&#39;) # you will need to select a CRAN mirror from where 
-# to install the package; for example, typing in &#39;70&#39; will select UK London  
+# install.packages(&#39;ggdag&#39;) # you will need to select a CRAN mirror from where
+# to install the package; for example, typing in &#39;70&#39; will select UK London
 library(ggdag)
 theme_set(theme_dag())
 </pre></div>
@@ -1235,40 +1245,56 @@ theme_set(theme_dag())
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
-RiskCovid_dag &lt;- collider_triangle(x = &quot;Not Work from Home&quot;, 
-                  y = &quot;Age&quot;, 
-                  m = &quot;Perceived risk from getting Covid-19&quot;) 
+RiskCovid_dag &lt; -collider_triangle(
+    x=&quot;Not Work from Home&quot;, y=&quot;Age&quot;, m=&quot;Perceived risk from getting Covid-19&quot;
+)
 
-ggdag(RiskCovid_dag, text = FALSE, use_labels = &quot;label&quot;, node_size = 20, text_size = 6)
+ggdag(RiskCovid_dag, text=FALSE, use_labels=&quot;label&quot;, node_size=20, text_size=6)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08_causal_inference_9_0.png" src="../_images/08_causal_inference_9_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Error in withVisible({ : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in withVisible({ : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
-ggdag_dseparated(RiskCovid_dag, text = FALSE, use_labels = &quot;label&quot;, text_size = 6)
+ggdag_dseparated(RiskCovid_dag, text=FALSE, use_labels=&quot;label&quot;, text_size=6)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08_causal_inference_10_0.png" src="../_images/08_causal_inference_10_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Error in is.tidy_dagitty(.dagitty) : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in is.tidy_dagitty(.dagitty) : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
 </div>
 </div>
 <p>Although Work from home and Age are not correlated in the population, they may get correlated once we condition on Very high risk of getting Covid-19. The square shape of the variable <em>Risk of getting Covid-19</em> indicates that we condition on that variable being a certain value, in our case on people with Very high perceived risk of getting Covid-19.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
-ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
-                 text = FALSE, use_labels = &quot;label&quot;, text_size = 6)
+ggdag_dseparated(
+    RiskCovid_dag, controlling_for=&quot;m&quot;, text=FALSE, use_labels=&quot;label&quot;, text_size=6
+)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08_causal_inference_12_0.png" src="../_images/08_causal_inference_12_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Error in is.tidy_dagitty(.dagitty) : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in is.tidy_dagitty(.dagitty) : object &#39;RiskCovid_dag&#39; not found
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1277,10 +1303,32 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 <p>We will now perform our analysis to see how conditioning in a model can introduce a collider bias.</p>
 <p>In this lab, we will use the Python library <a class="reference external" href="https://www.statsmodels.org/devel/examples/index.html"><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a>. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> is a Python module that provides functions for the estimation of many different statistical models.</p>
 <img src="https://www.statsmodels.org/devel/_images/statsmodels-logo-v2-horizontal.svg" width="400" height="200"/>
+<p>You can install <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> by running the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install statsmodels
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.12.2)
+Requirement already satisfied: pandas&gt;=0.21 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels) (1.4.3)
+Requirement already satisfied: patsy&gt;=0.5 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels) (0.5.1)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels) (1.19.2)
+Requirement already satisfied: scipy&gt;=1.1 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from statsmodels) (1.5.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.21-&gt;statsmodels) (2.8.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.21-&gt;statsmodels) (2020.4)
+Requirement already satisfied: six in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from patsy&gt;=0.5-&gt;statsmodels) (1.15.0)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="collider-confounder">
 <h1>Collider confounder<a class="headerlink" href="#collider-confounder" title="Permalink to this headline">¶</a></h1>
-<p>We will use data from <a class="reference external" href="https://www.understandingsociety.ac.uk/topic/covid-19">Understanding Society Covid-19</a> (Wave 6, November 2021, web collected) to demonstrate the causal structure of collider confounder. Let’s first load the survey data.</p>
+<p>We will use data from <a class="reference external" href="https://www.understandingsociety.ac.uk/topic/covid-19">Understanding Society COVID-19</a> (Wave 6, November 2020, web collected) to demonstrate the causal structure of collider confounder. The data are safeguarded and can be accessed via the <a class="reference external" href="https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644">UK Data Service</a>. Once access to the data is obtained, the data needs to be stored securely in your Google Drive and loaded in your private Colab notebook. The data is provided in various file formats, we use the <code class="docutils literal notranslate"><span class="pre">.tab</span></code> file format (<code class="docutils literal notranslate"><span class="pre">tab</span></code> files store data values separated by tabs) which can be easily loaded using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Specifically, the web collected data of the survey from Wave 6 (November 2020) is stored in the file <code class="docutils literal notranslate"><span class="pre">cf_indresp_w.tab</span></code>. Let’s load the survey data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the Drive helper</span>
@@ -1295,7 +1343,7 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-7-71de872a6421&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-8-71de872a6421&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import the Drive helper</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
@@ -1311,10 +1359,20 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
+<span class="c1"># Load the Understadning Society COVID-19 Study web collected data, Wave 6</span>
+<span class="c1"># Set the delimeter parameter sep to &quot;\t&quot; which indicates tabs</span>
 <span class="n">USocietyCovid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s2">&quot;/content/drive/My Drive/Understanding_Society_Covid19_Wave6_November2020.csv&quot;</span>
+    <span class="s2">&quot;/content/drive/My Drive/cf_indresp_w.tab&quot;</span><span class="p">,</span>
+    <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># display headings only as the data is safeguarded</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display headings only as the data is safeguarded</span>
+<span class="n">USocietyCovid</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1363,7 +1421,7 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
   <tbody>
   </tbody>
 </table>
-<p>0 rows × 916 columns</p>
+<p>0 rows × 915 columns</p>
 </div></div></div>
 </div>
 <div class="section" id="variables">
@@ -1397,10 +1455,15 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select and preprocesses our variables from the Understanding Society Study</span>
-<span class="n">USocietyCovidCollider</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[[</span><span class="s2">&quot;cf_wah&quot;</span><span class="p">,</span> <span class="s2">&quot;cf_age&quot;</span><span class="p">,</span> <span class="s2">&quot;cf_riskcv19&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select and preprocesses our variables from the Understanding Society Study.</span>
+<span class="c1"># We also select the weighting variable cf_betaindin_xw we will use later (see  </span>
+<span class="c1"># section &#39;Weighting to correct for complex sample design&#39; below)</span>
+
+<span class="n">USocietyCovidCollider</span> <span class="o">=</span> <span class="n">USocietyCovid</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;cf_wah&quot;</span><span class="p">,</span> <span class="s2">&quot;cf_age&quot;</span><span class="p">,</span> <span class="s2">&quot;cf_riskcv19&quot;</span><span class="p">,</span> <span class="s2">&quot;cf_betaindin_xw&quot;</span><span class="p">]</span>
+<span class="p">]</span>
 <span class="n">USocietyCovidCollider</span> <span class="o">=</span> <span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">USocietyCovidCollider</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">USocietyCovidCollider</span> <span class="o">=</span> <span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">USocietyCovidCollider</span> <span class="o">=</span> <span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">USocietyCovidCollider</span>
 </pre></div>
 </div>
@@ -1427,84 +1490,99 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
       <th>cf_wah</th>
       <th>cf_age</th>
       <th>cf_riskcv19</th>
+      <th>cf_betaindin_xw</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>37</td>
-      <td>4</td>
+      <td>1.0</td>
+      <td>37.0</td>
+      <td>4.0</td>
+      <td>0.502242</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>55</td>
-      <td>3</td>
+      <td>3.0</td>
+      <td>55.0</td>
+      <td>3.0</td>
+      <td>0.138687</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2</td>
-      <td>38</td>
-      <td>4</td>
+      <td>2.0</td>
+      <td>38.0</td>
+      <td>4.0</td>
+      <td>0.485160</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>4</td>
-      <td>63</td>
-      <td>3</td>
+      <td>4.0</td>
+      <td>63.0</td>
+      <td>3.0</td>
+      <td>0.788910</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>3</td>
-      <td>56</td>
-      <td>4</td>
+      <td>3.0</td>
+      <td>56.0</td>
+      <td>4.0</td>
+      <td>0.705270</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>12026</th>
-      <td>3</td>
-      <td>41</td>
-      <td>3</td>
+      <td>3.0</td>
+      <td>41.0</td>
+      <td>3.0</td>
+      <td>0.016283</td>
     </tr>
     <tr>
       <th>12028</th>
-      <td>4</td>
-      <td>39</td>
-      <td>3</td>
+      <td>4.0</td>
+      <td>39.0</td>
+      <td>3.0</td>
+      <td>0.025795</td>
     </tr>
     <tr>
       <th>12029</th>
-      <td>1</td>
-      <td>41</td>
-      <td>4</td>
+      <td>1.0</td>
+      <td>41.0</td>
+      <td>4.0</td>
+      <td>0.285402</td>
     </tr>
     <tr>
       <th>12030</th>
-      <td>1</td>
-      <td>57</td>
-      <td>4</td>
+      <td>1.0</td>
+      <td>57.0</td>
+      <td>4.0</td>
+      <td>0.020726</td>
     </tr>
     <tr>
       <th>12034</th>
-      <td>1</td>
-      <td>41</td>
-      <td>3</td>
+      <td>1.0</td>
+      <td>41.0</td>
+      <td>3.0</td>
+      <td>2.750525</td>
     </tr>
   </tbody>
 </table>
-<p>6683 rows × 3 columns</p>
+<p>6683 rows × 4 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Work at home versus risk of getting covid</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 
@@ -1516,17 +1594,34 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
     <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
     <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ch:.25&quot;</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="p">,</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Change the labels of the horizontal x axis</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Working at home&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add informative labels to the horizontal x axis</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;Always&quot;</span><span class="p">,</span> <span class="s2">&quot;Often&quot;</span><span class="p">,</span> <span class="s2">&quot;Sometimes&quot;</span><span class="p">,</span> <span class="s2">&quot;Never&quot;</span><span class="p">])</span>
+
+<span class="c1"># Change title and labels of the legend</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Risk of getting COVID-19&quot;</span><span class="p">,</span>
+    <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Very likely&quot;</span><span class="p">,</span> <span class="s2">&quot;Likely&quot;</span><span class="p">,</span> <span class="s2">&quot;Unlikely&quot;</span><span class="p">,</span> <span class="s2">&quot;Very unlikely&quot;</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08_causal_inference_19_0.png" src="../_images/08_causal_inference_19_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f86987b82e0&gt;
+</pre></div>
+</div>
+<img alt="../_images/08_causal_inference_21_1.png" src="../_images/08_causal_inference_21_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Risk of getting Covid versus age</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Risk of getting COVID-19 versus age</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cf_riskcv19&quot;</span><span class="p">,</span>
@@ -1537,17 +1632,40 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
     <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># set different y axes for each plot</span>
     <span class="n">data</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="p">,</span>
 <span class="p">)</span>
+
+<span class="c1"># Add informative labels to the horizontal x axis</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Risk of getting COVID-19&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;Very likely&quot;</span><span class="p">,</span> <span class="s2">&quot;Likely&quot;</span><span class="p">,</span> <span class="s2">&quot;Unlikely&quot;</span><span class="p">,</span> <span class="s2">&quot;Very unlikely&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08_causal_inference_20_0.png" src="../_images/08_causal_inference_20_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f8698594f10&gt;
+</pre></div>
+</div>
+<img alt="../_images/08_causal_inference_22_1.png" src="../_images/08_causal_inference_22_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlate the variables using the corr() function in pandas</span>
-<span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the mean of the three variables of interest</span>
+<span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cf_wah          2.788867
+cf_age         47.494538
+cf_riskcv19     3.069280
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the correlation of the three variables of interest</span>
+<span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1598,17 +1716,88 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 </table>
 </div></div></div>
 </div>
-<p>Work at home is negatively correlated with Risk of getting Covid, indicating that people who Never work at home perceive greater risk of getting Covid-19.</p>
-<p>Age is positively correlated, indicating that perceived risk of getting Covid decreases with age.</p>
-<p><em>Note:</em> The variable Risk of getting Covid measures perceived risk, which is different from actual risk or health outcome after different age groups get Covid-19.</p>
+</div>
+</div>
+<div class="section" id="using-weights-to-correct-for-complex-sample-design">
+<h1>Using weights to correct for complex sample design<a class="headerlink" href="#using-weights-to-correct-for-complex-sample-design" title="Permalink to this headline">¶</a></h1>
+<p>Before we perform data analysis, we need to consider the sample of the Understanding Society COVID-19 Study and the importance of using weights in our analysis. The sample of the Understanding Society COVID-19 Study has a clustered and stratified design with certain types of people being over-represented in the sample by design. For example, the study over-samples ethnic minorities. This complex design allows various research analyses across different population sub-groups and topics but posses also a challenge as the sample does not reflect the population structure. To correctly reflect the population structure, we need to use weights in our analysis. The weights correct for unequal selection probability and other conditions (e.g., non-response).</p>
+<p>The Understanding Society team provides a number of weights reflecting the structure of the data. For the Understanding Society data we use (cross-sectional web-collected survey data from Wave 6, November 2020), the relevant weights variables is <code class="docutils literal notranslate"><span class="pre">cf_betaindin_xw</span></code>. The name of the weight variable reflects the wave for which the weight is calculated (<code class="docutils literal notranslate"><span class="pre">cf</span></code> refers to Wave 6), level of analysis (<code class="docutils literal notranslate"><span class="pre">indin</span></code> refers to individual interview), and data source (<code class="docutils literal notranslate"><span class="pre">xw</span></code> refers to cross-sectional analysis weight).</p>
+<p>Weighting in <em>Understanding Society</em> is discussed in the following sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/covid-19/user-guides/covid-19-user-guide.pdf">Understanding Society COVID-19. User Guide. Version 10.0. December 2021.</a></p></li>
+<li><p><a class="reference external" href="https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/user-guides/mainstage/weighting_faqs.pdf">Weighting and Sample Representation: Frequently Asked Questions.
+Version 1.0. October 2019.</a></p></li>
+</ul>
+<p>We use <a class="reference external" href="https://www.statsmodels.org/dev/generated/statsmodels.stats.weightstats.DescrStatsW.html"><code class="docutils literal notranslate"><span class="pre">DescrStatsW</span></code></a> from the library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to compute descriptive statistics and tests with weights for case weights:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instead of correlation, we can model the variables using GLM</span>
-<span class="c1"># with outcome Risk of getting Covid and predictors Age and Work at home.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import DescrStatsW</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.weightstats</span> <span class="kn">import</span> <span class="n">DescrStatsW</span>
+
+<span class="c1"># Create a weighted instance using the cf_betaindin_xw weights</span>
+<span class="n">USocietyCovidCollider_Weighted</span> <span class="o">=</span> <span class="n">DescrStatsW</span><span class="p">(</span>
+    <span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span>
+    <span class="n">weights</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">cf_betaindin_xw</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute weighted mean of the three variables of interest</span>
+<span class="c1"># using the mean attribute in statsmodels</span>
+<span class="n">USocietyCovidCollider_Weighted</span><span class="o">.</span><span class="n">mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.94456926, 43.15515565,  3.06442045])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute weighted correlation of the three variables of interest </span>
+<span class="c1"># using the corrcoef attribute in statsmodels</span>
+<span class="n">USocietyCovidCollider_Weighted</span><span class="o">.</span><span class="n">corrcoef</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.        , -0.04274411, -0.11605542],
+       [-0.04274411,  1.        ,  0.09240866],
+       [-0.11605542,  0.09240866,  1.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the weighted mean and correlation coefficients differ quantitatively from the unweighted versions we computed earlier. The overall pattern of correlation is preserved.</p>
+<p>Let’s interpret the weighted correlation results:</p>
+<ul class="simple">
+<li><p>Work at home is negatively correlated with Risk of getting COVID-19, indicating that people who rarely or never work at home perceive a greater risk of getting COVID-19.</p></li>
+<li><p>Age is weakly positively correlated with Risk of getting COVID-19, indicating that perceived risk of getting COVID-19 decreases with age.</p></li>
+<li><p>Age and work at home are largely not associated in the data set.</p></li>
+</ul>
+<p><em>Note:</em> Due to the way the variable Risk of getting COVID-19 is coded (1 = Very likely, 2 = Likely, 3 = Unlikely, 4 = Very unlikely), larger values indicate lower risk. The variable Risk of getting COVID-19 measures perceived risk, which is different from actual risk or health outcome after different age groups get COVID-19.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We model the outcome variable Risk of getting COVID-19 and the predictors</span>
+<span class="c1"># Age and Work at home using a Generalized Linear Model (GLM) in statsmodels.</span>
+<span class="c1"># We treat our outcome variable as quantitative and thus use the default</span>
+<span class="c1"># Gaussian distribution family. Weights (cf_betaindin_xw) are applied using the</span>
+<span class="c1"># parameter freq_weights.</span>
+
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 
-<span class="n">LogReg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">glm</span><span class="p">(</span><span class="s2">&quot;cf_riskcv19 ~ cf_age * cf_wah&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">LogReg</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">glm</span><span class="p">(</span>
+    <span class="s2">&quot;cf_riskcv19 ~ cf_age + cf_wah&quot;</span><span class="p">,</span>
+    <span class="n">freq_weights</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">cf_betaindin_xw</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1616,63 +1805,53 @@ ggdag_dseparated(RiskCovid_dag, controlling_for = &quot;m&quot;,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 Generalized Linear Model Regression Results                  
 ==============================================================================
 Dep. Variable:            cf_riskcv19   No. Observations:                 6683
-Model:                            GLM   Df Residuals:                     6679
-Model Family:                Gaussian   Df Model:                            3
-Link Function:               identity   Scale:                         0.34066
-Method:                          IRLS   Log-Likelihood:                -5882.4
-Date:                Tue, 16 Mar 2021   Deviance:                       2275.3
-Time:                        09:50:49   Pearson chi2:                 2.28e+03
-No. Iterations:                     3                                         
-Covariance Type:            nonrobust                                         
-=================================================================================
-                    coef    std err          z      P&gt;|z|      [0.025      0.975]
----------------------------------------------------------------------------------
-Intercept         3.0520      0.068     45.019      0.000       2.919       3.185
-cf_age            0.0040      0.001      2.920      0.003       0.001       0.007
-cf_wah           -0.0720      0.021     -3.353      0.001      -0.114      -0.030
-cf_age:cf_wah     0.0002      0.000      0.473      0.636      -0.001       0.001
-=================================================================================
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Although both Age and Work at home affect Risk of getting covid,</span>
-<span class="c1"># the two predictors are not associated in the data set.</span>
-
-<span class="n">LogReg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">glm</span><span class="p">(</span><span class="s2">&quot;cf_wah ~ cf_age&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">LogReg</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 Generalized Linear Model Regression Results                  
-==============================================================================
-Dep. Variable:                 cf_wah   No. Observations:                 6683
-Model:                            GLM   Df Residuals:                     6681
-Model Family:                Gaussian   Df Model:                            1
-Link Function:               identity   Scale:                          1.7185
-Method:                          IRLS   Log-Likelihood:                -11291.
-Date:                Tue, 16 Mar 2021   Deviance:                       11481.
-Time:                        09:41:55   Pearson chi2:                 1.15e+04
+Model:                            GLM   Df Residuals:                  7101.97
+Model Family:                Gaussian   Df Model:                            2
+Link Function:               identity   Scale:                         0.34918
+Method:                          IRLS   Log-Likelihood:                -6342.3
+Date:                Fri, 22 Jul 2022   Deviance:                       2479.9
+Time:                        15:22:40   Pearson chi2:                 2.48e+03
 No. Iterations:                     3                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Intercept      2.8545      0.063     45.536      0.000       2.732       2.977
-cf_age        -0.0014      0.001     -1.083      0.279      -0.004       0.001
+Intercept      3.0564      0.028    107.373      0.000       3.001       3.112
+cf_age         0.0038      0.001      7.455      0.000       0.003       0.005
+cf_wah        -0.0523      0.005     -9.558      0.000      -0.063      -0.042
 ==============================================================================
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s condition on the respondents who considered the risk for getting covid ‘Very likely’. This is an example of problematic conditioning on a collider variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a collider variable — Very likely risk of getting covid.</span>
-<span class="c1"># Select the respondents who considered the risk for getting covid &#39;Very likely&#39;.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Although both Age and Work at home have some effect on </span>
+<span class="c1"># Risk of getting COVID-19, the two predictors are not </span>
+<span class="c1"># associated in the data set as measured via</span>
+<span class="c1"># weighted correlation</span>
+
+<span class="n">USocietyCovidCollider_Weighted</span> <span class="o">=</span> <span class="n">DescrStatsW</span><span class="p">(</span>
+    <span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span>
+    <span class="n">weights</span><span class="o">=</span><span class="n">USocietyCovidCollider</span><span class="o">.</span><span class="n">cf_betaindin_xw</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">USocietyCovidCollider_Weighted</span><span class="o">.</span><span class="n">corrcoef</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.        , -0.04274411],
+       [-0.04274411,  1.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s condition on the respondents who considered the risk for getting COVID-19 ‘Very likely’. This is an example of problematic conditioning on a collider variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a collider variable — Very likely risk of getting COVID-19.</span>
+<span class="c1"># Select the respondents who considered the risk for getting COVID-19 &#39;Very likely&#39;.</span>
 
 <span class="n">USocietyCovidColliderRisk</span> <span class="o">=</span> <span class="n">USocietyCovidCollider</span><span class="p">[</span>
     <span class="n">USocietyCovidCollider</span><span class="p">[</span><span class="s2">&quot;cf_riskcv19&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
@@ -1704,143 +1883,119 @@ cf_age        -0.0014      0.001     -1.083      0.279      -0.004       0.001
       <th>cf_wah</th>
       <th>cf_age</th>
       <th>cf_riskcv19</th>
+      <th>cf_betaindin_xw</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>443</th>
-      <td>4</td>
-      <td>27</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>27.0</td>
+      <td>1.0</td>
+      <td>0.693835</td>
     </tr>
     <tr>
       <th>619</th>
-      <td>4</td>
-      <td>25</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>25.0</td>
+      <td>1.0</td>
+      <td>1.627781</td>
     </tr>
     <tr>
       <th>890</th>
-      <td>4</td>
-      <td>49</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>49.0</td>
+      <td>1.0</td>
+      <td>0.766018</td>
     </tr>
     <tr>
       <th>1635</th>
-      <td>4</td>
-      <td>49</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>49.0</td>
+      <td>1.0</td>
+      <td>0.195473</td>
     </tr>
     <tr>
       <th>1969</th>
-      <td>4</td>
-      <td>28</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>28.0</td>
+      <td>1.0</td>
+      <td>2.347204</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>11334</th>
-      <td>1</td>
-      <td>38</td>
-      <td>1</td>
+      <td>1.0</td>
+      <td>38.0</td>
+      <td>1.0</td>
+      <td>0.963162</td>
     </tr>
     <tr>
       <th>11457</th>
-      <td>4</td>
-      <td>29</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>29.0</td>
+      <td>1.0</td>
+      <td>2.864587</td>
     </tr>
     <tr>
       <th>11593</th>
-      <td>4</td>
-      <td>42</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>42.0</td>
+      <td>1.0</td>
+      <td>1.980593</td>
     </tr>
     <tr>
       <th>11702</th>
-      <td>4</td>
-      <td>48</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>48.0</td>
+      <td>1.0</td>
+      <td>2.443001</td>
     </tr>
     <tr>
       <th>11975</th>
-      <td>4</td>
-      <td>50</td>
-      <td>1</td>
+      <td>4.0</td>
+      <td>50.0</td>
+      <td>1.0</td>
+      <td>0.387473</td>
     </tr>
   </tbody>
 </table>
-<p>63 rows × 3 columns</p>
+<p>63 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>After we condition on those who considered the risk for getting Covid-19 ‘Very likely’, we observe a negative correlation between Age and Work at home.</p>
+<p>After we condition on those who considered the risk for getting COVID-19 ‘Very likely’, we observe a negative correlation between Age and Work at home.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlate our variables</span>
-<span class="c1"># Note that correlation coefficients for cf_riskcv19 are NaN. This is due to the</span>
-<span class="c1"># fact that we selected only one category, hence correlation cannot be computed.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute weighted correlation of Age and Work at home</span>
 
-<span class="n">USocietyCovidColliderRisk</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="c1"># Create a weighted instance</span>
+<span class="n">USocietyCovidColliderRisk_Weighted</span> <span class="o">=</span> <span class="n">DescrStatsW</span><span class="p">(</span>
+    <span class="n">USocietyCovidColliderRisk</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span>
+    <span class="n">weights</span><span class="o">=</span><span class="n">USocietyCovidColliderRisk</span><span class="o">.</span><span class="n">cf_betaindin_xw</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Weighted correlation</span>
+<span class="n">USocietyCovidColliderRisk_Weighted</span><span class="o">.</span><span class="n">corrcoef</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cf_wah</th>
-      <th>cf_age</th>
-      <th>cf_riskcv19</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>cf_wah</th>
-      <td>1.000000</td>
-      <td>-0.185572</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>cf_age</th>
-      <td>-0.185572</td>
-      <td>1.000000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>cf_riskcv19</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.        , -0.20653002],
+       [-0.20653002,  1.        ]])
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Why Age and Work at home were uncorrelated in the population but are negatively correlated once we condition on those who perceive ‘Very likely’ risk of getting Covid?</p></li>
+<li><p>Why Age and Work at home were uncorrelated in the population but are negatively correlated once we condition on those who perceive ‘Very likely’ risk of getting COVID-19?</p></li>
 </ul>
 </div>
 </div>
@@ -1856,18 +2011,21 @@ cf_age        -0.0014      0.001     -1.083      0.279      -0.004       0.001
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install Stargazer
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">from</span> <span class="nn">stargazer.stargazer</span> <span class="kn">import</span> <span class="n">Stargazer</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Stargazer
-  Downloading stargazer-0.0.5-py3-none-any.whl (9.7 kB)
-Installing collected packages: Stargazer
-Successfully installed Stargazer-0.0.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Stargazer in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.0.5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/statsmodels/tsa/base/tsa_model.py:7: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
+/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/statsmodels/tsa/base/tsa_model.py:7: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
 </pre></div>
 </div>
 </div>
@@ -1938,42 +2096,42 @@ Successfully installed Stargazer-0.0.5
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>0.099726</td>
+      <td>0.936659</td>
       <td>1</td>
-      <td>-1.223869</td>
-      <td>-1.247802</td>
+      <td>1.518708</td>
+      <td>2.497788</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>-1.781548</td>
-      <td>0</td>
-      <td>-1.954134</td>
-      <td>-5.485027</td>
+      <td>1</td>
+      <td>-0.822491</td>
+      <td>1</td>
+      <td>-3.060495</td>
+      <td>-4.638239</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>1.516262</td>
-      <td>1</td>
-      <td>1.858005</td>
-      <td>4.760583</td>
+      <td>0</td>
+      <td>0.182544</td>
+      <td>0</td>
+      <td>1.682320</td>
+      <td>2.632574</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0</td>
-      <td>-0.995852</td>
+      <td>-2.152261</td>
       <td>0</td>
-      <td>-1.401073</td>
-      <td>-3.041161</td>
+      <td>-2.950735</td>
+      <td>-6.152687</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>0.251987</td>
-      <td>0</td>
-      <td>1.990522</td>
-      <td>2.982625</td>
+      <td>1</td>
+      <td>0.243361</td>
+      <td>1</td>
+      <td>-1.869238</td>
+      <td>-1.731099</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1986,42 +2144,42 @@ Successfully installed Stargazer-0.0.5
     <tr>
       <th>9995</th>
       <td>1</td>
-      <td>1.554097</td>
+      <td>-1.193729</td>
       <td>1</td>
-      <td>5.339169</td>
-      <td>8.511789</td>
+      <td>-3.785567</td>
+      <td>-6.157548</td>
     </tr>
     <tr>
       <th>9996</th>
-      <td>1</td>
-      <td>-0.219406</td>
-      <td>1</td>
-      <td>-0.459321</td>
-      <td>-0.301864</td>
+      <td>0</td>
+      <td>0.002218</td>
+      <td>0</td>
+      <td>2.072743</td>
+      <td>3.944768</td>
     </tr>
     <tr>
       <th>9997</th>
-      <td>0</td>
-      <td>-0.760498</td>
-      <td>0</td>
-      <td>0.157653</td>
-      <td>-0.553857</td>
+      <td>1</td>
+      <td>-2.256762</td>
+      <td>1</td>
+      <td>-5.115725</td>
+      <td>-8.722608</td>
     </tr>
     <tr>
       <th>9998</th>
-      <td>0</td>
-      <td>-0.297383</td>
-      <td>0</td>
-      <td>1.075582</td>
-      <td>0.123010</td>
+      <td>1</td>
+      <td>0.961977</td>
+      <td>1</td>
+      <td>-0.474545</td>
+      <td>1.603516</td>
     </tr>
     <tr>
       <th>9999</th>
       <td>1</td>
-      <td>-1.053546</td>
+      <td>0.988728</td>
       <td>1</td>
-      <td>-2.661607</td>
-      <td>-4.252707</td>
+      <td>2.848932</td>
+      <td>4.788099</td>
     </tr>
   </tbody>
 </table>
@@ -2046,7 +2204,7 @@ Successfully installed Stargazer-0.0.5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table style="text-align:center"><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="3"><em>Dependent variable:wage</em></td></tr><tr><td style="text-align:left"></td><tr><td></td><td colspan="1">Biased Unconditional</td><td colspan="1">Biased</td><td colspan="1">Unbiased Conditional</td></tr><tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Intercept</td><td>2.015<sup>***</sup></td><td>0.193<sup>***</sup></td><td>1.003<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td>(0.060)</td><td>(0.020)</td><td>(0.017)</td></tr><tr><td style="text-align:left">ability</td><td></td><td></td><td>2.011<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td>(0.022)</td></tr><tr><td style="text-align:left">female</td><td>-3.002<sup>***</sup></td><td>0.575<sup>***</sup></td><td>-1.018<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td>(0.085)</td><td>(0.030)</td><td>(0.028)</td></tr><tr><td style="text-align:left">occupation</td><td></td><td>1.798<sup>***</sup></td><td>0.997<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td></td><td>(0.006)</td><td>(0.010)</td></tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Observations</td><td>10,000</td><td>10,000</td><td>10,000</td></tr><tr><td style="text-align: left">R<sup>2</sup></td><td>0.112</td><td>0.909</td><td>0.950</td></tr><tr><td style="text-align: left">Adjusted R<sup>2</sup></td><td>0.112</td><td>0.909</td><td>0.950</td></tr><tr><td style="text-align: left">Residual Std. Error</td><td>4.231 (df=9998)</td><td>1.355 (df=9997)</td><td>1.006 (df=9996)</td></tr><tr><td style="text-align: left">F Statistic</td><td>1258.024<sup>***</sup> (df=1; 9998)</td><td>49873.717<sup>***</sup> (df=2; 9997)</td><td>63006.715<sup>***</sup> (df=3; 9996)</td></tr><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Note:</td>
+<div class="output text_html"><table style="text-align:center"><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="3"><em>Dependent variable:wage</em></td></tr><tr><td style="text-align:left"></td><tr><td></td><td colspan="1">Biased Unconditional</td><td colspan="1">Biased</td><td colspan="1">Unbiased Conditional</td></tr><tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Intercept</td><td>1.975<sup>***</sup></td><td>0.215<sup>***</sup></td><td>1.027<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td>(0.060)</td><td>(0.020)</td><td>(0.018)</td></tr><tr><td style="text-align:left">ability</td><td></td><td></td><td>2.001<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td>(0.023)</td></tr><tr><td style="text-align:left">female</td><td>-2.886<sup>***</sup></td><td>0.566<sup>***</sup></td><td>-1.041<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td>(0.085)</td><td>(0.029)</td><td>(0.029)</td></tr><tr><td style="text-align:left">occupation</td><td></td><td>1.789<sup>***</sup></td><td>0.990<sup>***</sup></td></tr><tr><td style="text-align:left"></td><td></td><td>(0.006)</td><td>(0.010)</td></tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Observations</td><td>10,000</td><td>10,000</td><td>10,000</td></tr><tr><td style="text-align: left">R<sup>2</sup></td><td>0.104</td><td>0.909</td><td>0.949</td></tr><tr><td style="text-align: left">Adjusted R<sup>2</sup></td><td>0.104</td><td>0.909</td><td>0.949</td></tr><tr><td style="text-align: left">Residual Std. Error</td><td>4.236 (df=9998)</td><td>1.352 (df=9997)</td><td>1.012 (df=9996)</td></tr><tr><td style="text-align: left">F Statistic</td><td>1160.216<sup>***</sup> (df=1; 9998)</td><td>49770.418<sup>***</sup> (df=2; 9997)</td><td>61804.591<sup>***</sup> (df=3; 9996)</td></tr><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Note:</td>
  <td colspan="3" style="text-align: right">
   <sup>*</sup>p&lt;0.1;
   <sup>**</sup>p&lt;0.05;

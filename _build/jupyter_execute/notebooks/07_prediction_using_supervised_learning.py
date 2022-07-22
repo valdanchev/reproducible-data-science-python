@@ -71,8 +71,10 @@ The data are safeguarded and is available to users registered with the [UK Data 
 
 <img src="https://www.cdcs.ed.ac.uk/files/styles/large_16x9/public/2019-08/Spotlighton_AjaMurray_A4_UKHLS_Logo_positive_RGB_300dpi.jpg?itok=YmQnr_oq" width="400" height="200" >
 
+Once access to the data is obtained, the data needs to be stored securely in your Google Drive and loaded in your private Colab notebook. The data is provided in various file formats, we use the `.tab` file format (`tab` files store data values separated by tabs) which can be easily loaded using `pandas`. The web collected data of the survey from Wave 6 (November 2020) is stored in the file `cf_indresp_w.tab`.
+
 :::{note}
-The workflow in this session assumes that learners, first, have registered with the UK Data Service and obtained access to the Understanding Society: Covid-19 Study (Wave 6, November 2020, Web-collected data) and, second, have safely and securely stored the data in their Google Drive as a comma-separated values (CSV) file named `Understanding_Society_Covid19_Wave6_November2020.csv` that can be loaded in Colab. If you have not registered with the UK Data Service and have not obtained access to the data, you can still read the textbook chapter and follow the analytical steps but would not be able to work interactively with the notebook.
+The workflow in this session assumes that learners, first, have registered with the UK Data Service and obtained access to the Understanding Society: Covid-19 Study (Wave 6, November 2020, Web-collected data) and, second, have safely and securely stored the data in their Google Drive as a tab-separated values (TAB) file named `cf_indresp_w.tab`. If you have not registered with the UK Data Service and have not obtained access to the data, you can still read the textbook chapter and follow the analytical steps but would not be able to work interactively with the notebook.
 :::
 
 ## Accessing data from your Google Drive
@@ -94,8 +96,11 @@ The above code will execute in Colab but will give the following error `ModuleNo
 import pandas as pd
 import numpy as np
 
+# Load the Understadning Society COVID-19 Study web collected data, Wave 6
+# Set the delimeter parameter sep to "\t" which indicates tabs
 USocietyCovid = pd.read_csv(
-    "/content/drive/My Drive/Understanding_Society_Covid19_Wave6_November2020.csv"
+    "/content/drive/My Drive/cf_indresp_w.tab",
+    sep="\t",
 )
 
 # Display all columns in the Understanding Society: COVID-19 Study

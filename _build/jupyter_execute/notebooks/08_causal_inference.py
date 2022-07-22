@@ -65,8 +65,8 @@ In order to run R in a Python Jupyter, we need to install the `rpy2` package whi
 Now we can run R code in a cell by adding the R cell magic command `%%R`.
 
 %%R
-#install.packages('ggdag') # you will need to select a CRAN mirror from where 
-# to install the package; for example, typing in '70' will select UK London  
+# install.packages('ggdag') # you will need to select a CRAN mirror from where
+# to install the package; for example, typing in '70' will select UK London
 library(ggdag)
 theme_set(theme_dag())
 
@@ -79,20 +79,21 @@ theme_set(theme_dag())
 In our model, we assume that both variables _Work from home_ and _Age_ affect the outcome variable, _Risk of getting Covid-19_. We also assume that _Working at home_ and _Age_ are not causally connected. Below we represent our simple model using a causal graph. The node where _Work from home_ and _Age_ arrowheads meet is called a collider, meaning that both variables collide there. Let's now plot a causal graph with our three variables.
 
 %%R
-RiskCovid_dag <- collider_triangle(x = "Not Work from Home", 
-                  y = "Age", 
-                  m = "Perceived risk from getting Covid-19") 
+RiskCovid_dag < -collider_triangle(
+    x="Not Work from Home", y="Age", m="Perceived risk from getting Covid-19"
+)
 
-ggdag(RiskCovid_dag, text = FALSE, use_labels = "label", node_size = 20, text_size = 6)
+ggdag(RiskCovid_dag, text=FALSE, use_labels="label", node_size=20, text_size=6)
 
 %%R
-ggdag_dseparated(RiskCovid_dag, text = FALSE, use_labels = "label", text_size = 6)
+ggdag_dseparated(RiskCovid_dag, text=FALSE, use_labels="label", text_size=6)
 
 Although Work from home and Age are not correlated in the population, they may get correlated once we condition on Very high risk of getting Covid-19. The square shape of the variable _Risk of getting Covid-19_ indicates that we condition on that variable being a certain value, in our case on people with Very high perceived risk of getting Covid-19.
 
 %%R
-ggdag_dseparated(RiskCovid_dag, controlling_for = "m",
-                 text = FALSE, use_labels = "label", text_size = 6)
+ggdag_dseparated(
+    RiskCovid_dag, controlling_for="m", text=FALSE, use_labels="label", text_size=6
+)
 
 # Statistical Models in Python
 
@@ -102,10 +103,13 @@ In this lab, we will use the Python library [`statsmodels`](https://www.statsmod
 
 <img src="https://www.statsmodels.org/devel/_images/statsmodels-logo-v2-horizontal.svg" width="400" height="200"/>
 
+You can install `statsmodels` by running the following command:
+
+!pip install statsmodels
 
 # Collider confounder
 
-We will use data from [Understanding Society Covid-19](https://www.understandingsociety.ac.uk/topic/covid-19) (Wave 6, November 2021, web collected) to demonstrate the causal structure of collider confounder. Let's first load the survey data.
+We will use data from [Understanding Society COVID-19](https://www.understandingsociety.ac.uk/topic/covid-19) (Wave 6, November 2020, web collected) to demonstrate the causal structure of collider confounder. The data are safeguarded and can be accessed via the [UK Data Service](https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8644). Once access to the data is obtained, the data needs to be stored securely in your Google Drive and loaded in your private Colab notebook. The data is provided in various file formats, we use the `.tab` file format (`tab` files store data values separated by tabs) which can be easily loaded using `pandas`. Specifically, the web collected data of the survey from Wave 6 (November 2020) is stored in the file `cf_indresp_w.tab`. Let's load the survey data.
 
 # Import the Drive helper
 from google.colab import drive
@@ -116,10 +120,15 @@ drive.mount("/content/drive")
 
 import pandas as pd
 
+# Load the Understadning Society COVID-19 Study web collected data, Wave 6
+# Set the delimeter parameter sep to "\t" which indicates tabs
 USocietyCovid = pd.read_csv(
-    "/content/drive/My Drive/Understanding_Society_Covid19_Wave6_November2020.csv"
+    "/content/drive/My Drive/cf_indresp_w.tab",
+    sep="\t",
 )
-USocietyCovid.head(0)  # display headings only as the data is safeguarded
+
+# Display headings only as the data is safeguarded
+USocietyCovid.head(0)
 
 ### Variables
 
@@ -131,14 +140,22 @@ To make things concrete, let's select three variables.
 | Z | Age | cf_age | Integer values (whole numbers)
 | Y | Risk of getting covid19 | cf_riskcv19 | 1 = Very likely, 2 = Likely, 3 = Unlikely, 4 = Very unlikely
 
-# Select and preprocesses our variables from the Understanding Society Study
-USocietyCovidCollider = USocietyCovid[["cf_wah", "cf_age", "cf_riskcv19"]]
+# Select and preprocesses our variables from the Understanding Society Study.
+# We also select the weighting variable cf_betaindin_xw we will use later (see  
+# section 'Weighting to correct for complex sample design' below)
+
+USocietyCovidCollider = USocietyCovid[
+    ["cf_wah", "cf_age", "cf_riskcv19", "cf_betaindin_xw"]
+]
 USocietyCovidCollider = USocietyCovidCollider.mask(USocietyCovidCollider < 0)
-USocietyCovidCollider = USocietyCovidCollider.dropna().astype(int)
+USocietyCovidCollider = USocietyCovidCollider.dropna().astype(float)
 USocietyCovidCollider
 
 # Work at home versus risk of getting covid
+import matplotlib.pyplot as plt
 import seaborn as sns
+
+%matplotlib inline
 
 sns.set_context("notebook", font_scale=1.5)
 
@@ -150,9 +167,23 @@ fig = sns.catplot(
     aspect=1.5,
     palette="ch:.25",
     data=USocietyCovidCollider,
+    legend=False,
 )
 
-# Risk of getting Covid versus age
+# Change the labels of the horizontal x axis
+fig.set(xlabel="Working at home")
+
+# Add informative labels to the horizontal x axis
+fig.set_xticklabels(["Always", "Often", "Sometimes", "Never"])
+
+# Change title and labels of the legend
+plt.legend(
+    title="Risk of getting COVID-19",
+    loc="upper center",
+    labels=["Very likely", "Likely", "Unlikely", "Very unlikely"],
+)
+
+# Risk of getting COVID-19 versus age
 
 fig = sns.catplot(
     x="cf_riskcv19",
@@ -164,32 +195,87 @@ fig = sns.catplot(
     data=USocietyCovidCollider,
 )
 
-# Correlate the variables using the corr() function in pandas
-USocietyCovidCollider.corr()
+# Add informative labels to the horizontal x axis
+fig.set(xlabel="Risk of getting COVID-19")
+fig.set_xticklabels(["Very likely", "Likely", "Unlikely", "Very unlikely"])
 
-Work at home is negatively correlated with Risk of getting Covid, indicating that people who Never work at home perceive greater risk of getting Covid-19. 
+# Compute the mean of the three variables of interest
+USocietyCovidCollider.iloc[:, 0:3].mean()
 
-Age is positively correlated, indicating that perceived risk of getting Covid decreases with age. 
+# Compute the correlation of the three variables of interest
+USocietyCovidCollider.iloc[:, 0:3].corr()
 
-_Note:_ The variable Risk of getting Covid measures perceived risk, which is different from actual risk or health outcome after different age groups get Covid-19.
+# Using weights to correct for complex sample design
 
-# Instead of correlation, we can model the variables using GLM
-# with outcome Risk of getting Covid and predictors Age and Work at home.
+Before we perform data analysis, we need to consider the sample of the Understanding Society COVID-19 Study and the importance of using weights in our analysis. The sample of the Understanding Society COVID-19 Study has a clustered and stratified design with certain types of people being over-represented in the sample by design. For example, the study over-samples ethnic minorities. This complex design allows various research analyses across different population sub-groups and topics but posses also a challenge as the sample does not reflect the population structure. To correctly reflect the population structure, we need to use weights in our analysis. The weights correct for unequal selection probability and other conditions (e.g., non-response). 
+
+The Understanding Society team provides a number of weights reflecting the structure of the data. For the Understanding Society data we use (cross-sectional web-collected survey data from Wave 6, November 2020), the relevant weights variables is `cf_betaindin_xw`. The name of the weight variable reflects the wave for which the weight is calculated (`cf` refers to Wave 6), level of analysis (`indin` refers to individual interview), and data source (`xw` refers to cross-sectional analysis weight).
+
+Weighting in _Understanding Society_ is discussed in the following sources: 
+* [Understanding Society COVID-19. User Guide. Version 10.0. December 2021.](https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/covid-19/user-guides/covid-19-user-guide.pdf)
+* [Weighting and Sample Representation: Frequently Asked Questions. 
+Version 1.0. October 2019.](https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/user-guides/mainstage/weighting_faqs.pdf)
+
+We use [`DescrStatsW`](https://www.statsmodels.org/dev/generated/statsmodels.stats.weightstats.DescrStatsW.html) from the library `statsmodels` to compute descriptive statistics and tests with weights for case weights:
+
+# Import DescrStatsW
+from statsmodels.stats.weightstats import DescrStatsW
+
+# Create a weighted instance using the cf_betaindin_xw weights
+USocietyCovidCollider_Weighted = DescrStatsW(
+    USocietyCovidCollider.iloc[:, 0:3],
+    weights=USocietyCovidCollider.cf_betaindin_xw,
+)
+
+# Compute weighted mean of the three variables of interest
+# using the mean attribute in statsmodels
+USocietyCovidCollider_Weighted.mean
+
+# Compute weighted correlation of the three variables of interest 
+# using the corrcoef attribute in statsmodels
+USocietyCovidCollider_Weighted.corrcoef
+
+Note that the weighted mean and correlation coefficients differ quantitatively from the unweighted versions we computed earlier. The overall pattern of correlation is preserved.
+
+Let's interpret the weighted correlation results:
+* Work at home is negatively correlated with Risk of getting COVID-19, indicating that people who rarely or never work at home perceive a greater risk of getting COVID-19. 
+* Age is weakly positively correlated with Risk of getting COVID-19, indicating that perceived risk of getting COVID-19 decreases with age.
+* Age and work at home are largely not associated in the data set. 
+
+_Note:_ Due to the way the variable Risk of getting COVID-19 is coded (1 = Very likely, 2 = Likely, 3 = Unlikely, 4 = Very unlikely), larger values indicate lower risk. The variable Risk of getting COVID-19 measures perceived risk, which is different from actual risk or health outcome after different age groups get COVID-19. 
+
+# We model the outcome variable Risk of getting COVID-19 and the predictors
+# Age and Work at home using a Generalized Linear Model (GLM) in statsmodels.
+# We treat our outcome variable as quantitative and thus use the default
+# Gaussian distribution family. Weights (cf_betaindin_xw) are applied using the
+# parameter freq_weights.
+
 import statsmodels.formula.api as smf
 
-LogReg = smf.glm("cf_riskcv19 ~ cf_age * cf_wah", data=USocietyCovidCollider).fit()
-print(LogReg.summary())
+model = smf.glm(
+    "cf_riskcv19 ~ cf_age + cf_wah",
+    freq_weights=USocietyCovidCollider.cf_betaindin_xw,
+    data=USocietyCovidCollider,
+).fit()
 
-# Although both Age and Work at home affect Risk of getting covid,
-# the two predictors are not associated in the data set.
+print(model.summary())
 
-LogReg = smf.glm("cf_wah ~ cf_age", data=USocietyCovidCollider).fit()
-print(LogReg.summary())
+# Although both Age and Work at home have some effect on 
+# Risk of getting COVID-19, the two predictors are not 
+# associated in the data set as measured via
+# weighted correlation
 
-Let's condition on the respondents who considered the risk for getting covid 'Very likely'. This is an example of problematic conditioning on a collider variable.
+USocietyCovidCollider_Weighted = DescrStatsW(
+    USocietyCovidCollider.iloc[:, 0:2],
+    weights=USocietyCovidCollider.cf_betaindin_xw,
+)
 
-# Create a collider variable — Very likely risk of getting covid.
-# Select the respondents who considered the risk for getting covid 'Very likely'.
+USocietyCovidCollider_Weighted.corrcoef
+
+Let's condition on the respondents who considered the risk for getting COVID-19 'Very likely'. This is an example of problematic conditioning on a collider variable.
+
+# Create a collider variable — Very likely risk of getting COVID-19.
+# Select the respondents who considered the risk for getting COVID-19 'Very likely'.
 
 USocietyCovidColliderRisk = USocietyCovidCollider[
     USocietyCovidCollider["cf_riskcv19"] == 1
@@ -197,16 +283,21 @@ USocietyCovidColliderRisk = USocietyCovidCollider[
 
 USocietyCovidColliderRisk
 
-After we condition on those who considered the risk for getting Covid-19 'Very likely', we observe a negative correlation between Age and Work at home. 
+After we condition on those who considered the risk for getting COVID-19 'Very likely', we observe a negative correlation between Age and Work at home. 
 
-# Correlate our variables
-# Note that correlation coefficients for cf_riskcv19 are NaN. This is due to the
-# fact that we selected only one category, hence correlation cannot be computed.
+# Compute weighted correlation of Age and Work at home
 
-USocietyCovidColliderRisk.corr()
+# Create a weighted instance
+USocietyCovidColliderRisk_Weighted = DescrStatsW(
+    USocietyCovidColliderRisk.iloc[:, 0:2],
+    weights=USocietyCovidColliderRisk.cf_betaindin_xw,
+)
+
+# Weighted correlation
+USocietyCovidColliderRisk_Weighted.corrcoef
 
 ### Questions
-* Why Age and Work at home were uncorrelated in the population but are negatively correlated once we condition on those who perceive 'Very likely' risk of getting Covid?
+* Why Age and Work at home were uncorrelated in the population but are negatively correlated once we condition on those who perceive 'Very likely' risk of getting COVID-19?
 
 # Additional material
 
@@ -221,8 +312,8 @@ Suppose we are interested in studying the effect of gender discrimination on ear
 For a detailed account on of the discrimination example, see [Chapter 3: Directed Acyclical Graphs](https://mixtape.scunning.com/dag.html) in Scott Cunningham's book [Causal Inference: The Mixtape](https://mixtape.scunning.com/index.html).
 
 !pip install Stargazer
-import pandas as pd
 import numpy as np
+import pandas as pd
 import statsmodels.api as sm
 from stargazer.stargazer import Stargazer
 
