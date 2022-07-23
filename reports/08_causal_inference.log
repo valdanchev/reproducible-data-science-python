@@ -1,4 +1,15 @@
 Traceback (most recent call last):
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 609, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 85, in ensure_async
+    result = await obj
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/jupyter_client/asynchronous/channels.py", line 48, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
@@ -11,29 +22,21 @@ Traceback (most recent call last):
     return future.result()
   File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
     await self.async_execute_cell(
-  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-# Import the Drive helper
-from google.colab import drive
-
-# This will prompt for authorization.
-# Enter your authorisation code and rerun the cell.
-drive.mount("/content/drive")
-------------------
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-8-71de872a6421>[0m in [0;36m<cell line: 2>[0;34m()[0m
-[1;32m      1[0m [0;31m# Import the Drive helper[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0;32mfrom[0m [0mgoogle[0m[0;34m.[0m[0mcolab[0m [0;32mimport[0m [0mdrive[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0;31m# This will prompt for authorization.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;31m# Enter your authorisation code and rerun the cell.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mModuleNotFoundError[0m: No module named 'google'
-ModuleNotFoundError: No module named 'google'
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 816, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 633, in _async_poll_for_reply
+    await self._async_handle_timeout(timeout, cell)
+  File "/Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 683, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+%%R
+# You will need to select a CRAN mirror from which
+# to install the package; for example, typing in '70' will select UK London
+install.packages("ggdag")
+# We also install ggplot2, a popular data visualization package in R 
+install.packages("ggplot2") 
+-------------------
 
