@@ -65,34 +65,36 @@ In order to run R in a Python Jupyter, we need to install the `rpy2` package whi
 Now we can run R code in a cell by adding the R cell magic command `%%R`.
 
 %%R
-# install.packages('ggdag') # you will need to select a CRAN mirror from where
+# You will need to select a CRAN mirror from which
 # to install the package; for example, typing in '70' will select UK London
-library(ggdag)
-theme_set(theme_dag())
+install.packages("ggdag")
+# We also install ggplot2, a popular data visualization package in R 
+install.packages("ggplot2") 
 
-Import the `ggdag` package.  
+Import the `ggdag` package (and the `ggplot2` package)
 
 %%R
 library(ggdag)
+library(ggplot2)
 theme_set(theme_dag())
 
 In our model, we assume that both variables _Work from home_ and _Age_ affect the outcome variable, _Risk of getting Covid-19_. We also assume that _Working at home_ and _Age_ are not causally connected. Below we represent our simple model using a causal graph. The node where _Work from home_ and _Age_ arrowheads meet is called a collider, meaning that both variables collide there. Let's now plot a causal graph with our three variables.
 
 %%R
-RiskCovid_dag < -collider_triangle(
-    x="Not Work from Home", y="Age", m="Perceived risk from getting Covid-19"
+RiskCovid_dag <-collider_triangle(
+    x="Not Work from Home", y="Age", m="Perceived risk from getting COVID-19"
 )
 
-ggdag(RiskCovid_dag, text=FALSE, use_labels="label", node_size=20, text_size=6)
+ggdag(RiskCovid_dag, text=FALSE, use_labels="label", node_size=20, text_size=5)
 
 %%R
-ggdag_dseparated(RiskCovid_dag, text=FALSE, use_labels="label", text_size=6)
+ggdag_dseparated(RiskCovid_dag, text=FALSE, use_labels="label", text_size=5)
 
 Although Work from home and Age are not correlated in the population, they may get correlated once we condition on Very high risk of getting Covid-19. The square shape of the variable _Risk of getting Covid-19_ indicates that we condition on that variable being a certain value, in our case on people with Very high perceived risk of getting Covid-19.
 
 %%R
 ggdag_dseparated(
-    RiskCovid_dag, controlling_for="m", text=FALSE, use_labels="label", text_size=6
+    RiskCovid_dag, controlling_for="m", text=FALSE, use_labels="label", text_size=5
 )
 
 # Statistical Models in Python
@@ -141,7 +143,7 @@ To make things concrete, let's select three variables.
 | Y | Risk of getting covid19 | cf_riskcv19 | 1 = Very likely, 2 = Likely, 3 = Unlikely, 4 = Very unlikely
 
 # Select and preprocesses our variables from the Understanding Society Study.
-# We also select the weighting variable cf_betaindin_xw we will use later (see  
+# We also select the weighting variable cf_betaindin_xw we will use later (see
 # section 'Weighting to correct for complex sample design' below)
 
 USocietyCovidCollider = USocietyCovid[
@@ -205,7 +207,7 @@ USocietyCovidCollider.iloc[:, 0:3].mean()
 # Compute the correlation of the three variables of interest
 USocietyCovidCollider.iloc[:, 0:3].corr()
 
-# Using weights to correct for complex sample design
+# Using weights to adjust for complex sample design
 
 Before we perform data analysis, we need to consider the sample of the Understanding Society COVID-19 Study and the importance of using weights in our analysis. The sample of the Understanding Society COVID-19 Study has a clustered and stratified design with certain types of people being over-represented in the sample by design. For example, the study over-samples ethnic minorities. This complex design allows various research analyses across different population sub-groups and topics but posses also a challenge as the sample does not reflect the population structure. To correctly reflect the population structure, we need to use weights in our analysis. The weights correct for unequal selection probability and other conditions (e.g., non-response). 
 
@@ -231,7 +233,7 @@ USocietyCovidCollider_Weighted = DescrStatsW(
 # using the mean attribute in statsmodels
 USocietyCovidCollider_Weighted.mean
 
-# Compute weighted correlation of the three variables of interest 
+# Compute weighted correlation of the three variables of interest
 # using the corrcoef attribute in statsmodels
 USocietyCovidCollider_Weighted.corrcoef
 
@@ -260,8 +262,8 @@ model = smf.glm(
 
 print(model.summary())
 
-# Although both Age and Work at home have some effect on 
-# Risk of getting COVID-19, the two predictors are not 
+# Although both Age and Work at home have some effect on
+# Risk of getting COVID-19, the two predictors are not
 # associated in the data set as measured via
 # weighted correlation
 
