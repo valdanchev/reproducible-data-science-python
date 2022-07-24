@@ -33,9 +33,11 @@ The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
 %%R
+
 # You will need to select a CRAN mirror from which
 # to install the package; for example, typing in '70' will select UK London
 install.packages("ggdag")
+
 # We also install ggplot2, a popular data visualization package in R 
 install.packages("ggplot2") 
 -------------------

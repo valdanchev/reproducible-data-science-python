@@ -58,16 +58,18 @@ In order to run R in a Python Jupyter, we need to install the `rpy2` package whi
 
 !pip install rpy2
 
-# To enable the %%R cell magic command, which turns a cell to be
-# interpreted as an R code, we execute %load_ext rpy2.ipython.
+To enable the `%%R` cell magic command, which turns a cell to be interpreted as an R code, we need to execute `%load_ext rpy2.ipython`.
+
 %load_ext rpy2.ipython
 
 Now we can run R code in a cell by adding the R cell magic command `%%R`.
 
 %%R
+
 # You will need to select a CRAN mirror from which
 # to install the package; for example, typing in '70' will select UK London
 install.packages("ggdag")
+
 # We also install ggplot2, a popular data visualization package in R 
 install.packages("ggplot2") 
 
@@ -248,7 +250,7 @@ _Note:_ Due to the way the variable Risk of getting COVID-19 is coded (1 = Very 
 
 # We model the outcome variable Risk of getting COVID-19 and the predictors
 # Age and Work at home using a Generalized Linear Model (GLM) in statsmodels.
-# We treat our outcome variable as quantitative and thus use the default
+# We treat our outcome variable as a discrete quantitative variable and use the default
 # Gaussian distribution family. Weights (cf_betaindin_xw) are applied using the
 # parameter freq_weights.
 
@@ -314,6 +316,7 @@ Suppose we are interested in studying the effect of gender discrimination on ear
 For a detailed account on of the discrimination example, see [Chapter 3: Directed Acyclical Graphs](https://mixtape.scunning.com/dag.html) in Scott Cunningham's book [Causal Inference: The Mixtape](https://mixtape.scunning.com/index.html).
 
 !pip install Stargazer
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
