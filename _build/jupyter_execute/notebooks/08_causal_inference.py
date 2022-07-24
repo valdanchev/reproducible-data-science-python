@@ -122,6 +122,10 @@ from google.colab import drive
 # Enter your authorisation code and rerun the cell.
 drive.mount("/content/drive")
 
+:::{note}
+The above code will execute in Colab but will give an error (e.g., `ModuleNotFoundError: No module named 'google'`) when the notebook is run outside Colab.
+:::
+
 import pandas as pd
 
 # Load the Understadning Society COVID-19 Study web collected data, Wave 6

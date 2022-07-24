@@ -34,6 +34,6 @@ drive.mount("/content/drive")
 [1;32m      4[0m [0;31m# This will prompt for authorization.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m [0;31m# Enter your authorisation code and rerun the cell.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'google'
-ModuleNotFoundError: No module named 'google'
+[0;31mModuleNotFoundError[0m: No module named 'google.colab'
+ModuleNotFoundError: No module named 'google.colab'
 

@@ -88,7 +88,7 @@ from google.colab import drive
 drive.mount("/content/drive")
 
 :::{note}
-The above code will execute in Colab but will give the following error `ModuleNotFoundError: No module named 'google'` when the notebook is run outside Colab.
+The above code will execute in Colab but will give an error (e.g., `ModuleNotFoundError: No module named 'google'`) when the notebook is run outside Colab.
 :::
 
 ## Loading the Understanding Society Covid-19 Study (Wave 6, November 2020, Web collected)
