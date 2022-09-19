@@ -11,10 +11,11 @@ prediction & machine learning, causal inference, and network analysis.
 ## Contact
 
 **[Valentin Danchev](https://valdanchev.github.io)**\
-Lecturer in Computational Social Science\
-Department of Sociology\
-University of Essex\
-<i class="fas fa-envelope"></i> `valentin.danchev@essex.ac.uk`\
+Lecturer (Assistant Professor) in Business Analytics\
+Department of Business Analytics and Applied Economics\
+School of Business and Management\
+Queen Mary University of London\
+<i class="fas fa-envelope"></i> `v.danchev@qmul.ac.uk`\
 <i class="fab fa-github"></i> [@valdanchev](https://valdanchev.github.io)\
 <i class="fab fa-twitter"></i> [@valdanchev](https://twitter.com/valdanchev)
 
