@@ -18,7 +18,6 @@ authors:
 affiliations:
   - name: Department of Sociology, University of Essex, United Kingdom
     index: 1
-affiliations:
   - name: School of Business and Management, Queen Mary University of London, United Kingdom
     index: 2
 

@@ -117,11 +117,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-these-materials">
-   How to get the most of these materials?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#learning-resources">
    Learning resources
   </a>
@@ -134,6 +129,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="00_textbook_outline.html#data-sets">
    Data sets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_textbook_outline.html#how-to-get-the-most-of-the-open-learning-resource">
+   How to get the most of the open learning resource?
   </a>
  </li>
  <li class="toctree-l1">
@@ -283,8 +283,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_python_data_science_on_the_cloud.html#running-terminal-commands-in-jupyter-colab-notebook">
-   Running Terminal commands in Jupyter/Colab notebook
+  <a class="reference internal" href="02_python_data_science_on_the_cloud.html#running-command-line-commands-in-jupyter-colab-notebook">
+   Running command-line commands in Jupyter/Colab notebook
   </a>
  </li>
  <li class="toctree-l1">
@@ -804,6 +804,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="08_causal_inference.html#using-weights-to-adjust-for-complex-sample-design">
+   Using weights to adjust for complex sample design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="08_causal_inference.html#additional-material">
    Additional material
   </a>
@@ -1302,11 +1307,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: 
-Type: Graph
-Number of nodes: 6
-Number of edges: 7
-Average degree:   2.3333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 6 nodes and 7 edges
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-6-30b69dc9c89c&gt;:2: DeprecationWarning: info is deprecated and will be removed in version 3.0.
+
+  print(nx.info(G))
 </pre></div>
 </div>
 </div>
@@ -1490,9 +1496,22 @@ Average degree:   2.3333
 </div>
 </div>
 </div>
-<p>If <code class="docutils literal notranslate"><span class="pre">normalized</span> <span class="pre">=</span> <span class="pre">True</span></code>, then betweenness centrality of a node is normalised by <span class="math notranslate nohighlight">\(2/((n - 1)(n - 2))\)</span>. In our example graph:</p>
-<p><span class="math notranslate nohighlight">\(2/((6 - 1)(6 - 2) = 2/(5 * 4) = 2 / 20 = 0.1.\)</span></p>
-<p>Hence the betweenness centrality, for example, of node 1 is <span class="math notranslate nohighlight">\(2.5/0.1 = 0.25\)</span>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">normalized</span> <span class="pre">=</span> <span class="pre">True</span></code>, then betweenness centrality of a node is normalised by <span class="math notranslate nohighlight">\(((n - 1)(n - 2))/2\)</span>. In our example graph:</p>
+<p><span class="math notranslate nohighlight">\(((6 - 1)(6 - 2))/2 = (5 * 4)/2 = 20 / 2 = 10\)</span>.</p>
+<p>Hence the normalized betweenness centrality of, for example, node 1 is <span class="math notranslate nohighlight">\(2.5/10 = 0.25\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute normalized betweenness centrality</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.25, 2: 0.25, 3: 0.0, 4: 0.4, 5: 0.05, 6: 0.05}
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Eigenvector centrality</strong></p>
 <p>Eigenvector centrality is another diagnostic that considers non-direct connections. If node degree measures the number of connections of a node, eigenvector centrality measures the extent to which those connected to a node are themselves highly connected nodes. Eigenvector centrality is an indicator of the influence of a node in a network. People with high eigenvector centrality in social and information networks are influential because they are connected to others who are themselves highly connected and, thus, can easily reach many other people in the networks.</p>
 <div class="cell docutils container">
@@ -1604,7 +1623,7 @@ Average degree:   2.3333
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/09_network_analysis_42_0.png" src="../_images/09_network_analysis_42_0.png" />
+<img alt="../_images/09_network_analysis_43_0.png" src="../_images/09_network_analysis_43_0.png" />
 </div>
 </div>
 </div>
@@ -1619,7 +1638,7 @@ Average degree:   2.3333
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29999999999999993
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29999999999999977
 </pre></div>
 </div>
 </div>
@@ -1633,7 +1652,7 @@ Average degree:   2.3333
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.10526315789473836
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.10526315789473463
 </pre></div>
 </div>
 </div>
@@ -1667,7 +1686,7 @@ Average degree:   2.3333
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/09_network_analysis_49_0.png" src="../_images/09_network_analysis_49_0.png" />
+<img alt="../_images/09_network_analysis_50_0.png" src="../_images/09_network_analysis_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1801,11 +1820,12 @@ Average degree:   2.3333
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: 
-Type: Graph
-Number of nodes: 21
-Number of edges: 60
-Average degree:   5.7143
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Graph with 21 nodes and 60 edges
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-31-24cf5aa5bfee&gt;:2: DeprecationWarning: info is deprecated and will be removed in version 3.0.
+
+  print(nx.info(GraphStarWars))
 </pre></div>
 </div>
 </div>
@@ -1870,7 +1890,7 @@ Average degree:   5.7143
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/09_network_analysis_62_0.png" src="../_images/09_network_analysis_62_0.png" />
+<img alt="../_images/09_network_analysis_63_0.png" src="../_images/09_network_analysis_63_0.png" />
 </div>
 </div>
 </div>
@@ -1921,9 +1941,12 @@ Average degree:   5.7143
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-louvain in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (0.14)
-Requirement already satisfied: networkx in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-louvain) (2.5)
+Requirement already satisfied: networkx in /Users/valentindanchev/.local/lib/python3.8/site-packages (from python-louvain) (2.8.5)
 Requirement already satisfied: numpy in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from python-louvain) (1.19.2)
-Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt/anaconda3/lib/python3.8/site-packages (from networkx-&gt;python-louvain) (5.0.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.2</span> -&gt; <span class=" -Color -Color-Green">22.3.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -1948,7 +1971,7 @@ Requirement already satisfied: decorator&gt;=4.3.0 in /Users/valentindanchev/opt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/09_network_analysis_69_0.png" src="../_images/09_network_analysis_69_0.png" />
+<img alt="../_images/09_network_analysis_70_0.png" src="../_images/09_network_analysis_70_0.png" />
 </div>
 </div>
 </div>
@@ -2038,7 +2061,7 @@ RED TEN 2
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Star Wars Episode IV network&#39;)
 </pre></div>
 </div>
-<img alt="../_images/09_network_analysis_73_1.png" src="../_images/09_network_analysis_73_1.png" />
+<img alt="../_images/09_network_analysis_74_1.png" src="../_images/09_network_analysis_74_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2143,25 +2166,25 @@ RED TEN 2
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;LUKE&#39;: 0,
- &#39;CHEWBACCA&#39;: 1,
- &#39;OBI-WAN&#39;: 1,
+ &#39;GOLD LEADER&#39;: 1,
+ &#39;CAMIE&#39;: 1,
+ &#39;R2-D2&#39;: 1,
+ &#39;C-3PO&#39;: 1,
  &#39;BIGGS&#39;: 1,
+ &#39;DODONNA&#39;: 1,
+ &#39;CHEWBACCA&#39;: 1,
+ &#39;OWEN&#39;: 1,
+ &#39;WEDGE&#39;: 1,
+ &#39;OBI-WAN&#39;: 1,
  &#39;BERU&#39;: 1,
  &#39;LEIA&#39;: 1,
- &#39;GOLD LEADER&#39;: 1,
  &#39;HAN&#39;: 1,
- &#39;WEDGE&#39;: 1,
  &#39;RED LEADER&#39;: 1,
  &#39;RED TEN&#39;: 1,
- &#39;R2-D2&#39;: 1,
- &#39;OWEN&#39;: 1,
- &#39;CAMIE&#39;: 1,
- &#39;DODONNA&#39;: 1,
- &#39;C-3PO&#39;: 1,
- &#39;DARTH VADER&#39;: 2,
+ &#39;GREEDO&#39;: 2,
  &#39;JABBA&#39;: 2,
  &#39;TARKIN&#39;: 2,
- &#39;GREEDO&#39;: 2,
+ &#39;DARTH VADER&#39;: 2,
  &#39;MOTTI&#39;: 2}
 </pre></div>
 </div>
@@ -2237,15 +2260,15 @@ RED TEN 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 0.4173849989544929),
- (&#39;LEIA&#39;, 0.3621476171212341),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;LUKE&#39;, 0.41738499895449294),
+ (&#39;LEIA&#39;, 0.3621476171212343),
  (&#39;C-3PO&#39;, 0.34237759659841116),
- (&#39;CHEWBACCA&#39;, 0.29309285556955944),
+ (&#39;CHEWBACCA&#39;, 0.2930928555695595),
  (&#39;R2-D2&#39;, 0.2768558557532187),
- (&#39;OBI-WAN&#39;, 0.27354238616778775),
+ (&#39;OBI-WAN&#39;, 0.2735423861677878),
  (&#39;HAN&#39;, 0.2652851070021197),
- (&#39;RED LEADER&#39;, 0.22769355656700285),
- (&#39;BIGGS&#39;, 0.22769355656700282),
+ (&#39;BIGGS&#39;, 0.2276935565670028),
+ (&#39;RED LEADER&#39;, 0.2276935565670028),
  (&#39;DODONNA&#39;, 0.16949029608351718)]
 </pre></div>
 </div>
