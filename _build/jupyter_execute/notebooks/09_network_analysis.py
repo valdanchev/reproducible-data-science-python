@@ -209,11 +209,14 @@ $1/2 + 1/1 + 1/1 = 2.5$
 # Compute betweenness centrality
 nx.betweenness_centrality(G, normalized=False)
 
-If `normalized = True`, then betweenness centrality of a node is normalised by $2/((n - 1)(n - 2))$. In our example graph: 
+If `normalized = True`, then betweenness centrality of a node is normalised by $((n - 1)(n - 2))/2$. In our example graph: 
 
-$2/((6 - 1)(6 - 2) = 2/(5 * 4) = 2 / 20 = 0.1.$ 
+$((6 - 1)(6 - 2))/2 = (5 * 4)/2 = 20 / 2 = 10$.
 
-Hence the betweenness centrality, for example, of node 1 is $2.5/0.1 = 0.25$.
+Hence the normalized betweenness centrality of, for example, node 1 is $2.5/10 = 0.25$.
+
+# Compute normalized betweenness centrality
+nx.betweenness_centrality(G, normalized=True)
 
 **Eigenvector centrality**
 
